@@ -189,6 +189,7 @@ def _compute_domain_risk(raw_arr: np.ndarray, feature_order: List[str]) -> Tuple
 
     speed_series = series_for("speed")
     speed_ratio = 0.0
+    peak_speed = 0.0
     if speed_series is not None:
         metrics = MODEL_FEATURE_METRICS.get("speed", {})
         quantiles = quantiles_for("speed", "base")
@@ -217,7 +218,12 @@ def _compute_domain_risk(raw_arr: np.ndarray, feature_order: List[str]) -> Tuple
         peak_lat = float(np.max(lateral_series))
         mean_lat = float(np.mean(lateral_series))
         lateral_ratio = _tail_ratio(peak_lat, pleasant, caution, danger)
-        risk += 0.2 * lateral_ratio
+        speed_gate = 1.0
+        if peak_speed <= 90:
+            speed_gate = 0.35
+        elif peak_speed <= 130:
+            speed_gate = 0.5 + 0.5 * ((peak_speed - 90) / 40.0)
+        risk += 0.2 * lateral_ratio * speed_gate
         if lateral_ratio >= 1.0:
             update_scenario("high-speed-lateral", 4)
         elif lateral_ratio >= 0.6:
@@ -234,7 +240,12 @@ def _compute_domain_risk(raw_arr: np.ndarray, feature_order: List[str]) -> Tuple
         danger = quantiles_abs.get("p99") or (caution + 3.0)
         peak_yaw = float(np.max(yaw_series))
         yaw_ratio = _tail_ratio(peak_yaw, pleasant, caution, danger)
-        risk += 0.16 * yaw_ratio
+        speed_gate = 1.0
+        if peak_speed <= 90:
+            speed_gate = 0.35
+        elif peak_speed <= 130:
+            speed_gate = 0.5 + 0.5 * ((peak_speed - 90) / 40.0)
+        risk += 0.16 * yaw_ratio * speed_gate
         if yaw_ratio >= 1.0:
             update_scenario("snap-oversteer", 4)
         elif yaw_ratio >= 0.6:
@@ -873,9 +884,14 @@ def run_inference(telemetry: TelemetryPayload, context: Optional[Dict[str, Any]]
         score = float(mse.item())
 
     anomaly_score = _calibrated_anomaly_score(score)
+    sample_steps = raw_arr.shape[0] if raw_arr.size else 0
+    if sample_steps and sample_steps <= 5:
+        anomaly_score = min(anomaly_score, 0.35)
     domain_modifier, scenario_label, domain_notes = _compute_domain_risk(raw_arr, feature_order)
 
     combined_index = 0.55 * anomaly_score + domain_modifier
+    if sample_steps and sample_steps <= 5:
+        combined_index *= 0.6
     logistic_component = 1.0 / (1.0 + np.exp(-3.0 * (combined_index - 0.58)))
     base_probability = _clamp(logistic_component, 0.05, 0.95)
     crash_probability = _clamp(base_probability + env_modifier, 0.02, 0.97)

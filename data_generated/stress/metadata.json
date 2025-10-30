@@ -1,0 +1,3602 @@
+{
+  "0": {
+    "weather": "light_rain",
+    "track_surface": "wet",
+    "humidity": 65.72388600317908,
+    "tyre_wear": 0.7978487149165667,
+    "driver_state": "fresh",
+    "gt_crash_probability": 0.4351688686200631,
+    "missing_rate": 0.05
+  },
+  "1": {
+    "weather": "wet",
+    "track_surface": "mixed",
+    "humidity": 77.09107278121064,
+    "tyre_wear": 0.973261794607671,
+    "driver_state": "fresh",
+    "gt_crash_probability": 0.4902170223337175,
+    "missing_rate": 0.0
+  },
+  "2": {
+    "weather": "rain",
+    "track_surface": "wet",
+    "humidity": 70.87442809278312,
+    "tyre_wear": 0.7545685820317142,
+    "driver_state": "fatigued",
+    "gt_crash_probability": 0.427158899633089,
+    "missing_rate": 0.0
+  },
+  "3": {
+    "weather": "sunny",
+    "track_surface": "green",
+    "humidity": 31.211962618869546,
+    "tyre_wear": 0.762935694706768,
+    "driver_state": "cautious",
+    "gt_crash_probability": 0.2994194494104028,
+    "missing_rate": 0.0
+  },
+  "4": {
+    "weather": "overcast",
+    "track_surface": "wet",
+    "humidity": 36.01926647760829,
+    "tyre_wear": 0.0339706862036472,
+    "driver_state": "cautious",
+    "gt_crash_probability": 0.1724670671332278,
+    "missing_rate": 0.0
+  },
+  "5": {
+    "weather": "rain",
+    "track_surface": "rubbered",
+    "humidity": 44.430272264093155,
+    "tyre_wear": 0.964450349015792,
+    "driver_state": "fatigued",
+    "gt_crash_probability": 0.5592530219738426,
+    "missing_rate": 0.05
+  },
+  "6": {
+    "weather": "overcast",
+    "track_surface": "wet",
+    "humidity": 40.48584496782225,
+    "tyre_wear": 0.5336224528957968,
+    "driver_state": "cautious",
+    "gt_crash_probability": 0.3363329965643847,
+    "missing_rate": 0.0
+  },
+  "7": {
+    "weather": "sunny",
+    "track_surface": "wet",
+    "humidity": 40.23498240336551,
+    "tyre_wear": 0.7479918601431962,
+    "driver_state": "cautious",
+    "gt_crash_probability": 0.5153163150105738,
+    "missing_rate": 0.05
+  },
+  "8": {
+    "weather": "wet",
+    "track_surface": "green",
+    "humidity": 71.85594757598682,
+    "tyre_wear": 0.5214987768993061,
+    "driver_state": "cautious",
+    "gt_crash_probability": 0.4669798106418671,
+    "missing_rate": 0.02
+  },
+  "9": {
+    "weather": "wet",
+    "track_surface": "mixed",
+    "humidity": 55.965983887784816,
+    "tyre_wear": 0.3506341538187174,
+    "driver_state": "fresh",
+    "gt_crash_probability": 0.4561205612537274,
+    "missing_rate": 0.02
+  },
+  "10": {
+    "weather": "light_rain",
+    "track_surface": "green",
+    "humidity": 79.89472534322942,
+    "tyre_wear": 0.6922951495696611,
+    "driver_state": "fatigued",
+    "gt_crash_probability": 0.2715885722302575,
+    "missing_rate": 0.0
+  },
+  "11": {
+    "weather": "rain",
+    "track_surface": "rubbered",
+    "humidity": 64.05150835140219,
+    "tyre_wear": 0.2787110517474062,
+    "driver_state": "fresh",
+    "gt_crash_probability": 0.133834768357864,
+    "missing_rate": 0.03
+  },
+  "12": {
+    "weather": "light_rain",
+    "track_surface": "mixed",
+    "humidity": 30.362362622043555,
+    "tyre_wear": 0.2974639872847187,
+    "driver_state": "pushing",
+    "gt_crash_probability": 0.6155045082183102,
+    "missing_rate": 0.02
+  },
+  "13": {
+    "weather": "sunny",
+    "track_surface": "mixed",
+    "humidity": 33.25689914860996,
+    "tyre_wear": 0.2327538633256779,
+    "driver_state": "fresh",
+    "gt_crash_probability": 0.2335782142495661,
+    "missing_rate": 0.05
+  },
+  "14": {
+    "weather": "rain",
+    "track_surface": "mixed",
+    "humidity": 87.55003987242111,
+    "tyre_wear": 0.4565172634995614,
+    "driver_state": "pushing",
+    "gt_crash_probability": 0.8005444548371251,
+    "missing_rate": 0.0
+  },
+  "15": {
+    "weather": "wet",
+    "track_surface": "mixed",
+    "humidity": 54.35133240651819,
+    "tyre_wear": 0.9503043210292372,
+    "driver_state": "pushing",
+    "gt_crash_probability": 0.8271461855892337,
+    "missing_rate": 0.04
+  },
+  "16": {
+    "weather": "light_rain",
+    "track_surface": "green",
+    "humidity": 34.83895038267094,
+    "tyre_wear": 0.4327844518729236,
+    "driver_state": "fatigued",
+    "gt_crash_probability": 0.1764721568829168,
+    "missing_rate": 0.0
+  },
+  "17": {
+    "weather": "overcast",
+    "track_surface": "green",
+    "humidity": 89.10187270499958,
+    "tyre_wear": 0.4238945796528468,
+    "driver_state": "fresh",
+    "gt_crash_probability": 0.398348167016009,
+    "missing_rate": 0.0
+  },
+  "18": {
+    "weather": "overcast",
+    "track_surface": "green",
+    "humidity": 30.53775018433195,
+    "tyre_wear": 0.2747655648593692,
+    "driver_state": "pushing",
+    "gt_crash_probability": 0.295636566685275,
+    "missing_rate": 0.05
+  },
+  "19": {
+    "weather": "wet",
+    "track_surface": "wet",
+    "humidity": 60.60087144325905,
+    "tyre_wear": 0.9612864029889238,
+    "driver_state": "cautious",
+    "gt_crash_probability": 0.6857441645140258,
+    "missing_rate": 0.0
+  },
+  "20": {
+    "weather": "rain",
+    "track_surface": "rubbered",
+    "humidity": 69.16388667628227,
+    "tyre_wear": 0.6756136280600565,
+    "driver_state": "cautious",
+    "gt_crash_probability": 0.2764238474706033,
+    "missing_rate": 0.0
+  },
+  "21": {
+    "weather": "rain",
+    "track_surface": "rubbered",
+    "humidity": 75.93003808956854,
+    "tyre_wear": 0.4302142141359588,
+    "driver_state": "fresh",
+    "gt_crash_probability": 0.6795710022468113,
+    "missing_rate": 0.0
+  },
+  "22": {
+    "weather": "sunny",
+    "track_surface": "rubbered",
+    "humidity": 65.31685009587271,
+    "tyre_wear": 0.6608714790251464,
+    "driver_state": "fresh",
+    "gt_crash_probability": 0.7484311676188784,
+    "missing_rate": 0.04
+  },
+  "23": {
+    "weather": "sunny",
+    "track_surface": "mixed",
+    "humidity": 41.64151634408259,
+    "tyre_wear": 0.1864454518890312,
+    "driver_state": "pushing",
+    "gt_crash_probability": 0.3718291746044037,
+    "missing_rate": 0.0
+  },
+  "24": {
+    "weather": "light_rain",
+    "track_surface": "mixed",
+    "humidity": 81.15957098246193,
+    "tyre_wear": 0.8259690061182584,
+    "driver_state": "fatigued",
+    "gt_crash_probability": 0.8927533233439621,
+    "missing_rate": 0.0
+  },
+  "25": {
+    "weather": "sunny",
+    "track_surface": "wet",
+    "humidity": 73.15643444177101,
+    "tyre_wear": 0.8150418836437273,
+    "driver_state": "cautious",
+    "gt_crash_probability": 0.7599213675840696,
+    "missing_rate": 0.0
+  },
+  "26": {
+    "weather": "light_rain",
+    "track_surface": "wet",
+    "humidity": 83.90513576624991,
+    "tyre_wear": 0.3034693188619404,
+    "driver_state": "fatigued",
+    "gt_crash_probability": 0.2533359997033341,
+    "missing_rate": 0.03
+  },
+  "27": {
+    "weather": "wet",
+    "track_surface": "green",
+    "humidity": 31.859615393243725,
+    "tyre_wear": 0.3946707371231357,
+    "driver_state": "pushing",
+    "gt_crash_probability": 0.3107932667232874,
+    "missing_rate": 0.0
+  },
+  "28": {
+    "weather": "wet",
+    "track_surface": "rubbered",
+    "humidity": 36.560405994921986,
+    "tyre_wear": 0.541990545952203,
+    "driver_state": "fresh",
+    "gt_crash_probability": 0.2236226195473752,
+    "missing_rate": 0.05
+  },
+  "29": {
+    "weather": "wet",
+    "track_surface": "wet",
+    "humidity": 72.70334423654953,
+    "tyre_wear": 0.8580538499299337,
+    "driver_state": "fresh",
+    "gt_crash_probability": 0.4445563050356359,
+    "missing_rate": 0.0
+  },
+  "30": {
+    "weather": "overcast",
+    "track_surface": "rubbered",
+    "humidity": 64.4653036775461,
+    "tyre_wear": 0.1238488031543257,
+    "driver_state": "fresh",
+    "gt_crash_probability": 0.2067940160135228,
+    "missing_rate": 0.0
+  },
+  "31": {
+    "weather": "sunny",
+    "track_surface": "mixed",
+    "humidity": 90.32609263034004,
+    "tyre_wear": 0.0593479260789728,
+    "driver_state": "cautious",
+    "gt_crash_probability": 0.2819971896040324,
+    "missing_rate": 0.0
+  },
+  "32": {
+    "weather": "overcast",
+    "track_surface": "green",
+    "humidity": 41.84120436457454,
+    "tyre_wear": 0.505153302727056,
+    "driver_state": "pushing",
+    "gt_crash_probability": 0.8262884760933255,
+    "missing_rate": 0.04
+  },
+  "33": {
+    "weather": "light_rain",
+    "track_surface": "green",
+    "humidity": 61.89628830619602,
+    "tyre_wear": 0.7641716881049236,
+    "driver_state": "fatigued",
+    "gt_crash_probability": 0.2955871378841703,
+    "missing_rate": 0.05
+  },
+  "34": {
+    "weather": "rain",
+    "track_surface": "mixed",
+    "humidity": 31.245265199779674,
+    "tyre_wear": 0.3673376768835225,
+    "driver_state": "fresh",
+    "gt_crash_probability": 0.2810690249316506,
+    "missing_rate": 0.0
+  },
+  "35": {
+    "weather": "rain",
+    "track_surface": "mixed",
+    "humidity": 38.05298354891542,
+    "tyre_wear": 0.8257548128386217,
+    "driver_state": "pushing",
+    "gt_crash_probability": 1.0,
+    "missing_rate": 0.04
+  },
+  "36": {
+    "weather": "rain",
+    "track_surface": "mixed",
+    "humidity": 46.72024978488332,
+    "tyre_wear": 0.6561671577842436,
+    "driver_state": "fresh",
+    "gt_crash_probability": 0.4161903981696211,
+    "missing_rate": 0.02
+  },
+  "37": {
+    "weather": "overcast",
+    "track_surface": "wet",
+    "humidity": 86.76652141351356,
+    "tyre_wear": 0.1086721694560087,
+    "driver_state": "fresh",
+    "gt_crash_probability": 0.1940293062151784,
+    "missing_rate": 0.0
+  },
+  "38": {
+    "weather": "light_rain",
+    "track_surface": "wet",
+    "humidity": 45.60925765203971,
+    "tyre_wear": 0.328532176633497,
+    "driver_state": "cautious",
+    "gt_crash_probability": 0.2705228454476186,
+    "missing_rate": 0.0
+  },
+  "39": {
+    "weather": "wet",
+    "track_surface": "wet",
+    "humidity": 60.37387749230871,
+    "tyre_wear": 0.4386597018941512,
+    "driver_state": "fresh",
+    "gt_crash_probability": 0.3027012379869647,
+    "missing_rate": 0.0
+  },
+  "40": {
+    "weather": "sunny",
+    "track_surface": "rubbered",
+    "humidity": 40.536417396452066,
+    "tyre_wear": 0.2697051091823991,
+    "driver_state": "cautious",
+    "gt_crash_probability": 0.3221735920367006,
+    "missing_rate": 0.0
+  },
+  "41": {
+    "weather": "rain",
+    "track_surface": "wet",
+    "humidity": 88.23056533821436,
+    "tyre_wear": 0.0944378889439548,
+    "driver_state": "cautious",
+    "gt_crash_probability": 0.5738331420389694,
+    "missing_rate": 0.0
+  },
+  "42": {
+    "weather": "wet",
+    "track_surface": "green",
+    "humidity": 88.13642034379374,
+    "tyre_wear": 0.1527153311113418,
+    "driver_state": "fatigued",
+    "gt_crash_probability": 0.2961171714121048,
+    "missing_rate": 0.0
+  },
+  "43": {
+    "weather": "light_rain",
+    "track_surface": "green",
+    "humidity": 76.1539009737293,
+    "tyre_wear": 0.4223376368499383,
+    "driver_state": "pushing",
+    "gt_crash_probability": 0.5232373142073539,
+    "missing_rate": 0.0
+  },
+  "44": {
+    "weather": "rain",
+    "track_surface": "rubbered",
+    "humidity": 62.750329135460376,
+    "tyre_wear": 0.3432059848800136,
+    "driver_state": "pushing",
+    "gt_crash_probability": 0.3115280710529946,
+    "missing_rate": 0.0
+  },
+  "45": {
+    "weather": "wet",
+    "track_surface": "green",
+    "humidity": 44.74369640488372,
+    "tyre_wear": 0.8928318711080788,
+    "driver_state": "fatigued",
+    "gt_crash_probability": 0.5787157416907027,
+    "missing_rate": 0.05
+  },
+  "46": {
+    "weather": "rain",
+    "track_surface": "mixed",
+    "humidity": 63.44550739807453,
+    "tyre_wear": 0.9628413879812407,
+    "driver_state": "pushing",
+    "gt_crash_probability": 0.6406952075402133,
+    "missing_rate": 0.03
+  },
+  "47": {
+    "weather": "light_rain",
+    "track_surface": "rubbered",
+    "humidity": 73.80097743025782,
+    "tyre_wear": 0.417292723167054,
+    "driver_state": "pushing",
+    "gt_crash_probability": 0.6153639907703196,
+    "missing_rate": 0.0
+  },
+  "48": {
+    "weather": "rain",
+    "track_surface": "mixed",
+    "humidity": 88.2526330050539,
+    "tyre_wear": 0.6770745992476941,
+    "driver_state": "cautious",
+    "gt_crash_probability": 0.5158985554926959,
+    "missing_rate": 0.0
+  },
+  "49": {
+    "weather": "rain",
+    "track_surface": "wet",
+    "humidity": 50.00199251988258,
+    "tyre_wear": 0.1219264976999489,
+    "driver_state": "fatigued",
+    "gt_crash_probability": 0.1905144555633447,
+    "missing_rate": 0.02
+  },
+  "50": {
+    "weather": "overcast",
+    "track_surface": "mixed",
+    "humidity": 94.08460263751138,
+    "tyre_wear": 0.8824703574984969,
+    "driver_state": "fatigued",
+    "gt_crash_probability": 0.7798756632770953,
+    "missing_rate": 0.0
+  },
+  "51": {
+    "weather": "sunny",
+    "track_surface": "rubbered",
+    "humidity": 31.22135348441755,
+    "tyre_wear": 0.3813734481443838,
+    "driver_state": "pushing",
+    "gt_crash_probability": 0.3313942076171778,
+    "missing_rate": 0.02
+  },
+  "52": {
+    "weather": "overcast",
+    "track_surface": "wet",
+    "humidity": 61.397517278880045,
+    "tyre_wear": 0.9251684978437852,
+    "driver_state": "cautious",
+    "gt_crash_probability": 0.7795989428534512,
+    "missing_rate": 0.0
+  },
+  "53": {
+    "weather": "light_rain",
+    "track_surface": "wet",
+    "humidity": 69.11963983948274,
+    "tyre_wear": 0.9206000308599328,
+    "driver_state": "cautious",
+    "gt_crash_probability": 0.5017785844732326,
+    "missing_rate": 0.0
+  },
+  "54": {
+    "weather": "overcast",
+    "track_surface": "wet",
+    "humidity": 39.275551495098355,
+    "tyre_wear": 0.969683454302274,
+    "driver_state": "fresh",
+    "gt_crash_probability": 0.4853083705601477,
+    "missing_rate": 0.05
+  },
+  "55": {
+    "weather": "rain",
+    "track_surface": "rubbered",
+    "humidity": 30.10643644769473,
+    "tyre_wear": 0.5047795705262917,
+    "driver_state": "fresh",
+    "gt_crash_probability": 0.3508726637262856,
+    "missing_rate": 0.0
+  },
+  "56": {
+    "weather": "sunny",
+    "track_surface": "rubbered",
+    "humidity": 45.16573803740179,
+    "tyre_wear": 0.5199134612470155,
+    "driver_state": "cautious",
+    "gt_crash_probability": 0.4459810569694344,
+    "missing_rate": 0.04
+  },
+  "57": {
+    "weather": "rain",
+    "track_surface": "wet",
+    "humidity": 46.942277562475255,
+    "tyre_wear": 0.3310984868787757,
+    "driver_state": "cautious",
+    "gt_crash_probability": 0.4496632612291717,
+    "missing_rate": 0.0
+  },
+  "58": {
+    "weather": "light_rain",
+    "track_surface": "green",
+    "humidity": 45.194079012445386,
+    "tyre_wear": 0.6214739112361787,
+    "driver_state": "fresh",
+    "gt_crash_probability": 0.6111688188557932,
+    "missing_rate": 0.04
+  },
+  "59": {
+    "weather": "wet",
+    "track_surface": "wet",
+    "humidity": 77.77070927722113,
+    "tyre_wear": 0.3068507279221192,
+    "driver_state": "fatigued",
+    "gt_crash_probability": 0.4831556179818707,
+    "missing_rate": 0.02
+  },
+  "60": {
+    "weather": "rain",
+    "track_surface": "mixed",
+    "humidity": 90.31443305207551,
+    "tyre_wear": 0.4247807035411108,
+    "driver_state": "fresh",
+    "gt_crash_probability": 0.2999835915763688,
+    "missing_rate": 0.0
+  },
+  "61": {
+    "weather": "light_rain",
+    "track_surface": "rubbered",
+    "humidity": 38.17903346313756,
+    "tyre_wear": 0.8076753823471281,
+    "driver_state": "fatigued",
+    "gt_crash_probability": 0.5860252540060482,
+    "missing_rate": 0.02
+  },
+  "62": {
+    "weather": "wet",
+    "track_surface": "green",
+    "humidity": 70.9056107495206,
+    "tyre_wear": 0.0763734409053327,
+    "driver_state": "fresh",
+    "gt_crash_probability": 0.0556653444012644,
+    "missing_rate": 0.03
+  },
+  "63": {
+    "weather": "overcast",
+    "track_surface": "green",
+    "humidity": 84.08486221805214,
+    "tyre_wear": 0.9679265675261352,
+    "driver_state": "fresh",
+    "gt_crash_probability": 0.6065489413762186,
+    "missing_rate": 0.0
+  },
+  "64": {
+    "weather": "wet",
+    "track_surface": "wet",
+    "humidity": 35.88067732631878,
+    "tyre_wear": 0.4860069521210644,
+    "driver_state": "fatigued",
+    "gt_crash_probability": 0.593935987930575,
+    "missing_rate": 0.03
+  },
+  "65": {
+    "weather": "wet",
+    "track_surface": "wet",
+    "humidity": 88.44670326615258,
+    "tyre_wear": 0.8211573099732684,
+    "driver_state": "fresh",
+    "gt_crash_probability": 0.5990770604824626,
+    "missing_rate": 0.0
+  },
+  "66": {
+    "weather": "light_rain",
+    "track_surface": "wet",
+    "humidity": 64.62240337347151,
+    "tyre_wear": 0.3491637783588669,
+    "driver_state": "fresh",
+    "gt_crash_probability": 0.2875063778819156,
+    "missing_rate": 0.0
+  },
+  "67": {
+    "weather": "overcast",
+    "track_surface": "mixed",
+    "humidity": 78.14907398847038,
+    "tyre_wear": 0.3409300399390454,
+    "driver_state": "pushing",
+    "gt_crash_probability": 0.7587908851183932,
+    "missing_rate": 0.0
+  },
+  "68": {
+    "weather": "light_rain",
+    "track_surface": "green",
+    "humidity": 60.96087416403408,
+    "tyre_wear": 0.7404995847264647,
+    "driver_state": "fresh",
+    "gt_crash_probability": 0.44303109723117,
+    "missing_rate": 0.03
+  },
+  "69": {
+    "weather": "overcast",
+    "track_surface": "rubbered",
+    "humidity": 63.43876692533778,
+    "tyre_wear": 0.1292625106740146,
+    "driver_state": "pushing",
+    "gt_crash_probability": 0.2226229494355445,
+    "missing_rate": 0.0
+  },
+  "70": {
+    "weather": "rain",
+    "track_surface": "green",
+    "humidity": 90.33502454202318,
+    "tyre_wear": 0.7650219919911397,
+    "driver_state": "pushing",
+    "gt_crash_probability": 0.7152608092774405,
+    "missing_rate": 0.0
+  },
+  "71": {
+    "weather": "overcast",
+    "track_surface": "mixed",
+    "humidity": 85.72448895102704,
+    "tyre_wear": 0.3838452106502458,
+    "driver_state": "pushing",
+    "gt_crash_probability": 0.8812013674053922,
+    "missing_rate": 0.05
+  },
+  "72": {
+    "weather": "sunny",
+    "track_surface": "wet",
+    "humidity": 67.99735680586188,
+    "tyre_wear": 0.1734378498517537,
+    "driver_state": "pushing",
+    "gt_crash_probability": 0.3629279760384774,
+    "missing_rate": 0.0
+  },
+  "73": {
+    "weather": "light_rain",
+    "track_surface": "mixed",
+    "humidity": 30.54577763060285,
+    "tyre_wear": 0.5747581308145798,
+    "driver_state": "fatigued",
+    "gt_crash_probability": 0.35017254243322,
+    "missing_rate": 0.03
+  },
+  "74": {
+    "weather": "light_rain",
+    "track_surface": "green",
+    "humidity": 45.345157765682565,
+    "tyre_wear": 0.2816642525293169,
+    "driver_state": "cautious",
+    "gt_crash_probability": 0.4587863604651073,
+    "missing_rate": 0.0
+  },
+  "75": {
+    "weather": "sunny",
+    "track_surface": "rubbered",
+    "humidity": 55.22163571285258,
+    "tyre_wear": 0.5226656176902005,
+    "driver_state": "fatigued",
+    "gt_crash_probability": 0.7269424914890161,
+    "missing_rate": 0.04
+  },
+  "76": {
+    "weather": "light_rain",
+    "track_surface": "rubbered",
+    "humidity": 90.70167940468424,
+    "tyre_wear": 0.6696359714283913,
+    "driver_state": "pushing",
+    "gt_crash_probability": 0.5932091117998481,
+    "missing_rate": 0.0
+  },
+  "77": {
+    "weather": "wet",
+    "track_surface": "rubbered",
+    "humidity": 88.06786784861072,
+    "tyre_wear": 0.3372532396514314,
+    "driver_state": "fresh",
+    "gt_crash_probability": 0.4030756312537193,
+    "missing_rate": 0.04
+  },
+  "78": {
+    "weather": "wet",
+    "track_surface": "wet",
+    "humidity": 39.43840012840222,
+    "tyre_wear": 0.2823919125705312,
+    "driver_state": "fresh",
+    "gt_crash_probability": 0.2641966728190153,
+    "missing_rate": 0.0
+  },
+  "79": {
+    "weather": "light_rain",
+    "track_surface": "mixed",
+    "humidity": 72.47942726753011,
+    "tyre_wear": 0.7971521858839721,
+    "driver_state": "cautious",
+    "gt_crash_probability": 0.7631681469820316,
+    "missing_rate": 0.0
+  },
+  "80": {
+    "weather": "sunny",
+    "track_surface": "wet",
+    "humidity": 33.7213752578955,
+    "tyre_wear": 0.9308644792233366,
+    "driver_state": "pushing",
+    "gt_crash_probability": 0.7747656921629309,
+    "missing_rate": 0.03
+  },
+  "81": {
+    "weather": "rain",
+    "track_surface": "rubbered",
+    "humidity": 72.92889802644514,
+    "tyre_wear": 0.916967005254485,
+    "driver_state": "fresh",
+    "gt_crash_probability": 0.3627638492077193,
+    "missing_rate": 0.05
+  },
+  "82": {
+    "weather": "overcast",
+    "track_surface": "green",
+    "humidity": 35.31063487605818,
+    "tyre_wear": 0.9585446406535711,
+    "driver_state": "fresh",
+    "gt_crash_probability": 0.5502939790135454,
+    "missing_rate": 0.05
+  },
+  "83": {
+    "weather": "wet",
+    "track_surface": "wet",
+    "humidity": 46.78173944591619,
+    "tyre_wear": 0.1483720426090069,
+    "driver_state": "fatigued",
+    "gt_crash_probability": 0.5431962161500511,
+    "missing_rate": 0.02
+  },
+  "84": {
+    "weather": "rain",
+    "track_surface": "rubbered",
+    "humidity": 32.63304560853193,
+    "tyre_wear": 0.9729857722403602,
+    "driver_state": "pushing",
+    "gt_crash_probability": 0.9918093909283152,
+    "missing_rate": 0.0
+  },
+  "85": {
+    "weather": "rain",
+    "track_surface": "green",
+    "humidity": 60.767629821414474,
+    "tyre_wear": 0.0697759002101846,
+    "driver_state": "fatigued",
+    "gt_crash_probability": 0.3699573582879485,
+    "missing_rate": 0.0
+  },
+  "86": {
+    "weather": "wet",
+    "track_surface": "rubbered",
+    "humidity": 34.28099898237183,
+    "tyre_wear": 0.0341061480031161,
+    "driver_state": "fresh",
+    "gt_crash_probability": 0.0465028518706058,
+    "missing_rate": 0.0
+  },
+  "87": {
+    "weather": "sunny",
+    "track_surface": "mixed",
+    "humidity": 73.93009082832228,
+    "tyre_wear": 0.1785236463577552,
+    "driver_state": "fatigued",
+    "gt_crash_probability": 0.212709069414443,
+    "missing_rate": 0.0
+  },
+  "88": {
+    "weather": "overcast",
+    "track_surface": "green",
+    "humidity": 93.7155377700324,
+    "tyre_wear": 0.0886824942421731,
+    "driver_state": "fatigued",
+    "gt_crash_probability": 0.2386318828327413,
+    "missing_rate": 0.04
+  },
+  "89": {
+    "weather": "rain",
+    "track_surface": "mixed",
+    "humidity": 32.390318774635126,
+    "tyre_wear": 0.6218862245803101,
+    "driver_state": "pushing",
+    "gt_crash_probability": 0.8067434240332758,
+    "missing_rate": 0.0
+  },
+  "90": {
+    "weather": "wet",
+    "track_surface": "green",
+    "humidity": 86.93144235955583,
+    "tyre_wear": 0.5487296469739965,
+    "driver_state": "pushing",
+    "gt_crash_probability": 0.7463910894216752,
+    "missing_rate": 0.05
+  },
+  "91": {
+    "weather": "light_rain",
+    "track_surface": "mixed",
+    "humidity": 49.30539277285821,
+    "tyre_wear": 0.0093746001198697,
+    "driver_state": "pushing",
+    "gt_crash_probability": 0.5310835005596353,
+    "missing_rate": 0.0
+  },
+  "92": {
+    "weather": "light_rain",
+    "track_surface": "mixed",
+    "humidity": 58.390901078876155,
+    "tyre_wear": 0.0179322489030113,
+    "driver_state": "fresh",
+    "gt_crash_probability": 0.1482510073763132,
+    "missing_rate": 0.05
+  },
+  "93": {
+    "weather": "light_rain",
+    "track_surface": "green",
+    "humidity": 62.13271944700359,
+    "tyre_wear": 0.9027074129117636,
+    "driver_state": "cautious",
+    "gt_crash_probability": 0.345862073734183,
+    "missing_rate": 0.05
+  },
+  "94": {
+    "weather": "wet",
+    "track_surface": "wet",
+    "humidity": 43.682329501196136,
+    "tyre_wear": 0.5940809241273386,
+    "driver_state": "fresh",
+    "gt_crash_probability": 0.3702467400347135,
+    "missing_rate": 0.04
+  },
+  "95": {
+    "weather": "overcast",
+    "track_surface": "mixed",
+    "humidity": 46.370687821121535,
+    "tyre_wear": 0.0540407146721203,
+    "driver_state": "fresh",
+    "gt_crash_probability": 0.4327614949466498,
+    "missing_rate": 0.0
+  },
+  "96": {
+    "weather": "wet",
+    "track_surface": "green",
+    "humidity": 37.37565841216978,
+    "tyre_wear": 0.4898525274452388,
+    "driver_state": "fatigued",
+    "gt_crash_probability": 0.1999022003585689,
+    "missing_rate": 0.0
+  },
+  "97": {
+    "weather": "wet",
+    "track_surface": "wet",
+    "humidity": 34.22201715086643,
+    "tyre_wear": 0.8894593309601032,
+    "driver_state": "pushing",
+    "gt_crash_probability": 0.8695644839404757,
+    "missing_rate": 0.04
+  },
+  "98": {
+    "weather": "sunny",
+    "track_surface": "mixed",
+    "humidity": 39.32737185944927,
+    "tyre_wear": 0.0991396400867898,
+    "driver_state": "pushing",
+    "gt_crash_probability": 0.3397996190330984,
+    "missing_rate": 0.02
+  },
+  "99": {
+    "weather": "overcast",
+    "track_surface": "rubbered",
+    "humidity": 61.27580477248665,
+    "tyre_wear": 0.140685684332762,
+    "driver_state": "fresh",
+    "gt_crash_probability": 0.0776034045982194,
+    "missing_rate": 0.02
+  },
+  "100": {
+    "weather": "light_rain",
+    "track_surface": "wet",
+    "humidity": 56.77013689349764,
+    "tyre_wear": 0.4570789572558105,
+    "driver_state": "pushing",
+    "gt_crash_probability": 0.9039091228975858,
+    "missing_rate": 0.04
+  },
+  "101": {
+    "weather": "overcast",
+    "track_surface": "green",
+    "humidity": 66.25203970786714,
+    "tyre_wear": 0.4235360520642877,
+    "driver_state": "pushing",
+    "gt_crash_probability": 0.7912477911425487,
+    "missing_rate": 0.0
+  },
+  "102": {
+    "weather": "sunny",
+    "track_surface": "wet",
+    "humidity": 75.0499787696177,
+    "tyre_wear": 0.0033016052093813,
+    "driver_state": "cautious",
+    "gt_crash_probability": 0.3075416787706179,
+    "missing_rate": 0.0
+  },
+  "103": {
+    "weather": "rain",
+    "track_surface": "wet",
+    "humidity": 91.01378895293657,
+    "tyre_wear": 0.757956338359071,
+    "driver_state": "pushing",
+    "gt_crash_probability": 0.5675563319360377,
+    "missing_rate": 0.0
+  },
+  "104": {
+    "weather": "wet",
+    "track_surface": "rubbered",
+    "humidity": 66.23268922088167,
+    "tyre_wear": 0.447426299313176,
+    "driver_state": "cautious",
+    "gt_crash_probability": 0.1894720801943787,
+    "missing_rate": 0.0
+  },
+  "105": {
+    "weather": "rain",
+    "track_surface": "wet",
+    "humidity": 66.12503162833309,
+    "tyre_wear": 0.8266534842719019,
+    "driver_state": "cautious",
+    "gt_crash_probability": 0.4377924293974067,
+    "missing_rate": 0.0
+  },
+  "106": {
+    "weather": "sunny",
+    "track_surface": "wet",
+    "humidity": 50.77718414814693,
+    "tyre_wear": 0.7822574199026106,
+    "driver_state": "fatigued",
+    "gt_crash_probability": 0.601074908413946,
+    "missing_rate": 0.0
+  },
+  "107": {
+    "weather": "wet",
+    "track_surface": "mixed",
+    "humidity": 70.71693834121811,
+    "tyre_wear": 0.9321014232712768,
+    "driver_state": "fresh",
+    "gt_crash_probability": 0.6795388275761544,
+    "missing_rate": 0.04
+  },
+  "108": {
+    "weather": "light_rain",
+    "track_surface": "rubbered",
+    "humidity": 60.19131973463866,
+    "tyre_wear": 0.7648354353234736,
+    "driver_state": "fresh",
+    "gt_crash_probability": 0.3052051457704541,
+    "missing_rate": 0.0
+  },
+  "109": {
+    "weather": "sunny",
+    "track_surface": "green",
+    "humidity": 91.81314169811968,
+    "tyre_wear": 0.8431303092478282,
+    "driver_state": "fresh",
+    "gt_crash_probability": 0.3300417382934602,
+    "missing_rate": 0.0
+  },
+  "110": {
+    "weather": "sunny",
+    "track_surface": "green",
+    "humidity": 68.78847085406073,
+    "tyre_wear": 0.7339801145896164,
+    "driver_state": "pushing",
+    "gt_crash_probability": 0.4352881596587709,
+    "missing_rate": 0.0
+  },
+  "111": {
+    "weather": "light_rain",
+    "track_surface": "rubbered",
+    "humidity": 38.430658510197965,
+    "tyre_wear": 0.5499017624405569,
+    "driver_state": "fresh",
+    "gt_crash_probability": 0.2193093564646065,
+    "missing_rate": 0.0
+  },
+  "112": {
+    "weather": "sunny",
+    "track_surface": "rubbered",
+    "humidity": 54.67354406066149,
+    "tyre_wear": 0.0083396800711194,
+    "driver_state": "pushing",
+    "gt_crash_probability": 0.3654956243465393,
+    "missing_rate": 0.04
+  },
+  "113": {
+    "weather": "rain",
+    "track_surface": "rubbered",
+    "humidity": 78.73366549104844,
+    "tyre_wear": 0.5204744158697175,
+    "driver_state": "fatigued",
+    "gt_crash_probability": 0.3796911638668169,
+    "missing_rate": 0.0
+  },
+  "114": {
+    "weather": "sunny",
+    "track_surface": "rubbered",
+    "humidity": 52.86872002302218,
+    "tyre_wear": 0.6826784758846917,
+    "driver_state": "fatigued",
+    "gt_crash_probability": 0.2663327748462281,
+    "missing_rate": 0.03
+  },
+  "115": {
+    "weather": "wet",
+    "track_surface": "wet",
+    "humidity": 80.43874235356401,
+    "tyre_wear": 0.7374891232597286,
+    "driver_state": "pushing",
+    "gt_crash_probability": 0.83890359664276,
+    "missing_rate": 0.05
+  },
+  "116": {
+    "weather": "light_rain",
+    "track_surface": "green",
+    "humidity": 90.97594262937042,
+    "tyre_wear": 0.536952579689847,
+    "driver_state": "fatigued",
+    "gt_crash_probability": 0.2276975742308633,
+    "missing_rate": 0.0
+  },
+  "117": {
+    "weather": "rain",
+    "track_surface": "wet",
+    "humidity": 81.37058239111951,
+    "tyre_wear": 0.744554271393177,
+    "driver_state": "fresh",
+    "gt_crash_probability": 0.4069079712491059,
+    "missing_rate": 0.0
+  },
+  "118": {
+    "weather": "overcast",
+    "track_surface": "mixed",
+    "humidity": 65.65102556340565,
+    "tyre_wear": 0.967072015512448,
+    "driver_state": "fatigued",
+    "gt_crash_probability": 0.7980407664283421,
+    "missing_rate": 0.03
+  },
+  "119": {
+    "weather": "sunny",
+    "track_surface": "mixed",
+    "humidity": 52.92281268659532,
+    "tyre_wear": 0.0509806442384997,
+    "driver_state": "fresh",
+    "gt_crash_probability": 0.5987538840269051,
+    "missing_rate": 0.03
+  },
+  "120": {
+    "weather": "rain",
+    "track_surface": "rubbered",
+    "humidity": 39.064679037225915,
+    "tyre_wear": 0.2034998023765072,
+    "driver_state": "fatigued",
+    "gt_crash_probability": 0.4587173531214153,
+    "missing_rate": 0.04
+  },
+  "121": {
+    "weather": "sunny",
+    "track_surface": "green",
+    "humidity": 52.061355965132094,
+    "tyre_wear": 0.9592970977995086,
+    "driver_state": "fresh",
+    "gt_crash_probability": 0.3754413792826084,
+    "missing_rate": 0.0
+  },
+  "122": {
+    "weather": "overcast",
+    "track_surface": "green",
+    "humidity": 40.527055534045274,
+    "tyre_wear": 0.9502287528096008,
+    "driver_state": "fatigued",
+    "gt_crash_probability": 0.3592624156655767,
+    "missing_rate": 0.03
+  },
+  "123": {
+    "weather": "rain",
+    "track_surface": "rubbered",
+    "humidity": 35.262191703661884,
+    "tyre_wear": 0.8011138389264845,
+    "driver_state": "cautious",
+    "gt_crash_probability": 0.3119753732052522,
+    "missing_rate": 0.05
+  },
+  "124": {
+    "weather": "rain",
+    "track_surface": "wet",
+    "humidity": 39.50183521300896,
+    "tyre_wear": 0.2563555884903591,
+    "driver_state": "cautious",
+    "gt_crash_probability": 0.5046799743795926,
+    "missing_rate": 0.02
+  },
+  "125": {
+    "weather": "sunny",
+    "track_surface": "mixed",
+    "humidity": 45.988849615501614,
+    "tyre_wear": 0.7650224352332871,
+    "driver_state": "pushing",
+    "gt_crash_probability": 0.568833012906622,
+    "missing_rate": 0.02
+  },
+  "126": {
+    "weather": "overcast",
+    "track_surface": "wet",
+    "humidity": 59.074882455559866,
+    "tyre_wear": 0.0395368367875441,
+    "driver_state": "pushing",
+    "gt_crash_probability": 0.3248316362674145,
+    "missing_rate": 0.04
+  },
+  "127": {
+    "weather": "light_rain",
+    "track_surface": "mixed",
+    "humidity": 84.20101404404492,
+    "tyre_wear": 0.4131515299644622,
+    "driver_state": "pushing",
+    "gt_crash_probability": 0.4362088203377022,
+    "missing_rate": 0.0
+  },
+  "128": {
+    "weather": "rain",
+    "track_surface": "wet",
+    "humidity": 94.85702843985374,
+    "tyre_wear": 0.7291357015727209,
+    "driver_state": "cautious",
+    "gt_crash_probability": 0.405331209915107,
+    "missing_rate": 0.02
+  },
+  "129": {
+    "weather": "rain",
+    "track_surface": "mixed",
+    "humidity": 42.77556353597937,
+    "tyre_wear": 0.5140992857201594,
+    "driver_state": "fatigued",
+    "gt_crash_probability": 0.3339538322727347,
+    "missing_rate": 0.03
+  },
+  "130": {
+    "weather": "wet",
+    "track_surface": "wet",
+    "humidity": 65.57123627950455,
+    "tyre_wear": 0.2339159460543918,
+    "driver_state": "cautious",
+    "gt_crash_probability": 0.6847431719424842,
+    "missing_rate": 0.02
+  },
+  "131": {
+    "weather": "light_rain",
+    "track_surface": "rubbered",
+    "humidity": 39.13083366403714,
+    "tyre_wear": 0.1581605715176322,
+    "driver_state": "fatigued",
+    "gt_crash_probability": 0.0864751256542163,
+    "missing_rate": 0.0
+  },
+  "132": {
+    "weather": "rain",
+    "track_surface": "green",
+    "humidity": 65.91362714182789,
+    "tyre_wear": 0.2553218100481706,
+    "driver_state": "cautious",
+    "gt_crash_probability": 0.1279236249081344,
+    "missing_rate": 0.02
+  },
+  "133": {
+    "weather": "light_rain",
+    "track_surface": "green",
+    "humidity": 37.91206572133912,
+    "tyre_wear": 0.8400923059917376,
+    "driver_state": "cautious",
+    "gt_crash_probability": 0.681613524161734,
+    "missing_rate": 0.0
+  },
+  "134": {
+    "weather": "light_rain",
+    "track_surface": "wet",
+    "humidity": 62.78114219943329,
+    "tyre_wear": 0.7810002760955658,
+    "driver_state": "pushing",
+    "gt_crash_probability": 0.5788289251823459,
+    "missing_rate": 0.0
+  },
+  "135": {
+    "weather": "wet",
+    "track_surface": "green",
+    "humidity": 81.63997219129814,
+    "tyre_wear": 0.8091318716271145,
+    "driver_state": "fresh",
+    "gt_crash_probability": 0.3444645143932283,
+    "missing_rate": 0.0
+  },
+  "136": {
+    "weather": "overcast",
+    "track_surface": "wet",
+    "humidity": 69.9571485185371,
+    "tyre_wear": 0.8994776002857728,
+    "driver_state": "fatigued",
+    "gt_crash_probability": 0.6734718675903087,
+    "missing_rate": 0.05
+  },
+  "137": {
+    "weather": "rain",
+    "track_surface": "rubbered",
+    "humidity": 90.10297584110512,
+    "tyre_wear": 0.2062551425267814,
+    "driver_state": "cautious",
+    "gt_crash_probability": 0.4353818877533739,
+    "missing_rate": 0.04
+  },
+  "138": {
+    "weather": "rain",
+    "track_surface": "mixed",
+    "humidity": 42.27261892435719,
+    "tyre_wear": 0.2923535505322946,
+    "driver_state": "cautious",
+    "gt_crash_probability": 0.2526248661922485,
+    "missing_rate": 0.0
+  },
+  "139": {
+    "weather": "light_rain",
+    "track_surface": "mixed",
+    "humidity": 54.46923439420529,
+    "tyre_wear": 0.162641400632268,
+    "driver_state": "fatigued",
+    "gt_crash_probability": 0.659546119823583,
+    "missing_rate": 0.0
+  },
+  "140": {
+    "weather": "sunny",
+    "track_surface": "mixed",
+    "humidity": 51.31059013256855,
+    "tyre_wear": 0.8892129083725181,
+    "driver_state": "pushing",
+    "gt_crash_probability": 0.6249115908541218,
+    "missing_rate": 0.03
+  },
+  "141": {
+    "weather": "sunny",
+    "track_surface": "mixed",
+    "humidity": 34.73183786119789,
+    "tyre_wear": 0.0543931805455241,
+    "driver_state": "pushing",
+    "gt_crash_probability": 0.5080500779990075,
+    "missing_rate": 0.03
+  },
+  "142": {
+    "weather": "sunny",
+    "track_surface": "green",
+    "humidity": 32.59901402239543,
+    "tyre_wear": 0.1543765594188439,
+    "driver_state": "fatigued",
+    "gt_crash_probability": 0.0886720952644516,
+    "missing_rate": 0.0
+  },
+  "143": {
+    "weather": "wet",
+    "track_surface": "green",
+    "humidity": 75.03232174447086,
+    "tyre_wear": 0.2278205079138808,
+    "driver_state": "pushing",
+    "gt_crash_probability": 0.2852081922674976,
+    "missing_rate": 0.0
+  },
+  "144": {
+    "weather": "wet",
+    "track_surface": "mixed",
+    "humidity": 80.35584227430053,
+    "tyre_wear": 0.7663600214311851,
+    "driver_state": "pushing",
+    "gt_crash_probability": 0.5742485569219915,
+    "missing_rate": 0.0
+  },
+  "145": {
+    "weather": "light_rain",
+    "track_surface": "green",
+    "humidity": 31.84576576589413,
+    "tyre_wear": 0.4590932587736835,
+    "driver_state": "fresh",
+    "gt_crash_probability": 0.6384850364644687,
+    "missing_rate": 0.0
+  },
+  "146": {
+    "weather": "overcast",
+    "track_surface": "green",
+    "humidity": 68.60189507336389,
+    "tyre_wear": 0.9208290157348386,
+    "driver_state": "fatigued",
+    "gt_crash_probability": 0.7432784292436729,
+    "missing_rate": 0.02
+  },
+  "147": {
+    "weather": "overcast",
+    "track_surface": "green",
+    "humidity": 52.64439482429777,
+    "tyre_wear": 0.0281130652585139,
+    "driver_state": "fatigued",
+    "gt_crash_probability": 0.3194529046587173,
+    "missing_rate": 0.0
+  },
+  "148": {
+    "weather": "overcast",
+    "track_surface": "rubbered",
+    "humidity": 30.799016746622375,
+    "tyre_wear": 0.4154984975764064,
+    "driver_state": "fatigued",
+    "gt_crash_probability": 0.1845064844569618,
+    "missing_rate": 0.0
+  },
+  "149": {
+    "weather": "sunny",
+    "track_surface": "mixed",
+    "humidity": 79.26364842917113,
+    "tyre_wear": 0.0869636158809605,
+    "driver_state": "pushing",
+    "gt_crash_probability": 0.5025405358658729,
+    "missing_rate": 0.0
+  },
+  "150": {
+    "weather": "overcast",
+    "track_surface": "wet",
+    "humidity": 55.83535628698545,
+    "tyre_wear": 0.3427703718389562,
+    "driver_state": "fatigued",
+    "gt_crash_probability": 0.2795201104966127,
+    "missing_rate": 0.0
+  },
+  "151": {
+    "weather": "light_rain",
+    "track_surface": "green",
+    "humidity": 61.66015862660091,
+    "tyre_wear": 0.6795741110083283,
+    "driver_state": "pushing",
+    "gt_crash_probability": 0.8779169369720918,
+    "missing_rate": 0.0
+  },
+  "152": {
+    "weather": "sunny",
+    "track_surface": "rubbered",
+    "humidity": 59.79639301130198,
+    "tyre_wear": 0.9226936116071326,
+    "driver_state": "pushing",
+    "gt_crash_probability": 0.5030728665396059,
+    "missing_rate": 0.0
+  },
+  "153": {
+    "weather": "sunny",
+    "track_surface": "mixed",
+    "humidity": 91.55830365485356,
+    "tyre_wear": 0.0107840903159018,
+    "driver_state": "pushing",
+    "gt_crash_probability": 0.723334823865962,
+    "missing_rate": 0.0
+  },
+  "154": {
+    "weather": "sunny",
+    "track_surface": "green",
+    "humidity": 65.1596076321231,
+    "tyre_wear": 0.0609931923169063,
+    "driver_state": "cautious",
+    "gt_crash_probability": 0.4648932683893144,
+    "missing_rate": 0.05
+  },
+  "155": {
+    "weather": "wet",
+    "track_surface": "rubbered",
+    "humidity": 84.85620254941294,
+    "tyre_wear": 0.7888844858326276,
+    "driver_state": "cautious",
+    "gt_crash_probability": 0.6311889646258966,
+    "missing_rate": 0.0
+  },
+  "156": {
+    "weather": "sunny",
+    "track_surface": "wet",
+    "humidity": 54.77909011880995,
+    "tyre_wear": 0.5068187232773498,
+    "driver_state": "cautious",
+    "gt_crash_probability": 0.333528916815194,
+    "missing_rate": 0.0
+  },
+  "157": {
+    "weather": "sunny",
+    "track_surface": "rubbered",
+    "humidity": 64.01629255016752,
+    "tyre_wear": 0.0680077465786782,
+    "driver_state": "fresh",
+    "gt_crash_probability": 0.3856592775297269,
+    "missing_rate": 0.0
+  },
+  "158": {
+    "weather": "sunny",
+    "track_surface": "rubbered",
+    "humidity": 61.52410122889884,
+    "tyre_wear": 0.6035108308387181,
+    "driver_state": "pushing",
+    "gt_crash_probability": 0.3926119653179238,
+    "missing_rate": 0.0
+  },
+  "159": {
+    "weather": "rain",
+    "track_surface": "mixed",
+    "humidity": 38.775207721983634,
+    "tyre_wear": 0.7504203055986595,
+    "driver_state": "cautious",
+    "gt_crash_probability": 0.5742848946824649,
+    "missing_rate": 0.0
+  },
+  "160": {
+    "weather": "sunny",
+    "track_surface": "rubbered",
+    "humidity": 83.87516786998145,
+    "tyre_wear": 0.7015041701388923,
+    "driver_state": "fatigued",
+    "gt_crash_probability": 0.4632936068826513,
+    "missing_rate": 0.0
+  },
+  "161": {
+    "weather": "overcast",
+    "track_surface": "green",
+    "humidity": 53.77420611807609,
+    "tyre_wear": 0.3859351373044044,
+    "driver_state": "fatigued",
+    "gt_crash_probability": 0.3860113553439065,
+    "missing_rate": 0.03
+  },
+  "162": {
+    "weather": "sunny",
+    "track_surface": "mixed",
+    "humidity": 52.6685846823531,
+    "tyre_wear": 0.1884119753867006,
+    "driver_state": "pushing",
+    "gt_crash_probability": 0.3699856418211466,
+    "missing_rate": 0.05
+  },
+  "163": {
+    "weather": "sunny",
+    "track_surface": "green",
+    "humidity": 57.8870141250291,
+    "tyre_wear": 0.1370343504108956,
+    "driver_state": "pushing",
+    "gt_crash_probability": 0.2247248562105121,
+    "missing_rate": 0.0
+  },
+  "164": {
+    "weather": "sunny",
+    "track_surface": "mixed",
+    "humidity": 77.67599708116583,
+    "tyre_wear": 0.3864155978006905,
+    "driver_state": "cautious",
+    "gt_crash_probability": 0.6997652911570063,
+    "missing_rate": 0.0
+  },
+  "165": {
+    "weather": "rain",
+    "track_surface": "rubbered",
+    "humidity": 66.31307664031344,
+    "tyre_wear": 0.666254722944547,
+    "driver_state": "fresh",
+    "gt_crash_probability": 0.6596286644967468,
+    "missing_rate": 0.0
+  },
+  "166": {
+    "weather": "light_rain",
+    "track_surface": "green",
+    "humidity": 39.371562362383905,
+    "tyre_wear": 0.6210397918439197,
+    "driver_state": "fatigued",
+    "gt_crash_probability": 0.2436897790224809,
+    "missing_rate": 0.0
+  },
+  "167": {
+    "weather": "rain",
+    "track_surface": "mixed",
+    "humidity": 92.70385360832206,
+    "tyre_wear": 0.4355980807746276,
+    "driver_state": "cautious",
+    "gt_crash_probability": 0.3011182277332668,
+    "missing_rate": 0.0
+  },
+  "168": {
+    "weather": "wet",
+    "track_surface": "mixed",
+    "humidity": 93.4064500007373,
+    "tyre_wear": 0.4468776811660815,
+    "driver_state": "fatigued",
+    "gt_crash_probability": 0.5258438465783156,
+    "missing_rate": 0.0
+  },
+  "169": {
+    "weather": "wet",
+    "track_surface": "green",
+    "humidity": 57.68751460805276,
+    "tyre_wear": 0.8066924017682902,
+    "driver_state": "cautious",
+    "gt_crash_probability": 0.5509555282882967,
+    "missing_rate": 0.0
+  },
+  "170": {
+    "weather": "rain",
+    "track_surface": "wet",
+    "humidity": 47.44546249763928,
+    "tyre_wear": 0.1350216990982797,
+    "driver_state": "fresh",
+    "gt_crash_probability": 0.5682613774240817,
+    "missing_rate": 0.04
+  },
+  "171": {
+    "weather": "overcast",
+    "track_surface": "rubbered",
+    "humidity": 79.76000872299832,
+    "tyre_wear": 0.4977024494806104,
+    "driver_state": "cautious",
+    "gt_crash_probability": 0.2032040489576966,
+    "missing_rate": 0.05
+  },
+  "172": {
+    "weather": "overcast",
+    "track_surface": "wet",
+    "humidity": 53.92362339284587,
+    "tyre_wear": 0.7848010249560976,
+    "driver_state": "fresh",
+    "gt_crash_probability": 0.581884656212678,
+    "missing_rate": 0.0
+  },
+  "173": {
+    "weather": "overcast",
+    "track_surface": "green",
+    "humidity": 31.437995432331583,
+    "tyre_wear": 0.7142536572092669,
+    "driver_state": "fatigued",
+    "gt_crash_probability": 0.2778370832428866,
+    "missing_rate": 0.0
+  },
+  "174": {
+    "weather": "light_rain",
+    "track_surface": "rubbered",
+    "humidity": 38.829806554174176,
+    "tyre_wear": 0.8490807437018844,
+    "driver_state": "fatigued",
+    "gt_crash_probability": 0.533272610277053,
+    "missing_rate": 0.0
+  },
+  "175": {
+    "weather": "rain",
+    "track_surface": "mixed",
+    "humidity": 50.364832069595366,
+    "tyre_wear": 0.8052604737125548,
+    "driver_state": "fresh",
+    "gt_crash_probability": 0.437520922537133,
+    "missing_rate": 0.02
+  },
+  "176": {
+    "weather": "wet",
+    "track_surface": "green",
+    "humidity": 46.95999481750553,
+    "tyre_wear": 0.7660050083144462,
+    "driver_state": "pushing",
+    "gt_crash_probability": 0.9047138023300512,
+    "missing_rate": 0.04
+  },
+  "177": {
+    "weather": "sunny",
+    "track_surface": "green",
+    "humidity": 53.36764327644296,
+    "tyre_wear": 0.5580069757331643,
+    "driver_state": "fresh",
+    "gt_crash_probability": 0.2418136033515697,
+    "missing_rate": 0.0
+  },
+  "178": {
+    "weather": "wet",
+    "track_surface": "mixed",
+    "humidity": 78.78537109645359,
+    "tyre_wear": 0.7259459548257134,
+    "driver_state": "pushing",
+    "gt_crash_probability": 0.72610667652912,
+    "missing_rate": 0.0
+  },
+  "179": {
+    "weather": "wet",
+    "track_surface": "wet",
+    "humidity": 93.33190447741362,
+    "tyre_wear": 0.8958939251330249,
+    "driver_state": "pushing",
+    "gt_crash_probability": 0.8807257205168153,
+    "missing_rate": 0.0
+  },
+  "180": {
+    "weather": "light_rain",
+    "track_surface": "rubbered",
+    "humidity": 63.113916287655094,
+    "tyre_wear": 0.697579909986757,
+    "driver_state": "cautious",
+    "gt_crash_probability": 0.2710913228479257,
+    "missing_rate": 0.0
+  },
+  "181": {
+    "weather": "overcast",
+    "track_surface": "green",
+    "humidity": 49.16754693446922,
+    "tyre_wear": 0.0219748208011447,
+    "driver_state": "cautious",
+    "gt_crash_probability": 0.0497331773888447,
+    "missing_rate": 0.04
+  },
+  "182": {
+    "weather": "wet",
+    "track_surface": "wet",
+    "humidity": 87.18122866586597,
+    "tyre_wear": 0.2458196132601748,
+    "driver_state": "fatigued",
+    "gt_crash_probability": 0.2355908203081753,
+    "missing_rate": 0.0
+  },
+  "183": {
+    "weather": "light_rain",
+    "track_surface": "rubbered",
+    "humidity": 86.09712194938959,
+    "tyre_wear": 0.5287381887559578,
+    "driver_state": "fresh",
+    "gt_crash_probability": 0.6722996564464411,
+    "missing_rate": 0.05
+  },
+  "184": {
+    "weather": "wet",
+    "track_surface": "rubbered",
+    "humidity": 42.40079686588873,
+    "tyre_wear": 0.9976168946226136,
+    "driver_state": "fresh",
+    "gt_crash_probability": 0.5833453128501508,
+    "missing_rate": 0.0
+  },
+  "185": {
+    "weather": "sunny",
+    "track_surface": "wet",
+    "humidity": 42.261651577995494,
+    "tyre_wear": 0.928576866788242,
+    "driver_state": "fatigued",
+    "gt_crash_probability": 0.4786597263981939,
+    "missing_rate": 0.0
+  },
+  "186": {
+    "weather": "light_rain",
+    "track_surface": "wet",
+    "humidity": 43.41595631164648,
+    "tyre_wear": 0.7745530747639631,
+    "driver_state": "pushing",
+    "gt_crash_probability": 0.5712945073820416,
+    "missing_rate": 0.0
+  },
+  "187": {
+    "weather": "light_rain",
+    "track_surface": "rubbered",
+    "humidity": 40.090443663946246,
+    "tyre_wear": 0.0585170619140378,
+    "driver_state": "pushing",
+    "gt_crash_probability": 0.4090688129300197,
+    "missing_rate": 0.0
+  },
+  "188": {
+    "weather": "light_rain",
+    "track_surface": "wet",
+    "humidity": 71.50882686800935,
+    "tyre_wear": 0.1277509176377684,
+    "driver_state": "cautious",
+    "gt_crash_probability": 0.1940587447438045,
+    "missing_rate": 0.05
+  },
+  "189": {
+    "weather": "rain",
+    "track_surface": "rubbered",
+    "humidity": 89.06200076785369,
+    "tyre_wear": 0.1446783947472094,
+    "driver_state": "pushing",
+    "gt_crash_probability": 0.4945809614578531,
+    "missing_rate": 0.0
+  },
+  "190": {
+    "weather": "light_rain",
+    "track_surface": "green",
+    "humidity": 49.501765030209896,
+    "tyre_wear": 0.133288518692303,
+    "driver_state": "cautious",
+    "gt_crash_probability": 0.540859144340849,
+    "missing_rate": 0.0
+  },
+  "191": {
+    "weather": "sunny",
+    "track_surface": "wet",
+    "humidity": 58.75686138298063,
+    "tyre_wear": 0.0322264770075371,
+    "driver_state": "cautious",
+    "gt_crash_probability": 0.3579868593189259,
+    "missing_rate": 0.03
+  },
+  "192": {
+    "weather": "wet",
+    "track_surface": "rubbered",
+    "humidity": 93.2364356831407,
+    "tyre_wear": 0.0574853482531729,
+    "driver_state": "pushing",
+    "gt_crash_probability": 0.2081869105420672,
+    "missing_rate": 0.0
+  },
+  "193": {
+    "weather": "wet",
+    "track_surface": "green",
+    "humidity": 51.6752699816314,
+    "tyre_wear": 0.1649509930375104,
+    "driver_state": "cautious",
+    "gt_crash_probability": 0.0949955009735562,
+    "missing_rate": 0.0
+  },
+  "194": {
+    "weather": "rain",
+    "track_surface": "mixed",
+    "humidity": 61.05040345744203,
+    "tyre_wear": 0.3339765210891032,
+    "driver_state": "pushing",
+    "gt_crash_probability": 0.415036825935609,
+    "missing_rate": 0.03
+  },
+  "195": {
+    "weather": "sunny",
+    "track_surface": "mixed",
+    "humidity": 33.35302636979103,
+    "tyre_wear": 0.2331232093682731,
+    "driver_state": "fresh",
+    "gt_crash_probability": 0.7154336016468529,
+    "missing_rate": 0.0
+  },
+  "196": {
+    "weather": "rain",
+    "track_surface": "green",
+    "humidity": 66.56776253179984,
+    "tyre_wear": 0.3436179607702373,
+    "driver_state": "pushing",
+    "gt_crash_probability": 0.2994733183975546,
+    "missing_rate": 0.02
+  },
+  "197": {
+    "weather": "overcast",
+    "track_surface": "wet",
+    "humidity": 68.98120339899894,
+    "tyre_wear": 0.3498787055862976,
+    "driver_state": "fatigued",
+    "gt_crash_probability": 0.7305829036314012,
+    "missing_rate": 0.03
+  },
+  "198": {
+    "weather": "overcast",
+    "track_surface": "rubbered",
+    "humidity": 47.28570486533546,
+    "tyre_wear": 0.8503026197689056,
+    "driver_state": "pushing",
+    "gt_crash_probability": 0.6235493979231298,
+    "missing_rate": 0.0
+  },
+  "199": {
+    "weather": "sunny",
+    "track_surface": "rubbered",
+    "humidity": 37.73313934343778,
+    "tyre_wear": 0.6137522211570204,
+    "driver_state": "cautious",
+    "gt_crash_probability": 0.2470293647820048,
+    "missing_rate": 0.05
+  },
+  "200": {
+    "weather": "sunny",
+    "track_surface": "wet",
+    "humidity": 70.60215905384464,
+    "tyre_wear": 0.2830614504771644,
+    "driver_state": "fresh",
+    "gt_crash_probability": 0.2623895889332814,
+    "missing_rate": 0.04
+  },
+  "201": {
+    "weather": "wet",
+    "track_surface": "green",
+    "humidity": 94.35210420557284,
+    "tyre_wear": 0.2446551516226598,
+    "driver_state": "pushing",
+    "gt_crash_probability": 0.4561546901284551,
+    "missing_rate": 0.03
+  },
+  "202": {
+    "weather": "overcast",
+    "track_surface": "green",
+    "humidity": 66.3403907551395,
+    "tyre_wear": 0.0867252010058613,
+    "driver_state": "fresh",
+    "gt_crash_probability": 0.0622647298509381,
+    "missing_rate": 0.04
+  },
+  "203": {
+    "weather": "rain",
+    "track_surface": "green",
+    "humidity": 71.79288391885432,
+    "tyre_wear": 0.8850581648458811,
+    "driver_state": "pushing",
+    "gt_crash_probability": 0.4937889540080116,
+    "missing_rate": 0.02
+  },
+  "204": {
+    "weather": "light_rain",
+    "track_surface": "wet",
+    "humidity": 32.194743530791676,
+    "tyre_wear": 0.4756617658730424,
+    "driver_state": "pushing",
+    "gt_crash_probability": 0.662663250238949,
+    "missing_rate": 0.0
+  },
+  "205": {
+    "weather": "sunny",
+    "track_surface": "green",
+    "humidity": 40.83015061621346,
+    "tyre_wear": 0.2192105400852608,
+    "driver_state": "fatigued",
+    "gt_crash_probability": 0.1119097712570859,
+    "missing_rate": 0.05
+  },
+  "206": {
+    "weather": "overcast",
+    "track_surface": "mixed",
+    "humidity": 36.29481316850457,
+    "tyre_wear": 0.9764695591199464,
+    "driver_state": "fatigued",
+    "gt_crash_probability": 0.946789521859628,
+    "missing_rate": 0.03
+  },
+  "207": {
+    "weather": "wet",
+    "track_surface": "mixed",
+    "humidity": 33.2444586293155,
+    "tyre_wear": 0.6303561618772635,
+    "driver_state": "cautious",
+    "gt_crash_probability": 0.6033531020793329,
+    "missing_rate": 0.0
+  },
+  "208": {
+    "weather": "sunny",
+    "track_surface": "rubbered",
+    "humidity": 89.97978355479191,
+    "tyre_wear": 0.3944055007142812,
+    "driver_state": "cautious",
+    "gt_crash_probability": 0.1702844820158204,
+    "missing_rate": 0.0
+  },
+  "209": {
+    "weather": "wet",
+    "track_surface": "mixed",
+    "humidity": 94.78806044298145,
+    "tyre_wear": 0.0593975861194178,
+    "driver_state": "pushing",
+    "gt_crash_probability": 0.3189938893384125,
+    "missing_rate": 0.03
+  },
+  "210": {
+    "weather": "light_rain",
+    "track_surface": "rubbered",
+    "humidity": 85.17847556874509,
+    "tyre_wear": 0.0145945251631636,
+    "driver_state": "pushing",
+    "gt_crash_probability": 0.2898640422770094,
+    "missing_rate": 0.0
+  },
+  "211": {
+    "weather": "overcast",
+    "track_surface": "rubbered",
+    "humidity": 46.570757640229715,
+    "tyre_wear": 0.4302645147710097,
+    "driver_state": "fresh",
+    "gt_crash_probability": 0.4419673284344234,
+    "missing_rate": 0.04
+  },
+  "212": {
+    "weather": "wet",
+    "track_surface": "rubbered",
+    "humidity": 50.91333533766745,
+    "tyre_wear": 0.2093741923738349,
+    "driver_state": "fatigued",
+    "gt_crash_probability": 0.1135127204978211,
+    "missing_rate": 0.04
+  },
+  "213": {
+    "weather": "overcast",
+    "track_surface": "mixed",
+    "humidity": 62.39541178157635,
+    "tyre_wear": 0.3126956112022065,
+    "driver_state": "fresh",
+    "gt_crash_probability": 0.5820640121085211,
+    "missing_rate": 0.02
+  },
+  "214": {
+    "weather": "overcast",
+    "track_surface": "wet",
+    "humidity": 46.275345103194425,
+    "tyre_wear": 0.0890509608829114,
+    "driver_state": "fatigued",
+    "gt_crash_probability": 0.2040562979435395,
+    "missing_rate": 0.0
+  },
+  "215": {
+    "weather": "light_rain",
+    "track_surface": "wet",
+    "humidity": 42.25929050844387,
+    "tyre_wear": 0.6595326819803551,
+    "driver_state": "fresh",
+    "gt_crash_probability": 0.8361157451678917,
+    "missing_rate": 0.05
+  },
+  "216": {
+    "weather": "rain",
+    "track_surface": "rubbered",
+    "humidity": 74.10196812631216,
+    "tyre_wear": 0.1647224897552331,
+    "driver_state": "fresh",
+    "gt_crash_probability": 0.086658350162425,
+    "missing_rate": 0.02
+  },
+  "217": {
+    "weather": "light_rain",
+    "track_surface": "mixed",
+    "humidity": 49.22436030349389,
+    "tyre_wear": 0.0180802043815018,
+    "driver_state": "fresh",
+    "gt_crash_probability": 0.1699181268878841,
+    "missing_rate": 0.05
+  },
+  "218": {
+    "weather": "light_rain",
+    "track_surface": "rubbered",
+    "humidity": 80.4674301476131,
+    "tyre_wear": 0.9505420952302108,
+    "driver_state": "fatigued",
+    "gt_crash_probability": 0.5720961674475621,
+    "missing_rate": 0.0
+  },
+  "219": {
+    "weather": "sunny",
+    "track_surface": "wet",
+    "humidity": 77.7070125670167,
+    "tyre_wear": 0.7402095725402092,
+    "driver_state": "fresh",
+    "gt_crash_probability": 0.4032175123550042,
+    "missing_rate": 0.0
+  },
+  "220": {
+    "weather": "sunny",
+    "track_surface": "green",
+    "humidity": 83.79924438846015,
+    "tyre_wear": 0.177291746585399,
+    "driver_state": "fresh",
+    "gt_crash_probability": 0.08531794667659,
+    "missing_rate": 0.0
+  },
+  "221": {
+    "weather": "overcast",
+    "track_surface": "green",
+    "humidity": 51.18340058491969,
+    "tyre_wear": 0.7285994358636035,
+    "driver_state": "fatigued",
+    "gt_crash_probability": 0.2802050312068787,
+    "missing_rate": 0.0
+  },
+  "222": {
+    "weather": "sunny",
+    "track_surface": "green",
+    "humidity": 59.5950303107883,
+    "tyre_wear": 0.2709243839676845,
+    "driver_state": "cautious",
+    "gt_crash_probability": 0.5657838661494499,
+    "missing_rate": 0.04
+  },
+  "223": {
+    "weather": "sunny",
+    "track_surface": "wet",
+    "humidity": 37.797508184905695,
+    "tyre_wear": 0.979755047241055,
+    "driver_state": "cautious",
+    "gt_crash_probability": 0.4968521097618028,
+    "missing_rate": 0.05
+  },
+  "224": {
+    "weather": "overcast",
+    "track_surface": "wet",
+    "humidity": 83.62142289791817,
+    "tyre_wear": 0.9391833295189124,
+    "driver_state": "fatigued",
+    "gt_crash_probability": 0.4812363813405579,
+    "missing_rate": 0.0
+  },
+  "225": {
+    "weather": "rain",
+    "track_surface": "rubbered",
+    "humidity": 56.488790204809,
+    "tyre_wear": 0.1112467961980816,
+    "driver_state": "pushing",
+    "gt_crash_probability": 0.2224700693109214,
+    "missing_rate": 0.0
+  },
+  "226": {
+    "weather": "rain",
+    "track_surface": "mixed",
+    "humidity": 70.75191254185363,
+    "tyre_wear": 0.8841447204055781,
+    "driver_state": "fresh",
+    "gt_crash_probability": 0.4672435437090658,
+    "missing_rate": 0.0
+  },
+  "227": {
+    "weather": "rain",
+    "track_surface": "wet",
+    "humidity": 44.97790157691957,
+    "tyre_wear": 0.129030022066712,
+    "driver_state": "cautious",
+    "gt_crash_probability": 0.3984161414677641,
+    "missing_rate": 0.05
+  },
+  "228": {
+    "weather": "rain",
+    "track_surface": "rubbered",
+    "humidity": 82.29512050029462,
+    "tyre_wear": 0.2995739397359223,
+    "driver_state": "cautious",
+    "gt_crash_probability": 0.2937670060743797,
+    "missing_rate": 0.0
+  },
+  "229": {
+    "weather": "overcast",
+    "track_surface": "rubbered",
+    "humidity": 76.34129921746666,
+    "tyre_wear": 0.5806000254885437,
+    "driver_state": "cautious",
+    "gt_crash_probability": 0.656019427193949,
+    "missing_rate": 0.03
+  },
+  "230": {
+    "weather": "overcast",
+    "track_surface": "rubbered",
+    "humidity": 62.899778768035475,
+    "tyre_wear": 0.1046936028087983,
+    "driver_state": "fresh",
+    "gt_crash_probability": 0.0678214984109894,
+    "missing_rate": 0.04
+  },
+  "231": {
+    "weather": "rain",
+    "track_surface": "rubbered",
+    "humidity": 75.37358888238566,
+    "tyre_wear": 0.379503527835716,
+    "driver_state": "pushing",
+    "gt_crash_probability": 0.7996140128381403,
+    "missing_rate": 0.0
+  },
+  "232": {
+    "weather": "sunny",
+    "track_surface": "green",
+    "humidity": 75.4848132158898,
+    "tyre_wear": 0.7197740762683051,
+    "driver_state": "fresh",
+    "gt_crash_probability": 0.2838302733206518,
+    "missing_rate": 0.05
+  },
+  "233": {
+    "weather": "sunny",
+    "track_surface": "green",
+    "humidity": 74.03062273831867,
+    "tyre_wear": 0.142013613234166,
+    "driver_state": "fresh",
+    "gt_crash_probability": 0.0947082738326523,
+    "missing_rate": 0.0
+  },
+  "234": {
+    "weather": "light_rain",
+    "track_surface": "wet",
+    "humidity": 64.27390525412258,
+    "tyre_wear": 0.2530057123715551,
+    "driver_state": "cautious",
+    "gt_crash_probability": 0.2286751927385212,
+    "missing_rate": 0.0
+  },
+  "235": {
+    "weather": "light_rain",
+    "track_surface": "green",
+    "humidity": 64.98292497877678,
+    "tyre_wear": 0.3556594987853608,
+    "driver_state": "fatigued",
+    "gt_crash_probability": 0.5234695929454439,
+    "missing_rate": 0.0
+  },
+  "236": {
+    "weather": "rain",
+    "track_surface": "green",
+    "humidity": 39.56282838972509,
+    "tyre_wear": 0.066689935389286,
+    "driver_state": "cautious",
+    "gt_crash_probability": 0.0609953553295717,
+    "missing_rate": 0.05
+  },
+  "237": {
+    "weather": "wet",
+    "track_surface": "green",
+    "humidity": 58.522134735366734,
+    "tyre_wear": 0.3231111186258142,
+    "driver_state": "fresh",
+    "gt_crash_probability": 0.1386513056593216,
+    "missing_rate": 0.04
+  },
+  "238": {
+    "weather": "sunny",
+    "track_surface": "green",
+    "humidity": 47.186450086679926,
+    "tyre_wear": 0.6097245446924305,
+    "driver_state": "fresh",
+    "gt_crash_probability": 0.4022031466716486,
+    "missing_rate": 0.03
+  },
+  "239": {
+    "weather": "sunny",
+    "track_surface": "mixed",
+    "humidity": 94.64557815904976,
+    "tyre_wear": 0.6161847905010008,
+    "driver_state": "fresh",
+    "gt_crash_probability": 0.3693786016452378,
+    "missing_rate": 0.04
+  },
+  "240": {
+    "weather": "light_rain",
+    "track_surface": "rubbered",
+    "humidity": 37.712574360953866,
+    "tyre_wear": 0.6513032952758833,
+    "driver_state": "fresh",
+    "gt_crash_probability": 0.2501402573457676,
+    "missing_rate": 0.0
+  },
+  "241": {
+    "weather": "overcast",
+    "track_surface": "green",
+    "humidity": 69.37615853005948,
+    "tyre_wear": 0.234655876518265,
+    "driver_state": "fresh",
+    "gt_crash_probability": 0.4501249948460067,
+    "missing_rate": 0.05
+  },
+  "242": {
+    "weather": "wet",
+    "track_surface": "green",
+    "humidity": 55.28269325784091,
+    "tyre_wear": 0.4656101399483022,
+    "driver_state": "fatigued",
+    "gt_crash_probability": 0.386084781566711,
+    "missing_rate": 0.0
+  },
+  "243": {
+    "weather": "rain",
+    "track_surface": "wet",
+    "humidity": 69.60466674871748,
+    "tyre_wear": 0.3930014201402747,
+    "driver_state": "fresh",
+    "gt_crash_probability": 0.4077659488310333,
+    "missing_rate": 0.05
+  },
+  "244": {
+    "weather": "wet",
+    "track_surface": "wet",
+    "humidity": 89.39473704040898,
+    "tyre_wear": 0.0273594658079227,
+    "driver_state": "fatigued",
+    "gt_crash_probability": 0.1541842635898674,
+    "missing_rate": 0.02
+  },
+  "245": {
+    "weather": "light_rain",
+    "track_surface": "mixed",
+    "humidity": 87.83258831927306,
+    "tyre_wear": 0.7551436710134544,
+    "driver_state": "pushing",
+    "gt_crash_probability": 0.5631369428293036,
+    "missing_rate": 0.0
+  },
+  "246": {
+    "weather": "light_rain",
+    "track_surface": "wet",
+    "humidity": 42.53260499678525,
+    "tyre_wear": 0.7220939992450393,
+    "driver_state": "fresh",
+    "gt_crash_probability": 0.4010029761725181,
+    "missing_rate": 0.0
+  },
+  "247": {
+    "weather": "rain",
+    "track_surface": "wet",
+    "humidity": 44.75303714560423,
+    "tyre_wear": 0.4159063756913065,
+    "driver_state": "fresh",
+    "gt_crash_probability": 0.3209935477703641,
+    "missing_rate": 0.0
+  },
+  "248": {
+    "weather": "overcast",
+    "track_surface": "wet",
+    "humidity": 48.11371918174166,
+    "tyre_wear": 0.3029763568868743,
+    "driver_state": "fresh",
+    "gt_crash_probability": 0.2725579246658072,
+    "missing_rate": 0.0
+  },
+  "249": {
+    "weather": "overcast",
+    "track_surface": "wet",
+    "humidity": 78.7373781126908,
+    "tyre_wear": 0.4588082300593427,
+    "driver_state": "cautious",
+    "gt_crash_probability": 0.3213580713059617,
+    "missing_rate": 0.03
+  },
+  "250": {
+    "weather": "wet",
+    "track_surface": "rubbered",
+    "humidity": 35.67923352085915,
+    "tyre_wear": 0.1513146950667863,
+    "driver_state": "fatigued",
+    "gt_crash_probability": 0.1024481374195344,
+    "missing_rate": 0.05
+  },
+  "251": {
+    "weather": "light_rain",
+    "track_surface": "mixed",
+    "humidity": 74.15937951793744,
+    "tyre_wear": 0.9309105248632846,
+    "driver_state": "pushing",
+    "gt_crash_probability": 0.6221430315115725,
+    "missing_rate": 0.05
+  },
+  "252": {
+    "weather": "light_rain",
+    "track_surface": "green",
+    "humidity": 36.358042359157366,
+    "tyre_wear": 0.72339166446079,
+    "driver_state": "fatigued",
+    "gt_crash_probability": 0.2819421893031956,
+    "missing_rate": 0.0
+  },
+  "253": {
+    "weather": "overcast",
+    "track_surface": "green",
+    "humidity": 31.56990517531295,
+    "tyre_wear": 0.0665278101812202,
+    "driver_state": "pushing",
+    "gt_crash_probability": 0.2060179083671701,
+    "missing_rate": 0.05
+  },
+  "254": {
+    "weather": "wet",
+    "track_surface": "mixed",
+    "humidity": 67.80758365547698,
+    "tyre_wear": 0.7913882702401754,
+    "driver_state": "pushing",
+    "gt_crash_probability": 0.7334246685884861,
+    "missing_rate": 0.0
+  },
+  "255": {
+    "weather": "light_rain",
+    "track_surface": "rubbered",
+    "humidity": 57.655982638260966,
+    "tyre_wear": 0.9739340845944752,
+    "driver_state": "fatigued",
+    "gt_crash_probability": 0.3764516773024975,
+    "missing_rate": 0.03
+  },
+  "256": {
+    "weather": "wet",
+    "track_surface": "rubbered",
+    "humidity": 85.59588127243279,
+    "tyre_wear": 0.1065253058276782,
+    "driver_state": "cautious",
+    "gt_crash_probability": 0.3711917198915696,
+    "missing_rate": 0.04
+  },
+  "257": {
+    "weather": "rain",
+    "track_surface": "mixed",
+    "humidity": 90.85194199053235,
+    "tyre_wear": 0.9640408233540702,
+    "driver_state": "fatigued",
+    "gt_crash_probability": 0.9953196485677056,
+    "missing_rate": 0.0
+  },
+  "258": {
+    "weather": "rain",
+    "track_surface": "mixed",
+    "humidity": 90.24664640842104,
+    "tyre_wear": 0.3506701412497094,
+    "driver_state": "fatigued",
+    "gt_crash_probability": 0.5292144444383445,
+    "missing_rate": 0.0
+  },
+  "259": {
+    "weather": "overcast",
+    "track_surface": "mixed",
+    "humidity": 69.19260735041391,
+    "tyre_wear": 0.4001619340804693,
+    "driver_state": "cautious",
+    "gt_crash_probability": 0.6141502552666499,
+    "missing_rate": 0.05
+  },
+  "260": {
+    "weather": "sunny",
+    "track_surface": "mixed",
+    "humidity": 32.80668976080349,
+    "tyre_wear": 0.5386229584204678,
+    "driver_state": "fresh",
+    "gt_crash_probability": 0.3375897090315991,
+    "missing_rate": 0.0
+  },
+  "261": {
+    "weather": "overcast",
+    "track_surface": "wet",
+    "humidity": 77.98595152976532,
+    "tyre_wear": 0.945255009888649,
+    "driver_state": "fresh",
+    "gt_crash_probability": 0.8050312597534843,
+    "missing_rate": 0.0
+  },
+  "262": {
+    "weather": "wet",
+    "track_surface": "green",
+    "humidity": 57.504080425558094,
+    "tyre_wear": 0.8665383343230255,
+    "driver_state": "cautious",
+    "gt_crash_probability": 0.3315796994644408,
+    "missing_rate": 0.0
+  },
+  "263": {
+    "weather": "sunny",
+    "track_surface": "rubbered",
+    "humidity": 81.72536610601836,
+    "tyre_wear": 0.0340954846653103,
+    "driver_state": "pushing",
+    "gt_crash_probability": 0.1939536863653946,
+    "missing_rate": 0.0
+  },
+  "264": {
+    "weather": "rain",
+    "track_surface": "wet",
+    "humidity": 30.768040015261633,
+    "tyre_wear": 0.7126586080408418,
+    "driver_state": "fatigued",
+    "gt_crash_probability": 0.3975312146949309,
+    "missing_rate": 0.0
+  },
+  "265": {
+    "weather": "light_rain",
+    "track_surface": "wet",
+    "humidity": 74.6145861133517,
+    "tyre_wear": 0.4184029365867467,
+    "driver_state": "cautious",
+    "gt_crash_probability": 0.2978519925845573,
+    "missing_rate": 0.04
+  },
+  "266": {
+    "weather": "overcast",
+    "track_surface": "rubbered",
+    "humidity": 91.19603383703544,
+    "tyre_wear": 0.6666335657552691,
+    "driver_state": "fatigued",
+    "gt_crash_probability": 0.2662895731521341,
+    "missing_rate": 0.04
+  },
+  "267": {
+    "weather": "overcast",
+    "track_surface": "wet",
+    "humidity": 85.40800175980714,
+    "tyre_wear": 0.8339082333461888,
+    "driver_state": "pushing",
+    "gt_crash_probability": 0.5887154334854082,
+    "missing_rate": 0.0
+  },
+  "268": {
+    "weather": "sunny",
+    "track_surface": "mixed",
+    "humidity": 90.44763706772544,
+    "tyre_wear": 0.4581512618272368,
+    "driver_state": "cautious",
+    "gt_crash_probability": 0.6221706795166241,
+    "missing_rate": 0.0
+  },
+  "269": {
+    "weather": "wet",
+    "track_surface": "wet",
+    "humidity": 36.10046391052189,
+    "tyre_wear": 0.9116460455973754,
+    "driver_state": "fresh",
+    "gt_crash_probability": 0.6205781043233776,
+    "missing_rate": 0.0
+  },
+  "270": {
+    "weather": "sunny",
+    "track_surface": "mixed",
+    "humidity": 46.0512333240433,
+    "tyre_wear": 0.4755962476543252,
+    "driver_state": "cautious",
+    "gt_crash_probability": 0.7881696887770552,
+    "missing_rate": 0.0
+  },
+  "271": {
+    "weather": "wet",
+    "track_surface": "rubbered",
+    "humidity": 44.613378290950216,
+    "tyre_wear": 0.1515159347246975,
+    "driver_state": "fatigued",
+    "gt_crash_probability": 0.090744974509657,
+    "missing_rate": 0.0
+  },
+  "272": {
+    "weather": "overcast",
+    "track_surface": "green",
+    "humidity": 45.94248921888148,
+    "tyre_wear": 0.8798218718619533,
+    "driver_state": "fresh",
+    "gt_crash_probability": 0.6604027758205051,
+    "missing_rate": 0.03
+  },
+  "273": {
+    "weather": "overcast",
+    "track_surface": "wet",
+    "humidity": 73.05722909194037,
+    "tyre_wear": 0.2000842970112791,
+    "driver_state": "cautious",
+    "gt_crash_probability": 0.4051442779128556,
+    "missing_rate": 0.0
+  },
+  "274": {
+    "weather": "rain",
+    "track_surface": "green",
+    "humidity": 92.0912070975152,
+    "tyre_wear": 0.6641913950980111,
+    "driver_state": "cautious",
+    "gt_crash_probability": 0.4567454668863191,
+    "missing_rate": 0.05
+  },
+  "275": {
+    "weather": "wet",
+    "track_surface": "wet",
+    "humidity": 84.15691197832766,
+    "tyre_wear": 0.0801967964098299,
+    "driver_state": "cautious",
+    "gt_crash_probability": 0.327489579522739,
+    "missing_rate": 0.05
+  },
+  "276": {
+    "weather": "wet",
+    "track_surface": "green",
+    "humidity": 45.1062385739012,
+    "tyre_wear": 0.955477848573424,
+    "driver_state": "fatigued",
+    "gt_crash_probability": 0.5171506328975769,
+    "missing_rate": 0.0
+  },
+  "277": {
+    "weather": "wet",
+    "track_surface": "wet",
+    "humidity": 51.697937714907226,
+    "tyre_wear": 0.86524707824146,
+    "driver_state": "pushing",
+    "gt_crash_probability": 0.6053770409351842,
+    "missing_rate": 0.03
+  },
+  "278": {
+    "weather": "overcast",
+    "track_surface": "wet",
+    "humidity": 46.018745908563105,
+    "tyre_wear": 0.2712131099163499,
+    "driver_state": "fatigued",
+    "gt_crash_probability": 0.4647900635244292,
+    "missing_rate": 0.0
+  },
+  "279": {
+    "weather": "sunny",
+    "track_surface": "mixed",
+    "humidity": 92.69418732432236,
+    "tyre_wear": 0.3633973561734216,
+    "driver_state": "fatigued",
+    "gt_crash_probability": 0.2726186284345449,
+    "missing_rate": 0.0
+  },
+  "280": {
+    "weather": "rain",
+    "track_surface": "wet",
+    "humidity": 56.12167951591392,
+    "tyre_wear": 0.1924613417136165,
+    "driver_state": "pushing",
+    "gt_crash_probability": 0.4544035155750486,
+    "missing_rate": 0.0
+  },
+  "281": {
+    "weather": "wet",
+    "track_surface": "mixed",
+    "humidity": 73.14059575445137,
+    "tyre_wear": 0.2565769631334152,
+    "driver_state": "pushing",
+    "gt_crash_probability": 0.559527941439342,
+    "missing_rate": 0.0
+  },
+  "282": {
+    "weather": "wet",
+    "track_surface": "green",
+    "humidity": 49.84905071255608,
+    "tyre_wear": 0.7770393645930987,
+    "driver_state": "fatigued",
+    "gt_crash_probability": 0.3074293577576614,
+    "missing_rate": 0.02
+  },
+  "283": {
+    "weather": "overcast",
+    "track_surface": "rubbered",
+    "humidity": 54.42737855541941,
+    "tyre_wear": 0.1938944438605855,
+    "driver_state": "cautious",
+    "gt_crash_probability": 0.0912703712315555,
+    "missing_rate": 0.03
+  },
+  "284": {
+    "weather": "rain",
+    "track_surface": "green",
+    "humidity": 41.41892573232545,
+    "tyre_wear": 0.4239260219653032,
+    "driver_state": "pushing",
+    "gt_crash_probability": 0.320680405679595,
+    "missing_rate": 0.0
+  },
+  "285": {
+    "weather": "sunny",
+    "track_surface": "wet",
+    "humidity": 55.1299876851485,
+    "tyre_wear": 0.3283441228357501,
+    "driver_state": "fatigued",
+    "gt_crash_probability": 0.2660393459018405,
+    "missing_rate": 0.0
+  },
+  "286": {
+    "weather": "sunny",
+    "track_surface": "green",
+    "humidity": 34.46660754491661,
+    "tyre_wear": 0.0364067553927919,
+    "driver_state": "fresh",
+    "gt_crash_probability": 0.0442063875891442,
+    "missing_rate": 0.0
+  },
+  "287": {
+    "weather": "light_rain",
+    "track_surface": "rubbered",
+    "humidity": 71.75503848692043,
+    "tyre_wear": 0.4100526786383255,
+    "driver_state": "fatigued",
+    "gt_crash_probability": 0.1794402381918963,
+    "missing_rate": 0.03
+  },
+  "288": {
+    "weather": "sunny",
+    "track_surface": "mixed",
+    "humidity": 31.263217245713097,
+    "tyre_wear": 0.8082221485478565,
+    "driver_state": "cautious",
+    "gt_crash_probability": 0.4387243958733223,
+    "missing_rate": 0.0
+  },
+  "289": {
+    "weather": "wet",
+    "track_surface": "rubbered",
+    "humidity": 88.33450044449529,
+    "tyre_wear": 0.2809626580275953,
+    "driver_state": "fresh",
+    "gt_crash_probability": 0.2966307883319495,
+    "missing_rate": 0.03
+  },
+  "290": {
+    "weather": "rain",
+    "track_surface": "wet",
+    "humidity": 36.749200613896406,
+    "tyre_wear": 0.1952162498369333,
+    "driver_state": "fatigued",
+    "gt_crash_probability": 0.3725107484710224,
+    "missing_rate": 0.0
+  },
+  "291": {
+    "weather": "rain",
+    "track_surface": "rubbered",
+    "humidity": 37.99900558517756,
+    "tyre_wear": 0.9909067253450886,
+    "driver_state": "pushing",
+    "gt_crash_probability": 0.5328119632362874,
+    "missing_rate": 0.0
+  },
+  "292": {
+    "weather": "light_rain",
+    "track_surface": "rubbered",
+    "humidity": 47.655174229968466,
+    "tyre_wear": 0.9150807520034188,
+    "driver_state": "fresh",
+    "gt_crash_probability": 0.6957516751330075,
+    "missing_rate": 0.02
+  },
+  "293": {
+    "weather": "sunny",
+    "track_surface": "green",
+    "humidity": 34.47254740114023,
+    "tyre_wear": 0.8531837501069568,
+    "driver_state": "fresh",
+    "gt_crash_probability": 0.3266638967529915,
+    "missing_rate": 0.0
+  },
+  "294": {
+    "weather": "light_rain",
+    "track_surface": "rubbered",
+    "humidity": 36.490468545750815,
+    "tyre_wear": 0.2388871618090111,
+    "driver_state": "fresh",
+    "gt_crash_probability": 0.568852363105544,
+    "missing_rate": 0.05
+  },
+  "295": {
+    "weather": "sunny",
+    "track_surface": "rubbered",
+    "humidity": 56.96995394833331,
+    "tyre_wear": 0.1706226092470965,
+    "driver_state": "cautious",
+    "gt_crash_probability": 0.2972526677497972,
+    "missing_rate": 0.0
+  },
+  "296": {
+    "weather": "wet",
+    "track_surface": "wet",
+    "humidity": 89.78523724346385,
+    "tyre_wear": 0.2583759153085524,
+    "driver_state": "fatigued",
+    "gt_crash_probability": 0.2539927496386239,
+    "missing_rate": 0.0
+  },
+  "297": {
+    "weather": "sunny",
+    "track_surface": "wet",
+    "humidity": 73.05350869907083,
+    "tyre_wear": 0.1992912429838782,
+    "driver_state": "cautious",
+    "gt_crash_probability": 0.5354179366628845,
+    "missing_rate": 0.0
+  },
+  "298": {
+    "weather": "sunny",
+    "track_surface": "wet",
+    "humidity": 87.75300878453913,
+    "tyre_wear": 0.1651991224309024,
+    "driver_state": "fatigued",
+    "gt_crash_probability": 0.2072454121707788,
+    "missing_rate": 0.0
+  },
+  "299": {
+    "weather": "rain",
+    "track_surface": "mixed",
+    "humidity": 85.25724174316832,
+    "tyre_wear": 0.9449811077868484,
+    "driver_state": "fatigued",
+    "gt_crash_probability": 0.7062633209686956,
+    "missing_rate": 0.05
+  },
+  "300": {
+    "weather": "rain",
+    "track_surface": "mixed",
+    "humidity": 59.594490826652745,
+    "tyre_wear": 0.22003895894448,
+    "driver_state": "cautious",
+    "gt_crash_probability": 0.2327291951695598,
+    "missing_rate": 0.0
+  },
+  "301": {
+    "weather": "wet",
+    "track_surface": "green",
+    "humidity": 51.06582007617348,
+    "tyre_wear": 0.7003597795146173,
+    "driver_state": "pushing",
+    "gt_crash_probability": 0.7538969814402209,
+    "missing_rate": 0.0
+  },
+  "302": {
+    "weather": "overcast",
+    "track_surface": "green",
+    "humidity": 64.44189209087016,
+    "tyre_wear": 0.6757679679236535,
+    "driver_state": "fresh",
+    "gt_crash_probability": 0.6715152025787801,
+    "missing_rate": 0.0
+  },
+  "303": {
+    "weather": "overcast",
+    "track_surface": "mixed",
+    "humidity": 67.45886132665228,
+    "tyre_wear": 0.7317069472566323,
+    "driver_state": "pushing",
+    "gt_crash_probability": 0.5549050642228575,
+    "missing_rate": 0.0
+  },
+  "304": {
+    "weather": "sunny",
+    "track_surface": "wet",
+    "humidity": 88.41164800510336,
+    "tyre_wear": 0.499234363312443,
+    "driver_state": "cautious",
+    "gt_crash_probability": 0.585585917163582,
+    "missing_rate": 0.0
+  },
+  "305": {
+    "weather": "rain",
+    "track_surface": "rubbered",
+    "humidity": 85.41933236280708,
+    "tyre_wear": 0.7059834135769231,
+    "driver_state": "fresh",
+    "gt_crash_probability": 0.2839318027435423,
+    "missing_rate": 0.0
+  },
+  "306": {
+    "weather": "overcast",
+    "track_surface": "green",
+    "humidity": 46.77388757063194,
+    "tyre_wear": 0.6636389632770777,
+    "driver_state": "pushing",
+    "gt_crash_probability": 0.4146253298611142,
+    "missing_rate": 0.0
+  },
+  "307": {
+    "weather": "overcast",
+    "track_surface": "mixed",
+    "humidity": 75.69440852305554,
+    "tyre_wear": 0.5236456382354373,
+    "driver_state": "fresh",
+    "gt_crash_probability": 0.5826289758271284,
+    "missing_rate": 0.0
+  },
+  "308": {
+    "weather": "light_rain",
+    "track_surface": "green",
+    "humidity": 53.42654131495722,
+    "tyre_wear": 0.6194106842153714,
+    "driver_state": "fatigued",
+    "gt_crash_probability": 0.4235913797673843,
+    "missing_rate": 0.04
+  },
+  "309": {
+    "weather": "wet",
+    "track_surface": "wet",
+    "humidity": 70.24600019399324,
+    "tyre_wear": 0.8248046663844246,
+    "driver_state": "fresh",
+    "gt_crash_probability": 0.8883403223240952,
+    "missing_rate": 0.0
+  },
+  "310": {
+    "weather": "rain",
+    "track_surface": "green",
+    "humidity": 39.46008289020682,
+    "tyre_wear": 0.1329502516326801,
+    "driver_state": "fatigued",
+    "gt_crash_probability": 0.1043705851773964,
+    "missing_rate": 0.0
+  },
+  "311": {
+    "weather": "overcast",
+    "track_surface": "rubbered",
+    "humidity": 48.39938920819151,
+    "tyre_wear": 0.9589078612338834,
+    "driver_state": "pushing",
+    "gt_crash_probability": 0.5343166152788869,
+    "missing_rate": 0.03
+  },
+  "312": {
+    "weather": "wet",
+    "track_surface": "wet",
+    "humidity": 44.299322122178886,
+    "tyre_wear": 0.8764557999411021,
+    "driver_state": "fatigued",
+    "gt_crash_probability": 0.4740298149229062,
+    "missing_rate": 0.02
+  },
+  "313": {
+    "weather": "wet",
+    "track_surface": "green",
+    "humidity": 87.13770420703827,
+    "tyre_wear": 0.4804442888200163,
+    "driver_state": "cautious",
+    "gt_crash_probability": 0.1945767592555118,
+    "missing_rate": 0.02
+  },
+  "314": {
+    "weather": "light_rain",
+    "track_surface": "wet",
+    "humidity": 65.80315261467732,
+    "tyre_wear": 0.7234518654276115,
+    "driver_state": "cautious",
+    "gt_crash_probability": 0.8986204818497832,
+    "missing_rate": 0.04
+  },
+  "315": {
+    "weather": "sunny",
+    "track_surface": "rubbered",
+    "humidity": 36.835642657041554,
+    "tyre_wear": 0.7405547822983137,
+    "driver_state": "fresh",
+    "gt_crash_probability": 0.3138730072572555,
+    "missing_rate": 0.0
+  },
+  "316": {
+    "weather": "sunny",
+    "track_surface": "wet",
+    "humidity": 52.98207719878951,
+    "tyre_wear": 0.7938693489719554,
+    "driver_state": "cautious",
+    "gt_crash_probability": 0.6609298694357891,
+    "missing_rate": 0.0
+  },
+  "317": {
+    "weather": "wet",
+    "track_surface": "rubbered",
+    "humidity": 94.18381758254785,
+    "tyre_wear": 0.2292180394302065,
+    "driver_state": "pushing",
+    "gt_crash_probability": 0.5037650333659486,
+    "missing_rate": 0.0
+  },
+  "318": {
+    "weather": "overcast",
+    "track_surface": "rubbered",
+    "humidity": 85.92871028867289,
+    "tyre_wear": 0.8040933224578912,
+    "driver_state": "cautious",
+    "gt_crash_probability": 0.3080303562318622,
+    "missing_rate": 0.05
+  },
+  "319": {
+    "weather": "light_rain",
+    "track_surface": "green",
+    "humidity": 38.61201021163151,
+    "tyre_wear": 0.3117196550232699,
+    "driver_state": "fresh",
+    "gt_crash_probability": 0.4146439379803766,
+    "missing_rate": 0.0
+  },
+  "320": {
+    "weather": "rain",
+    "track_surface": "mixed",
+    "humidity": 91.57527359687111,
+    "tyre_wear": 0.5222676424945616,
+    "driver_state": "cautious",
+    "gt_crash_probability": 0.5697907489530019,
+    "missing_rate": 0.0
+  },
+  "321": {
+    "weather": "overcast",
+    "track_surface": "rubbered",
+    "humidity": 50.4821129926264,
+    "tyre_wear": 0.8002224526400601,
+    "driver_state": "fatigued",
+    "gt_crash_probability": 0.5108504833327587,
+    "missing_rate": 0.0
+  },
+  "322": {
+    "weather": "light_rain",
+    "track_surface": "mixed",
+    "humidity": 42.43818757303233,
+    "tyre_wear": 0.9964629269802038,
+    "driver_state": "fresh",
+    "gt_crash_probability": 0.7103832125842856,
+    "missing_rate": 0.0
+  },
+  "323": {
+    "weather": "sunny",
+    "track_surface": "rubbered",
+    "humidity": 94.1429226843614,
+    "tyre_wear": 0.520645021228933,
+    "driver_state": "fresh",
+    "gt_crash_probability": 0.2203265573875156,
+    "missing_rate": 0.05
+  },
+  "324": {
+    "weather": "rain",
+    "track_surface": "wet",
+    "humidity": 48.16639617308179,
+    "tyre_wear": 0.613889819358488,
+    "driver_state": "fresh",
+    "gt_crash_probability": 0.3747059911635936,
+    "missing_rate": 0.0
+  },
+  "325": {
+    "weather": "sunny",
+    "track_surface": "wet",
+    "humidity": 66.46737234401866,
+    "tyre_wear": 0.5081592676924632,
+    "driver_state": "cautious",
+    "gt_crash_probability": 0.5129397903476557,
+    "missing_rate": 0.03
+  },
+  "326": {
+    "weather": "light_rain",
+    "track_surface": "mixed",
+    "humidity": 87.5805493649465,
+    "tyre_wear": 0.7954204986870741,
+    "driver_state": "pushing",
+    "gt_crash_probability": 0.9809478414092488,
+    "missing_rate": 0.0
+  },
+  "327": {
+    "weather": "rain",
+    "track_surface": "wet",
+    "humidity": 53.89043968343685,
+    "tyre_wear": 0.55143663041061,
+    "driver_state": "pushing",
+    "gt_crash_probability": 0.7601312173907083,
+    "missing_rate": 0.02
+  },
+  "328": {
+    "weather": "sunny",
+    "track_surface": "mixed",
+    "humidity": 53.89619927876636,
+    "tyre_wear": 0.996874813365086,
+    "driver_state": "cautious",
+    "gt_crash_probability": 0.8862693036229383,
+    "missing_rate": 0.02
+  },
+  "329": {
+    "weather": "rain",
+    "track_surface": "green",
+    "humidity": 61.554597752149235,
+    "tyre_wear": 0.7786892111829616,
+    "driver_state": "fatigued",
+    "gt_crash_probability": 0.3007776508188738,
+    "missing_rate": 0.03
+  },
+  "330": {
+    "weather": "sunny",
+    "track_surface": "mixed",
+    "humidity": 64.70975914041645,
+    "tyre_wear": 0.3460667276062997,
+    "driver_state": "cautious",
+    "gt_crash_probability": 0.7377958044655474,
+    "missing_rate": 0.0
+  },
+  "331": {
+    "weather": "sunny",
+    "track_surface": "wet",
+    "humidity": 60.438909096577866,
+    "tyre_wear": 0.3973535814495088,
+    "driver_state": "fresh",
+    "gt_crash_probability": 0.284350328824387,
+    "missing_rate": 0.03
+  },
+  "332": {
+    "weather": "overcast",
+    "track_surface": "wet",
+    "humidity": 32.87623350399041,
+    "tyre_wear": 0.473364125094128,
+    "driver_state": "fatigued",
+    "gt_crash_probability": 0.3129480390649758,
+    "missing_rate": 0.0
+  },
+  "333": {
+    "weather": "light_rain",
+    "track_surface": "mixed",
+    "humidity": 66.50696583308225,
+    "tyre_wear": 0.1516034377910745,
+    "driver_state": "cautious",
+    "gt_crash_probability": 0.2037448866561574,
+    "missing_rate": 0.03
+  },
+  "334": {
+    "weather": "light_rain",
+    "track_surface": "rubbered",
+    "humidity": 50.49588186150005,
+    "tyre_wear": 0.8071936712914147,
+    "driver_state": "fatigued",
+    "gt_crash_probability": 0.5570075961385659,
+    "missing_rate": 0.0
+  },
+  "335": {
+    "weather": "rain",
+    "track_surface": "mixed",
+    "humidity": 38.399404449284994,
+    "tyre_wear": 0.7641910191040817,
+    "driver_state": "cautious",
+    "gt_crash_probability": 0.4175954839920891,
+    "missing_rate": 0.04
+  },
+  "336": {
+    "weather": "overcast",
+    "track_surface": "mixed",
+    "humidity": 39.64392890994979,
+    "tyre_wear": 0.6103387399338427,
+    "driver_state": "fresh",
+    "gt_crash_probability": 0.3689190189507088,
+    "missing_rate": 0.0
+  },
+  "337": {
+    "weather": "rain",
+    "track_surface": "wet",
+    "humidity": 52.461623723675544,
+    "tyre_wear": 0.9800479621848563,
+    "driver_state": "fatigued",
+    "gt_crash_probability": 0.5988578673584414,
+    "missing_rate": 0.04
+  },
+  "338": {
+    "weather": "rain",
+    "track_surface": "rubbered",
+    "humidity": 60.79531421658539,
+    "tyre_wear": 0.3486921869272019,
+    "driver_state": "fatigued",
+    "gt_crash_probability": 0.5372120995969948,
+    "missing_rate": 0.0
+  },
+  "339": {
+    "weather": "light_rain",
+    "track_surface": "mixed",
+    "humidity": 32.136684507710726,
+    "tyre_wear": 0.1536396212957779,
+    "driver_state": "cautious",
+    "gt_crash_probability": 0.4451476257021721,
+    "missing_rate": 0.0
+  },
+  "340": {
+    "weather": "rain",
+    "track_surface": "green",
+    "humidity": 63.30331507007898,
+    "tyre_wear": 0.7049107981605185,
+    "driver_state": "cautious",
+    "gt_crash_probability": 0.7676795770147052,
+    "missing_rate": 0.03
+  },
+  "341": {
+    "weather": "sunny",
+    "track_surface": "rubbered",
+    "humidity": 65.2818677561192,
+    "tyre_wear": 0.6167440475940626,
+    "driver_state": "pushing",
+    "gt_crash_probability": 0.4002302588341931,
+    "missing_rate": 0.02
+  },
+  "342": {
+    "weather": "rain",
+    "track_surface": "wet",
+    "humidity": 41.64675632632192,
+    "tyre_wear": 0.9987955684179428,
+    "driver_state": "fresh",
+    "gt_crash_probability": 0.7384013590232433,
+    "missing_rate": 0.0
+  },
+  "343": {
+    "weather": "overcast",
+    "track_surface": "wet",
+    "humidity": 81.61116214235551,
+    "tyre_wear": 0.6279550968412128,
+    "driver_state": "cautious",
+    "gt_crash_probability": 0.8726297086508804,
+    "missing_rate": 0.0
+  },
+  "344": {
+    "weather": "light_rain",
+    "track_surface": "rubbered",
+    "humidity": 82.73447232750578,
+    "tyre_wear": 0.2101139138832888,
+    "driver_state": "cautious",
+    "gt_crash_probability": 0.5852775981414351,
+    "missing_rate": 0.04
+  },
+  "345": {
+    "weather": "light_rain",
+    "track_surface": "rubbered",
+    "humidity": 81.56312490968507,
+    "tyre_wear": 0.42365672978808,
+    "driver_state": "cautious",
+    "gt_crash_probability": 0.5674475255953869,
+    "missing_rate": 0.0
+  },
+  "346": {
+    "weather": "overcast",
+    "track_surface": "green",
+    "humidity": 32.69935565689259,
+    "tyre_wear": 0.9265951642904824,
+    "driver_state": "fresh",
+    "gt_crash_probability": 0.3712994356020599,
+    "missing_rate": 0.04
+  },
+  "347": {
+    "weather": "sunny",
+    "track_surface": "rubbered",
+    "humidity": 91.23824493384302,
+    "tyre_wear": 0.0056312609255178,
+    "driver_state": "fresh",
+    "gt_crash_probability": 0.03366893945402,
+    "missing_rate": 0.04
+  },
+  "348": {
+    "weather": "sunny",
+    "track_surface": "mixed",
+    "humidity": 37.60575270421914,
+    "tyre_wear": 0.4961785082879273,
+    "driver_state": "cautious",
+    "gt_crash_probability": 0.8080533781068405,
+    "missing_rate": 0.0
+  },
+  "349": {
+    "weather": "light_rain",
+    "track_surface": "green",
+    "humidity": 36.29579466495193,
+    "tyre_wear": 0.6176466009383016,
+    "driver_state": "pushing",
+    "gt_crash_probability": 0.3995085776355976,
+    "missing_rate": 0.0
+  },
+  "350": {
+    "weather": "wet",
+    "track_surface": "rubbered",
+    "humidity": 41.98609437417916,
+    "tyre_wear": 0.120825903140157,
+    "driver_state": "fatigued",
+    "gt_crash_probability": 0.5059203716933387,
+    "missing_rate": 0.0
+  },
+  "351": {
+    "weather": "sunny",
+    "track_surface": "wet",
+    "humidity": 48.375036109007205,
+    "tyre_wear": 0.9241355639014868,
+    "driver_state": "pushing",
+    "gt_crash_probability": 0.960470377454212,
+    "missing_rate": 0.0
+  },
+  "352": {
+    "weather": "sunny",
+    "track_surface": "green",
+    "humidity": 46.18350283622415,
+    "tyre_wear": 0.6341762886507822,
+    "driver_state": "pushing",
+    "gt_crash_probability": 0.6670266913510492,
+    "missing_rate": 0.0
+  },
+  "353": {
+    "weather": "light_rain",
+    "track_surface": "rubbered",
+    "humidity": 32.89302162751041,
+    "tyre_wear": 0.7231746777852045,
+    "driver_state": "fresh",
+    "gt_crash_probability": 0.27760230660078,
+    "missing_rate": 0.03
+  },
+  "354": {
+    "weather": "overcast",
+    "track_surface": "wet",
+    "humidity": 64.87850160364836,
+    "tyre_wear": 0.1824381775592586,
+    "driver_state": "fresh",
+    "gt_crash_probability": 0.4884752786708261,
+    "missing_rate": 0.02
+  },
+  "355": {
+    "weather": "rain",
+    "track_surface": "mixed",
+    "humidity": 54.66240093320747,
+    "tyre_wear": 0.0004456599439602,
+    "driver_state": "fatigued",
+    "gt_crash_probability": 0.1549730344335632,
+    "missing_rate": 0.0
+  },
+  "356": {
+    "weather": "wet",
+    "track_surface": "rubbered",
+    "humidity": 35.72005921415012,
+    "tyre_wear": 0.0440985230680515,
+    "driver_state": "fatigued",
+    "gt_crash_probability": 0.2300978208528213,
+    "missing_rate": 0.02
+  },
+  "357": {
+    "weather": "light_rain",
+    "track_surface": "wet",
+    "humidity": 50.52409890728566,
+    "tyre_wear": 0.1303374646012617,
+    "driver_state": "cautious",
+    "gt_crash_probability": 0.5412649774381834,
+    "missing_rate": 0.0
+  },
+  "358": {
+    "weather": "overcast",
+    "track_surface": "rubbered",
+    "humidity": 86.90521122842337,
+    "tyre_wear": 0.7010323259717722,
+    "driver_state": "fatigued",
+    "gt_crash_probability": 0.2700126695822223,
+    "missing_rate": 0.02
+  },
+  "359": {
+    "weather": "rain",
+    "track_surface": "wet",
+    "humidity": 42.01914298127786,
+    "tyre_wear": 0.2625880548211049,
+    "driver_state": "pushing",
+    "gt_crash_probability": 0.5650358280759309,
+    "missing_rate": 0.05
+  },
+  "360": {
+    "weather": "sunny",
+    "track_surface": "green",
+    "humidity": 88.15881737598252,
+    "tyre_wear": 0.2897684138808429,
+    "driver_state": "cautious",
+    "gt_crash_probability": 0.1387562129029339,
+    "missing_rate": 0.03
+  },
+  "361": {
+    "weather": "sunny",
+    "track_surface": "green",
+    "humidity": 45.53980297855867,
+    "tyre_wear": 0.8362455480753445,
+    "driver_state": "fatigued",
+    "gt_crash_probability": 0.3283260223003423,
+    "missing_rate": 0.03
+  },
+  "362": {
+    "weather": "rain",
+    "track_surface": "mixed",
+    "humidity": 76.96572314378317,
+    "tyre_wear": 0.7228883763233503,
+    "driver_state": "cautious",
+    "gt_crash_probability": 0.4025513564481006,
+    "missing_rate": 0.03
+  },
+  "363": {
+    "weather": "rain",
+    "track_surface": "rubbered",
+    "humidity": 80.0482847526878,
+    "tyre_wear": 0.738783821640913,
+    "driver_state": "fresh",
+    "gt_crash_probability": 0.6412541819033797,
+    "missing_rate": 0.0
+  },
+  "364": {
+    "weather": "sunny",
+    "track_surface": "green",
+    "humidity": 76.19118434660177,
+    "tyre_wear": 0.1877915613102468,
+    "driver_state": "pushing",
+    "gt_crash_probability": 0.2535213405612213,
+    "missing_rate": 0.02
+  },
+  "365": {
+    "weather": "sunny",
+    "track_surface": "wet",
+    "humidity": 56.48716170267021,
+    "tyre_wear": 0.1734573958830225,
+    "driver_state": "fatigued",
+    "gt_crash_probability": 0.2158868644353628,
+    "missing_rate": 0.05
+  },
+  "366": {
+    "weather": "sunny",
+    "track_surface": "mixed",
+    "humidity": 83.1369010609217,
+    "tyre_wear": 0.6510301095469465,
+    "driver_state": "pushing",
+    "gt_crash_probability": 1.0,
+    "missing_rate": 0.0
+  },
+  "367": {
+    "weather": "rain",
+    "track_surface": "wet",
+    "humidity": 52.274412072664035,
+    "tyre_wear": 0.4584867687072971,
+    "driver_state": "pushing",
+    "gt_crash_probability": 0.4563151628385337,
+    "missing_rate": 0.0
+  },
+  "368": {
+    "weather": "rain",
+    "track_surface": "rubbered",
+    "humidity": 68.73461537704114,
+    "tyre_wear": 0.2455575545419271,
+    "driver_state": "pushing",
+    "gt_crash_probability": 0.2692735136486753,
+    "missing_rate": 0.0
+  },
+  "369": {
+    "weather": "rain",
+    "track_surface": "green",
+    "humidity": 33.688306912578675,
+    "tyre_wear": 0.4175410684175139,
+    "driver_state": "fresh",
+    "gt_crash_probability": 0.1749475643983012,
+    "missing_rate": 0.0
+  },
+  "370": {
+    "weather": "sunny",
+    "track_surface": "mixed",
+    "humidity": 56.48152197897687,
+    "tyre_wear": 0.2895117181378529,
+    "driver_state": "fresh",
+    "gt_crash_probability": 0.2514365028056755,
+    "missing_rate": 0.02
+  },
+  "371": {
+    "weather": "light_rain",
+    "track_surface": "rubbered",
+    "humidity": 91.78789993321936,
+    "tyre_wear": 0.2950257061088209,
+    "driver_state": "cautious",
+    "gt_crash_probability": 0.1579963708368085,
+    "missing_rate": 0.05
+  },
+  "372": {
+    "weather": "sunny",
+    "track_surface": "wet",
+    "humidity": 90.3625614769465,
+    "tyre_wear": 0.351736938125924,
+    "driver_state": "fatigued",
+    "gt_crash_probability": 0.2682345283700516,
+    "missing_rate": 0.02
+  },
+  "373": {
+    "weather": "sunny",
+    "track_surface": "rubbered",
+    "humidity": 65.79957143279972,
+    "tyre_wear": 0.2472954557105567,
+    "driver_state": "fatigued",
+    "gt_crash_probability": 0.1122020003595765,
+    "missing_rate": 0.0
+  },
+  "374": {
+    "weather": "rain",
+    "track_surface": "green",
+    "humidity": 73.4316218160522,
+    "tyre_wear": 0.6129880637046256,
+    "driver_state": "fatigued",
+    "gt_crash_probability": 0.4519254527720884,
+    "missing_rate": 0.04
+  },
+  "375": {
+    "weather": "wet",
+    "track_surface": "rubbered",
+    "humidity": 36.05875390525176,
+    "tyre_wear": 0.2116583402858128,
+    "driver_state": "fresh",
+    "gt_crash_probability": 0.0972566026139746,
+    "missing_rate": 0.02
+  },
+  "376": {
+    "weather": "overcast",
+    "track_surface": "mixed",
+    "humidity": 47.70381448177069,
+    "tyre_wear": 0.8455126677191537,
+    "driver_state": "cautious",
+    "gt_crash_probability": 0.7246920738303647,
+    "missing_rate": 0.0
+  },
+  "377": {
+    "weather": "wet",
+    "track_surface": "mixed",
+    "humidity": 90.57421364631728,
+    "tyre_wear": 0.4766402720621545,
+    "driver_state": "fatigued",
+    "gt_crash_probability": 0.6663968937278494,
+    "missing_rate": 0.0
+  },
+  "378": {
+    "weather": "sunny",
+    "track_surface": "mixed",
+    "humidity": 80.70762616330362,
+    "tyre_wear": 0.4935217495243424,
+    "driver_state": "fresh",
+    "gt_crash_probability": 0.3242444064352172,
+    "missing_rate": 0.05
+  },
+  "379": {
+    "weather": "wet",
+    "track_surface": "green",
+    "humidity": 30.734975255126574,
+    "tyre_wear": 0.0488971278092541,
+    "driver_state": "pushing",
+    "gt_crash_probability": 0.2012558651189469,
+    "missing_rate": 0.02
+  },
+  "380": {
+    "weather": "wet",
+    "track_surface": "green",
+    "humidity": 89.44406002450322,
+    "tyre_wear": 0.9279030984968444,
+    "driver_state": "fresh",
+    "gt_crash_probability": 0.796256019535397,
+    "missing_rate": 0.05
+  },
+  "381": {
+    "weather": "light_rain",
+    "track_surface": "rubbered",
+    "humidity": 66.51948792938856,
+    "tyre_wear": 0.9015214898089492,
+    "driver_state": "pushing",
+    "gt_crash_probability": 0.5058802069607584,
+    "missing_rate": 0.03
+  },
+  "382": {
+    "weather": "wet",
+    "track_surface": "mixed",
+    "humidity": 34.427754702159326,
+    "tyre_wear": 0.7699506594775127,
+    "driver_state": "pushing",
+    "gt_crash_probability": 0.5713355098756924,
+    "missing_rate": 0.05
+  },
+  "383": {
+    "weather": "wet",
+    "track_surface": "green",
+    "humidity": 37.48450169608394,
+    "tyre_wear": 0.2919948207590512,
+    "driver_state": "fresh",
+    "gt_crash_probability": 0.2622180765407423,
+    "missing_rate": 0.03
+  },
+  "384": {
+    "weather": "rain",
+    "track_surface": "wet",
+    "humidity": 74.33531837404412,
+    "tyre_wear": 0.0779162611630797,
+    "driver_state": "cautious",
+    "gt_crash_probability": 0.3529108136704008,
+    "missing_rate": 0.0
+  },
+  "385": {
+    "weather": "light_rain",
+    "track_surface": "mixed",
+    "humidity": 52.42603512133769,
+    "tyre_wear": 0.0409146686738196,
+    "driver_state": "fresh",
+    "gt_crash_probability": 0.1950262776830657,
+    "missing_rate": 0.0
+  },
+  "386": {
+    "weather": "wet",
+    "track_surface": "mixed",
+    "humidity": 33.874260366455445,
+    "tyre_wear": 0.9146398476756876,
+    "driver_state": "fatigued",
+    "gt_crash_probability": 0.7040060882605532,
+    "missing_rate": 0.0
+  },
+  "387": {
+    "weather": "overcast",
+    "track_surface": "mixed",
+    "humidity": 69.44718654992836,
+    "tyre_wear": 0.9751957848465808,
+    "driver_state": "cautious",
+    "gt_crash_probability": 0.4862652919904973,
+    "missing_rate": 0.05
+  },
+  "388": {
+    "weather": "wet",
+    "track_surface": "green",
+    "humidity": 87.26939803513912,
+    "tyre_wear": 0.7844149765329423,
+    "driver_state": "cautious",
+    "gt_crash_probability": 0.6213909853681012,
+    "missing_rate": 0.0
+  },
+  "389": {
+    "weather": "rain",
+    "track_surface": "rubbered",
+    "humidity": 49.527868810462834,
+    "tyre_wear": 0.0010920217858738,
+    "driver_state": "fatigued",
+    "gt_crash_probability": 0.0331659979723703,
+    "missing_rate": 0.0
+  },
+  "390": {
+    "weather": "sunny",
+    "track_surface": "green",
+    "humidity": 67.90539110248895,
+    "tyre_wear": 0.8876448395835426,
+    "driver_state": "cautious",
+    "gt_crash_probability": 0.4590029111536917,
+    "missing_rate": 0.0
+  },
+  "391": {
+    "weather": "rain",
+    "track_surface": "green",
+    "humidity": 75.03829963497193,
+    "tyre_wear": 0.1726760852865527,
+    "driver_state": "cautious",
+    "gt_crash_probability": 0.1600974862245149,
+    "missing_rate": 0.02
+  },
+  "392": {
+    "weather": "wet",
+    "track_surface": "rubbered",
+    "humidity": 67.39758416876711,
+    "tyre_wear": 0.444089449753694,
+    "driver_state": "fatigued",
+    "gt_crash_probability": 0.1783991175539587,
+    "missing_rate": 0.02
+  },
+  "393": {
+    "weather": "wet",
+    "track_surface": "rubbered",
+    "humidity": 50.78363113761989,
+    "tyre_wear": 0.9596500439328596,
+    "driver_state": "fatigued",
+    "gt_crash_probability": 0.5801886162678545,
+    "missing_rate": 0.0
+  },
+  "394": {
+    "weather": "sunny",
+    "track_surface": "mixed",
+    "humidity": 71.84066482051968,
+    "tyre_wear": 0.4011898758086408,
+    "driver_state": "cautious",
+    "gt_crash_probability": 0.4644550090064394,
+    "missing_rate": 0.03
+  },
+  "395": {
+    "weather": "overcast",
+    "track_surface": "wet",
+    "humidity": 86.03165959318571,
+    "tyre_wear": 0.0732656171921788,
+    "driver_state": "cautious",
+    "gt_crash_probability": 0.1794165189423622,
+    "missing_rate": 0.04
+  },
+  "396": {
+    "weather": "wet",
+    "track_surface": "rubbered",
+    "humidity": 55.75629778795932,
+    "tyre_wear": 0.4736563036464103,
+    "driver_state": "fresh",
+    "gt_crash_probability": 0.4860254451697162,
+    "missing_rate": 0.04
+  },
+  "397": {
+    "weather": "rain",
+    "track_surface": "green",
+    "humidity": 54.875284168822475,
+    "tyre_wear": 0.8763754338771749,
+    "driver_state": "fatigued",
+    "gt_crash_probability": 0.50399117677934,
+    "missing_rate": 0.0
+  },
+  "398": {
+    "weather": "wet",
+    "track_surface": "mixed",
+    "humidity": 52.06458444263873,
+    "tyre_wear": 0.2772044020818333,
+    "driver_state": "fresh",
+    "gt_crash_probability": 0.2564040606035977,
+    "missing_rate": 0.0
+  },
+  "399": {
+    "weather": "overcast",
+    "track_surface": "rubbered",
+    "humidity": 78.04105117274796,
+    "tyre_wear": 0.0718714875553954,
+    "driver_state": "fresh",
+    "gt_crash_probability": 0.2946839145937723,
+    "missing_rate": 0.0
+  }
+}

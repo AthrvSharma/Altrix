@@ -1,0 +1,3202 @@
+{
+  "0": {
+    "scenario_label": "steering_oscillation",
+    "severity": 0.5732595044787561
+  },
+  "1": {
+    "scenario_label": "snap_oversteer",
+    "severity": 0.9282381416520312
+  },
+  "2": {
+    "scenario_label": "snap_oversteer",
+    "severity": 0.7118619664087293
+  },
+  "3": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.8667152752251074
+  },
+  "4": {
+    "scenario_label": "heavy_brake_low_grip",
+    "severity": 0.8020802904213142
+  },
+  "5": {
+    "scenario_label": "snap_oversteer",
+    "severity": 0.4596157408015567
+  },
+  "6": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.91816356429599
+  },
+  "7": {
+    "scenario_label": "heavy_brake_low_grip",
+    "severity": 0.3617697197330077
+  },
+  "8": {
+    "scenario_label": "tyre_blowout_response",
+    "severity": 0.413014351241492
+  },
+  "9": {
+    "scenario_label": "steering_oscillation",
+    "severity": 0.9316080833162734
+  },
+  "10": {
+    "scenario_label": "snap_oversteer",
+    "severity": 0.5807753554493041
+  },
+  "11": {
+    "scenario_label": "heavy_brake_low_grip",
+    "severity": 0.8996203217756583
+  },
+  "12": {
+    "scenario_label": "snap_oversteer",
+    "severity": 0.3638073491971354
+  },
+  "13": {
+    "scenario_label": "tyre_blowout_response",
+    "severity": 0.5397808643457991
+  },
+  "14": {
+    "scenario_label": "heavy_brake_low_grip",
+    "severity": 0.4614067479148324
+  },
+  "15": {
+    "scenario_label": "snap_oversteer",
+    "severity": 0.8935776212400052
+  },
+  "16": {
+    "scenario_label": "tyre_blowout_response",
+    "severity": 0.8211121761386655
+  },
+  "17": {
+    "scenario_label": "steering_oscillation",
+    "severity": 0.9289987324471172
+  },
+  "18": {
+    "scenario_label": "heavy_brake_low_grip",
+    "severity": 0.615083632349223
+  },
+  "19": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.6350734035461294
+  },
+  "20": {
+    "scenario_label": "snap_oversteer",
+    "severity": 0.7318237193879247
+  },
+  "21": {
+    "scenario_label": "tyre_blowout_response",
+    "severity": 0.7745104051430753
+  },
+  "22": {
+    "scenario_label": "snap_oversteer",
+    "severity": 0.8698680416566916
+  },
+  "23": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.8193654499635121
+  },
+  "24": {
+    "scenario_label": "steering_oscillation",
+    "severity": 0.7019984785183399
+  },
+  "25": {
+    "scenario_label": "heavy_brake_low_grip",
+    "severity": 0.4286393102239396
+  },
+  "26": {
+    "scenario_label": "heavy_brake_low_grip",
+    "severity": 0.5692702080492387
+  },
+  "27": {
+    "scenario_label": "snap_oversteer",
+    "severity": 0.4299536620542746
+  },
+  "28": {
+    "scenario_label": "snap_oversteer",
+    "severity": 0.5439361964007315
+  },
+  "29": {
+    "scenario_label": "steering_oscillation",
+    "severity": 0.5459618251929371
+  },
+  "30": {
+    "scenario_label": "steering_oscillation",
+    "severity": 0.7476900466787614
+  },
+  "31": {
+    "scenario_label": "steering_oscillation",
+    "severity": 0.7865422935926526
+  },
+  "32": {
+    "scenario_label": "snap_oversteer",
+    "severity": 0.5870773633773414
+  },
+  "33": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.5234793527386981
+  },
+  "34": {
+    "scenario_label": "snap_oversteer",
+    "severity": 0.4840616513667272
+  },
+  "35": {
+    "scenario_label": "snap_oversteer",
+    "severity": 0.5643074657089706
+  },
+  "36": {
+    "scenario_label": "snap_oversteer",
+    "severity": 0.5767371940208919
+  },
+  "37": {
+    "scenario_label": "snap_oversteer",
+    "severity": 0.5096558914442116
+  },
+  "38": {
+    "scenario_label": "steering_oscillation",
+    "severity": 0.4314665068553084
+  },
+  "39": {
+    "scenario_label": "tyre_blowout_response",
+    "severity": 0.5575598081191385
+  },
+  "40": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.8859163066840339
+  },
+  "41": {
+    "scenario_label": "tyre_blowout_response",
+    "severity": 0.5795680694744647
+  },
+  "42": {
+    "scenario_label": "steering_oscillation",
+    "severity": 0.3779389248627413
+  },
+  "43": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.4192329123668918
+  },
+  "44": {
+    "scenario_label": "heavy_brake_low_grip",
+    "severity": 0.452219493662606
+  },
+  "45": {
+    "scenario_label": "tyre_blowout_response",
+    "severity": 0.8867904366434084
+  },
+  "46": {
+    "scenario_label": "snap_oversteer",
+    "severity": 0.6870350568408843
+  },
+  "47": {
+    "scenario_label": "heavy_brake_low_grip",
+    "severity": 0.8405396466764437
+  },
+  "48": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.3645688070057706
+  },
+  "49": {
+    "scenario_label": "snap_oversteer",
+    "severity": 0.6887016639106686
+  },
+  "50": {
+    "scenario_label": "tyre_blowout_response",
+    "severity": 0.4527145670978673
+  },
+  "51": {
+    "scenario_label": "tyre_blowout_response",
+    "severity": 0.7126884809061842
+  },
+  "52": {
+    "scenario_label": "tyre_blowout_response",
+    "severity": 0.7784373837718236
+  },
+  "53": {
+    "scenario_label": "snap_oversteer",
+    "severity": 0.8816063861286015
+  },
+  "54": {
+    "scenario_label": "snap_oversteer",
+    "severity": 0.4673343669326803
+  },
+  "55": {
+    "scenario_label": "heavy_brake_low_grip",
+    "severity": 0.5775440963632409
+  },
+  "56": {
+    "scenario_label": "snap_oversteer",
+    "severity": 0.3813687589183004
+  },
+  "57": {
+    "scenario_label": "steering_oscillation",
+    "severity": 0.474737002405866
+  },
+  "58": {
+    "scenario_label": "snap_oversteer",
+    "severity": 0.4128080016045766
+  },
+  "59": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.8864384570465873
+  },
+  "60": {
+    "scenario_label": "steering_oscillation",
+    "severity": 0.5301898664059644
+  },
+  "61": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.3570480333303601
+  },
+  "62": {
+    "scenario_label": "tyre_blowout_response",
+    "severity": 0.5650648289626252
+  },
+  "63": {
+    "scenario_label": "heavy_brake_low_grip",
+    "severity": 0.7436308824387996
+  },
+  "64": {
+    "scenario_label": "heavy_brake_low_grip",
+    "severity": 0.5370722796946684
+  },
+  "65": {
+    "scenario_label": "steering_oscillation",
+    "severity": 0.7370956096932935
+  },
+  "66": {
+    "scenario_label": "steering_oscillation",
+    "severity": 0.9493497284925516
+  },
+  "67": {
+    "scenario_label": "heavy_brake_low_grip",
+    "severity": 0.7634177101805217
+  },
+  "68": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.707654589969337
+  },
+  "69": {
+    "scenario_label": "snap_oversteer",
+    "severity": 0.700951265949424
+  },
+  "70": {
+    "scenario_label": "steering_oscillation",
+    "severity": 0.5618124728360412
+  },
+  "71": {
+    "scenario_label": "steering_oscillation",
+    "severity": 0.8706462019141078
+  },
+  "72": {
+    "scenario_label": "tyre_blowout_response",
+    "severity": 0.5644296736561807
+  },
+  "73": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.7220935952835958
+  },
+  "74": {
+    "scenario_label": "steering_oscillation",
+    "severity": 0.4371578758056559
+  },
+  "75": {
+    "scenario_label": "tyre_blowout_response",
+    "severity": 0.684666249621801
+  },
+  "76": {
+    "scenario_label": "steering_oscillation",
+    "severity": 0.3815617433881531
+  },
+  "77": {
+    "scenario_label": "tyre_blowout_response",
+    "severity": 0.777573307812012
+  },
+  "78": {
+    "scenario_label": "tyre_blowout_response",
+    "severity": 0.6103895484198922
+  },
+  "79": {
+    "scenario_label": "tyre_blowout_response",
+    "severity": 0.8223325490040969
+  },
+  "80": {
+    "scenario_label": "heavy_brake_low_grip",
+    "severity": 0.3602283737555382
+  },
+  "81": {
+    "scenario_label": "heavy_brake_low_grip",
+    "severity": 0.5585023676899084
+  },
+  "82": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.5750994022080468
+  },
+  "83": {
+    "scenario_label": "snap_oversteer",
+    "severity": 0.4931661761287156
+  },
+  "84": {
+    "scenario_label": "snap_oversteer",
+    "severity": 0.701671700242884
+  },
+  "85": {
+    "scenario_label": "tyre_blowout_response",
+    "severity": 0.6096483391267319
+  },
+  "86": {
+    "scenario_label": "snap_oversteer",
+    "severity": 0.7582984743849104
+  },
+  "87": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.4571032974498184
+  },
+  "88": {
+    "scenario_label": "tyre_blowout_response",
+    "severity": 0.902363601768236
+  },
+  "89": {
+    "scenario_label": "heavy_brake_low_grip",
+    "severity": 0.4901880737987861
+  },
+  "90": {
+    "scenario_label": "steering_oscillation",
+    "severity": 0.6346140716287747
+  },
+  "91": {
+    "scenario_label": "steering_oscillation",
+    "severity": 0.5319407859638144
+  },
+  "92": {
+    "scenario_label": "steering_oscillation",
+    "severity": 0.4786158420342329
+  },
+  "93": {
+    "scenario_label": "tyre_blowout_response",
+    "severity": 0.7577698982564183
+  },
+  "94": {
+    "scenario_label": "snap_oversteer",
+    "severity": 0.8022357377442153
+  },
+  "95": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.828944272147337
+  },
+  "96": {
+    "scenario_label": "tyre_blowout_response",
+    "severity": 0.3743383714864982
+  },
+  "97": {
+    "scenario_label": "heavy_brake_low_grip",
+    "severity": 0.4446316168721868
+  },
+  "98": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.5256466288555854
+  },
+  "99": {
+    "scenario_label": "steering_oscillation",
+    "severity": 0.3716285912963559
+  },
+  "100": {
+    "scenario_label": "tyre_blowout_response",
+    "severity": 0.9440760469388058
+  },
+  "101": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.3507809067235243
+  },
+  "102": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.9131202931382824
+  },
+  "103": {
+    "scenario_label": "snap_oversteer",
+    "severity": 0.726868158468891
+  },
+  "104": {
+    "scenario_label": "heavy_brake_low_grip",
+    "severity": 0.869006076607541
+  },
+  "105": {
+    "scenario_label": "snap_oversteer",
+    "severity": 0.711705864457348
+  },
+  "106": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.9269311289512115
+  },
+  "107": {
+    "scenario_label": "snap_oversteer",
+    "severity": 0.4946534090655651
+  },
+  "108": {
+    "scenario_label": "heavy_brake_low_grip",
+    "severity": 0.897564031879732
+  },
+  "109": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.4546499572979956
+  },
+  "110": {
+    "scenario_label": "steering_oscillation",
+    "severity": 0.4614560321113936
+  },
+  "111": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.40120308394601
+  },
+  "112": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.9487072396213732
+  },
+  "113": {
+    "scenario_label": "tyre_blowout_response",
+    "severity": 0.4838460868872948
+  },
+  "114": {
+    "scenario_label": "snap_oversteer",
+    "severity": 0.7085926744102929
+  },
+  "115": {
+    "scenario_label": "heavy_brake_low_grip",
+    "severity": 0.6530340083991815
+  },
+  "116": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.8027386877209794
+  },
+  "117": {
+    "scenario_label": "heavy_brake_low_grip",
+    "severity": 0.4342344891668527
+  },
+  "118": {
+    "scenario_label": "steering_oscillation",
+    "severity": 0.629897266652439
+  },
+  "119": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.7778842164615973
+  },
+  "120": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.7481950977750091
+  },
+  "121": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.7458443967611035
+  },
+  "122": {
+    "scenario_label": "steering_oscillation",
+    "severity": 0.3569383111737998
+  },
+  "123": {
+    "scenario_label": "heavy_brake_low_grip",
+    "severity": 0.4732897193699748
+  },
+  "124": {
+    "scenario_label": "tyre_blowout_response",
+    "severity": 0.5731671801752556
+  },
+  "125": {
+    "scenario_label": "tyre_blowout_response",
+    "severity": 0.6907181522840494
+  },
+  "126": {
+    "scenario_label": "tyre_blowout_response",
+    "severity": 0.8626312716065994
+  },
+  "127": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.4437079318898352
+  },
+  "128": {
+    "scenario_label": "snap_oversteer",
+    "severity": 0.8580805193856144
+  },
+  "129": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.9223628777150282
+  },
+  "130": {
+    "scenario_label": "tyre_blowout_response",
+    "severity": 0.6566179618233685
+  },
+  "131": {
+    "scenario_label": "heavy_brake_low_grip",
+    "severity": 0.4979706284870268
+  },
+  "132": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.7678768229988249
+  },
+  "133": {
+    "scenario_label": "heavy_brake_low_grip",
+    "severity": 0.6828596089494579
+  },
+  "134": {
+    "scenario_label": "tyre_blowout_response",
+    "severity": 0.7766836839174942
+  },
+  "135": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.9314539442462714
+  },
+  "136": {
+    "scenario_label": "tyre_blowout_response",
+    "severity": 0.9136498125973886
+  },
+  "137": {
+    "scenario_label": "steering_oscillation",
+    "severity": 0.5395244903547081
+  },
+  "138": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.6732756488883764
+  },
+  "139": {
+    "scenario_label": "tyre_blowout_response",
+    "severity": 0.7963450740869069
+  },
+  "140": {
+    "scenario_label": "tyre_blowout_response",
+    "severity": 0.3979333894065403
+  },
+  "141": {
+    "scenario_label": "tyre_blowout_response",
+    "severity": 0.8507806126421313
+  },
+  "142": {
+    "scenario_label": "snap_oversteer",
+    "severity": 0.4331076108581955
+  },
+  "143": {
+    "scenario_label": "steering_oscillation",
+    "severity": 0.6072942520692557
+  },
+  "144": {
+    "scenario_label": "steering_oscillation",
+    "severity": 0.4763757612864118
+  },
+  "145": {
+    "scenario_label": "steering_oscillation",
+    "severity": 0.7287873694821596
+  },
+  "146": {
+    "scenario_label": "snap_oversteer",
+    "severity": 0.6962171494080978
+  },
+  "147": {
+    "scenario_label": "heavy_brake_low_grip",
+    "severity": 0.671765690514593
+  },
+  "148": {
+    "scenario_label": "snap_oversteer",
+    "severity": 0.9429267543368006
+  },
+  "149": {
+    "scenario_label": "heavy_brake_low_grip",
+    "severity": 0.9083702503812316
+  },
+  "150": {
+    "scenario_label": "heavy_brake_low_grip",
+    "severity": 0.8254823840096279
+  },
+  "151": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.7905288351060966
+  },
+  "152": {
+    "scenario_label": "tyre_blowout_response",
+    "severity": 0.7917049687388528
+  },
+  "153": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.3812532257825116
+  },
+  "154": {
+    "scenario_label": "heavy_brake_low_grip",
+    "severity": 0.5373819593158402
+  },
+  "155": {
+    "scenario_label": "steering_oscillation",
+    "severity": 0.5067766905124786
+  },
+  "156": {
+    "scenario_label": "tyre_blowout_response",
+    "severity": 0.6328924974554809
+  },
+  "157": {
+    "scenario_label": "snap_oversteer",
+    "severity": 0.442427201803789
+  },
+  "158": {
+    "scenario_label": "heavy_brake_low_grip",
+    "severity": 0.4990129810890231
+  },
+  "159": {
+    "scenario_label": "tyre_blowout_response",
+    "severity": 0.6694447219918409
+  },
+  "160": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.8272431162100602
+  },
+  "161": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.6194173601692917
+  },
+  "162": {
+    "scenario_label": "snap_oversteer",
+    "severity": 0.8449978102939981
+  },
+  "163": {
+    "scenario_label": "snap_oversteer",
+    "severity": 0.6314569368625138
+  },
+  "164": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.4217784123001813
+  },
+  "165": {
+    "scenario_label": "snap_oversteer",
+    "severity": 0.6657791984897549
+  },
+  "166": {
+    "scenario_label": "heavy_brake_low_grip",
+    "severity": 0.3706936205485535
+  },
+  "167": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.4885766635828139
+  },
+  "168": {
+    "scenario_label": "snap_oversteer",
+    "severity": 0.9090562067268456
+  },
+  "169": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.3892329099962397
+  },
+  "170": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.7406399029074805
+  },
+  "171": {
+    "scenario_label": "tyre_blowout_response",
+    "severity": 0.7615314620847962
+  },
+  "172": {
+    "scenario_label": "snap_oversteer",
+    "severity": 0.8872408098897854
+  },
+  "173": {
+    "scenario_label": "snap_oversteer",
+    "severity": 0.4639040407656599
+  },
+  "174": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.4406997975721138
+  },
+  "175": {
+    "scenario_label": "heavy_brake_low_grip",
+    "severity": 0.7206344186926428
+  },
+  "176": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.8214046303932248
+  },
+  "177": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.9438239458868208
+  },
+  "178": {
+    "scenario_label": "snap_oversteer",
+    "severity": 0.7415186954662577
+  },
+  "179": {
+    "scenario_label": "steering_oscillation",
+    "severity": 0.5436577031806082
+  },
+  "180": {
+    "scenario_label": "tyre_blowout_response",
+    "severity": 0.5730184275999236
+  },
+  "181": {
+    "scenario_label": "steering_oscillation",
+    "severity": 0.4879598529972389
+  },
+  "182": {
+    "scenario_label": "heavy_brake_low_grip",
+    "severity": 0.8914515115461783
+  },
+  "183": {
+    "scenario_label": "steering_oscillation",
+    "severity": 0.86147178313697
+  },
+  "184": {
+    "scenario_label": "steering_oscillation",
+    "severity": 0.4018388574253839
+  },
+  "185": {
+    "scenario_label": "steering_oscillation",
+    "severity": 0.729556486492188
+  },
+  "186": {
+    "scenario_label": "heavy_brake_low_grip",
+    "severity": 0.7968838767074257
+  },
+  "187": {
+    "scenario_label": "heavy_brake_low_grip",
+    "severity": 0.8325549442610116
+  },
+  "188": {
+    "scenario_label": "steering_oscillation",
+    "severity": 0.4138632625453032
+  },
+  "189": {
+    "scenario_label": "snap_oversteer",
+    "severity": 0.4961821522900457
+  },
+  "190": {
+    "scenario_label": "steering_oscillation",
+    "severity": 0.6050708623874121
+  },
+  "191": {
+    "scenario_label": "steering_oscillation",
+    "severity": 0.7350436886070086
+  },
+  "192": {
+    "scenario_label": "steering_oscillation",
+    "severity": 0.767478720248649
+  },
+  "193": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.8157314303792579
+  },
+  "194": {
+    "scenario_label": "heavy_brake_low_grip",
+    "severity": 0.7093240989930336
+  },
+  "195": {
+    "scenario_label": "snap_oversteer",
+    "severity": 0.8038072980275917
+  },
+  "196": {
+    "scenario_label": "tyre_blowout_response",
+    "severity": 0.4214656736964383
+  },
+  "197": {
+    "scenario_label": "steering_oscillation",
+    "severity": 0.5512722003948844
+  },
+  "198": {
+    "scenario_label": "snap_oversteer",
+    "severity": 0.8009322313600279
+  },
+  "199": {
+    "scenario_label": "snap_oversteer",
+    "severity": 0.6136234054590215
+  },
+  "200": {
+    "scenario_label": "tyre_blowout_response",
+    "severity": 0.5303646897634527
+  },
+  "201": {
+    "scenario_label": "heavy_brake_low_grip",
+    "severity": 0.6146528548724826
+  },
+  "202": {
+    "scenario_label": "steering_oscillation",
+    "severity": 0.6158413007100252
+  },
+  "203": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.386374401884744
+  },
+  "204": {
+    "scenario_label": "heavy_brake_low_grip",
+    "severity": 0.4110429795466891
+  },
+  "205": {
+    "scenario_label": "heavy_brake_low_grip",
+    "severity": 0.9385092308840812
+  },
+  "206": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.8517718890053604
+  },
+  "207": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.4967843024878287
+  },
+  "208": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.9246344601405848
+  },
+  "209": {
+    "scenario_label": "heavy_brake_low_grip",
+    "severity": 0.8236710615942595
+  },
+  "210": {
+    "scenario_label": "steering_oscillation",
+    "severity": 0.7886690234437779
+  },
+  "211": {
+    "scenario_label": "snap_oversteer",
+    "severity": 0.8041933842007133
+  },
+  "212": {
+    "scenario_label": "tyre_blowout_response",
+    "severity": 0.6752382858601631
+  },
+  "213": {
+    "scenario_label": "steering_oscillation",
+    "severity": 0.5240015553271534
+  },
+  "214": {
+    "scenario_label": "snap_oversteer",
+    "severity": 0.7195246511008856
+  },
+  "215": {
+    "scenario_label": "snap_oversteer",
+    "severity": 0.3622833342060739
+  },
+  "216": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.5667263458303629
+  },
+  "217": {
+    "scenario_label": "snap_oversteer",
+    "severity": 0.5675199982541896
+  },
+  "218": {
+    "scenario_label": "steering_oscillation",
+    "severity": 0.5838437797068241
+  },
+  "219": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.5563168566552591
+  },
+  "220": {
+    "scenario_label": "heavy_brake_low_grip",
+    "severity": 0.4321930563338371
+  },
+  "221": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.3838423603648664
+  },
+  "222": {
+    "scenario_label": "tyre_blowout_response",
+    "severity": 0.5782303290516897
+  },
+  "223": {
+    "scenario_label": "snap_oversteer",
+    "severity": 0.445208019191442
+  },
+  "224": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.5968398897096342
+  },
+  "225": {
+    "scenario_label": "snap_oversteer",
+    "severity": 0.3580348762445353
+  },
+  "226": {
+    "scenario_label": "snap_oversteer",
+    "severity": 0.4331464087612959
+  },
+  "227": {
+    "scenario_label": "heavy_brake_low_grip",
+    "severity": 0.623050952194838
+  },
+  "228": {
+    "scenario_label": "steering_oscillation",
+    "severity": 0.947705363134048
+  },
+  "229": {
+    "scenario_label": "heavy_brake_low_grip",
+    "severity": 0.6673637110259419
+  },
+  "230": {
+    "scenario_label": "steering_oscillation",
+    "severity": 0.772933261665399
+  },
+  "231": {
+    "scenario_label": "snap_oversteer",
+    "severity": 0.7053506592831453
+  },
+  "232": {
+    "scenario_label": "heavy_brake_low_grip",
+    "severity": 0.69547935040064
+  },
+  "233": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.8295091993925914
+  },
+  "234": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.7524809441384209
+  },
+  "235": {
+    "scenario_label": "tyre_blowout_response",
+    "severity": 0.6476611766812734
+  },
+  "236": {
+    "scenario_label": "heavy_brake_low_grip",
+    "severity": 0.538638834913595
+  },
+  "237": {
+    "scenario_label": "heavy_brake_low_grip",
+    "severity": 0.3903248367790706
+  },
+  "238": {
+    "scenario_label": "tyre_blowout_response",
+    "severity": 0.490862984495598
+  },
+  "239": {
+    "scenario_label": "tyre_blowout_response",
+    "severity": 0.4294642961816212
+  },
+  "240": {
+    "scenario_label": "heavy_brake_low_grip",
+    "severity": 0.4207725693633546
+  },
+  "241": {
+    "scenario_label": "steering_oscillation",
+    "severity": 0.5492681166869012
+  },
+  "242": {
+    "scenario_label": "steering_oscillation",
+    "severity": 0.6401854456413743
+  },
+  "243": {
+    "scenario_label": "steering_oscillation",
+    "severity": 0.518463316382885
+  },
+  "244": {
+    "scenario_label": "tyre_blowout_response",
+    "severity": 0.6494416864957859
+  },
+  "245": {
+    "scenario_label": "snap_oversteer",
+    "severity": 0.5671304880887498
+  },
+  "246": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.3617226234326828
+  },
+  "247": {
+    "scenario_label": "snap_oversteer",
+    "severity": 0.79418424802459
+  },
+  "248": {
+    "scenario_label": "tyre_blowout_response",
+    "severity": 0.714906272830967
+  },
+  "249": {
+    "scenario_label": "steering_oscillation",
+    "severity": 0.6195191065541695
+  },
+  "250": {
+    "scenario_label": "tyre_blowout_response",
+    "severity": 0.5512065872967646
+  },
+  "251": {
+    "scenario_label": "tyre_blowout_response",
+    "severity": 0.7926299591837144
+  },
+  "252": {
+    "scenario_label": "steering_oscillation",
+    "severity": 0.4635970558884615
+  },
+  "253": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.4442177800848447
+  },
+  "254": {
+    "scenario_label": "snap_oversteer",
+    "severity": 0.7096562819995442
+  },
+  "255": {
+    "scenario_label": "tyre_blowout_response",
+    "severity": 0.7576115780213912
+  },
+  "256": {
+    "scenario_label": "steering_oscillation",
+    "severity": 0.8632380885917844
+  },
+  "257": {
+    "scenario_label": "tyre_blowout_response",
+    "severity": 0.8775029412136527
+  },
+  "258": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.6452589151345698
+  },
+  "259": {
+    "scenario_label": "tyre_blowout_response",
+    "severity": 0.4337965427192146
+  },
+  "260": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.8740539953167833
+  },
+  "261": {
+    "scenario_label": "snap_oversteer",
+    "severity": 0.5608422568505869
+  },
+  "262": {
+    "scenario_label": "tyre_blowout_response",
+    "severity": 0.5993191151604672
+  },
+  "263": {
+    "scenario_label": "tyre_blowout_response",
+    "severity": 0.5733070487197858
+  },
+  "264": {
+    "scenario_label": "snap_oversteer",
+    "severity": 0.8900811614210766
+  },
+  "265": {
+    "scenario_label": "snap_oversteer",
+    "severity": 0.721527924212165
+  },
+  "266": {
+    "scenario_label": "snap_oversteer",
+    "severity": 0.7346420679659154
+  },
+  "267": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.7084914706999872
+  },
+  "268": {
+    "scenario_label": "snap_oversteer",
+    "severity": 0.6158809294747847
+  },
+  "269": {
+    "scenario_label": "steering_oscillation",
+    "severity": 0.8418883698227273
+  },
+  "270": {
+    "scenario_label": "tyre_blowout_response",
+    "severity": 0.7324095291588342
+  },
+  "271": {
+    "scenario_label": "tyre_blowout_response",
+    "severity": 0.7044322651490852
+  },
+  "272": {
+    "scenario_label": "heavy_brake_low_grip",
+    "severity": 0.4980858025857911
+  },
+  "273": {
+    "scenario_label": "steering_oscillation",
+    "severity": 0.7648829724544055
+  },
+  "274": {
+    "scenario_label": "heavy_brake_low_grip",
+    "severity": 0.7122791022371069
+  },
+  "275": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.7499440068148772
+  },
+  "276": {
+    "scenario_label": "snap_oversteer",
+    "severity": 0.8975070675254578
+  },
+  "277": {
+    "scenario_label": "snap_oversteer",
+    "severity": 0.5139835951554756
+  },
+  "278": {
+    "scenario_label": "steering_oscillation",
+    "severity": 0.430898908501523
+  },
+  "279": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.7620940775530725
+  },
+  "280": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.5072713098744599
+  },
+  "281": {
+    "scenario_label": "tyre_blowout_response",
+    "severity": 0.3814638873872887
+  },
+  "282": {
+    "scenario_label": "steering_oscillation",
+    "severity": 0.7182129062454892
+  },
+  "283": {
+    "scenario_label": "tyre_blowout_response",
+    "severity": 0.5541234719455475
+  },
+  "284": {
+    "scenario_label": "steering_oscillation",
+    "severity": 0.3608545824751171
+  },
+  "285": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.7691873510915908
+  },
+  "286": {
+    "scenario_label": "heavy_brake_low_grip",
+    "severity": 0.5804233860316435
+  },
+  "287": {
+    "scenario_label": "heavy_brake_low_grip",
+    "severity": 0.8073769959581476
+  },
+  "288": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.4394856551524586
+  },
+  "289": {
+    "scenario_label": "tyre_blowout_response",
+    "severity": 0.6515618868483238
+  },
+  "290": {
+    "scenario_label": "snap_oversteer",
+    "severity": 0.7122474288811325
+  },
+  "291": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.6247663280873423
+  },
+  "292": {
+    "scenario_label": "snap_oversteer",
+    "severity": 0.8209368447527483
+  },
+  "293": {
+    "scenario_label": "snap_oversteer",
+    "severity": 0.4108600020409956
+  },
+  "294": {
+    "scenario_label": "tyre_blowout_response",
+    "severity": 0.517540374974733
+  },
+  "295": {
+    "scenario_label": "heavy_brake_low_grip",
+    "severity": 0.568927821355713
+  },
+  "296": {
+    "scenario_label": "snap_oversteer",
+    "severity": 0.838103904309837
+  },
+  "297": {
+    "scenario_label": "steering_oscillation",
+    "severity": 0.4650731017540749
+  },
+  "298": {
+    "scenario_label": "snap_oversteer",
+    "severity": 0.5014414457030937
+  },
+  "299": {
+    "scenario_label": "tyre_blowout_response",
+    "severity": 0.5029798804683092
+  },
+  "300": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.9096077416523264
+  },
+  "301": {
+    "scenario_label": "tyre_blowout_response",
+    "severity": 0.6080359603408214
+  },
+  "302": {
+    "scenario_label": "snap_oversteer",
+    "severity": 0.6294978855515699
+  },
+  "303": {
+    "scenario_label": "heavy_brake_low_grip",
+    "severity": 0.4912943841194286
+  },
+  "304": {
+    "scenario_label": "heavy_brake_low_grip",
+    "severity": 0.5345993589654212
+  },
+  "305": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.4076599931578125
+  },
+  "306": {
+    "scenario_label": "snap_oversteer",
+    "severity": 0.8865902300451345
+  },
+  "307": {
+    "scenario_label": "heavy_brake_low_grip",
+    "severity": 0.5985359513965033
+  },
+  "308": {
+    "scenario_label": "tyre_blowout_response",
+    "severity": 0.4592866455775108
+  },
+  "309": {
+    "scenario_label": "steering_oscillation",
+    "severity": 0.6141649904718414
+  },
+  "310": {
+    "scenario_label": "heavy_brake_low_grip",
+    "severity": 0.3548084494958631
+  },
+  "311": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.8834875573043623
+  },
+  "312": {
+    "scenario_label": "heavy_brake_low_grip",
+    "severity": 0.3861611314747549
+  },
+  "313": {
+    "scenario_label": "tyre_blowout_response",
+    "severity": 0.6775681433264298
+  },
+  "314": {
+    "scenario_label": "snap_oversteer",
+    "severity": 0.4102159087449768
+  },
+  "315": {
+    "scenario_label": "tyre_blowout_response",
+    "severity": 0.9471760198453316
+  },
+  "316": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.8766225845447653
+  },
+  "317": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.4874756162254919
+  },
+  "318": {
+    "scenario_label": "steering_oscillation",
+    "severity": 0.4772311326124444
+  },
+  "319": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.6943888453010303
+  },
+  "320": {
+    "scenario_label": "heavy_brake_low_grip",
+    "severity": 0.6304719491469973
+  },
+  "321": {
+    "scenario_label": "tyre_blowout_response",
+    "severity": 0.8670373094942422
+  },
+  "322": {
+    "scenario_label": "tyre_blowout_response",
+    "severity": 0.5153784213652749
+  },
+  "323": {
+    "scenario_label": "tyre_blowout_response",
+    "severity": 0.6339137247765094
+  },
+  "324": {
+    "scenario_label": "heavy_brake_low_grip",
+    "severity": 0.57221317870343
+  },
+  "325": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.6339753381849812
+  },
+  "326": {
+    "scenario_label": "steering_oscillation",
+    "severity": 0.7753779886684931
+  },
+  "327": {
+    "scenario_label": "tyre_blowout_response",
+    "severity": 0.8281733276228161
+  },
+  "328": {
+    "scenario_label": "steering_oscillation",
+    "severity": 0.930598142278177
+  },
+  "329": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.5619109694517231
+  },
+  "330": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.6649575986284391
+  },
+  "331": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.6133896132564431
+  },
+  "332": {
+    "scenario_label": "heavy_brake_low_grip",
+    "severity": 0.5864665584504465
+  },
+  "333": {
+    "scenario_label": "heavy_brake_low_grip",
+    "severity": 0.6041154022162887
+  },
+  "334": {
+    "scenario_label": "steering_oscillation",
+    "severity": 0.5485283840455224
+  },
+  "335": {
+    "scenario_label": "snap_oversteer",
+    "severity": 0.8860231759884153
+  },
+  "336": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.89769892521754
+  },
+  "337": {
+    "scenario_label": "steering_oscillation",
+    "severity": 0.7231065155740602
+  },
+  "338": {
+    "scenario_label": "heavy_brake_low_grip",
+    "severity": 0.5756641145761614
+  },
+  "339": {
+    "scenario_label": "tyre_blowout_response",
+    "severity": 0.5624915909110769
+  },
+  "340": {
+    "scenario_label": "steering_oscillation",
+    "severity": 0.6888981649141144
+  },
+  "341": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.6029373913910667
+  },
+  "342": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.7626497423424945
+  },
+  "343": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.5524733152576662
+  },
+  "344": {
+    "scenario_label": "tyre_blowout_response",
+    "severity": 0.8176469764402545
+  },
+  "345": {
+    "scenario_label": "steering_oscillation",
+    "severity": 0.4274499118561718
+  },
+  "346": {
+    "scenario_label": "heavy_brake_low_grip",
+    "severity": 0.5258867246447076
+  },
+  "347": {
+    "scenario_label": "snap_oversteer",
+    "severity": 0.7378815163160708
+  },
+  "348": {
+    "scenario_label": "snap_oversteer",
+    "severity": 0.8773487300531378
+  },
+  "349": {
+    "scenario_label": "steering_oscillation",
+    "severity": 0.381343948330603
+  },
+  "350": {
+    "scenario_label": "heavy_brake_low_grip",
+    "severity": 0.5525037205888065
+  },
+  "351": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.5703102692141673
+  },
+  "352": {
+    "scenario_label": "tyre_blowout_response",
+    "severity": 0.4514386186064895
+  },
+  "353": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.3869554096301901
+  },
+  "354": {
+    "scenario_label": "snap_oversteer",
+    "severity": 0.6768638605240268
+  },
+  "355": {
+    "scenario_label": "heavy_brake_low_grip",
+    "severity": 0.6011174681778857
+  },
+  "356": {
+    "scenario_label": "heavy_brake_low_grip",
+    "severity": 0.8928698059842686
+  },
+  "357": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.3661788553524755
+  },
+  "358": {
+    "scenario_label": "steering_oscillation",
+    "severity": 0.6551691002121872
+  },
+  "359": {
+    "scenario_label": "snap_oversteer",
+    "severity": 0.3940667134023919
+  },
+  "360": {
+    "scenario_label": "steering_oscillation",
+    "severity": 0.6357817178465055
+  },
+  "361": {
+    "scenario_label": "tyre_blowout_response",
+    "severity": 0.4332593715593116
+  },
+  "362": {
+    "scenario_label": "snap_oversteer",
+    "severity": 0.3588753207279673
+  },
+  "363": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.6148355030986052
+  },
+  "364": {
+    "scenario_label": "tyre_blowout_response",
+    "severity": 0.678974596458213
+  },
+  "365": {
+    "scenario_label": "steering_oscillation",
+    "severity": 0.9484474476942064
+  },
+  "366": {
+    "scenario_label": "tyre_blowout_response",
+    "severity": 0.9139689665905216
+  },
+  "367": {
+    "scenario_label": "heavy_brake_low_grip",
+    "severity": 0.5198218203093828
+  },
+  "368": {
+    "scenario_label": "steering_oscillation",
+    "severity": 0.5566378667859849
+  },
+  "369": {
+    "scenario_label": "snap_oversteer",
+    "severity": 0.4198541383837629
+  },
+  "370": {
+    "scenario_label": "steering_oscillation",
+    "severity": 0.4230684045830065
+  },
+  "371": {
+    "scenario_label": "tyre_blowout_response",
+    "severity": 0.7212272320169306
+  },
+  "372": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.3517888680553198
+  },
+  "373": {
+    "scenario_label": "heavy_brake_low_grip",
+    "severity": 0.3861491069781921
+  },
+  "374": {
+    "scenario_label": "steering_oscillation",
+    "severity": 0.7579450835838937
+  },
+  "375": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.770721852905091
+  },
+  "376": {
+    "scenario_label": "snap_oversteer",
+    "severity": 0.5717355590880633
+  },
+  "377": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.4754836016192194
+  },
+  "378": {
+    "scenario_label": "steering_oscillation",
+    "severity": 0.9476588977903008
+  },
+  "379": {
+    "scenario_label": "steering_oscillation",
+    "severity": 0.8118373052238235
+  },
+  "380": {
+    "scenario_label": "steering_oscillation",
+    "severity": 0.7116621116042419
+  },
+  "381": {
+    "scenario_label": "steering_oscillation",
+    "severity": 0.7002859430290074
+  },
+  "382": {
+    "scenario_label": "heavy_brake_low_grip",
+    "severity": 0.6538714150769577
+  },
+  "383": {
+    "scenario_label": "snap_oversteer",
+    "severity": 0.9213284142270411
+  },
+  "384": {
+    "scenario_label": "steering_oscillation",
+    "severity": 0.7286641815041383
+  },
+  "385": {
+    "scenario_label": "snap_oversteer",
+    "severity": 0.3769900225047851
+  },
+  "386": {
+    "scenario_label": "heavy_brake_low_grip",
+    "severity": 0.7862870929283365
+  },
+  "387": {
+    "scenario_label": "tyre_blowout_response",
+    "severity": 0.6244962852018966
+  },
+  "388": {
+    "scenario_label": "steering_oscillation",
+    "severity": 0.3642452676039197
+  },
+  "389": {
+    "scenario_label": "heavy_brake_low_grip",
+    "severity": 0.7894129113770685
+  },
+  "390": {
+    "scenario_label": "heavy_brake_low_grip",
+    "severity": 0.6592202603090207
+  },
+  "391": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.5285828127353978
+  },
+  "392": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.8654263955623762
+  },
+  "393": {
+    "scenario_label": "tyre_blowout_response",
+    "severity": 0.8663484548814936
+  },
+  "394": {
+    "scenario_label": "snap_oversteer",
+    "severity": 0.6606566921604766
+  },
+  "395": {
+    "scenario_label": "snap_oversteer",
+    "severity": 0.6815101819708829
+  },
+  "396": {
+    "scenario_label": "snap_oversteer",
+    "severity": 0.5145351456013533
+  },
+  "397": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.4101252813723382
+  },
+  "398": {
+    "scenario_label": "steering_oscillation",
+    "severity": 0.606338878496854
+  },
+  "399": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.7756667230141612
+  },
+  "400": {
+    "scenario_label": "heavy_brake_low_grip",
+    "severity": 0.6549294179393722
+  },
+  "401": {
+    "scenario_label": "steering_oscillation",
+    "severity": 0.9195651297485072
+  },
+  "402": {
+    "scenario_label": "snap_oversteer",
+    "severity": 0.508382586928801
+  },
+  "403": {
+    "scenario_label": "steering_oscillation",
+    "severity": 0.3700277908317013
+  },
+  "404": {
+    "scenario_label": "steering_oscillation",
+    "severity": 0.8101545146025264
+  },
+  "405": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.5920274796118409
+  },
+  "406": {
+    "scenario_label": "steering_oscillation",
+    "severity": 0.6220724306671988
+  },
+  "407": {
+    "scenario_label": "snap_oversteer",
+    "severity": 0.8285983589908442
+  },
+  "408": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.4419133147764109
+  },
+  "409": {
+    "scenario_label": "tyre_blowout_response",
+    "severity": 0.5074149249821032
+  },
+  "410": {
+    "scenario_label": "tyre_blowout_response",
+    "severity": 0.7213080881001874
+  },
+  "411": {
+    "scenario_label": "snap_oversteer",
+    "severity": 0.5368299491702211
+  },
+  "412": {
+    "scenario_label": "heavy_brake_low_grip",
+    "severity": 0.5622932512611155
+  },
+  "413": {
+    "scenario_label": "steering_oscillation",
+    "severity": 0.7933778867774761
+  },
+  "414": {
+    "scenario_label": "tyre_blowout_response",
+    "severity": 0.4628484008578437
+  },
+  "415": {
+    "scenario_label": "steering_oscillation",
+    "severity": 0.6233509993628625
+  },
+  "416": {
+    "scenario_label": "steering_oscillation",
+    "severity": 0.6909757532573944
+  },
+  "417": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.5936372742662899
+  },
+  "418": {
+    "scenario_label": "heavy_brake_low_grip",
+    "severity": 0.4636991180468096
+  },
+  "419": {
+    "scenario_label": "heavy_brake_low_grip",
+    "severity": 0.66184883526023
+  },
+  "420": {
+    "scenario_label": "steering_oscillation",
+    "severity": 0.747738076988076
+  },
+  "421": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.6783739198590555
+  },
+  "422": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.4821649347167768
+  },
+  "423": {
+    "scenario_label": "tyre_blowout_response",
+    "severity": 0.6549386366991061
+  },
+  "424": {
+    "scenario_label": "heavy_brake_low_grip",
+    "severity": 0.7509237647283356
+  },
+  "425": {
+    "scenario_label": "snap_oversteer",
+    "severity": 0.8116926413887529
+  },
+  "426": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.7715793209668429
+  },
+  "427": {
+    "scenario_label": "steering_oscillation",
+    "severity": 0.4940069679370593
+  },
+  "428": {
+    "scenario_label": "steering_oscillation",
+    "severity": 0.513003020454261
+  },
+  "429": {
+    "scenario_label": "snap_oversteer",
+    "severity": 0.4431531527838866
+  },
+  "430": {
+    "scenario_label": "tyre_blowout_response",
+    "severity": 0.8782220065465395
+  },
+  "431": {
+    "scenario_label": "steering_oscillation",
+    "severity": 0.8556237507443198
+  },
+  "432": {
+    "scenario_label": "snap_oversteer",
+    "severity": 0.7406139681222883
+  },
+  "433": {
+    "scenario_label": "heavy_brake_low_grip",
+    "severity": 0.6440865818358308
+  },
+  "434": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.4101002669676954
+  },
+  "435": {
+    "scenario_label": "tyre_blowout_response",
+    "severity": 0.9039318255176172
+  },
+  "436": {
+    "scenario_label": "heavy_brake_low_grip",
+    "severity": 0.7798413941270677
+  },
+  "437": {
+    "scenario_label": "heavy_brake_low_grip",
+    "severity": 0.4609793015242341
+  },
+  "438": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.8361369974648456
+  },
+  "439": {
+    "scenario_label": "heavy_brake_low_grip",
+    "severity": 0.5471472914134168
+  },
+  "440": {
+    "scenario_label": "snap_oversteer",
+    "severity": 0.5998243683772949
+  },
+  "441": {
+    "scenario_label": "snap_oversteer",
+    "severity": 0.8203317087544197
+  },
+  "442": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.6968955030787813
+  },
+  "443": {
+    "scenario_label": "steering_oscillation",
+    "severity": 0.664629726542757
+  },
+  "444": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.8323355209897038
+  },
+  "445": {
+    "scenario_label": "heavy_brake_low_grip",
+    "severity": 0.6842064627005116
+  },
+  "446": {
+    "scenario_label": "steering_oscillation",
+    "severity": 0.9203985387951176
+  },
+  "447": {
+    "scenario_label": "snap_oversteer",
+    "severity": 0.6571514943362537
+  },
+  "448": {
+    "scenario_label": "snap_oversteer",
+    "severity": 0.4436568722659412
+  },
+  "449": {
+    "scenario_label": "steering_oscillation",
+    "severity": 0.4565079170804531
+  },
+  "450": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.6666811831572278
+  },
+  "451": {
+    "scenario_label": "heavy_brake_low_grip",
+    "severity": 0.5245668670595167
+  },
+  "452": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.4713100890497828
+  },
+  "453": {
+    "scenario_label": "tyre_blowout_response",
+    "severity": 0.6805308915716539
+  },
+  "454": {
+    "scenario_label": "tyre_blowout_response",
+    "severity": 0.8079999446209494
+  },
+  "455": {
+    "scenario_label": "steering_oscillation",
+    "severity": 0.8804452470987731
+  },
+  "456": {
+    "scenario_label": "snap_oversteer",
+    "severity": 0.7905810492293108
+  },
+  "457": {
+    "scenario_label": "steering_oscillation",
+    "severity": 0.6441706414490322
+  },
+  "458": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.3900198748512867
+  },
+  "459": {
+    "scenario_label": "snap_oversteer",
+    "severity": 0.3685074897784759
+  },
+  "460": {
+    "scenario_label": "steering_oscillation",
+    "severity": 0.4010334042043983
+  },
+  "461": {
+    "scenario_label": "heavy_brake_low_grip",
+    "severity": 0.6550346002480462
+  },
+  "462": {
+    "scenario_label": "snap_oversteer",
+    "severity": 0.9455713602871456
+  },
+  "463": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.7854718100882085
+  },
+  "464": {
+    "scenario_label": "tyre_blowout_response",
+    "severity": 0.851209981022451
+  },
+  "465": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.6685873783914269
+  },
+  "466": {
+    "scenario_label": "steering_oscillation",
+    "severity": 0.3534763989051614
+  },
+  "467": {
+    "scenario_label": "snap_oversteer",
+    "severity": 0.4048630807918679
+  },
+  "468": {
+    "scenario_label": "steering_oscillation",
+    "severity": 0.6461522172201138
+  },
+  "469": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.6447048352743856
+  },
+  "470": {
+    "scenario_label": "steering_oscillation",
+    "severity": 0.3812993888306174
+  },
+  "471": {
+    "scenario_label": "steering_oscillation",
+    "severity": 0.5629990969372122
+  },
+  "472": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.7307838635716963
+  },
+  "473": {
+    "scenario_label": "steering_oscillation",
+    "severity": 0.495586820656253
+  },
+  "474": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.696376893511087
+  },
+  "475": {
+    "scenario_label": "steering_oscillation",
+    "severity": 0.3953275368804148
+  },
+  "476": {
+    "scenario_label": "tyre_blowout_response",
+    "severity": 0.8447279414064695
+  },
+  "477": {
+    "scenario_label": "steering_oscillation",
+    "severity": 0.3802777013159747
+  },
+  "478": {
+    "scenario_label": "heavy_brake_low_grip",
+    "severity": 0.5310743283714396
+  },
+  "479": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.3969117652878554
+  },
+  "480": {
+    "scenario_label": "steering_oscillation",
+    "severity": 0.9034503103008402
+  },
+  "481": {
+    "scenario_label": "tyre_blowout_response",
+    "severity": 0.5551340858802845
+  },
+  "482": {
+    "scenario_label": "heavy_brake_low_grip",
+    "severity": 0.4729660096523923
+  },
+  "483": {
+    "scenario_label": "heavy_brake_low_grip",
+    "severity": 0.8975589407579712
+  },
+  "484": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.9315715180706012
+  },
+  "485": {
+    "scenario_label": "tyre_blowout_response",
+    "severity": 0.9089376074041126
+  },
+  "486": {
+    "scenario_label": "steering_oscillation",
+    "severity": 0.807597113470661
+  },
+  "487": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.7630925331730811
+  },
+  "488": {
+    "scenario_label": "tyre_blowout_response",
+    "severity": 0.7844359482253096
+  },
+  "489": {
+    "scenario_label": "heavy_brake_low_grip",
+    "severity": 0.8254844457951483
+  },
+  "490": {
+    "scenario_label": "snap_oversteer",
+    "severity": 0.7570211885243475
+  },
+  "491": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.6205265475217703
+  },
+  "492": {
+    "scenario_label": "heavy_brake_low_grip",
+    "severity": 0.6453107264672275
+  },
+  "493": {
+    "scenario_label": "snap_oversteer",
+    "severity": 0.6591631135833858
+  },
+  "494": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.6070132588633685
+  },
+  "495": {
+    "scenario_label": "snap_oversteer",
+    "severity": 0.614269103590734
+  },
+  "496": {
+    "scenario_label": "snap_oversteer",
+    "severity": 0.6345317322647965
+  },
+  "497": {
+    "scenario_label": "heavy_brake_low_grip",
+    "severity": 0.5155855552684244
+  },
+  "498": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.5593635130721901
+  },
+  "499": {
+    "scenario_label": "heavy_brake_low_grip",
+    "severity": 0.4099978782028827
+  },
+  "500": {
+    "scenario_label": "steering_oscillation",
+    "severity": 0.8609211095425232
+  },
+  "501": {
+    "scenario_label": "heavy_brake_low_grip",
+    "severity": 0.5504176824257194
+  },
+  "502": {
+    "scenario_label": "tyre_blowout_response",
+    "severity": 0.3799093208815117
+  },
+  "503": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.685179671536974
+  },
+  "504": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.5150318195544065
+  },
+  "505": {
+    "scenario_label": "tyre_blowout_response",
+    "severity": 0.6372793207081391
+  },
+  "506": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.910507888171866
+  },
+  "507": {
+    "scenario_label": "snap_oversteer",
+    "severity": 0.4477348541388704
+  },
+  "508": {
+    "scenario_label": "snap_oversteer",
+    "severity": 0.8433924511467386
+  },
+  "509": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.75786441965821
+  },
+  "510": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.544883159518402
+  },
+  "511": {
+    "scenario_label": "tyre_blowout_response",
+    "severity": 0.5303034749007938
+  },
+  "512": {
+    "scenario_label": "snap_oversteer",
+    "severity": 0.4784834720245612
+  },
+  "513": {
+    "scenario_label": "steering_oscillation",
+    "severity": 0.6553055509080277
+  },
+  "514": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.8463767989373061
+  },
+  "515": {
+    "scenario_label": "heavy_brake_low_grip",
+    "severity": 0.9330960089826812
+  },
+  "516": {
+    "scenario_label": "tyre_blowout_response",
+    "severity": 0.5329192827645008
+  },
+  "517": {
+    "scenario_label": "tyre_blowout_response",
+    "severity": 0.794856693777148
+  },
+  "518": {
+    "scenario_label": "heavy_brake_low_grip",
+    "severity": 0.8951624621039304
+  },
+  "519": {
+    "scenario_label": "tyre_blowout_response",
+    "severity": 0.7325872289463269
+  },
+  "520": {
+    "scenario_label": "heavy_brake_low_grip",
+    "severity": 0.7079385264295043
+  },
+  "521": {
+    "scenario_label": "snap_oversteer",
+    "severity": 0.8628862756445547
+  },
+  "522": {
+    "scenario_label": "steering_oscillation",
+    "severity": 0.7189957844418955
+  },
+  "523": {
+    "scenario_label": "steering_oscillation",
+    "severity": 0.8730047299925359
+  },
+  "524": {
+    "scenario_label": "tyre_blowout_response",
+    "severity": 0.5624774343754761
+  },
+  "525": {
+    "scenario_label": "tyre_blowout_response",
+    "severity": 0.562431713512216
+  },
+  "526": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.6906672205793831
+  },
+  "527": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.624240925085396
+  },
+  "528": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.8456838880667495
+  },
+  "529": {
+    "scenario_label": "snap_oversteer",
+    "severity": 0.6687198037286834
+  },
+  "530": {
+    "scenario_label": "steering_oscillation",
+    "severity": 0.3904615147456728
+  },
+  "531": {
+    "scenario_label": "heavy_brake_low_grip",
+    "severity": 0.6665317204973502
+  },
+  "532": {
+    "scenario_label": "steering_oscillation",
+    "severity": 0.4007939934015014
+  },
+  "533": {
+    "scenario_label": "heavy_brake_low_grip",
+    "severity": 0.5948073130984094
+  },
+  "534": {
+    "scenario_label": "tyre_blowout_response",
+    "severity": 0.8201271155428158
+  },
+  "535": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.4115807098253065
+  },
+  "536": {
+    "scenario_label": "snap_oversteer",
+    "severity": 0.7076127241897179
+  },
+  "537": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.4204662219686155
+  },
+  "538": {
+    "scenario_label": "heavy_brake_low_grip",
+    "severity": 0.9130345846169629
+  },
+  "539": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.9404142397671074
+  },
+  "540": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.7519748830591322
+  },
+  "541": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.8624972117189618
+  },
+  "542": {
+    "scenario_label": "heavy_brake_low_grip",
+    "severity": 0.8428419399065961
+  },
+  "543": {
+    "scenario_label": "tyre_blowout_response",
+    "severity": 0.3630329167296238
+  },
+  "544": {
+    "scenario_label": "tyre_blowout_response",
+    "severity": 0.9315000031298748
+  },
+  "545": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.8864220709196817
+  },
+  "546": {
+    "scenario_label": "snap_oversteer",
+    "severity": 0.8724952513476881
+  },
+  "547": {
+    "scenario_label": "heavy_brake_low_grip",
+    "severity": 0.5370036776955616
+  },
+  "548": {
+    "scenario_label": "tyre_blowout_response",
+    "severity": 0.8546474344358845
+  },
+  "549": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.6606885954139154
+  },
+  "550": {
+    "scenario_label": "heavy_brake_low_grip",
+    "severity": 0.9171418921283948
+  },
+  "551": {
+    "scenario_label": "steering_oscillation",
+    "severity": 0.8355789599331326
+  },
+  "552": {
+    "scenario_label": "steering_oscillation",
+    "severity": 0.5512506041792585
+  },
+  "553": {
+    "scenario_label": "steering_oscillation",
+    "severity": 0.4652707622996534
+  },
+  "554": {
+    "scenario_label": "steering_oscillation",
+    "severity": 0.4239105482598258
+  },
+  "555": {
+    "scenario_label": "snap_oversteer",
+    "severity": 0.5517173304756224
+  },
+  "556": {
+    "scenario_label": "snap_oversteer",
+    "severity": 0.7473134316431123
+  },
+  "557": {
+    "scenario_label": "snap_oversteer",
+    "severity": 0.5996054261947713
+  },
+  "558": {
+    "scenario_label": "tyre_blowout_response",
+    "severity": 0.6168103117491871
+  },
+  "559": {
+    "scenario_label": "snap_oversteer",
+    "severity": 0.4885496623831108
+  },
+  "560": {
+    "scenario_label": "tyre_blowout_response",
+    "severity": 0.4370903973308204
+  },
+  "561": {
+    "scenario_label": "heavy_brake_low_grip",
+    "severity": 0.9218606663986592
+  },
+  "562": {
+    "scenario_label": "heavy_brake_low_grip",
+    "severity": 0.4166868936502029
+  },
+  "563": {
+    "scenario_label": "tyre_blowout_response",
+    "severity": 0.3657599178047109
+  },
+  "564": {
+    "scenario_label": "heavy_brake_low_grip",
+    "severity": 0.8809980180260502
+  },
+  "565": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.6674725165808051
+  },
+  "566": {
+    "scenario_label": "snap_oversteer",
+    "severity": 0.9129084043111958
+  },
+  "567": {
+    "scenario_label": "tyre_blowout_response",
+    "severity": 0.5147207716913706
+  },
+  "568": {
+    "scenario_label": "heavy_brake_low_grip",
+    "severity": 0.9451234917346958
+  },
+  "569": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.7574124810786024
+  },
+  "570": {
+    "scenario_label": "steering_oscillation",
+    "severity": 0.8446047309718274
+  },
+  "571": {
+    "scenario_label": "heavy_brake_low_grip",
+    "severity": 0.9038285822352682
+  },
+  "572": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.4459459357592955
+  },
+  "573": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.920760135341168
+  },
+  "574": {
+    "scenario_label": "steering_oscillation",
+    "severity": 0.6014703031199815
+  },
+  "575": {
+    "scenario_label": "heavy_brake_low_grip",
+    "severity": 0.855447827189459
+  },
+  "576": {
+    "scenario_label": "snap_oversteer",
+    "severity": 0.5809525237398507
+  },
+  "577": {
+    "scenario_label": "tyre_blowout_response",
+    "severity": 0.4161506760511495
+  },
+  "578": {
+    "scenario_label": "heavy_brake_low_grip",
+    "severity": 0.5975297447993466
+  },
+  "579": {
+    "scenario_label": "tyre_blowout_response",
+    "severity": 0.7420727589542836
+  },
+  "580": {
+    "scenario_label": "tyre_blowout_response",
+    "severity": 0.810140222070187
+  },
+  "581": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.7815694179677611
+  },
+  "582": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.6990769120271036
+  },
+  "583": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.3987665592745426
+  },
+  "584": {
+    "scenario_label": "heavy_brake_low_grip",
+    "severity": 0.9316833115975292
+  },
+  "585": {
+    "scenario_label": "snap_oversteer",
+    "severity": 0.593419623493409
+  },
+  "586": {
+    "scenario_label": "heavy_brake_low_grip",
+    "severity": 0.4259878115503338
+  },
+  "587": {
+    "scenario_label": "snap_oversteer",
+    "severity": 0.7271270351187336
+  },
+  "588": {
+    "scenario_label": "steering_oscillation",
+    "severity": 0.9195356623749044
+  },
+  "589": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.4725083527174269
+  },
+  "590": {
+    "scenario_label": "steering_oscillation",
+    "severity": 0.4976191743325686
+  },
+  "591": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.3637071920038651
+  },
+  "592": {
+    "scenario_label": "heavy_brake_low_grip",
+    "severity": 0.6580411367599313
+  },
+  "593": {
+    "scenario_label": "tyre_blowout_response",
+    "severity": 0.6670901037313515
+  },
+  "594": {
+    "scenario_label": "heavy_brake_low_grip",
+    "severity": 0.4803265096514318
+  },
+  "595": {
+    "scenario_label": "steering_oscillation",
+    "severity": 0.7207430519357285
+  },
+  "596": {
+    "scenario_label": "tyre_blowout_response",
+    "severity": 0.8320124234223558
+  },
+  "597": {
+    "scenario_label": "tyre_blowout_response",
+    "severity": 0.93630283273196
+  },
+  "598": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.5273929408234495
+  },
+  "599": {
+    "scenario_label": "heavy_brake_low_grip",
+    "severity": 0.626421150866667
+  },
+  "600": {
+    "scenario_label": "tyre_blowout_response",
+    "severity": 0.6390206210270805
+  },
+  "601": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.5728065745240295
+  },
+  "602": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.7498568477586529
+  },
+  "603": {
+    "scenario_label": "tyre_blowout_response",
+    "severity": 0.5101022345547371
+  },
+  "604": {
+    "scenario_label": "steering_oscillation",
+    "severity": 0.9424138645764456
+  },
+  "605": {
+    "scenario_label": "tyre_blowout_response",
+    "severity": 0.8644933643908167
+  },
+  "606": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.5604326357305014
+  },
+  "607": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.3763652688880494
+  },
+  "608": {
+    "scenario_label": "tyre_blowout_response",
+    "severity": 0.5255796524391754
+  },
+  "609": {
+    "scenario_label": "heavy_brake_low_grip",
+    "severity": 0.3941928010101544
+  },
+  "610": {
+    "scenario_label": "steering_oscillation",
+    "severity": 0.8532467209433512
+  },
+  "611": {
+    "scenario_label": "heavy_brake_low_grip",
+    "severity": 0.7837370677943485
+  },
+  "612": {
+    "scenario_label": "tyre_blowout_response",
+    "severity": 0.4337936310778121
+  },
+  "613": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.717092761471996
+  },
+  "614": {
+    "scenario_label": "snap_oversteer",
+    "severity": 0.3681124622177144
+  },
+  "615": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.4002759376904163
+  },
+  "616": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.8766927456365636
+  },
+  "617": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.9186211646594272
+  },
+  "618": {
+    "scenario_label": "steering_oscillation",
+    "severity": 0.5459967552951827
+  },
+  "619": {
+    "scenario_label": "snap_oversteer",
+    "severity": 0.9166313340511512
+  },
+  "620": {
+    "scenario_label": "steering_oscillation",
+    "severity": 0.4924913752807653
+  },
+  "621": {
+    "scenario_label": "heavy_brake_low_grip",
+    "severity": 0.7696909773828614
+  },
+  "622": {
+    "scenario_label": "heavy_brake_low_grip",
+    "severity": 0.5622776831276888
+  },
+  "623": {
+    "scenario_label": "steering_oscillation",
+    "severity": 0.6659161200959985
+  },
+  "624": {
+    "scenario_label": "heavy_brake_low_grip",
+    "severity": 0.5669741077617069
+  },
+  "625": {
+    "scenario_label": "tyre_blowout_response",
+    "severity": 0.3795665243512445
+  },
+  "626": {
+    "scenario_label": "steering_oscillation",
+    "severity": 0.7304375240864054
+  },
+  "627": {
+    "scenario_label": "tyre_blowout_response",
+    "severity": 0.7171869114405698
+  },
+  "628": {
+    "scenario_label": "heavy_brake_low_grip",
+    "severity": 0.6301698190242813
+  },
+  "629": {
+    "scenario_label": "heavy_brake_low_grip",
+    "severity": 0.3902808793521759
+  },
+  "630": {
+    "scenario_label": "heavy_brake_low_grip",
+    "severity": 0.7764662329105948
+  },
+  "631": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.5890151527931565
+  },
+  "632": {
+    "scenario_label": "snap_oversteer",
+    "severity": 0.5510912073243215
+  },
+  "633": {
+    "scenario_label": "steering_oscillation",
+    "severity": 0.6989551870550288
+  },
+  "634": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.4865058368872033
+  },
+  "635": {
+    "scenario_label": "steering_oscillation",
+    "severity": 0.6431742938659021
+  },
+  "636": {
+    "scenario_label": "tyre_blowout_response",
+    "severity": 0.5313478549246886
+  },
+  "637": {
+    "scenario_label": "steering_oscillation",
+    "severity": 0.5781455775752593
+  },
+  "638": {
+    "scenario_label": "steering_oscillation",
+    "severity": 0.7789699657059355
+  },
+  "639": {
+    "scenario_label": "snap_oversteer",
+    "severity": 0.6068864328702086
+  },
+  "640": {
+    "scenario_label": "tyre_blowout_response",
+    "severity": 0.4522145582725281
+  },
+  "641": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.6446218794816414
+  },
+  "642": {
+    "scenario_label": "snap_oversteer",
+    "severity": 0.9388601907213602
+  },
+  "643": {
+    "scenario_label": "snap_oversteer",
+    "severity": 0.3819352482011428
+  },
+  "644": {
+    "scenario_label": "steering_oscillation",
+    "severity": 0.8653132487931074
+  },
+  "645": {
+    "scenario_label": "steering_oscillation",
+    "severity": 0.4140193066042743
+  },
+  "646": {
+    "scenario_label": "tyre_blowout_response",
+    "severity": 0.8274944722861324
+  },
+  "647": {
+    "scenario_label": "tyre_blowout_response",
+    "severity": 0.7899130385870508
+  },
+  "648": {
+    "scenario_label": "heavy_brake_low_grip",
+    "severity": 0.6568318932328061
+  },
+  "649": {
+    "scenario_label": "snap_oversteer",
+    "severity": 0.3667473424279996
+  },
+  "650": {
+    "scenario_label": "snap_oversteer",
+    "severity": 0.4417253480063782
+  },
+  "651": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.4556101794829878
+  },
+  "652": {
+    "scenario_label": "tyre_blowout_response",
+    "severity": 0.5832055039832604
+  },
+  "653": {
+    "scenario_label": "heavy_brake_low_grip",
+    "severity": 0.7825301473933527
+  },
+  "654": {
+    "scenario_label": "heavy_brake_low_grip",
+    "severity": 0.7307774619291135
+  },
+  "655": {
+    "scenario_label": "tyre_blowout_response",
+    "severity": 0.8779098843894777
+  },
+  "656": {
+    "scenario_label": "heavy_brake_low_grip",
+    "severity": 0.6519965789739894
+  },
+  "657": {
+    "scenario_label": "heavy_brake_low_grip",
+    "severity": 0.3935097554036028
+  },
+  "658": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.788722336337593
+  },
+  "659": {
+    "scenario_label": "tyre_blowout_response",
+    "severity": 0.7908900189851885
+  },
+  "660": {
+    "scenario_label": "snap_oversteer",
+    "severity": 0.4355182337132595
+  },
+  "661": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.4109245183727364
+  },
+  "662": {
+    "scenario_label": "heavy_brake_low_grip",
+    "severity": 0.4614327274884782
+  },
+  "663": {
+    "scenario_label": "heavy_brake_low_grip",
+    "severity": 0.5377705361013017
+  },
+  "664": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.5539685844692113
+  },
+  "665": {
+    "scenario_label": "heavy_brake_low_grip",
+    "severity": 0.7043527160764674
+  },
+  "666": {
+    "scenario_label": "tyre_blowout_response",
+    "severity": 0.3536670290193378
+  },
+  "667": {
+    "scenario_label": "heavy_brake_low_grip",
+    "severity": 0.8181739062923503
+  },
+  "668": {
+    "scenario_label": "tyre_blowout_response",
+    "severity": 0.4469597721877959
+  },
+  "669": {
+    "scenario_label": "snap_oversteer",
+    "severity": 0.790151870218573
+  },
+  "670": {
+    "scenario_label": "heavy_brake_low_grip",
+    "severity": 0.6486878563114222
+  },
+  "671": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.7233647712641735
+  },
+  "672": {
+    "scenario_label": "heavy_brake_low_grip",
+    "severity": 0.4907242552916692
+  },
+  "673": {
+    "scenario_label": "snap_oversteer",
+    "severity": 0.4631745044411858
+  },
+  "674": {
+    "scenario_label": "snap_oversteer",
+    "severity": 0.7045738881308956
+  },
+  "675": {
+    "scenario_label": "steering_oscillation",
+    "severity": 0.5330148888824601
+  },
+  "676": {
+    "scenario_label": "heavy_brake_low_grip",
+    "severity": 0.8690250157976568
+  },
+  "677": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.4954699267312102
+  },
+  "678": {
+    "scenario_label": "heavy_brake_low_grip",
+    "severity": 0.5444655422640998
+  },
+  "679": {
+    "scenario_label": "steering_oscillation",
+    "severity": 0.7103449534157346
+  },
+  "680": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.7745717736961886
+  },
+  "681": {
+    "scenario_label": "steering_oscillation",
+    "severity": 0.354667121655244
+  },
+  "682": {
+    "scenario_label": "snap_oversteer",
+    "severity": 0.5459643540071436
+  },
+  "683": {
+    "scenario_label": "snap_oversteer",
+    "severity": 0.5454955138535766
+  },
+  "684": {
+    "scenario_label": "heavy_brake_low_grip",
+    "severity": 0.7414829680612895
+  },
+  "685": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.6490127561841115
+  },
+  "686": {
+    "scenario_label": "steering_oscillation",
+    "severity": 0.8866768635760757
+  },
+  "687": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.8064875791259625
+  },
+  "688": {
+    "scenario_label": "heavy_brake_low_grip",
+    "severity": 0.8535737673063353
+  },
+  "689": {
+    "scenario_label": "steering_oscillation",
+    "severity": 0.4787401518155573
+  },
+  "690": {
+    "scenario_label": "tyre_blowout_response",
+    "severity": 0.6283053926751405
+  },
+  "691": {
+    "scenario_label": "tyre_blowout_response",
+    "severity": 0.8188550742799814
+  },
+  "692": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.7385507386227228
+  },
+  "693": {
+    "scenario_label": "tyre_blowout_response",
+    "severity": 0.4069078522287077
+  },
+  "694": {
+    "scenario_label": "heavy_brake_low_grip",
+    "severity": 0.7833505201090003
+  },
+  "695": {
+    "scenario_label": "heavy_brake_low_grip",
+    "severity": 0.9297405611218706
+  },
+  "696": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.7647498492256193
+  },
+  "697": {
+    "scenario_label": "snap_oversteer",
+    "severity": 0.7928745449284946
+  },
+  "698": {
+    "scenario_label": "tyre_blowout_response",
+    "severity": 0.4765156859543615
+  },
+  "699": {
+    "scenario_label": "steering_oscillation",
+    "severity": 0.8144211932898504
+  },
+  "700": {
+    "scenario_label": "steering_oscillation",
+    "severity": 0.9480463591708156
+  },
+  "701": {
+    "scenario_label": "heavy_brake_low_grip",
+    "severity": 0.6061893379898775
+  },
+  "702": {
+    "scenario_label": "snap_oversteer",
+    "severity": 0.648667017400697
+  },
+  "703": {
+    "scenario_label": "snap_oversteer",
+    "severity": 0.6604561227986562
+  },
+  "704": {
+    "scenario_label": "heavy_brake_low_grip",
+    "severity": 0.3685139312661103
+  },
+  "705": {
+    "scenario_label": "snap_oversteer",
+    "severity": 0.544991565533038
+  },
+  "706": {
+    "scenario_label": "steering_oscillation",
+    "severity": 0.7328312675141666
+  },
+  "707": {
+    "scenario_label": "heavy_brake_low_grip",
+    "severity": 0.5814942319238499
+  },
+  "708": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.4837930950010722
+  },
+  "709": {
+    "scenario_label": "heavy_brake_low_grip",
+    "severity": 0.4165518072988448
+  },
+  "710": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.3728032259443968
+  },
+  "711": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.8868048781281769
+  },
+  "712": {
+    "scenario_label": "tyre_blowout_response",
+    "severity": 0.5288121566380574
+  },
+  "713": {
+    "scenario_label": "steering_oscillation",
+    "severity": 0.9434110937427572
+  },
+  "714": {
+    "scenario_label": "tyre_blowout_response",
+    "severity": 0.4343867939091396
+  },
+  "715": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.4966318689207444
+  },
+  "716": {
+    "scenario_label": "heavy_brake_low_grip",
+    "severity": 0.7247021659719656
+  },
+  "717": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.7802288881178511
+  },
+  "718": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.5805280343288859
+  },
+  "719": {
+    "scenario_label": "steering_oscillation",
+    "severity": 0.7786164290497968
+  },
+  "720": {
+    "scenario_label": "steering_oscillation",
+    "severity": 0.4727712364663504
+  },
+  "721": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.3840343743401837
+  },
+  "722": {
+    "scenario_label": "heavy_brake_low_grip",
+    "severity": 0.8453101169782593
+  },
+  "723": {
+    "scenario_label": "heavy_brake_low_grip",
+    "severity": 0.6494950545660401
+  },
+  "724": {
+    "scenario_label": "steering_oscillation",
+    "severity": 0.6091342601565078
+  },
+  "725": {
+    "scenario_label": "snap_oversteer",
+    "severity": 0.4757146435426299
+  },
+  "726": {
+    "scenario_label": "snap_oversteer",
+    "severity": 0.6751812243596838
+  },
+  "727": {
+    "scenario_label": "tyre_blowout_response",
+    "severity": 0.640127638919703
+  },
+  "728": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.6550566503748769
+  },
+  "729": {
+    "scenario_label": "steering_oscillation",
+    "severity": 0.9241793085638108
+  },
+  "730": {
+    "scenario_label": "heavy_brake_low_grip",
+    "severity": 0.3568800897877158
+  },
+  "731": {
+    "scenario_label": "heavy_brake_low_grip",
+    "severity": 0.3958298844863023
+  },
+  "732": {
+    "scenario_label": "tyre_blowout_response",
+    "severity": 0.8457661995599081
+  },
+  "733": {
+    "scenario_label": "steering_oscillation",
+    "severity": 0.8610119414818349
+  },
+  "734": {
+    "scenario_label": "steering_oscillation",
+    "severity": 0.8565817238697647
+  },
+  "735": {
+    "scenario_label": "heavy_brake_low_grip",
+    "severity": 0.6212316615546842
+  },
+  "736": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.4436193632987491
+  },
+  "737": {
+    "scenario_label": "tyre_blowout_response",
+    "severity": 0.5389765604131052
+  },
+  "738": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.4327973631636009
+  },
+  "739": {
+    "scenario_label": "heavy_brake_low_grip",
+    "severity": 0.9387772467235572
+  },
+  "740": {
+    "scenario_label": "heavy_brake_low_grip",
+    "severity": 0.4102606207928698
+  },
+  "741": {
+    "scenario_label": "tyre_blowout_response",
+    "severity": 0.747690597293983
+  },
+  "742": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.6294085978144237
+  },
+  "743": {
+    "scenario_label": "steering_oscillation",
+    "severity": 0.498162413488241
+  },
+  "744": {
+    "scenario_label": "tyre_blowout_response",
+    "severity": 0.8723050592093898
+  },
+  "745": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.945600087375888
+  },
+  "746": {
+    "scenario_label": "snap_oversteer",
+    "severity": 0.5290182886171152
+  },
+  "747": {
+    "scenario_label": "tyre_blowout_response",
+    "severity": 0.8453008483659143
+  },
+  "748": {
+    "scenario_label": "steering_oscillation",
+    "severity": 0.5131940598407987
+  },
+  "749": {
+    "scenario_label": "steering_oscillation",
+    "severity": 0.8342613262392703
+  },
+  "750": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.6508470166492233
+  },
+  "751": {
+    "scenario_label": "tyre_blowout_response",
+    "severity": 0.448359527763305
+  },
+  "752": {
+    "scenario_label": "tyre_blowout_response",
+    "severity": 0.7665388764856966
+  },
+  "753": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.8636671230321623
+  },
+  "754": {
+    "scenario_label": "steering_oscillation",
+    "severity": 0.7426978437238084
+  },
+  "755": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.5155979121811054
+  },
+  "756": {
+    "scenario_label": "snap_oversteer",
+    "severity": 0.7031328282205509
+  },
+  "757": {
+    "scenario_label": "snap_oversteer",
+    "severity": 0.5466729583085996
+  },
+  "758": {
+    "scenario_label": "steering_oscillation",
+    "severity": 0.7128945956569719
+  },
+  "759": {
+    "scenario_label": "tyre_blowout_response",
+    "severity": 0.6048466886154611
+  },
+  "760": {
+    "scenario_label": "steering_oscillation",
+    "severity": 0.8967634281799169
+  },
+  "761": {
+    "scenario_label": "tyre_blowout_response",
+    "severity": 0.5246876547370163
+  },
+  "762": {
+    "scenario_label": "snap_oversteer",
+    "severity": 0.4507780908772922
+  },
+  "763": {
+    "scenario_label": "heavy_brake_low_grip",
+    "severity": 0.4653493422109278
+  },
+  "764": {
+    "scenario_label": "snap_oversteer",
+    "severity": 0.5738914729580589
+  },
+  "765": {
+    "scenario_label": "tyre_blowout_response",
+    "severity": 0.6897394001970103
+  },
+  "766": {
+    "scenario_label": "steering_oscillation",
+    "severity": 0.8437586548229044
+  },
+  "767": {
+    "scenario_label": "snap_oversteer",
+    "severity": 0.4535952266593869
+  },
+  "768": {
+    "scenario_label": "steering_oscillation",
+    "severity": 0.5782391022303299
+  },
+  "769": {
+    "scenario_label": "tyre_blowout_response",
+    "severity": 0.8623363512969264
+  },
+  "770": {
+    "scenario_label": "heavy_brake_low_grip",
+    "severity": 0.6459194629985465
+  },
+  "771": {
+    "scenario_label": "heavy_brake_low_grip",
+    "severity": 0.7856318219770428
+  },
+  "772": {
+    "scenario_label": "steering_oscillation",
+    "severity": 0.4777158377218066
+  },
+  "773": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.8800891176291986
+  },
+  "774": {
+    "scenario_label": "steering_oscillation",
+    "severity": 0.703430603123046
+  },
+  "775": {
+    "scenario_label": "steering_oscillation",
+    "severity": 0.6595253953084588
+  },
+  "776": {
+    "scenario_label": "heavy_brake_low_grip",
+    "severity": 0.6825340737033492
+  },
+  "777": {
+    "scenario_label": "tyre_blowout_response",
+    "severity": 0.5381742299979644
+  },
+  "778": {
+    "scenario_label": "steering_oscillation",
+    "severity": 0.7671702448230118
+  },
+  "779": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.5999657706342101
+  },
+  "780": {
+    "scenario_label": "heavy_brake_low_grip",
+    "severity": 0.8505133392644781
+  },
+  "781": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.756139926662716
+  },
+  "782": {
+    "scenario_label": "steering_oscillation",
+    "severity": 0.5024112125885691
+  },
+  "783": {
+    "scenario_label": "steering_oscillation",
+    "severity": 0.7868049099754287
+  },
+  "784": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.4031207747329746
+  },
+  "785": {
+    "scenario_label": "tyre_blowout_response",
+    "severity": 0.6031535688535485
+  },
+  "786": {
+    "scenario_label": "tyre_blowout_response",
+    "severity": 0.6702974445439626
+  },
+  "787": {
+    "scenario_label": "steering_oscillation",
+    "severity": 0.5180918738887392
+  },
+  "788": {
+    "scenario_label": "heavy_brake_low_grip",
+    "severity": 0.5583621152311729
+  },
+  "789": {
+    "scenario_label": "heavy_brake_low_grip",
+    "severity": 0.8618572458299051
+  },
+  "790": {
+    "scenario_label": "tyre_blowout_response",
+    "severity": 0.8389738887145329
+  },
+  "791": {
+    "scenario_label": "tyre_blowout_response",
+    "severity": 0.6752723119700164
+  },
+  "792": {
+    "scenario_label": "snap_oversteer",
+    "severity": 0.5764086616127516
+  },
+  "793": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.4330422364131548
+  },
+  "794": {
+    "scenario_label": "steering_oscillation",
+    "severity": 0.5111483285592993
+  },
+  "795": {
+    "scenario_label": "traction_loss_highspeed",
+    "severity": 0.9384011725741416
+  },
+  "796": {
+    "scenario_label": "snap_oversteer",
+    "severity": 0.7156996973159171
+  },
+  "797": {
+    "scenario_label": "snap_oversteer",
+    "severity": 0.3968837654199616
+  },
+  "798": {
+    "scenario_label": "snap_oversteer",
+    "severity": 0.8101512855469679
+  },
+  "799": {
+    "scenario_label": "tyre_blowout_response",
+    "severity": 0.5541532088842519
+  }
+}

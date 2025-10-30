@@ -43,6 +43,18 @@
       font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       min-height: 100vh;
       overflow-x: hidden;
+      position: relative;
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      inset: -20% -10% auto -10%;
+      height: 70vh;
+      background: radial-gradient(circle at 20% 30%, rgba(255, 94, 0, 0.2), transparent 65%),
+                  radial-gradient(circle at 80% 20%, rgba(236, 87, 117, 0.15), transparent 60%);
+      filter: blur(120px);
+      pointer-events: none;
+      z-index: -1;
     }
 
     a {
@@ -52,18 +64,19 @@
     /* ============ NAVBAR ============ */
     nav {
       position: fixed;
-      top: 1.2rem;
+      top: 1.1rem;
       left: 50%;
       transform: translateX(-50%);
       display: flex;
       gap: 1.4rem;
       z-index: 1000;
-      background: rgba(0, 0, 0, 0.4);
-      backdrop-filter: blur(14px);
-      padding: 0.6rem 1.5rem;
+      background: rgba(0, 0, 0, 0.42);
+      backdrop-filter: blur(18px);
+      padding: 0.65rem 1.8rem;
       border-radius: 999px;
-      border: 1px solid rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.08);
       align-items: center;
+      box-shadow: 0 18px 42px rgba(0,0,0,0.35);
     }
     .logo {
       font-family: "Space Grotesk", sans-serif;
@@ -95,8 +108,8 @@
       color: #fff;
     }
     .nav-cta {
-      background: linear-gradient(140deg, rgba(255, 30, 0, 1), rgba(200, 5, 5, 1));
-      padding: 0.4rem 0.95rem;
+      background: linear-gradient(120deg, rgba(255, 65, 0, 1), rgba(180, 15, 5, 1));
+      padding: 0.45rem 1.1rem;
       border-radius: 999px;
       border: none;
       color: white;
@@ -110,14 +123,56 @@
       transform: translateY(-2px);
     }
 
+    .info-ticker {
+      position: fixed;
+      top: 4.6rem;
+      left: 50%;
+      transform: translateX(-50%);
+      width: min(720px, 90vw);
+      background: rgba(0,0,0,0.35);
+      border: 1px solid rgba(255,255,255,0.05);
+      border-radius: 999px;
+      padding: 0.35rem 0;
+      overflow: hidden;
+      z-index: 900;
+      backdrop-filter: blur(16px);
+    }
+    .info-track {
+      display: flex;
+      gap: 2.2rem;
+      animation: ticker 22s linear infinite;
+      font-size: 0.62rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.68);
+      padding-inline: 1.5rem;
+      white-space: nowrap;
+    }
+    @keyframes ticker {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    .scroll-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 4px;
+      width: 0;
+      background: linear-gradient(90deg, rgba(255,94,0,1), rgba(255,195,0,1));
+      z-index: 1200;
+      box-shadow: 0 0 18px rgba(255,94,0,0.65);
+      transition: width 0.2s ease;
+    }
+
     /* ============ HERO ============ */
     .hero {
-      height: 100vh;
+      min-height: 100vh;
       display: grid;
       grid-template-columns: 1.05fr 0.8fr;
       gap: 1rem;
       align-items: center;
-      padding: 7rem min(5vw, 4rem) 3rem;
+      padding: 8.8rem min(5vw, 4rem) 3.8rem;
       position: relative;
       overflow: hidden;
     }
@@ -335,7 +390,12 @@
 
     /* ============ SECTIONS ============ */
     section {
-      padding: 3rem min(5vw, 4rem);
+      padding: 3.4rem min(5vw, 4rem);
+    }
+    section > * {
+      max-width: min(1100px, 92vw);
+      margin-left: auto;
+      margin-right: auto;
     }
 
     .section-title {
@@ -356,6 +416,11 @@
       grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
       gap: 1.1rem;
     }
+    .pipeline {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 1.1rem;
+    }
     .feature-card {
       background: rgba(0, 0, 0, 0.35);
       border: 1px solid rgba(255, 255, 255, 0.02);
@@ -363,6 +428,19 @@
       padding: 1.1rem 1.25rem;
       backdrop-filter: blur(12px);
       box-shadow: 0 28px 70px rgba(0, 0, 0, 0.15);
+      position: relative;
+      overflow: hidden;
+    }
+    .feature-card::before {
+      content: "";
+      position: absolute;
+      width: 22px;
+      height: 22px;
+      top: 1.1rem;
+      right: 1.1rem;
+      background: radial-gradient(circle, rgba(255,94,0,0.9) 0%, rgba(255,94,0,0) 75%);
+      opacity: 0.7;
+      filter: blur(0.5px);
     }
     .feature-card h3 {
       font-size: 1rem;
@@ -372,6 +450,115 @@
       font-size: 0.75rem;
       color: var(--muted);
       line-height: 1.4;
+    }
+
+    .capability-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 1.15rem;
+    }
+    .cap-card {
+      background: rgba(0, 0, 0, 0.38);
+      border: 1px solid rgba(255,255,255,0.05);
+      border-radius: 1.1rem;
+      padding: 1rem 1.15rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+      box-shadow: 0 24px 60px rgba(0,0,0,0.35);
+      position: relative;
+      overflow: hidden;
+    }
+    .cap-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(150deg, rgba(255,255,255,0.05), transparent 55%);
+      opacity: 0.4;
+      pointer-events: none;
+    }
+    .cap-card > * {
+      position: relative;
+      z-index: 1;
+    }
+    .cap-icon {
+      width: 2.4rem;
+      height: 2.4rem;
+      border-radius: 0.75rem;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(140deg, rgba(255,94,0,0.2), rgba(255,94,0,0));
+      font-size: 1.2rem;
+    }
+    .cap-card h3 {
+      font-size: 0.95rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+    .cap-card p {
+      font-size: 0.7rem;
+      color: rgba(255,255,255,0.72);
+      line-height: 1.55;
+    }
+
+    .ops-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.15rem;
+      margin-top: 2.1rem;
+    }
+    .ops-card {
+      background: rgba(0,0,0,0.38);
+      border: 1px solid rgba(255,255,255,0.05);
+      border-radius: 1.1rem;
+      padding: 1rem 1.1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+      box-shadow: 0 18px 35px rgba(0,0,0,0.45);
+    }
+    .ops-card h3 {
+      font-size: 0.84rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.88);
+    }
+    .ops-list {
+      list-style: none;
+      padding-left: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+      font-size: 0.64rem;
+      color: rgba(255,255,255,0.75);
+    }
+    .ops-list li {
+      display: flex;
+      justify-content: space-between;
+      gap: 0.5rem;
+    }
+    .ops-list li span:last-child {
+      color: rgba(255,255,255,0.6);
+    }
+    .ops-progress span {
+      font-size: 0.58rem;
+      color: rgba(255,255,255,0.6);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+    .ops-bar {
+      width: 100%;
+      height: 8px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.08);
+      overflow: hidden;
+      margin-top: 0.35rem;
+    }
+    .ops-bar .fill {
+      height: 100%;
+      background: linear-gradient(120deg, rgba(255,94,0,0.88), rgba(255,150,0,0.88));
+      border-radius: inherit;
     }
 
     /* ============ WHY F1 SECTION ============ */
@@ -385,6 +572,16 @@
       border: 1px solid rgba(255, 30, 0, 0.04);
       border-radius: 1rem;
       padding: 1rem 1.1rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .why-item::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(140deg, rgba(255,255,255,0.05), transparent 60%);
+      opacity: 0.3;
+      pointer-events: none;
     }
     .why-item small {
       font-size: 0.65rem;
@@ -408,6 +605,16 @@
       border-radius: 1.1rem;
       border: 1px solid rgba(255,255,255,0.04);
       padding: 1rem 1.1rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .telemetry-card::before {
+      content: "";
+      position: absolute;
+      inset: -40% 20% auto;
+      height: 120px;
+      background: radial-gradient(circle, rgba(255,94,0,0.25), transparent 70%);
+      pointer-events: none;
     }
     .telemetry-title {
       font-size: 0.85rem;
@@ -600,6 +807,9 @@
         left: 50%;
         transform: translateX(-50%);
       }
+      .info-ticker {
+        display: none;
+      }
       .hero-actions {
         flex-direction: column;
         align-items: flex-start;
@@ -622,6 +832,8 @@
 </head>
 <body>
 
+  <div class="scroll-progress" id="scrollProgress"></div>
+
   <!-- Floating Particles -->
   <div class="particles" id="particles"></div>
 
@@ -636,6 +848,15 @@
     <a href="#contact">Contact</a>
     <button class="nav-cta" onclick="scrollToDemo()">Live Safety Demo</button>
   </nav>
+
+  <div class="info-ticker">
+    <div class="info-track">
+      <span>Edge-ready crash anomaly detection</span>
+      <span>F1 telemetry distilled into ADAS insights</span>
+      <span>Explainable risk scoring with environment context</span>
+      <span>Designed for hackathons, mobility labs, OEM pilots</span>
+    </div>
+  </div>
 
   <!-- HERO -->
   <header class="hero" id="top">
@@ -681,7 +902,73 @@
         </div>
       </div>
     </div>
-  </header>
+</header>
+
+  <section id="highlights">
+    <h2 class="section-title">Mission Control Snapshots</h2>
+    <p class="section-sub">Four tiles that help judges instantly grasp why VISIONALTRIX matters.</p>
+    <div class="capability-grid">
+      <div class="cap-card">
+        <span class="cap-icon">⚡</span>
+        <h3>Real-time crash IQ</h3>
+        <p>Sub-50&nbsp;ms inference with anomaly-driven probability curves keeps assists proactive instead of reactive.</p>
+      </div>
+      <div class="cap-card">
+        <span class="cap-icon">🧠</span>
+        <h3>Explainable telemetry</h3>
+        <p>Feature deviation meters, 3D trajectories, and notes tell safety teams exactly <em>why</em> we raised an alert.</p>
+      </div>
+      <div class="cap-card">
+        <span class="cap-icon">🛡️</span>
+        <h3>Adaptive mitigation</h3>
+        <p>Automatically maps risk bands to mitigation recipes (brake priming, seatbelt pre-tension, crew alerts).</p>
+      </div>
+      <div class="cap-card">
+        <span class="cap-icon">🌐</span>
+        <h3>Edge ready</h3>
+        <p>Jetson-friendly checkpoints, 11&nbsp;W envelopes, and OTA packaging for real vehicles or hackathon demos.</p>
+      </div>
+    </div>
+
+    <div class="ops-grid">
+      <div class="ops-card">
+        <h3>Data coverage</h3>
+        <ul class="ops-list">
+          <li><span>Crash laps ingested</span><span>412</span></li>
+          <li><span>Sim augmentations</span><span>3.1×</span></li>
+          <li><span>Sensor channels</span><span>26</span></li>
+        </ul>
+        <div class="ops-progress">
+          <span>Road transfer readiness</span>
+          <div class="ops-bar"><div class="fill" style="width:82%"></div></div>
+        </div>
+      </div>
+      <div class="ops-card">
+        <h3>Edge deployment</h3>
+        <ul class="ops-list">
+          <li><span>Jetson latency (ms)</span><span>14.2</span></li>
+          <li><span>Model footprint</span><span>6.1&nbsp;M params</span></li>
+          <li><span>Power envelope</span><span>11&nbsp;W</span></li>
+        </ul>
+        <div class="ops-progress">
+          <span>OTA packaging</span>
+          <div class="ops-bar"><div class="fill" style="width:68%"></div></div>
+        </div>
+      </div>
+      <div class="ops-card">
+        <h3>Safety playbook</h3>
+        <ul class="ops-list">
+          <li><span>Mitigation recipes</span><span>8</span></li>
+          <li><span>Alert endpoints</span><span>Slack, Pager, CAN</span></li>
+          <li><span>Human-in-loop</span><span>Sub 2&nbsp;s ack</span></li>
+        </ul>
+        <div class="ops-progress">
+          <span>Operator training</span>
+          <div class="ops-bar"><div class="fill" style="width:74%"></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- ABOUT -->
   <section id="about">
@@ -990,6 +1277,12 @@
     `;
     document.head.appendChild(style);
 
+    // duplicate ticker content for seamless loop
+    const tickerTrack = document.querySelector(".info-track");
+    if (tickerTrack) {
+      tickerTrack.innerHTML += tickerTrack.innerHTML;
+    }
+
     // ========== GSAP ANIMATIONS ==========
     gsap.registerPlugin(ScrollTrigger);
 
@@ -1060,6 +1353,7 @@
     // Active link on scroll
     const sections = document.querySelectorAll("section");
     const navLinks = document.querySelectorAll("nav a");
+    const progressBar = document.getElementById("scrollProgress");
     window.addEventListener("scroll", () => {
       let current = "";
       sections.forEach(sec => {
@@ -1074,6 +1368,11 @@
           a.classList.add("active");
         }
       });
+      if (progressBar) {
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const scrolled = docHeight > 0 ? (window.scrollY / docHeight) * 100 : 0;
+        progressBar.style.width = `${scrolled}%`;
+      }
     });
 
     // Mouse parallax for car

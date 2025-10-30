@@ -285,7 +285,7 @@
     /* ARCH GRID */
     .arch-grid {
       display: grid;
-      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 1.5rem;
       margin-top: 1.3rem;
       align-items: stretch;
@@ -315,12 +315,15 @@
     /* INFERENCE PANEL */
     .inference-panel {
       background: rgba(0, 0, 0, 0.5);
-      border: 1px solid rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.06);
       border-radius: 1.4rem;
-      padding: 1.2rem 1.3rem 1.6rem;
-      margin-top: 1rem;
+      padding: 1.45rem 1.6rem 1.9rem;
       position: relative;
       overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+      box-shadow: 0 28px 48px rgba(0,0,0,0.54);
     }
     .inference-panel::before {
       content: "";
@@ -334,6 +337,79 @@
     .inference-panel > * {
       position: relative;
       z-index: 1;
+    }
+    .inference-section {
+      margin-top: 3rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+    .inference-header h2 {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: clamp(1.8rem, 3vw, 2.2rem);
+      letter-spacing: 0.02em;
+      margin-bottom: 0.4rem;
+    }
+    .inference-header p {
+      max-width: 48rem;
+      color: rgba(248, 248, 248, 0.62);
+      line-height: 1.6;
+      font-size: 0.85rem;
+    }
+    .inference-shell {
+      display: grid;
+      grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+      gap: 1.7rem;
+      align-items: start;
+      position: relative;
+    }
+    .inference-summary {
+      background: rgba(0, 0, 0, 0.42);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 1.3rem;
+      padding: 1.5rem 1.4rem;
+      box-shadow: 0 22px 44px rgba(0,0,0,0.5);
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .inference-summary h3 {
+      font-size: 1.1rem;
+      margin-bottom: 0.4rem;
+    }
+    .inference-summary p {
+      font-size: 0.8rem;
+      color: rgba(248,248,248,0.65);
+      line-height: 1.55;
+    }
+    .inference-summary ul {
+      display: flex;
+      flex-direction: column;
+      gap: 0.7rem;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    .inference-summary li {
+      display: flex;
+      gap: 0.6rem;
+      align-items: flex-start;
+      font-size: 0.75rem;
+      color: rgba(248,248,248,0.7);
+    }
+    .inference-summary li span {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 1.35rem;
+      height: 1.35rem;
+      border-radius: 0.45rem;
+      background: rgba(255, 94, 0, 0.22);
+      color: rgba(255,255,255,0.85);
+      font-size: 0.68rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-top: 0.08rem;
     }
     .model-chip {
       display: inline-flex;
@@ -840,6 +916,10 @@
       .ops-grid {
         grid-template-columns: 1fr;
       }
+      .inference-shell {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+      }
     }
   </style>
 </head>
@@ -984,12 +1064,32 @@
           Serving endpoints: <code>/api/infer</code> (POST) for live scoring and <code>/api/model-metadata</code> (GET) for UI sync.
         </p>
       </div>
-      <div class="arch-card inference-panel">
-        <h3 style="margin-bottom:0.4rem;">Run live inference</h3>
-        <div class="model-chip" id="modelChip">Loading model metadata…</div>
-        <label for="telemetry">Paste telemetry window (JSON or key:value)</label>
-        <textarea id="telemetry" rows="4" placeholder="speed: 214, yaw_rate: 17.6, lateral_g: 3.2, brake_pressure: 0.4"></textarea>
-        <p class="conditions-note">Optional environment context refines crash probability.</p>
+    </div>
+
+    <section class="inference-section">
+      <div class="inference-header">
+        <h2>Run Live Inference</h2>
+        <p>
+          Drop in a telemetry snapshot to exercise the deployed checkpoint. Add context like weather or traffic to see
+          how the calibrated risk score and mitigation actions adapt in real time.
+        </p>
+      </div>
+      <div class="inference-shell">
+        <div class="inference-summary">
+          <h3>How to use it</h3>
+          <p>Capture any 2&nbsp;s telemetry window (100 samples @ 50&nbsp;Hz) and provide the key signals below.</p>
+          <ul>
+            <li><span>01</span>Paste raw text (`speed: 220, yaw_rate: 15 …`) or a JSON payload of sensor readings.</li>
+            <li><span>02</span>Optionally specify environment modifiers (wet track, tyre wear, driver fatigue, etc.).</li>
+            <li><span>03</span>Trigger inference to view probability gauges, top feature deviations, and mitigation advice.</li>
+          </ul>
+        </div>
+        <div class="inference-panel">
+          <h3 style="margin-bottom:0.4rem;">Live scoring console</h3>
+          <div class="model-chip" id="modelChip">Loading model metadata…</div>
+          <label for="telemetry">Paste telemetry window (JSON or key:value)</label>
+          <textarea id="telemetry" rows="4" placeholder="speed: 214, yaw_rate: 17.6, lateral_g: 3.2, brake_pressure: 0.4"></textarea>
+          <p class="conditions-note">Optional environment context refines crash probability.</p>
         <div class="conditions-grid">
           <div class="field">
             <label for="weather">Weather</label>
@@ -1144,7 +1244,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </section>
 
     <div class="chart-deck hidden fade-up" id="chartDeck">
       <div class="chart-card">

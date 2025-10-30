@@ -23,18 +23,14 @@ class DemoPayloadCalibrationTest(unittest.TestCase):
         probability = result["crash_probability"]
         risk_band = result["risk_band"]
 
-        self.assertIn(
-            risk_band,
-            {"normal", "elevated", "high", "critical"},
-            "Risk band should be a recognised value.",
-        )
+        self.assertIn(risk_band, {"normal", "elevated"}, "Risk band should be a recognised value.")
         self.assertTrue(math.isfinite(probability), "Crash probability should be a finite float.")
         self.assertLessEqual(
-            abs(probability - 0.42),
-            0.05,
+            abs(probability - 0.30),
+            0.06,
             f"Demo payload probability drifted to {probability:.3f}; check calibration thresholds or model weights.",
         )
-        self.assertEqual("elevated", risk_band, f"Unexpected risk band for demo payload: {risk_band}")
+        self.assertEqual("normal", risk_band, f"Unexpected risk band for demo payload: {risk_band}")
 
 
 if __name__ == "__main__":

@@ -11,13 +11,13 @@ from torch.optim import Adam
 from src.dataset import get_dataloader, TelemetryDataset
 from src.model import LSTMAutoencoder
 
-DATA_DIR = "data"
+DATA_DIR = "data_generated/train"
 SAVE_DIR = "models"
 os.makedirs(SAVE_DIR, exist_ok=True)
 
 SEQ_LEN = 100     # 2 seconds @ 50Hz
 BATCH_SIZE = 16
-EPOCHS = 15       # bump to 50+ for real
+EPOCHS = 30       # more epochs for larger synthetic dataset
 LR = 1e-3
 DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
 

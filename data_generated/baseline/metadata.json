@@ -1,0 +1,6002 @@
+{
+  "0": {
+    "scenario": "throttle_mod"
+  },
+  "1": {
+    "scenario": "straight"
+  },
+  "2": {
+    "scenario": "gentle_brake"
+  },
+  "3": {
+    "scenario": "gentle_brake"
+  },
+  "4": {
+    "scenario": "gentle_brake"
+  },
+  "5": {
+    "scenario": "corner_right"
+  },
+  "6": {
+    "scenario": "straight"
+  },
+  "7": {
+    "scenario": "corner_left"
+  },
+  "8": {
+    "scenario": "straight"
+  },
+  "9": {
+    "scenario": "gentle_brake"
+  },
+  "10": {
+    "scenario": "corner_right"
+  },
+  "11": {
+    "scenario": "straight"
+  },
+  "12": {
+    "scenario": "throttle_mod"
+  },
+  "13": {
+    "scenario": "throttle_mod"
+  },
+  "14": {
+    "scenario": "throttle_mod"
+  },
+  "15": {
+    "scenario": "corner_left"
+  },
+  "16": {
+    "scenario": "corner_right"
+  },
+  "17": {
+    "scenario": "corner_left"
+  },
+  "18": {
+    "scenario": "straight"
+  },
+  "19": {
+    "scenario": "corner_right"
+  },
+  "20": {
+    "scenario": "gentle_brake"
+  },
+  "21": {
+    "scenario": "throttle_mod"
+  },
+  "22": {
+    "scenario": "throttle_mod"
+  },
+  "23": {
+    "scenario": "straight"
+  },
+  "24": {
+    "scenario": "straight"
+  },
+  "25": {
+    "scenario": "throttle_mod"
+  },
+  "26": {
+    "scenario": "corner_left"
+  },
+  "27": {
+    "scenario": "straight"
+  },
+  "28": {
+    "scenario": "corner_left"
+  },
+  "29": {
+    "scenario": "straight"
+  },
+  "30": {
+    "scenario": "corner_right"
+  },
+  "31": {
+    "scenario": "straight"
+  },
+  "32": {
+    "scenario": "straight"
+  },
+  "33": {
+    "scenario": "straight"
+  },
+  "34": {
+    "scenario": "throttle_mod"
+  },
+  "35": {
+    "scenario": "throttle_mod"
+  },
+  "36": {
+    "scenario": "throttle_mod"
+  },
+  "37": {
+    "scenario": "gentle_brake"
+  },
+  "38": {
+    "scenario": "throttle_mod"
+  },
+  "39": {
+    "scenario": "corner_left"
+  },
+  "40": {
+    "scenario": "gentle_brake"
+  },
+  "41": {
+    "scenario": "corner_right"
+  },
+  "42": {
+    "scenario": "straight"
+  },
+  "43": {
+    "scenario": "corner_left"
+  },
+  "44": {
+    "scenario": "straight"
+  },
+  "45": {
+    "scenario": "corner_left"
+  },
+  "46": {
+    "scenario": "throttle_mod"
+  },
+  "47": {
+    "scenario": "corner_left"
+  },
+  "48": {
+    "scenario": "throttle_mod"
+  },
+  "49": {
+    "scenario": "gentle_brake"
+  },
+  "50": {
+    "scenario": "corner_left"
+  },
+  "51": {
+    "scenario": "straight"
+  },
+  "52": {
+    "scenario": "straight"
+  },
+  "53": {
+    "scenario": "corner_right"
+  },
+  "54": {
+    "scenario": "throttle_mod"
+  },
+  "55": {
+    "scenario": "gentle_brake"
+  },
+  "56": {
+    "scenario": "gentle_brake"
+  },
+  "57": {
+    "scenario": "corner_left"
+  },
+  "58": {
+    "scenario": "throttle_mod"
+  },
+  "59": {
+    "scenario": "gentle_brake"
+  },
+  "60": {
+    "scenario": "gentle_brake"
+  },
+  "61": {
+    "scenario": "corner_right"
+  },
+  "62": {
+    "scenario": "straight"
+  },
+  "63": {
+    "scenario": "corner_right"
+  },
+  "64": {
+    "scenario": "corner_right"
+  },
+  "65": {
+    "scenario": "throttle_mod"
+  },
+  "66": {
+    "scenario": "corner_left"
+  },
+  "67": {
+    "scenario": "straight"
+  },
+  "68": {
+    "scenario": "throttle_mod"
+  },
+  "69": {
+    "scenario": "gentle_brake"
+  },
+  "70": {
+    "scenario": "gentle_brake"
+  },
+  "71": {
+    "scenario": "straight"
+  },
+  "72": {
+    "scenario": "straight"
+  },
+  "73": {
+    "scenario": "straight"
+  },
+  "74": {
+    "scenario": "corner_left"
+  },
+  "75": {
+    "scenario": "straight"
+  },
+  "76": {
+    "scenario": "throttle_mod"
+  },
+  "77": {
+    "scenario": "throttle_mod"
+  },
+  "78": {
+    "scenario": "corner_right"
+  },
+  "79": {
+    "scenario": "corner_left"
+  },
+  "80": {
+    "scenario": "gentle_brake"
+  },
+  "81": {
+    "scenario": "corner_right"
+  },
+  "82": {
+    "scenario": "straight"
+  },
+  "83": {
+    "scenario": "corner_right"
+  },
+  "84": {
+    "scenario": "straight"
+  },
+  "85": {
+    "scenario": "straight"
+  },
+  "86": {
+    "scenario": "straight"
+  },
+  "87": {
+    "scenario": "corner_right"
+  },
+  "88": {
+    "scenario": "gentle_brake"
+  },
+  "89": {
+    "scenario": "gentle_brake"
+  },
+  "90": {
+    "scenario": "straight"
+  },
+  "91": {
+    "scenario": "gentle_brake"
+  },
+  "92": {
+    "scenario": "straight"
+  },
+  "93": {
+    "scenario": "corner_left"
+  },
+  "94": {
+    "scenario": "straight"
+  },
+  "95": {
+    "scenario": "gentle_brake"
+  },
+  "96": {
+    "scenario": "straight"
+  },
+  "97": {
+    "scenario": "throttle_mod"
+  },
+  "98": {
+    "scenario": "straight"
+  },
+  "99": {
+    "scenario": "corner_left"
+  },
+  "100": {
+    "scenario": "corner_left"
+  },
+  "101": {
+    "scenario": "corner_left"
+  },
+  "102": {
+    "scenario": "corner_right"
+  },
+  "103": {
+    "scenario": "throttle_mod"
+  },
+  "104": {
+    "scenario": "gentle_brake"
+  },
+  "105": {
+    "scenario": "straight"
+  },
+  "106": {
+    "scenario": "corner_left"
+  },
+  "107": {
+    "scenario": "straight"
+  },
+  "108": {
+    "scenario": "throttle_mod"
+  },
+  "109": {
+    "scenario": "corner_left"
+  },
+  "110": {
+    "scenario": "corner_right"
+  },
+  "111": {
+    "scenario": "throttle_mod"
+  },
+  "112": {
+    "scenario": "throttle_mod"
+  },
+  "113": {
+    "scenario": "corner_right"
+  },
+  "114": {
+    "scenario": "gentle_brake"
+  },
+  "115": {
+    "scenario": "throttle_mod"
+  },
+  "116": {
+    "scenario": "throttle_mod"
+  },
+  "117": {
+    "scenario": "throttle_mod"
+  },
+  "118": {
+    "scenario": "corner_left"
+  },
+  "119": {
+    "scenario": "gentle_brake"
+  },
+  "120": {
+    "scenario": "corner_right"
+  },
+  "121": {
+    "scenario": "corner_left"
+  },
+  "122": {
+    "scenario": "throttle_mod"
+  },
+  "123": {
+    "scenario": "gentle_brake"
+  },
+  "124": {
+    "scenario": "straight"
+  },
+  "125": {
+    "scenario": "straight"
+  },
+  "126": {
+    "scenario": "throttle_mod"
+  },
+  "127": {
+    "scenario": "gentle_brake"
+  },
+  "128": {
+    "scenario": "gentle_brake"
+  },
+  "129": {
+    "scenario": "throttle_mod"
+  },
+  "130": {
+    "scenario": "straight"
+  },
+  "131": {
+    "scenario": "corner_left"
+  },
+  "132": {
+    "scenario": "corner_left"
+  },
+  "133": {
+    "scenario": "gentle_brake"
+  },
+  "134": {
+    "scenario": "throttle_mod"
+  },
+  "135": {
+    "scenario": "corner_right"
+  },
+  "136": {
+    "scenario": "corner_left"
+  },
+  "137": {
+    "scenario": "throttle_mod"
+  },
+  "138": {
+    "scenario": "throttle_mod"
+  },
+  "139": {
+    "scenario": "gentle_brake"
+  },
+  "140": {
+    "scenario": "gentle_brake"
+  },
+  "141": {
+    "scenario": "corner_right"
+  },
+  "142": {
+    "scenario": "straight"
+  },
+  "143": {
+    "scenario": "gentle_brake"
+  },
+  "144": {
+    "scenario": "straight"
+  },
+  "145": {
+    "scenario": "straight"
+  },
+  "146": {
+    "scenario": "gentle_brake"
+  },
+  "147": {
+    "scenario": "straight"
+  },
+  "148": {
+    "scenario": "straight"
+  },
+  "149": {
+    "scenario": "corner_left"
+  },
+  "150": {
+    "scenario": "corner_left"
+  },
+  "151": {
+    "scenario": "straight"
+  },
+  "152": {
+    "scenario": "corner_left"
+  },
+  "153": {
+    "scenario": "throttle_mod"
+  },
+  "154": {
+    "scenario": "corner_left"
+  },
+  "155": {
+    "scenario": "gentle_brake"
+  },
+  "156": {
+    "scenario": "corner_right"
+  },
+  "157": {
+    "scenario": "gentle_brake"
+  },
+  "158": {
+    "scenario": "corner_left"
+  },
+  "159": {
+    "scenario": "straight"
+  },
+  "160": {
+    "scenario": "gentle_brake"
+  },
+  "161": {
+    "scenario": "corner_right"
+  },
+  "162": {
+    "scenario": "throttle_mod"
+  },
+  "163": {
+    "scenario": "throttle_mod"
+  },
+  "164": {
+    "scenario": "corner_left"
+  },
+  "165": {
+    "scenario": "gentle_brake"
+  },
+  "166": {
+    "scenario": "corner_left"
+  },
+  "167": {
+    "scenario": "throttle_mod"
+  },
+  "168": {
+    "scenario": "gentle_brake"
+  },
+  "169": {
+    "scenario": "gentle_brake"
+  },
+  "170": {
+    "scenario": "corner_left"
+  },
+  "171": {
+    "scenario": "throttle_mod"
+  },
+  "172": {
+    "scenario": "gentle_brake"
+  },
+  "173": {
+    "scenario": "throttle_mod"
+  },
+  "174": {
+    "scenario": "gentle_brake"
+  },
+  "175": {
+    "scenario": "throttle_mod"
+  },
+  "176": {
+    "scenario": "gentle_brake"
+  },
+  "177": {
+    "scenario": "corner_left"
+  },
+  "178": {
+    "scenario": "throttle_mod"
+  },
+  "179": {
+    "scenario": "gentle_brake"
+  },
+  "180": {
+    "scenario": "throttle_mod"
+  },
+  "181": {
+    "scenario": "corner_left"
+  },
+  "182": {
+    "scenario": "straight"
+  },
+  "183": {
+    "scenario": "corner_right"
+  },
+  "184": {
+    "scenario": "corner_left"
+  },
+  "185": {
+    "scenario": "throttle_mod"
+  },
+  "186": {
+    "scenario": "gentle_brake"
+  },
+  "187": {
+    "scenario": "throttle_mod"
+  },
+  "188": {
+    "scenario": "corner_right"
+  },
+  "189": {
+    "scenario": "throttle_mod"
+  },
+  "190": {
+    "scenario": "throttle_mod"
+  },
+  "191": {
+    "scenario": "throttle_mod"
+  },
+  "192": {
+    "scenario": "straight"
+  },
+  "193": {
+    "scenario": "gentle_brake"
+  },
+  "194": {
+    "scenario": "corner_right"
+  },
+  "195": {
+    "scenario": "corner_left"
+  },
+  "196": {
+    "scenario": "gentle_brake"
+  },
+  "197": {
+    "scenario": "straight"
+  },
+  "198": {
+    "scenario": "corner_right"
+  },
+  "199": {
+    "scenario": "corner_right"
+  },
+  "200": {
+    "scenario": "straight"
+  },
+  "201": {
+    "scenario": "gentle_brake"
+  },
+  "202": {
+    "scenario": "straight"
+  },
+  "203": {
+    "scenario": "throttle_mod"
+  },
+  "204": {
+    "scenario": "corner_left"
+  },
+  "205": {
+    "scenario": "gentle_brake"
+  },
+  "206": {
+    "scenario": "corner_left"
+  },
+  "207": {
+    "scenario": "straight"
+  },
+  "208": {
+    "scenario": "throttle_mod"
+  },
+  "209": {
+    "scenario": "gentle_brake"
+  },
+  "210": {
+    "scenario": "straight"
+  },
+  "211": {
+    "scenario": "throttle_mod"
+  },
+  "212": {
+    "scenario": "gentle_brake"
+  },
+  "213": {
+    "scenario": "corner_left"
+  },
+  "214": {
+    "scenario": "straight"
+  },
+  "215": {
+    "scenario": "corner_left"
+  },
+  "216": {
+    "scenario": "throttle_mod"
+  },
+  "217": {
+    "scenario": "gentle_brake"
+  },
+  "218": {
+    "scenario": "corner_left"
+  },
+  "219": {
+    "scenario": "gentle_brake"
+  },
+  "220": {
+    "scenario": "throttle_mod"
+  },
+  "221": {
+    "scenario": "gentle_brake"
+  },
+  "222": {
+    "scenario": "gentle_brake"
+  },
+  "223": {
+    "scenario": "straight"
+  },
+  "224": {
+    "scenario": "throttle_mod"
+  },
+  "225": {
+    "scenario": "gentle_brake"
+  },
+  "226": {
+    "scenario": "straight"
+  },
+  "227": {
+    "scenario": "straight"
+  },
+  "228": {
+    "scenario": "throttle_mod"
+  },
+  "229": {
+    "scenario": "straight"
+  },
+  "230": {
+    "scenario": "corner_left"
+  },
+  "231": {
+    "scenario": "corner_right"
+  },
+  "232": {
+    "scenario": "corner_right"
+  },
+  "233": {
+    "scenario": "corner_left"
+  },
+  "234": {
+    "scenario": "corner_right"
+  },
+  "235": {
+    "scenario": "straight"
+  },
+  "236": {
+    "scenario": "straight"
+  },
+  "237": {
+    "scenario": "corner_left"
+  },
+  "238": {
+    "scenario": "corner_left"
+  },
+  "239": {
+    "scenario": "gentle_brake"
+  },
+  "240": {
+    "scenario": "gentle_brake"
+  },
+  "241": {
+    "scenario": "corner_left"
+  },
+  "242": {
+    "scenario": "corner_left"
+  },
+  "243": {
+    "scenario": "corner_left"
+  },
+  "244": {
+    "scenario": "corner_right"
+  },
+  "245": {
+    "scenario": "throttle_mod"
+  },
+  "246": {
+    "scenario": "corner_left"
+  },
+  "247": {
+    "scenario": "gentle_brake"
+  },
+  "248": {
+    "scenario": "straight"
+  },
+  "249": {
+    "scenario": "straight"
+  },
+  "250": {
+    "scenario": "throttle_mod"
+  },
+  "251": {
+    "scenario": "gentle_brake"
+  },
+  "252": {
+    "scenario": "gentle_brake"
+  },
+  "253": {
+    "scenario": "straight"
+  },
+  "254": {
+    "scenario": "straight"
+  },
+  "255": {
+    "scenario": "throttle_mod"
+  },
+  "256": {
+    "scenario": "corner_left"
+  },
+  "257": {
+    "scenario": "gentle_brake"
+  },
+  "258": {
+    "scenario": "gentle_brake"
+  },
+  "259": {
+    "scenario": "gentle_brake"
+  },
+  "260": {
+    "scenario": "throttle_mod"
+  },
+  "261": {
+    "scenario": "gentle_brake"
+  },
+  "262": {
+    "scenario": "corner_left"
+  },
+  "263": {
+    "scenario": "corner_right"
+  },
+  "264": {
+    "scenario": "corner_left"
+  },
+  "265": {
+    "scenario": "throttle_mod"
+  },
+  "266": {
+    "scenario": "straight"
+  },
+  "267": {
+    "scenario": "straight"
+  },
+  "268": {
+    "scenario": "corner_right"
+  },
+  "269": {
+    "scenario": "corner_left"
+  },
+  "270": {
+    "scenario": "corner_right"
+  },
+  "271": {
+    "scenario": "gentle_brake"
+  },
+  "272": {
+    "scenario": "straight"
+  },
+  "273": {
+    "scenario": "throttle_mod"
+  },
+  "274": {
+    "scenario": "gentle_brake"
+  },
+  "275": {
+    "scenario": "gentle_brake"
+  },
+  "276": {
+    "scenario": "gentle_brake"
+  },
+  "277": {
+    "scenario": "corner_left"
+  },
+  "278": {
+    "scenario": "corner_left"
+  },
+  "279": {
+    "scenario": "corner_right"
+  },
+  "280": {
+    "scenario": "corner_right"
+  },
+  "281": {
+    "scenario": "gentle_brake"
+  },
+  "282": {
+    "scenario": "corner_left"
+  },
+  "283": {
+    "scenario": "gentle_brake"
+  },
+  "284": {
+    "scenario": "corner_right"
+  },
+  "285": {
+    "scenario": "throttle_mod"
+  },
+  "286": {
+    "scenario": "straight"
+  },
+  "287": {
+    "scenario": "gentle_brake"
+  },
+  "288": {
+    "scenario": "gentle_brake"
+  },
+  "289": {
+    "scenario": "gentle_brake"
+  },
+  "290": {
+    "scenario": "throttle_mod"
+  },
+  "291": {
+    "scenario": "gentle_brake"
+  },
+  "292": {
+    "scenario": "corner_right"
+  },
+  "293": {
+    "scenario": "throttle_mod"
+  },
+  "294": {
+    "scenario": "corner_right"
+  },
+  "295": {
+    "scenario": "straight"
+  },
+  "296": {
+    "scenario": "throttle_mod"
+  },
+  "297": {
+    "scenario": "straight"
+  },
+  "298": {
+    "scenario": "straight"
+  },
+  "299": {
+    "scenario": "straight"
+  },
+  "300": {
+    "scenario": "throttle_mod"
+  },
+  "301": {
+    "scenario": "corner_left"
+  },
+  "302": {
+    "scenario": "corner_left"
+  },
+  "303": {
+    "scenario": "throttle_mod"
+  },
+  "304": {
+    "scenario": "corner_left"
+  },
+  "305": {
+    "scenario": "straight"
+  },
+  "306": {
+    "scenario": "corner_left"
+  },
+  "307": {
+    "scenario": "gentle_brake"
+  },
+  "308": {
+    "scenario": "corner_right"
+  },
+  "309": {
+    "scenario": "corner_left"
+  },
+  "310": {
+    "scenario": "corner_right"
+  },
+  "311": {
+    "scenario": "gentle_brake"
+  },
+  "312": {
+    "scenario": "corner_left"
+  },
+  "313": {
+    "scenario": "corner_right"
+  },
+  "314": {
+    "scenario": "gentle_brake"
+  },
+  "315": {
+    "scenario": "gentle_brake"
+  },
+  "316": {
+    "scenario": "throttle_mod"
+  },
+  "317": {
+    "scenario": "throttle_mod"
+  },
+  "318": {
+    "scenario": "gentle_brake"
+  },
+  "319": {
+    "scenario": "gentle_brake"
+  },
+  "320": {
+    "scenario": "gentle_brake"
+  },
+  "321": {
+    "scenario": "throttle_mod"
+  },
+  "322": {
+    "scenario": "straight"
+  },
+  "323": {
+    "scenario": "corner_left"
+  },
+  "324": {
+    "scenario": "gentle_brake"
+  },
+  "325": {
+    "scenario": "gentle_brake"
+  },
+  "326": {
+    "scenario": "straight"
+  },
+  "327": {
+    "scenario": "corner_left"
+  },
+  "328": {
+    "scenario": "corner_left"
+  },
+  "329": {
+    "scenario": "straight"
+  },
+  "330": {
+    "scenario": "throttle_mod"
+  },
+  "331": {
+    "scenario": "throttle_mod"
+  },
+  "332": {
+    "scenario": "straight"
+  },
+  "333": {
+    "scenario": "straight"
+  },
+  "334": {
+    "scenario": "corner_left"
+  },
+  "335": {
+    "scenario": "gentle_brake"
+  },
+  "336": {
+    "scenario": "corner_right"
+  },
+  "337": {
+    "scenario": "corner_right"
+  },
+  "338": {
+    "scenario": "throttle_mod"
+  },
+  "339": {
+    "scenario": "corner_left"
+  },
+  "340": {
+    "scenario": "corner_left"
+  },
+  "341": {
+    "scenario": "corner_left"
+  },
+  "342": {
+    "scenario": "throttle_mod"
+  },
+  "343": {
+    "scenario": "straight"
+  },
+  "344": {
+    "scenario": "throttle_mod"
+  },
+  "345": {
+    "scenario": "throttle_mod"
+  },
+  "346": {
+    "scenario": "throttle_mod"
+  },
+  "347": {
+    "scenario": "throttle_mod"
+  },
+  "348": {
+    "scenario": "corner_left"
+  },
+  "349": {
+    "scenario": "throttle_mod"
+  },
+  "350": {
+    "scenario": "straight"
+  },
+  "351": {
+    "scenario": "throttle_mod"
+  },
+  "352": {
+    "scenario": "corner_left"
+  },
+  "353": {
+    "scenario": "corner_right"
+  },
+  "354": {
+    "scenario": "corner_left"
+  },
+  "355": {
+    "scenario": "throttle_mod"
+  },
+  "356": {
+    "scenario": "throttle_mod"
+  },
+  "357": {
+    "scenario": "straight"
+  },
+  "358": {
+    "scenario": "gentle_brake"
+  },
+  "359": {
+    "scenario": "straight"
+  },
+  "360": {
+    "scenario": "corner_right"
+  },
+  "361": {
+    "scenario": "gentle_brake"
+  },
+  "362": {
+    "scenario": "corner_right"
+  },
+  "363": {
+    "scenario": "corner_left"
+  },
+  "364": {
+    "scenario": "corner_right"
+  },
+  "365": {
+    "scenario": "corner_left"
+  },
+  "366": {
+    "scenario": "corner_left"
+  },
+  "367": {
+    "scenario": "gentle_brake"
+  },
+  "368": {
+    "scenario": "gentle_brake"
+  },
+  "369": {
+    "scenario": "throttle_mod"
+  },
+  "370": {
+    "scenario": "throttle_mod"
+  },
+  "371": {
+    "scenario": "straight"
+  },
+  "372": {
+    "scenario": "straight"
+  },
+  "373": {
+    "scenario": "gentle_brake"
+  },
+  "374": {
+    "scenario": "gentle_brake"
+  },
+  "375": {
+    "scenario": "throttle_mod"
+  },
+  "376": {
+    "scenario": "corner_right"
+  },
+  "377": {
+    "scenario": "corner_right"
+  },
+  "378": {
+    "scenario": "corner_right"
+  },
+  "379": {
+    "scenario": "gentle_brake"
+  },
+  "380": {
+    "scenario": "throttle_mod"
+  },
+  "381": {
+    "scenario": "throttle_mod"
+  },
+  "382": {
+    "scenario": "straight"
+  },
+  "383": {
+    "scenario": "straight"
+  },
+  "384": {
+    "scenario": "throttle_mod"
+  },
+  "385": {
+    "scenario": "corner_left"
+  },
+  "386": {
+    "scenario": "corner_right"
+  },
+  "387": {
+    "scenario": "corner_right"
+  },
+  "388": {
+    "scenario": "throttle_mod"
+  },
+  "389": {
+    "scenario": "throttle_mod"
+  },
+  "390": {
+    "scenario": "gentle_brake"
+  },
+  "391": {
+    "scenario": "gentle_brake"
+  },
+  "392": {
+    "scenario": "straight"
+  },
+  "393": {
+    "scenario": "straight"
+  },
+  "394": {
+    "scenario": "gentle_brake"
+  },
+  "395": {
+    "scenario": "gentle_brake"
+  },
+  "396": {
+    "scenario": "corner_right"
+  },
+  "397": {
+    "scenario": "gentle_brake"
+  },
+  "398": {
+    "scenario": "corner_right"
+  },
+  "399": {
+    "scenario": "gentle_brake"
+  },
+  "400": {
+    "scenario": "straight"
+  },
+  "401": {
+    "scenario": "straight"
+  },
+  "402": {
+    "scenario": "gentle_brake"
+  },
+  "403": {
+    "scenario": "gentle_brake"
+  },
+  "404": {
+    "scenario": "straight"
+  },
+  "405": {
+    "scenario": "gentle_brake"
+  },
+  "406": {
+    "scenario": "corner_left"
+  },
+  "407": {
+    "scenario": "throttle_mod"
+  },
+  "408": {
+    "scenario": "corner_right"
+  },
+  "409": {
+    "scenario": "straight"
+  },
+  "410": {
+    "scenario": "corner_right"
+  },
+  "411": {
+    "scenario": "straight"
+  },
+  "412": {
+    "scenario": "straight"
+  },
+  "413": {
+    "scenario": "corner_left"
+  },
+  "414": {
+    "scenario": "throttle_mod"
+  },
+  "415": {
+    "scenario": "straight"
+  },
+  "416": {
+    "scenario": "gentle_brake"
+  },
+  "417": {
+    "scenario": "gentle_brake"
+  },
+  "418": {
+    "scenario": "throttle_mod"
+  },
+  "419": {
+    "scenario": "corner_left"
+  },
+  "420": {
+    "scenario": "corner_right"
+  },
+  "421": {
+    "scenario": "gentle_brake"
+  },
+  "422": {
+    "scenario": "straight"
+  },
+  "423": {
+    "scenario": "gentle_brake"
+  },
+  "424": {
+    "scenario": "throttle_mod"
+  },
+  "425": {
+    "scenario": "corner_left"
+  },
+  "426": {
+    "scenario": "corner_left"
+  },
+  "427": {
+    "scenario": "corner_left"
+  },
+  "428": {
+    "scenario": "straight"
+  },
+  "429": {
+    "scenario": "corner_left"
+  },
+  "430": {
+    "scenario": "corner_left"
+  },
+  "431": {
+    "scenario": "corner_left"
+  },
+  "432": {
+    "scenario": "straight"
+  },
+  "433": {
+    "scenario": "corner_right"
+  },
+  "434": {
+    "scenario": "throttle_mod"
+  },
+  "435": {
+    "scenario": "straight"
+  },
+  "436": {
+    "scenario": "throttle_mod"
+  },
+  "437": {
+    "scenario": "straight"
+  },
+  "438": {
+    "scenario": "straight"
+  },
+  "439": {
+    "scenario": "throttle_mod"
+  },
+  "440": {
+    "scenario": "straight"
+  },
+  "441": {
+    "scenario": "gentle_brake"
+  },
+  "442": {
+    "scenario": "gentle_brake"
+  },
+  "443": {
+    "scenario": "corner_left"
+  },
+  "444": {
+    "scenario": "gentle_brake"
+  },
+  "445": {
+    "scenario": "gentle_brake"
+  },
+  "446": {
+    "scenario": "gentle_brake"
+  },
+  "447": {
+    "scenario": "corner_left"
+  },
+  "448": {
+    "scenario": "straight"
+  },
+  "449": {
+    "scenario": "straight"
+  },
+  "450": {
+    "scenario": "straight"
+  },
+  "451": {
+    "scenario": "throttle_mod"
+  },
+  "452": {
+    "scenario": "corner_left"
+  },
+  "453": {
+    "scenario": "gentle_brake"
+  },
+  "454": {
+    "scenario": "throttle_mod"
+  },
+  "455": {
+    "scenario": "corner_right"
+  },
+  "456": {
+    "scenario": "corner_left"
+  },
+  "457": {
+    "scenario": "corner_right"
+  },
+  "458": {
+    "scenario": "straight"
+  },
+  "459": {
+    "scenario": "corner_left"
+  },
+  "460": {
+    "scenario": "throttle_mod"
+  },
+  "461": {
+    "scenario": "gentle_brake"
+  },
+  "462": {
+    "scenario": "gentle_brake"
+  },
+  "463": {
+    "scenario": "gentle_brake"
+  },
+  "464": {
+    "scenario": "throttle_mod"
+  },
+  "465": {
+    "scenario": "throttle_mod"
+  },
+  "466": {
+    "scenario": "throttle_mod"
+  },
+  "467": {
+    "scenario": "gentle_brake"
+  },
+  "468": {
+    "scenario": "gentle_brake"
+  },
+  "469": {
+    "scenario": "corner_left"
+  },
+  "470": {
+    "scenario": "straight"
+  },
+  "471": {
+    "scenario": "throttle_mod"
+  },
+  "472": {
+    "scenario": "straight"
+  },
+  "473": {
+    "scenario": "straight"
+  },
+  "474": {
+    "scenario": "straight"
+  },
+  "475": {
+    "scenario": "gentle_brake"
+  },
+  "476": {
+    "scenario": "corner_right"
+  },
+  "477": {
+    "scenario": "gentle_brake"
+  },
+  "478": {
+    "scenario": "straight"
+  },
+  "479": {
+    "scenario": "straight"
+  },
+  "480": {
+    "scenario": "gentle_brake"
+  },
+  "481": {
+    "scenario": "corner_left"
+  },
+  "482": {
+    "scenario": "gentle_brake"
+  },
+  "483": {
+    "scenario": "gentle_brake"
+  },
+  "484": {
+    "scenario": "throttle_mod"
+  },
+  "485": {
+    "scenario": "throttle_mod"
+  },
+  "486": {
+    "scenario": "throttle_mod"
+  },
+  "487": {
+    "scenario": "corner_left"
+  },
+  "488": {
+    "scenario": "gentle_brake"
+  },
+  "489": {
+    "scenario": "corner_left"
+  },
+  "490": {
+    "scenario": "gentle_brake"
+  },
+  "491": {
+    "scenario": "gentle_brake"
+  },
+  "492": {
+    "scenario": "throttle_mod"
+  },
+  "493": {
+    "scenario": "corner_left"
+  },
+  "494": {
+    "scenario": "gentle_brake"
+  },
+  "495": {
+    "scenario": "straight"
+  },
+  "496": {
+    "scenario": "straight"
+  },
+  "497": {
+    "scenario": "corner_left"
+  },
+  "498": {
+    "scenario": "throttle_mod"
+  },
+  "499": {
+    "scenario": "straight"
+  },
+  "500": {
+    "scenario": "straight"
+  },
+  "501": {
+    "scenario": "corner_right"
+  },
+  "502": {
+    "scenario": "straight"
+  },
+  "503": {
+    "scenario": "throttle_mod"
+  },
+  "504": {
+    "scenario": "corner_left"
+  },
+  "505": {
+    "scenario": "straight"
+  },
+  "506": {
+    "scenario": "straight"
+  },
+  "507": {
+    "scenario": "gentle_brake"
+  },
+  "508": {
+    "scenario": "corner_left"
+  },
+  "509": {
+    "scenario": "gentle_brake"
+  },
+  "510": {
+    "scenario": "corner_right"
+  },
+  "511": {
+    "scenario": "corner_right"
+  },
+  "512": {
+    "scenario": "throttle_mod"
+  },
+  "513": {
+    "scenario": "straight"
+  },
+  "514": {
+    "scenario": "straight"
+  },
+  "515": {
+    "scenario": "throttle_mod"
+  },
+  "516": {
+    "scenario": "corner_right"
+  },
+  "517": {
+    "scenario": "throttle_mod"
+  },
+  "518": {
+    "scenario": "throttle_mod"
+  },
+  "519": {
+    "scenario": "gentle_brake"
+  },
+  "520": {
+    "scenario": "gentle_brake"
+  },
+  "521": {
+    "scenario": "corner_right"
+  },
+  "522": {
+    "scenario": "throttle_mod"
+  },
+  "523": {
+    "scenario": "straight"
+  },
+  "524": {
+    "scenario": "gentle_brake"
+  },
+  "525": {
+    "scenario": "straight"
+  },
+  "526": {
+    "scenario": "gentle_brake"
+  },
+  "527": {
+    "scenario": "straight"
+  },
+  "528": {
+    "scenario": "corner_right"
+  },
+  "529": {
+    "scenario": "gentle_brake"
+  },
+  "530": {
+    "scenario": "corner_right"
+  },
+  "531": {
+    "scenario": "corner_left"
+  },
+  "532": {
+    "scenario": "gentle_brake"
+  },
+  "533": {
+    "scenario": "straight"
+  },
+  "534": {
+    "scenario": "throttle_mod"
+  },
+  "535": {
+    "scenario": "straight"
+  },
+  "536": {
+    "scenario": "throttle_mod"
+  },
+  "537": {
+    "scenario": "corner_right"
+  },
+  "538": {
+    "scenario": "throttle_mod"
+  },
+  "539": {
+    "scenario": "throttle_mod"
+  },
+  "540": {
+    "scenario": "corner_left"
+  },
+  "541": {
+    "scenario": "corner_left"
+  },
+  "542": {
+    "scenario": "straight"
+  },
+  "543": {
+    "scenario": "throttle_mod"
+  },
+  "544": {
+    "scenario": "straight"
+  },
+  "545": {
+    "scenario": "gentle_brake"
+  },
+  "546": {
+    "scenario": "straight"
+  },
+  "547": {
+    "scenario": "throttle_mod"
+  },
+  "548": {
+    "scenario": "gentle_brake"
+  },
+  "549": {
+    "scenario": "corner_right"
+  },
+  "550": {
+    "scenario": "straight"
+  },
+  "551": {
+    "scenario": "throttle_mod"
+  },
+  "552": {
+    "scenario": "straight"
+  },
+  "553": {
+    "scenario": "throttle_mod"
+  },
+  "554": {
+    "scenario": "throttle_mod"
+  },
+  "555": {
+    "scenario": "throttle_mod"
+  },
+  "556": {
+    "scenario": "gentle_brake"
+  },
+  "557": {
+    "scenario": "straight"
+  },
+  "558": {
+    "scenario": "corner_left"
+  },
+  "559": {
+    "scenario": "gentle_brake"
+  },
+  "560": {
+    "scenario": "corner_left"
+  },
+  "561": {
+    "scenario": "corner_right"
+  },
+  "562": {
+    "scenario": "corner_right"
+  },
+  "563": {
+    "scenario": "gentle_brake"
+  },
+  "564": {
+    "scenario": "corner_right"
+  },
+  "565": {
+    "scenario": "gentle_brake"
+  },
+  "566": {
+    "scenario": "corner_left"
+  },
+  "567": {
+    "scenario": "corner_right"
+  },
+  "568": {
+    "scenario": "gentle_brake"
+  },
+  "569": {
+    "scenario": "corner_right"
+  },
+  "570": {
+    "scenario": "straight"
+  },
+  "571": {
+    "scenario": "straight"
+  },
+  "572": {
+    "scenario": "corner_left"
+  },
+  "573": {
+    "scenario": "throttle_mod"
+  },
+  "574": {
+    "scenario": "corner_left"
+  },
+  "575": {
+    "scenario": "throttle_mod"
+  },
+  "576": {
+    "scenario": "throttle_mod"
+  },
+  "577": {
+    "scenario": "gentle_brake"
+  },
+  "578": {
+    "scenario": "corner_right"
+  },
+  "579": {
+    "scenario": "corner_left"
+  },
+  "580": {
+    "scenario": "corner_left"
+  },
+  "581": {
+    "scenario": "corner_right"
+  },
+  "582": {
+    "scenario": "throttle_mod"
+  },
+  "583": {
+    "scenario": "corner_right"
+  },
+  "584": {
+    "scenario": "throttle_mod"
+  },
+  "585": {
+    "scenario": "throttle_mod"
+  },
+  "586": {
+    "scenario": "gentle_brake"
+  },
+  "587": {
+    "scenario": "throttle_mod"
+  },
+  "588": {
+    "scenario": "straight"
+  },
+  "589": {
+    "scenario": "throttle_mod"
+  },
+  "590": {
+    "scenario": "corner_right"
+  },
+  "591": {
+    "scenario": "corner_right"
+  },
+  "592": {
+    "scenario": "throttle_mod"
+  },
+  "593": {
+    "scenario": "corner_right"
+  },
+  "594": {
+    "scenario": "straight"
+  },
+  "595": {
+    "scenario": "gentle_brake"
+  },
+  "596": {
+    "scenario": "straight"
+  },
+  "597": {
+    "scenario": "throttle_mod"
+  },
+  "598": {
+    "scenario": "throttle_mod"
+  },
+  "599": {
+    "scenario": "corner_right"
+  },
+  "600": {
+    "scenario": "corner_left"
+  },
+  "601": {
+    "scenario": "straight"
+  },
+  "602": {
+    "scenario": "straight"
+  },
+  "603": {
+    "scenario": "straight"
+  },
+  "604": {
+    "scenario": "corner_left"
+  },
+  "605": {
+    "scenario": "straight"
+  },
+  "606": {
+    "scenario": "gentle_brake"
+  },
+  "607": {
+    "scenario": "gentle_brake"
+  },
+  "608": {
+    "scenario": "straight"
+  },
+  "609": {
+    "scenario": "straight"
+  },
+  "610": {
+    "scenario": "corner_right"
+  },
+  "611": {
+    "scenario": "gentle_brake"
+  },
+  "612": {
+    "scenario": "corner_right"
+  },
+  "613": {
+    "scenario": "corner_left"
+  },
+  "614": {
+    "scenario": "corner_right"
+  },
+  "615": {
+    "scenario": "gentle_brake"
+  },
+  "616": {
+    "scenario": "corner_right"
+  },
+  "617": {
+    "scenario": "corner_left"
+  },
+  "618": {
+    "scenario": "corner_right"
+  },
+  "619": {
+    "scenario": "throttle_mod"
+  },
+  "620": {
+    "scenario": "gentle_brake"
+  },
+  "621": {
+    "scenario": "corner_right"
+  },
+  "622": {
+    "scenario": "throttle_mod"
+  },
+  "623": {
+    "scenario": "throttle_mod"
+  },
+  "624": {
+    "scenario": "throttle_mod"
+  },
+  "625": {
+    "scenario": "straight"
+  },
+  "626": {
+    "scenario": "corner_left"
+  },
+  "627": {
+    "scenario": "gentle_brake"
+  },
+  "628": {
+    "scenario": "corner_right"
+  },
+  "629": {
+    "scenario": "throttle_mod"
+  },
+  "630": {
+    "scenario": "corner_right"
+  },
+  "631": {
+    "scenario": "corner_right"
+  },
+  "632": {
+    "scenario": "corner_left"
+  },
+  "633": {
+    "scenario": "straight"
+  },
+  "634": {
+    "scenario": "throttle_mod"
+  },
+  "635": {
+    "scenario": "throttle_mod"
+  },
+  "636": {
+    "scenario": "throttle_mod"
+  },
+  "637": {
+    "scenario": "corner_left"
+  },
+  "638": {
+    "scenario": "straight"
+  },
+  "639": {
+    "scenario": "throttle_mod"
+  },
+  "640": {
+    "scenario": "corner_left"
+  },
+  "641": {
+    "scenario": "straight"
+  },
+  "642": {
+    "scenario": "corner_left"
+  },
+  "643": {
+    "scenario": "straight"
+  },
+  "644": {
+    "scenario": "corner_right"
+  },
+  "645": {
+    "scenario": "corner_right"
+  },
+  "646": {
+    "scenario": "gentle_brake"
+  },
+  "647": {
+    "scenario": "throttle_mod"
+  },
+  "648": {
+    "scenario": "corner_right"
+  },
+  "649": {
+    "scenario": "straight"
+  },
+  "650": {
+    "scenario": "gentle_brake"
+  },
+  "651": {
+    "scenario": "throttle_mod"
+  },
+  "652": {
+    "scenario": "gentle_brake"
+  },
+  "653": {
+    "scenario": "corner_left"
+  },
+  "654": {
+    "scenario": "gentle_brake"
+  },
+  "655": {
+    "scenario": "throttle_mod"
+  },
+  "656": {
+    "scenario": "corner_left"
+  },
+  "657": {
+    "scenario": "corner_right"
+  },
+  "658": {
+    "scenario": "gentle_brake"
+  },
+  "659": {
+    "scenario": "corner_left"
+  },
+  "660": {
+    "scenario": "straight"
+  },
+  "661": {
+    "scenario": "corner_right"
+  },
+  "662": {
+    "scenario": "corner_left"
+  },
+  "663": {
+    "scenario": "corner_right"
+  },
+  "664": {
+    "scenario": "corner_right"
+  },
+  "665": {
+    "scenario": "gentle_brake"
+  },
+  "666": {
+    "scenario": "throttle_mod"
+  },
+  "667": {
+    "scenario": "throttle_mod"
+  },
+  "668": {
+    "scenario": "corner_left"
+  },
+  "669": {
+    "scenario": "throttle_mod"
+  },
+  "670": {
+    "scenario": "straight"
+  },
+  "671": {
+    "scenario": "gentle_brake"
+  },
+  "672": {
+    "scenario": "corner_left"
+  },
+  "673": {
+    "scenario": "corner_right"
+  },
+  "674": {
+    "scenario": "corner_right"
+  },
+  "675": {
+    "scenario": "gentle_brake"
+  },
+  "676": {
+    "scenario": "corner_left"
+  },
+  "677": {
+    "scenario": "throttle_mod"
+  },
+  "678": {
+    "scenario": "corner_right"
+  },
+  "679": {
+    "scenario": "straight"
+  },
+  "680": {
+    "scenario": "gentle_brake"
+  },
+  "681": {
+    "scenario": "corner_left"
+  },
+  "682": {
+    "scenario": "straight"
+  },
+  "683": {
+    "scenario": "throttle_mod"
+  },
+  "684": {
+    "scenario": "corner_left"
+  },
+  "685": {
+    "scenario": "straight"
+  },
+  "686": {
+    "scenario": "throttle_mod"
+  },
+  "687": {
+    "scenario": "throttle_mod"
+  },
+  "688": {
+    "scenario": "corner_right"
+  },
+  "689": {
+    "scenario": "corner_right"
+  },
+  "690": {
+    "scenario": "corner_right"
+  },
+  "691": {
+    "scenario": "corner_right"
+  },
+  "692": {
+    "scenario": "straight"
+  },
+  "693": {
+    "scenario": "throttle_mod"
+  },
+  "694": {
+    "scenario": "throttle_mod"
+  },
+  "695": {
+    "scenario": "straight"
+  },
+  "696": {
+    "scenario": "corner_right"
+  },
+  "697": {
+    "scenario": "throttle_mod"
+  },
+  "698": {
+    "scenario": "corner_left"
+  },
+  "699": {
+    "scenario": "corner_left"
+  },
+  "700": {
+    "scenario": "straight"
+  },
+  "701": {
+    "scenario": "throttle_mod"
+  },
+  "702": {
+    "scenario": "straight"
+  },
+  "703": {
+    "scenario": "corner_left"
+  },
+  "704": {
+    "scenario": "corner_left"
+  },
+  "705": {
+    "scenario": "throttle_mod"
+  },
+  "706": {
+    "scenario": "throttle_mod"
+  },
+  "707": {
+    "scenario": "corner_right"
+  },
+  "708": {
+    "scenario": "straight"
+  },
+  "709": {
+    "scenario": "corner_left"
+  },
+  "710": {
+    "scenario": "straight"
+  },
+  "711": {
+    "scenario": "straight"
+  },
+  "712": {
+    "scenario": "corner_right"
+  },
+  "713": {
+    "scenario": "straight"
+  },
+  "714": {
+    "scenario": "corner_right"
+  },
+  "715": {
+    "scenario": "gentle_brake"
+  },
+  "716": {
+    "scenario": "corner_left"
+  },
+  "717": {
+    "scenario": "corner_left"
+  },
+  "718": {
+    "scenario": "gentle_brake"
+  },
+  "719": {
+    "scenario": "gentle_brake"
+  },
+  "720": {
+    "scenario": "corner_left"
+  },
+  "721": {
+    "scenario": "straight"
+  },
+  "722": {
+    "scenario": "throttle_mod"
+  },
+  "723": {
+    "scenario": "corner_left"
+  },
+  "724": {
+    "scenario": "throttle_mod"
+  },
+  "725": {
+    "scenario": "corner_right"
+  },
+  "726": {
+    "scenario": "corner_left"
+  },
+  "727": {
+    "scenario": "straight"
+  },
+  "728": {
+    "scenario": "corner_left"
+  },
+  "729": {
+    "scenario": "throttle_mod"
+  },
+  "730": {
+    "scenario": "corner_left"
+  },
+  "731": {
+    "scenario": "gentle_brake"
+  },
+  "732": {
+    "scenario": "gentle_brake"
+  },
+  "733": {
+    "scenario": "throttle_mod"
+  },
+  "734": {
+    "scenario": "corner_left"
+  },
+  "735": {
+    "scenario": "straight"
+  },
+  "736": {
+    "scenario": "throttle_mod"
+  },
+  "737": {
+    "scenario": "throttle_mod"
+  },
+  "738": {
+    "scenario": "straight"
+  },
+  "739": {
+    "scenario": "gentle_brake"
+  },
+  "740": {
+    "scenario": "gentle_brake"
+  },
+  "741": {
+    "scenario": "straight"
+  },
+  "742": {
+    "scenario": "corner_right"
+  },
+  "743": {
+    "scenario": "corner_right"
+  },
+  "744": {
+    "scenario": "straight"
+  },
+  "745": {
+    "scenario": "corner_right"
+  },
+  "746": {
+    "scenario": "throttle_mod"
+  },
+  "747": {
+    "scenario": "corner_left"
+  },
+  "748": {
+    "scenario": "throttle_mod"
+  },
+  "749": {
+    "scenario": "throttle_mod"
+  },
+  "750": {
+    "scenario": "straight"
+  },
+  "751": {
+    "scenario": "gentle_brake"
+  },
+  "752": {
+    "scenario": "corner_right"
+  },
+  "753": {
+    "scenario": "gentle_brake"
+  },
+  "754": {
+    "scenario": "throttle_mod"
+  },
+  "755": {
+    "scenario": "throttle_mod"
+  },
+  "756": {
+    "scenario": "throttle_mod"
+  },
+  "757": {
+    "scenario": "straight"
+  },
+  "758": {
+    "scenario": "corner_left"
+  },
+  "759": {
+    "scenario": "corner_right"
+  },
+  "760": {
+    "scenario": "straight"
+  },
+  "761": {
+    "scenario": "throttle_mod"
+  },
+  "762": {
+    "scenario": "throttle_mod"
+  },
+  "763": {
+    "scenario": "corner_left"
+  },
+  "764": {
+    "scenario": "straight"
+  },
+  "765": {
+    "scenario": "corner_right"
+  },
+  "766": {
+    "scenario": "throttle_mod"
+  },
+  "767": {
+    "scenario": "throttle_mod"
+  },
+  "768": {
+    "scenario": "corner_left"
+  },
+  "769": {
+    "scenario": "throttle_mod"
+  },
+  "770": {
+    "scenario": "corner_right"
+  },
+  "771": {
+    "scenario": "corner_left"
+  },
+  "772": {
+    "scenario": "gentle_brake"
+  },
+  "773": {
+    "scenario": "gentle_brake"
+  },
+  "774": {
+    "scenario": "straight"
+  },
+  "775": {
+    "scenario": "gentle_brake"
+  },
+  "776": {
+    "scenario": "corner_left"
+  },
+  "777": {
+    "scenario": "corner_right"
+  },
+  "778": {
+    "scenario": "throttle_mod"
+  },
+  "779": {
+    "scenario": "straight"
+  },
+  "780": {
+    "scenario": "gentle_brake"
+  },
+  "781": {
+    "scenario": "throttle_mod"
+  },
+  "782": {
+    "scenario": "corner_left"
+  },
+  "783": {
+    "scenario": "corner_right"
+  },
+  "784": {
+    "scenario": "throttle_mod"
+  },
+  "785": {
+    "scenario": "corner_left"
+  },
+  "786": {
+    "scenario": "corner_left"
+  },
+  "787": {
+    "scenario": "corner_left"
+  },
+  "788": {
+    "scenario": "corner_left"
+  },
+  "789": {
+    "scenario": "gentle_brake"
+  },
+  "790": {
+    "scenario": "straight"
+  },
+  "791": {
+    "scenario": "straight"
+  },
+  "792": {
+    "scenario": "corner_right"
+  },
+  "793": {
+    "scenario": "corner_right"
+  },
+  "794": {
+    "scenario": "corner_right"
+  },
+  "795": {
+    "scenario": "corner_right"
+  },
+  "796": {
+    "scenario": "straight"
+  },
+  "797": {
+    "scenario": "straight"
+  },
+  "798": {
+    "scenario": "corner_left"
+  },
+  "799": {
+    "scenario": "throttle_mod"
+  },
+  "800": {
+    "scenario": "throttle_mod"
+  },
+  "801": {
+    "scenario": "straight"
+  },
+  "802": {
+    "scenario": "gentle_brake"
+  },
+  "803": {
+    "scenario": "throttle_mod"
+  },
+  "804": {
+    "scenario": "gentle_brake"
+  },
+  "805": {
+    "scenario": "throttle_mod"
+  },
+  "806": {
+    "scenario": "gentle_brake"
+  },
+  "807": {
+    "scenario": "gentle_brake"
+  },
+  "808": {
+    "scenario": "throttle_mod"
+  },
+  "809": {
+    "scenario": "gentle_brake"
+  },
+  "810": {
+    "scenario": "corner_left"
+  },
+  "811": {
+    "scenario": "straight"
+  },
+  "812": {
+    "scenario": "gentle_brake"
+  },
+  "813": {
+    "scenario": "corner_left"
+  },
+  "814": {
+    "scenario": "gentle_brake"
+  },
+  "815": {
+    "scenario": "corner_left"
+  },
+  "816": {
+    "scenario": "corner_right"
+  },
+  "817": {
+    "scenario": "corner_right"
+  },
+  "818": {
+    "scenario": "corner_left"
+  },
+  "819": {
+    "scenario": "straight"
+  },
+  "820": {
+    "scenario": "throttle_mod"
+  },
+  "821": {
+    "scenario": "straight"
+  },
+  "822": {
+    "scenario": "throttle_mod"
+  },
+  "823": {
+    "scenario": "straight"
+  },
+  "824": {
+    "scenario": "corner_right"
+  },
+  "825": {
+    "scenario": "corner_right"
+  },
+  "826": {
+    "scenario": "corner_left"
+  },
+  "827": {
+    "scenario": "throttle_mod"
+  },
+  "828": {
+    "scenario": "corner_left"
+  },
+  "829": {
+    "scenario": "gentle_brake"
+  },
+  "830": {
+    "scenario": "corner_right"
+  },
+  "831": {
+    "scenario": "straight"
+  },
+  "832": {
+    "scenario": "gentle_brake"
+  },
+  "833": {
+    "scenario": "straight"
+  },
+  "834": {
+    "scenario": "gentle_brake"
+  },
+  "835": {
+    "scenario": "throttle_mod"
+  },
+  "836": {
+    "scenario": "throttle_mod"
+  },
+  "837": {
+    "scenario": "straight"
+  },
+  "838": {
+    "scenario": "corner_left"
+  },
+  "839": {
+    "scenario": "straight"
+  },
+  "840": {
+    "scenario": "throttle_mod"
+  },
+  "841": {
+    "scenario": "corner_left"
+  },
+  "842": {
+    "scenario": "corner_right"
+  },
+  "843": {
+    "scenario": "throttle_mod"
+  },
+  "844": {
+    "scenario": "straight"
+  },
+  "845": {
+    "scenario": "straight"
+  },
+  "846": {
+    "scenario": "gentle_brake"
+  },
+  "847": {
+    "scenario": "straight"
+  },
+  "848": {
+    "scenario": "throttle_mod"
+  },
+  "849": {
+    "scenario": "straight"
+  },
+  "850": {
+    "scenario": "corner_left"
+  },
+  "851": {
+    "scenario": "gentle_brake"
+  },
+  "852": {
+    "scenario": "throttle_mod"
+  },
+  "853": {
+    "scenario": "throttle_mod"
+  },
+  "854": {
+    "scenario": "corner_left"
+  },
+  "855": {
+    "scenario": "corner_right"
+  },
+  "856": {
+    "scenario": "straight"
+  },
+  "857": {
+    "scenario": "corner_left"
+  },
+  "858": {
+    "scenario": "corner_left"
+  },
+  "859": {
+    "scenario": "straight"
+  },
+  "860": {
+    "scenario": "straight"
+  },
+  "861": {
+    "scenario": "gentle_brake"
+  },
+  "862": {
+    "scenario": "throttle_mod"
+  },
+  "863": {
+    "scenario": "gentle_brake"
+  },
+  "864": {
+    "scenario": "corner_right"
+  },
+  "865": {
+    "scenario": "corner_right"
+  },
+  "866": {
+    "scenario": "throttle_mod"
+  },
+  "867": {
+    "scenario": "throttle_mod"
+  },
+  "868": {
+    "scenario": "throttle_mod"
+  },
+  "869": {
+    "scenario": "straight"
+  },
+  "870": {
+    "scenario": "corner_right"
+  },
+  "871": {
+    "scenario": "straight"
+  },
+  "872": {
+    "scenario": "throttle_mod"
+  },
+  "873": {
+    "scenario": "straight"
+  },
+  "874": {
+    "scenario": "throttle_mod"
+  },
+  "875": {
+    "scenario": "corner_right"
+  },
+  "876": {
+    "scenario": "gentle_brake"
+  },
+  "877": {
+    "scenario": "straight"
+  },
+  "878": {
+    "scenario": "straight"
+  },
+  "879": {
+    "scenario": "corner_left"
+  },
+  "880": {
+    "scenario": "throttle_mod"
+  },
+  "881": {
+    "scenario": "gentle_brake"
+  },
+  "882": {
+    "scenario": "straight"
+  },
+  "883": {
+    "scenario": "throttle_mod"
+  },
+  "884": {
+    "scenario": "corner_left"
+  },
+  "885": {
+    "scenario": "corner_left"
+  },
+  "886": {
+    "scenario": "throttle_mod"
+  },
+  "887": {
+    "scenario": "gentle_brake"
+  },
+  "888": {
+    "scenario": "gentle_brake"
+  },
+  "889": {
+    "scenario": "straight"
+  },
+  "890": {
+    "scenario": "corner_right"
+  },
+  "891": {
+    "scenario": "corner_left"
+  },
+  "892": {
+    "scenario": "straight"
+  },
+  "893": {
+    "scenario": "corner_right"
+  },
+  "894": {
+    "scenario": "throttle_mod"
+  },
+  "895": {
+    "scenario": "corner_right"
+  },
+  "896": {
+    "scenario": "gentle_brake"
+  },
+  "897": {
+    "scenario": "straight"
+  },
+  "898": {
+    "scenario": "straight"
+  },
+  "899": {
+    "scenario": "corner_left"
+  },
+  "900": {
+    "scenario": "gentle_brake"
+  },
+  "901": {
+    "scenario": "corner_left"
+  },
+  "902": {
+    "scenario": "corner_right"
+  },
+  "903": {
+    "scenario": "straight"
+  },
+  "904": {
+    "scenario": "corner_right"
+  },
+  "905": {
+    "scenario": "throttle_mod"
+  },
+  "906": {
+    "scenario": "corner_left"
+  },
+  "907": {
+    "scenario": "gentle_brake"
+  },
+  "908": {
+    "scenario": "gentle_brake"
+  },
+  "909": {
+    "scenario": "corner_right"
+  },
+  "910": {
+    "scenario": "throttle_mod"
+  },
+  "911": {
+    "scenario": "straight"
+  },
+  "912": {
+    "scenario": "straight"
+  },
+  "913": {
+    "scenario": "throttle_mod"
+  },
+  "914": {
+    "scenario": "straight"
+  },
+  "915": {
+    "scenario": "straight"
+  },
+  "916": {
+    "scenario": "gentle_brake"
+  },
+  "917": {
+    "scenario": "corner_right"
+  },
+  "918": {
+    "scenario": "straight"
+  },
+  "919": {
+    "scenario": "throttle_mod"
+  },
+  "920": {
+    "scenario": "corner_right"
+  },
+  "921": {
+    "scenario": "corner_right"
+  },
+  "922": {
+    "scenario": "corner_right"
+  },
+  "923": {
+    "scenario": "straight"
+  },
+  "924": {
+    "scenario": "gentle_brake"
+  },
+  "925": {
+    "scenario": "corner_right"
+  },
+  "926": {
+    "scenario": "straight"
+  },
+  "927": {
+    "scenario": "corner_left"
+  },
+  "928": {
+    "scenario": "gentle_brake"
+  },
+  "929": {
+    "scenario": "straight"
+  },
+  "930": {
+    "scenario": "corner_left"
+  },
+  "931": {
+    "scenario": "gentle_brake"
+  },
+  "932": {
+    "scenario": "corner_left"
+  },
+  "933": {
+    "scenario": "throttle_mod"
+  },
+  "934": {
+    "scenario": "throttle_mod"
+  },
+  "935": {
+    "scenario": "throttle_mod"
+  },
+  "936": {
+    "scenario": "throttle_mod"
+  },
+  "937": {
+    "scenario": "corner_left"
+  },
+  "938": {
+    "scenario": "gentle_brake"
+  },
+  "939": {
+    "scenario": "corner_left"
+  },
+  "940": {
+    "scenario": "straight"
+  },
+  "941": {
+    "scenario": "throttle_mod"
+  },
+  "942": {
+    "scenario": "throttle_mod"
+  },
+  "943": {
+    "scenario": "gentle_brake"
+  },
+  "944": {
+    "scenario": "corner_left"
+  },
+  "945": {
+    "scenario": "corner_right"
+  },
+  "946": {
+    "scenario": "throttle_mod"
+  },
+  "947": {
+    "scenario": "corner_right"
+  },
+  "948": {
+    "scenario": "gentle_brake"
+  },
+  "949": {
+    "scenario": "gentle_brake"
+  },
+  "950": {
+    "scenario": "corner_left"
+  },
+  "951": {
+    "scenario": "throttle_mod"
+  },
+  "952": {
+    "scenario": "throttle_mod"
+  },
+  "953": {
+    "scenario": "corner_right"
+  },
+  "954": {
+    "scenario": "corner_right"
+  },
+  "955": {
+    "scenario": "throttle_mod"
+  },
+  "956": {
+    "scenario": "corner_right"
+  },
+  "957": {
+    "scenario": "straight"
+  },
+  "958": {
+    "scenario": "gentle_brake"
+  },
+  "959": {
+    "scenario": "straight"
+  },
+  "960": {
+    "scenario": "corner_right"
+  },
+  "961": {
+    "scenario": "throttle_mod"
+  },
+  "962": {
+    "scenario": "straight"
+  },
+  "963": {
+    "scenario": "throttle_mod"
+  },
+  "964": {
+    "scenario": "straight"
+  },
+  "965": {
+    "scenario": "corner_left"
+  },
+  "966": {
+    "scenario": "throttle_mod"
+  },
+  "967": {
+    "scenario": "throttle_mod"
+  },
+  "968": {
+    "scenario": "throttle_mod"
+  },
+  "969": {
+    "scenario": "straight"
+  },
+  "970": {
+    "scenario": "straight"
+  },
+  "971": {
+    "scenario": "gentle_brake"
+  },
+  "972": {
+    "scenario": "throttle_mod"
+  },
+  "973": {
+    "scenario": "straight"
+  },
+  "974": {
+    "scenario": "straight"
+  },
+  "975": {
+    "scenario": "throttle_mod"
+  },
+  "976": {
+    "scenario": "straight"
+  },
+  "977": {
+    "scenario": "throttle_mod"
+  },
+  "978": {
+    "scenario": "straight"
+  },
+  "979": {
+    "scenario": "gentle_brake"
+  },
+  "980": {
+    "scenario": "throttle_mod"
+  },
+  "981": {
+    "scenario": "straight"
+  },
+  "982": {
+    "scenario": "throttle_mod"
+  },
+  "983": {
+    "scenario": "straight"
+  },
+  "984": {
+    "scenario": "throttle_mod"
+  },
+  "985": {
+    "scenario": "corner_left"
+  },
+  "986": {
+    "scenario": "throttle_mod"
+  },
+  "987": {
+    "scenario": "straight"
+  },
+  "988": {
+    "scenario": "corner_left"
+  },
+  "989": {
+    "scenario": "straight"
+  },
+  "990": {
+    "scenario": "corner_left"
+  },
+  "991": {
+    "scenario": "straight"
+  },
+  "992": {
+    "scenario": "gentle_brake"
+  },
+  "993": {
+    "scenario": "corner_right"
+  },
+  "994": {
+    "scenario": "straight"
+  },
+  "995": {
+    "scenario": "throttle_mod"
+  },
+  "996": {
+    "scenario": "throttle_mod"
+  },
+  "997": {
+    "scenario": "gentle_brake"
+  },
+  "998": {
+    "scenario": "corner_left"
+  },
+  "999": {
+    "scenario": "corner_left"
+  },
+  "1000": {
+    "scenario": "throttle_mod"
+  },
+  "1001": {
+    "scenario": "straight"
+  },
+  "1002": {
+    "scenario": "straight"
+  },
+  "1003": {
+    "scenario": "gentle_brake"
+  },
+  "1004": {
+    "scenario": "straight"
+  },
+  "1005": {
+    "scenario": "gentle_brake"
+  },
+  "1006": {
+    "scenario": "corner_left"
+  },
+  "1007": {
+    "scenario": "gentle_brake"
+  },
+  "1008": {
+    "scenario": "straight"
+  },
+  "1009": {
+    "scenario": "gentle_brake"
+  },
+  "1010": {
+    "scenario": "corner_left"
+  },
+  "1011": {
+    "scenario": "corner_left"
+  },
+  "1012": {
+    "scenario": "corner_right"
+  },
+  "1013": {
+    "scenario": "straight"
+  },
+  "1014": {
+    "scenario": "throttle_mod"
+  },
+  "1015": {
+    "scenario": "straight"
+  },
+  "1016": {
+    "scenario": "gentle_brake"
+  },
+  "1017": {
+    "scenario": "gentle_brake"
+  },
+  "1018": {
+    "scenario": "corner_right"
+  },
+  "1019": {
+    "scenario": "straight"
+  },
+  "1020": {
+    "scenario": "straight"
+  },
+  "1021": {
+    "scenario": "corner_right"
+  },
+  "1022": {
+    "scenario": "straight"
+  },
+  "1023": {
+    "scenario": "corner_left"
+  },
+  "1024": {
+    "scenario": "gentle_brake"
+  },
+  "1025": {
+    "scenario": "throttle_mod"
+  },
+  "1026": {
+    "scenario": "throttle_mod"
+  },
+  "1027": {
+    "scenario": "throttle_mod"
+  },
+  "1028": {
+    "scenario": "corner_left"
+  },
+  "1029": {
+    "scenario": "throttle_mod"
+  },
+  "1030": {
+    "scenario": "corner_left"
+  },
+  "1031": {
+    "scenario": "straight"
+  },
+  "1032": {
+    "scenario": "straight"
+  },
+  "1033": {
+    "scenario": "corner_left"
+  },
+  "1034": {
+    "scenario": "straight"
+  },
+  "1035": {
+    "scenario": "corner_right"
+  },
+  "1036": {
+    "scenario": "corner_right"
+  },
+  "1037": {
+    "scenario": "straight"
+  },
+  "1038": {
+    "scenario": "throttle_mod"
+  },
+  "1039": {
+    "scenario": "corner_right"
+  },
+  "1040": {
+    "scenario": "throttle_mod"
+  },
+  "1041": {
+    "scenario": "straight"
+  },
+  "1042": {
+    "scenario": "gentle_brake"
+  },
+  "1043": {
+    "scenario": "straight"
+  },
+  "1044": {
+    "scenario": "corner_left"
+  },
+  "1045": {
+    "scenario": "throttle_mod"
+  },
+  "1046": {
+    "scenario": "corner_right"
+  },
+  "1047": {
+    "scenario": "straight"
+  },
+  "1048": {
+    "scenario": "straight"
+  },
+  "1049": {
+    "scenario": "straight"
+  },
+  "1050": {
+    "scenario": "corner_left"
+  },
+  "1051": {
+    "scenario": "corner_right"
+  },
+  "1052": {
+    "scenario": "corner_left"
+  },
+  "1053": {
+    "scenario": "straight"
+  },
+  "1054": {
+    "scenario": "straight"
+  },
+  "1055": {
+    "scenario": "corner_right"
+  },
+  "1056": {
+    "scenario": "straight"
+  },
+  "1057": {
+    "scenario": "throttle_mod"
+  },
+  "1058": {
+    "scenario": "throttle_mod"
+  },
+  "1059": {
+    "scenario": "straight"
+  },
+  "1060": {
+    "scenario": "straight"
+  },
+  "1061": {
+    "scenario": "throttle_mod"
+  },
+  "1062": {
+    "scenario": "straight"
+  },
+  "1063": {
+    "scenario": "straight"
+  },
+  "1064": {
+    "scenario": "throttle_mod"
+  },
+  "1065": {
+    "scenario": "throttle_mod"
+  },
+  "1066": {
+    "scenario": "straight"
+  },
+  "1067": {
+    "scenario": "gentle_brake"
+  },
+  "1068": {
+    "scenario": "throttle_mod"
+  },
+  "1069": {
+    "scenario": "straight"
+  },
+  "1070": {
+    "scenario": "straight"
+  },
+  "1071": {
+    "scenario": "gentle_brake"
+  },
+  "1072": {
+    "scenario": "corner_left"
+  },
+  "1073": {
+    "scenario": "throttle_mod"
+  },
+  "1074": {
+    "scenario": "gentle_brake"
+  },
+  "1075": {
+    "scenario": "gentle_brake"
+  },
+  "1076": {
+    "scenario": "throttle_mod"
+  },
+  "1077": {
+    "scenario": "throttle_mod"
+  },
+  "1078": {
+    "scenario": "corner_left"
+  },
+  "1079": {
+    "scenario": "throttle_mod"
+  },
+  "1080": {
+    "scenario": "throttle_mod"
+  },
+  "1081": {
+    "scenario": "straight"
+  },
+  "1082": {
+    "scenario": "straight"
+  },
+  "1083": {
+    "scenario": "gentle_brake"
+  },
+  "1084": {
+    "scenario": "gentle_brake"
+  },
+  "1085": {
+    "scenario": "corner_right"
+  },
+  "1086": {
+    "scenario": "corner_right"
+  },
+  "1087": {
+    "scenario": "straight"
+  },
+  "1088": {
+    "scenario": "throttle_mod"
+  },
+  "1089": {
+    "scenario": "throttle_mod"
+  },
+  "1090": {
+    "scenario": "straight"
+  },
+  "1091": {
+    "scenario": "gentle_brake"
+  },
+  "1092": {
+    "scenario": "throttle_mod"
+  },
+  "1093": {
+    "scenario": "corner_right"
+  },
+  "1094": {
+    "scenario": "corner_right"
+  },
+  "1095": {
+    "scenario": "corner_right"
+  },
+  "1096": {
+    "scenario": "straight"
+  },
+  "1097": {
+    "scenario": "gentle_brake"
+  },
+  "1098": {
+    "scenario": "straight"
+  },
+  "1099": {
+    "scenario": "gentle_brake"
+  },
+  "1100": {
+    "scenario": "corner_right"
+  },
+  "1101": {
+    "scenario": "throttle_mod"
+  },
+  "1102": {
+    "scenario": "corner_right"
+  },
+  "1103": {
+    "scenario": "throttle_mod"
+  },
+  "1104": {
+    "scenario": "corner_right"
+  },
+  "1105": {
+    "scenario": "throttle_mod"
+  },
+  "1106": {
+    "scenario": "straight"
+  },
+  "1107": {
+    "scenario": "corner_right"
+  },
+  "1108": {
+    "scenario": "corner_left"
+  },
+  "1109": {
+    "scenario": "corner_left"
+  },
+  "1110": {
+    "scenario": "gentle_brake"
+  },
+  "1111": {
+    "scenario": "throttle_mod"
+  },
+  "1112": {
+    "scenario": "corner_left"
+  },
+  "1113": {
+    "scenario": "gentle_brake"
+  },
+  "1114": {
+    "scenario": "throttle_mod"
+  },
+  "1115": {
+    "scenario": "corner_right"
+  },
+  "1116": {
+    "scenario": "throttle_mod"
+  },
+  "1117": {
+    "scenario": "throttle_mod"
+  },
+  "1118": {
+    "scenario": "gentle_brake"
+  },
+  "1119": {
+    "scenario": "gentle_brake"
+  },
+  "1120": {
+    "scenario": "corner_left"
+  },
+  "1121": {
+    "scenario": "corner_right"
+  },
+  "1122": {
+    "scenario": "corner_right"
+  },
+  "1123": {
+    "scenario": "corner_left"
+  },
+  "1124": {
+    "scenario": "corner_left"
+  },
+  "1125": {
+    "scenario": "gentle_brake"
+  },
+  "1126": {
+    "scenario": "straight"
+  },
+  "1127": {
+    "scenario": "gentle_brake"
+  },
+  "1128": {
+    "scenario": "gentle_brake"
+  },
+  "1129": {
+    "scenario": "straight"
+  },
+  "1130": {
+    "scenario": "straight"
+  },
+  "1131": {
+    "scenario": "corner_right"
+  },
+  "1132": {
+    "scenario": "corner_right"
+  },
+  "1133": {
+    "scenario": "straight"
+  },
+  "1134": {
+    "scenario": "straight"
+  },
+  "1135": {
+    "scenario": "corner_left"
+  },
+  "1136": {
+    "scenario": "gentle_brake"
+  },
+  "1137": {
+    "scenario": "straight"
+  },
+  "1138": {
+    "scenario": "throttle_mod"
+  },
+  "1139": {
+    "scenario": "straight"
+  },
+  "1140": {
+    "scenario": "gentle_brake"
+  },
+  "1141": {
+    "scenario": "corner_right"
+  },
+  "1142": {
+    "scenario": "corner_right"
+  },
+  "1143": {
+    "scenario": "corner_left"
+  },
+  "1144": {
+    "scenario": "corner_left"
+  },
+  "1145": {
+    "scenario": "straight"
+  },
+  "1146": {
+    "scenario": "corner_right"
+  },
+  "1147": {
+    "scenario": "throttle_mod"
+  },
+  "1148": {
+    "scenario": "corner_right"
+  },
+  "1149": {
+    "scenario": "corner_right"
+  },
+  "1150": {
+    "scenario": "corner_left"
+  },
+  "1151": {
+    "scenario": "straight"
+  },
+  "1152": {
+    "scenario": "gentle_brake"
+  },
+  "1153": {
+    "scenario": "straight"
+  },
+  "1154": {
+    "scenario": "gentle_brake"
+  },
+  "1155": {
+    "scenario": "corner_left"
+  },
+  "1156": {
+    "scenario": "gentle_brake"
+  },
+  "1157": {
+    "scenario": "corner_right"
+  },
+  "1158": {
+    "scenario": "throttle_mod"
+  },
+  "1159": {
+    "scenario": "corner_left"
+  },
+  "1160": {
+    "scenario": "gentle_brake"
+  },
+  "1161": {
+    "scenario": "corner_right"
+  },
+  "1162": {
+    "scenario": "gentle_brake"
+  },
+  "1163": {
+    "scenario": "throttle_mod"
+  },
+  "1164": {
+    "scenario": "gentle_brake"
+  },
+  "1165": {
+    "scenario": "corner_left"
+  },
+  "1166": {
+    "scenario": "straight"
+  },
+  "1167": {
+    "scenario": "corner_right"
+  },
+  "1168": {
+    "scenario": "corner_right"
+  },
+  "1169": {
+    "scenario": "straight"
+  },
+  "1170": {
+    "scenario": "throttle_mod"
+  },
+  "1171": {
+    "scenario": "straight"
+  },
+  "1172": {
+    "scenario": "gentle_brake"
+  },
+  "1173": {
+    "scenario": "straight"
+  },
+  "1174": {
+    "scenario": "gentle_brake"
+  },
+  "1175": {
+    "scenario": "gentle_brake"
+  },
+  "1176": {
+    "scenario": "throttle_mod"
+  },
+  "1177": {
+    "scenario": "corner_left"
+  },
+  "1178": {
+    "scenario": "throttle_mod"
+  },
+  "1179": {
+    "scenario": "throttle_mod"
+  },
+  "1180": {
+    "scenario": "corner_left"
+  },
+  "1181": {
+    "scenario": "corner_left"
+  },
+  "1182": {
+    "scenario": "straight"
+  },
+  "1183": {
+    "scenario": "gentle_brake"
+  },
+  "1184": {
+    "scenario": "gentle_brake"
+  },
+  "1185": {
+    "scenario": "straight"
+  },
+  "1186": {
+    "scenario": "straight"
+  },
+  "1187": {
+    "scenario": "gentle_brake"
+  },
+  "1188": {
+    "scenario": "corner_right"
+  },
+  "1189": {
+    "scenario": "throttle_mod"
+  },
+  "1190": {
+    "scenario": "throttle_mod"
+  },
+  "1191": {
+    "scenario": "straight"
+  },
+  "1192": {
+    "scenario": "gentle_brake"
+  },
+  "1193": {
+    "scenario": "straight"
+  },
+  "1194": {
+    "scenario": "gentle_brake"
+  },
+  "1195": {
+    "scenario": "straight"
+  },
+  "1196": {
+    "scenario": "throttle_mod"
+  },
+  "1197": {
+    "scenario": "corner_left"
+  },
+  "1198": {
+    "scenario": "corner_right"
+  },
+  "1199": {
+    "scenario": "straight"
+  },
+  "1200": {
+    "scenario": "corner_left"
+  },
+  "1201": {
+    "scenario": "corner_left"
+  },
+  "1202": {
+    "scenario": "straight"
+  },
+  "1203": {
+    "scenario": "gentle_brake"
+  },
+  "1204": {
+    "scenario": "straight"
+  },
+  "1205": {
+    "scenario": "straight"
+  },
+  "1206": {
+    "scenario": "corner_left"
+  },
+  "1207": {
+    "scenario": "gentle_brake"
+  },
+  "1208": {
+    "scenario": "corner_left"
+  },
+  "1209": {
+    "scenario": "throttle_mod"
+  },
+  "1210": {
+    "scenario": "straight"
+  },
+  "1211": {
+    "scenario": "gentle_brake"
+  },
+  "1212": {
+    "scenario": "gentle_brake"
+  },
+  "1213": {
+    "scenario": "throttle_mod"
+  },
+  "1214": {
+    "scenario": "straight"
+  },
+  "1215": {
+    "scenario": "corner_left"
+  },
+  "1216": {
+    "scenario": "throttle_mod"
+  },
+  "1217": {
+    "scenario": "throttle_mod"
+  },
+  "1218": {
+    "scenario": "corner_right"
+  },
+  "1219": {
+    "scenario": "corner_right"
+  },
+  "1220": {
+    "scenario": "throttle_mod"
+  },
+  "1221": {
+    "scenario": "corner_left"
+  },
+  "1222": {
+    "scenario": "throttle_mod"
+  },
+  "1223": {
+    "scenario": "straight"
+  },
+  "1224": {
+    "scenario": "throttle_mod"
+  },
+  "1225": {
+    "scenario": "corner_left"
+  },
+  "1226": {
+    "scenario": "corner_right"
+  },
+  "1227": {
+    "scenario": "corner_right"
+  },
+  "1228": {
+    "scenario": "gentle_brake"
+  },
+  "1229": {
+    "scenario": "straight"
+  },
+  "1230": {
+    "scenario": "gentle_brake"
+  },
+  "1231": {
+    "scenario": "gentle_brake"
+  },
+  "1232": {
+    "scenario": "straight"
+  },
+  "1233": {
+    "scenario": "throttle_mod"
+  },
+  "1234": {
+    "scenario": "throttle_mod"
+  },
+  "1235": {
+    "scenario": "throttle_mod"
+  },
+  "1236": {
+    "scenario": "gentle_brake"
+  },
+  "1237": {
+    "scenario": "straight"
+  },
+  "1238": {
+    "scenario": "throttle_mod"
+  },
+  "1239": {
+    "scenario": "straight"
+  },
+  "1240": {
+    "scenario": "straight"
+  },
+  "1241": {
+    "scenario": "throttle_mod"
+  },
+  "1242": {
+    "scenario": "gentle_brake"
+  },
+  "1243": {
+    "scenario": "straight"
+  },
+  "1244": {
+    "scenario": "corner_left"
+  },
+  "1245": {
+    "scenario": "straight"
+  },
+  "1246": {
+    "scenario": "corner_right"
+  },
+  "1247": {
+    "scenario": "corner_right"
+  },
+  "1248": {
+    "scenario": "throttle_mod"
+  },
+  "1249": {
+    "scenario": "throttle_mod"
+  },
+  "1250": {
+    "scenario": "gentle_brake"
+  },
+  "1251": {
+    "scenario": "corner_left"
+  },
+  "1252": {
+    "scenario": "straight"
+  },
+  "1253": {
+    "scenario": "corner_right"
+  },
+  "1254": {
+    "scenario": "straight"
+  },
+  "1255": {
+    "scenario": "corner_right"
+  },
+  "1256": {
+    "scenario": "corner_left"
+  },
+  "1257": {
+    "scenario": "straight"
+  },
+  "1258": {
+    "scenario": "corner_left"
+  },
+  "1259": {
+    "scenario": "gentle_brake"
+  },
+  "1260": {
+    "scenario": "gentle_brake"
+  },
+  "1261": {
+    "scenario": "gentle_brake"
+  },
+  "1262": {
+    "scenario": "corner_left"
+  },
+  "1263": {
+    "scenario": "corner_right"
+  },
+  "1264": {
+    "scenario": "corner_left"
+  },
+  "1265": {
+    "scenario": "gentle_brake"
+  },
+  "1266": {
+    "scenario": "throttle_mod"
+  },
+  "1267": {
+    "scenario": "gentle_brake"
+  },
+  "1268": {
+    "scenario": "straight"
+  },
+  "1269": {
+    "scenario": "gentle_brake"
+  },
+  "1270": {
+    "scenario": "gentle_brake"
+  },
+  "1271": {
+    "scenario": "corner_right"
+  },
+  "1272": {
+    "scenario": "corner_left"
+  },
+  "1273": {
+    "scenario": "corner_left"
+  },
+  "1274": {
+    "scenario": "throttle_mod"
+  },
+  "1275": {
+    "scenario": "corner_left"
+  },
+  "1276": {
+    "scenario": "gentle_brake"
+  },
+  "1277": {
+    "scenario": "corner_left"
+  },
+  "1278": {
+    "scenario": "straight"
+  },
+  "1279": {
+    "scenario": "corner_right"
+  },
+  "1280": {
+    "scenario": "corner_right"
+  },
+  "1281": {
+    "scenario": "gentle_brake"
+  },
+  "1282": {
+    "scenario": "gentle_brake"
+  },
+  "1283": {
+    "scenario": "straight"
+  },
+  "1284": {
+    "scenario": "corner_right"
+  },
+  "1285": {
+    "scenario": "straight"
+  },
+  "1286": {
+    "scenario": "throttle_mod"
+  },
+  "1287": {
+    "scenario": "straight"
+  },
+  "1288": {
+    "scenario": "throttle_mod"
+  },
+  "1289": {
+    "scenario": "throttle_mod"
+  },
+  "1290": {
+    "scenario": "corner_right"
+  },
+  "1291": {
+    "scenario": "throttle_mod"
+  },
+  "1292": {
+    "scenario": "corner_left"
+  },
+  "1293": {
+    "scenario": "corner_right"
+  },
+  "1294": {
+    "scenario": "throttle_mod"
+  },
+  "1295": {
+    "scenario": "corner_left"
+  },
+  "1296": {
+    "scenario": "gentle_brake"
+  },
+  "1297": {
+    "scenario": "throttle_mod"
+  },
+  "1298": {
+    "scenario": "corner_left"
+  },
+  "1299": {
+    "scenario": "gentle_brake"
+  },
+  "1300": {
+    "scenario": "straight"
+  },
+  "1301": {
+    "scenario": "throttle_mod"
+  },
+  "1302": {
+    "scenario": "corner_right"
+  },
+  "1303": {
+    "scenario": "throttle_mod"
+  },
+  "1304": {
+    "scenario": "corner_left"
+  },
+  "1305": {
+    "scenario": "gentle_brake"
+  },
+  "1306": {
+    "scenario": "corner_left"
+  },
+  "1307": {
+    "scenario": "corner_left"
+  },
+  "1308": {
+    "scenario": "corner_left"
+  },
+  "1309": {
+    "scenario": "straight"
+  },
+  "1310": {
+    "scenario": "gentle_brake"
+  },
+  "1311": {
+    "scenario": "straight"
+  },
+  "1312": {
+    "scenario": "throttle_mod"
+  },
+  "1313": {
+    "scenario": "throttle_mod"
+  },
+  "1314": {
+    "scenario": "gentle_brake"
+  },
+  "1315": {
+    "scenario": "straight"
+  },
+  "1316": {
+    "scenario": "straight"
+  },
+  "1317": {
+    "scenario": "straight"
+  },
+  "1318": {
+    "scenario": "straight"
+  },
+  "1319": {
+    "scenario": "corner_left"
+  },
+  "1320": {
+    "scenario": "straight"
+  },
+  "1321": {
+    "scenario": "straight"
+  },
+  "1322": {
+    "scenario": "throttle_mod"
+  },
+  "1323": {
+    "scenario": "gentle_brake"
+  },
+  "1324": {
+    "scenario": "gentle_brake"
+  },
+  "1325": {
+    "scenario": "gentle_brake"
+  },
+  "1326": {
+    "scenario": "throttle_mod"
+  },
+  "1327": {
+    "scenario": "straight"
+  },
+  "1328": {
+    "scenario": "gentle_brake"
+  },
+  "1329": {
+    "scenario": "throttle_mod"
+  },
+  "1330": {
+    "scenario": "straight"
+  },
+  "1331": {
+    "scenario": "corner_right"
+  },
+  "1332": {
+    "scenario": "straight"
+  },
+  "1333": {
+    "scenario": "corner_left"
+  },
+  "1334": {
+    "scenario": "throttle_mod"
+  },
+  "1335": {
+    "scenario": "gentle_brake"
+  },
+  "1336": {
+    "scenario": "straight"
+  },
+  "1337": {
+    "scenario": "gentle_brake"
+  },
+  "1338": {
+    "scenario": "throttle_mod"
+  },
+  "1339": {
+    "scenario": "gentle_brake"
+  },
+  "1340": {
+    "scenario": "straight"
+  },
+  "1341": {
+    "scenario": "straight"
+  },
+  "1342": {
+    "scenario": "throttle_mod"
+  },
+  "1343": {
+    "scenario": "corner_left"
+  },
+  "1344": {
+    "scenario": "corner_left"
+  },
+  "1345": {
+    "scenario": "corner_left"
+  },
+  "1346": {
+    "scenario": "gentle_brake"
+  },
+  "1347": {
+    "scenario": "throttle_mod"
+  },
+  "1348": {
+    "scenario": "corner_left"
+  },
+  "1349": {
+    "scenario": "straight"
+  },
+  "1350": {
+    "scenario": "gentle_brake"
+  },
+  "1351": {
+    "scenario": "throttle_mod"
+  },
+  "1352": {
+    "scenario": "throttle_mod"
+  },
+  "1353": {
+    "scenario": "gentle_brake"
+  },
+  "1354": {
+    "scenario": "throttle_mod"
+  },
+  "1355": {
+    "scenario": "gentle_brake"
+  },
+  "1356": {
+    "scenario": "straight"
+  },
+  "1357": {
+    "scenario": "throttle_mod"
+  },
+  "1358": {
+    "scenario": "throttle_mod"
+  },
+  "1359": {
+    "scenario": "straight"
+  },
+  "1360": {
+    "scenario": "straight"
+  },
+  "1361": {
+    "scenario": "straight"
+  },
+  "1362": {
+    "scenario": "straight"
+  },
+  "1363": {
+    "scenario": "corner_right"
+  },
+  "1364": {
+    "scenario": "straight"
+  },
+  "1365": {
+    "scenario": "throttle_mod"
+  },
+  "1366": {
+    "scenario": "straight"
+  },
+  "1367": {
+    "scenario": "gentle_brake"
+  },
+  "1368": {
+    "scenario": "corner_left"
+  },
+  "1369": {
+    "scenario": "throttle_mod"
+  },
+  "1370": {
+    "scenario": "corner_right"
+  },
+  "1371": {
+    "scenario": "corner_left"
+  },
+  "1372": {
+    "scenario": "throttle_mod"
+  },
+  "1373": {
+    "scenario": "corner_right"
+  },
+  "1374": {
+    "scenario": "corner_left"
+  },
+  "1375": {
+    "scenario": "gentle_brake"
+  },
+  "1376": {
+    "scenario": "corner_right"
+  },
+  "1377": {
+    "scenario": "corner_right"
+  },
+  "1378": {
+    "scenario": "straight"
+  },
+  "1379": {
+    "scenario": "corner_right"
+  },
+  "1380": {
+    "scenario": "throttle_mod"
+  },
+  "1381": {
+    "scenario": "corner_left"
+  },
+  "1382": {
+    "scenario": "throttle_mod"
+  },
+  "1383": {
+    "scenario": "corner_right"
+  },
+  "1384": {
+    "scenario": "straight"
+  },
+  "1385": {
+    "scenario": "throttle_mod"
+  },
+  "1386": {
+    "scenario": "straight"
+  },
+  "1387": {
+    "scenario": "corner_left"
+  },
+  "1388": {
+    "scenario": "straight"
+  },
+  "1389": {
+    "scenario": "corner_right"
+  },
+  "1390": {
+    "scenario": "corner_left"
+  },
+  "1391": {
+    "scenario": "straight"
+  },
+  "1392": {
+    "scenario": "throttle_mod"
+  },
+  "1393": {
+    "scenario": "gentle_brake"
+  },
+  "1394": {
+    "scenario": "throttle_mod"
+  },
+  "1395": {
+    "scenario": "gentle_brake"
+  },
+  "1396": {
+    "scenario": "gentle_brake"
+  },
+  "1397": {
+    "scenario": "throttle_mod"
+  },
+  "1398": {
+    "scenario": "straight"
+  },
+  "1399": {
+    "scenario": "corner_right"
+  },
+  "1400": {
+    "scenario": "gentle_brake"
+  },
+  "1401": {
+    "scenario": "straight"
+  },
+  "1402": {
+    "scenario": "throttle_mod"
+  },
+  "1403": {
+    "scenario": "corner_left"
+  },
+  "1404": {
+    "scenario": "gentle_brake"
+  },
+  "1405": {
+    "scenario": "gentle_brake"
+  },
+  "1406": {
+    "scenario": "corner_right"
+  },
+  "1407": {
+    "scenario": "gentle_brake"
+  },
+  "1408": {
+    "scenario": "corner_right"
+  },
+  "1409": {
+    "scenario": "gentle_brake"
+  },
+  "1410": {
+    "scenario": "gentle_brake"
+  },
+  "1411": {
+    "scenario": "corner_right"
+  },
+  "1412": {
+    "scenario": "corner_right"
+  },
+  "1413": {
+    "scenario": "straight"
+  },
+  "1414": {
+    "scenario": "corner_left"
+  },
+  "1415": {
+    "scenario": "corner_right"
+  },
+  "1416": {
+    "scenario": "corner_right"
+  },
+  "1417": {
+    "scenario": "straight"
+  },
+  "1418": {
+    "scenario": "straight"
+  },
+  "1419": {
+    "scenario": "straight"
+  },
+  "1420": {
+    "scenario": "gentle_brake"
+  },
+  "1421": {
+    "scenario": "straight"
+  },
+  "1422": {
+    "scenario": "corner_left"
+  },
+  "1423": {
+    "scenario": "corner_right"
+  },
+  "1424": {
+    "scenario": "corner_left"
+  },
+  "1425": {
+    "scenario": "throttle_mod"
+  },
+  "1426": {
+    "scenario": "corner_right"
+  },
+  "1427": {
+    "scenario": "gentle_brake"
+  },
+  "1428": {
+    "scenario": "straight"
+  },
+  "1429": {
+    "scenario": "gentle_brake"
+  },
+  "1430": {
+    "scenario": "gentle_brake"
+  },
+  "1431": {
+    "scenario": "straight"
+  },
+  "1432": {
+    "scenario": "corner_left"
+  },
+  "1433": {
+    "scenario": "gentle_brake"
+  },
+  "1434": {
+    "scenario": "corner_right"
+  },
+  "1435": {
+    "scenario": "throttle_mod"
+  },
+  "1436": {
+    "scenario": "throttle_mod"
+  },
+  "1437": {
+    "scenario": "gentle_brake"
+  },
+  "1438": {
+    "scenario": "gentle_brake"
+  },
+  "1439": {
+    "scenario": "corner_right"
+  },
+  "1440": {
+    "scenario": "corner_right"
+  },
+  "1441": {
+    "scenario": "throttle_mod"
+  },
+  "1442": {
+    "scenario": "gentle_brake"
+  },
+  "1443": {
+    "scenario": "straight"
+  },
+  "1444": {
+    "scenario": "corner_right"
+  },
+  "1445": {
+    "scenario": "gentle_brake"
+  },
+  "1446": {
+    "scenario": "throttle_mod"
+  },
+  "1447": {
+    "scenario": "straight"
+  },
+  "1448": {
+    "scenario": "straight"
+  },
+  "1449": {
+    "scenario": "corner_left"
+  },
+  "1450": {
+    "scenario": "corner_right"
+  },
+  "1451": {
+    "scenario": "corner_left"
+  },
+  "1452": {
+    "scenario": "corner_right"
+  },
+  "1453": {
+    "scenario": "throttle_mod"
+  },
+  "1454": {
+    "scenario": "straight"
+  },
+  "1455": {
+    "scenario": "gentle_brake"
+  },
+  "1456": {
+    "scenario": "corner_left"
+  },
+  "1457": {
+    "scenario": "gentle_brake"
+  },
+  "1458": {
+    "scenario": "gentle_brake"
+  },
+  "1459": {
+    "scenario": "gentle_brake"
+  },
+  "1460": {
+    "scenario": "corner_left"
+  },
+  "1461": {
+    "scenario": "throttle_mod"
+  },
+  "1462": {
+    "scenario": "straight"
+  },
+  "1463": {
+    "scenario": "throttle_mod"
+  },
+  "1464": {
+    "scenario": "straight"
+  },
+  "1465": {
+    "scenario": "throttle_mod"
+  },
+  "1466": {
+    "scenario": "straight"
+  },
+  "1467": {
+    "scenario": "straight"
+  },
+  "1468": {
+    "scenario": "throttle_mod"
+  },
+  "1469": {
+    "scenario": "gentle_brake"
+  },
+  "1470": {
+    "scenario": "corner_left"
+  },
+  "1471": {
+    "scenario": "straight"
+  },
+  "1472": {
+    "scenario": "corner_left"
+  },
+  "1473": {
+    "scenario": "gentle_brake"
+  },
+  "1474": {
+    "scenario": "corner_right"
+  },
+  "1475": {
+    "scenario": "corner_left"
+  },
+  "1476": {
+    "scenario": "gentle_brake"
+  },
+  "1477": {
+    "scenario": "straight"
+  },
+  "1478": {
+    "scenario": "straight"
+  },
+  "1479": {
+    "scenario": "gentle_brake"
+  },
+  "1480": {
+    "scenario": "corner_left"
+  },
+  "1481": {
+    "scenario": "gentle_brake"
+  },
+  "1482": {
+    "scenario": "corner_left"
+  },
+  "1483": {
+    "scenario": "corner_left"
+  },
+  "1484": {
+    "scenario": "gentle_brake"
+  },
+  "1485": {
+    "scenario": "corner_left"
+  },
+  "1486": {
+    "scenario": "corner_left"
+  },
+  "1487": {
+    "scenario": "corner_right"
+  },
+  "1488": {
+    "scenario": "gentle_brake"
+  },
+  "1489": {
+    "scenario": "throttle_mod"
+  },
+  "1490": {
+    "scenario": "corner_right"
+  },
+  "1491": {
+    "scenario": "corner_right"
+  },
+  "1492": {
+    "scenario": "gentle_brake"
+  },
+  "1493": {
+    "scenario": "straight"
+  },
+  "1494": {
+    "scenario": "straight"
+  },
+  "1495": {
+    "scenario": "throttle_mod"
+  },
+  "1496": {
+    "scenario": "gentle_brake"
+  },
+  "1497": {
+    "scenario": "straight"
+  },
+  "1498": {
+    "scenario": "throttle_mod"
+  },
+  "1499": {
+    "scenario": "corner_right"
+  },
+  "1500": {
+    "scenario": "corner_right"
+  },
+  "1501": {
+    "scenario": "corner_right"
+  },
+  "1502": {
+    "scenario": "straight"
+  },
+  "1503": {
+    "scenario": "gentle_brake"
+  },
+  "1504": {
+    "scenario": "straight"
+  },
+  "1505": {
+    "scenario": "gentle_brake"
+  },
+  "1506": {
+    "scenario": "straight"
+  },
+  "1507": {
+    "scenario": "throttle_mod"
+  },
+  "1508": {
+    "scenario": "straight"
+  },
+  "1509": {
+    "scenario": "throttle_mod"
+  },
+  "1510": {
+    "scenario": "corner_left"
+  },
+  "1511": {
+    "scenario": "gentle_brake"
+  },
+  "1512": {
+    "scenario": "corner_right"
+  },
+  "1513": {
+    "scenario": "straight"
+  },
+  "1514": {
+    "scenario": "throttle_mod"
+  },
+  "1515": {
+    "scenario": "corner_right"
+  },
+  "1516": {
+    "scenario": "corner_right"
+  },
+  "1517": {
+    "scenario": "throttle_mod"
+  },
+  "1518": {
+    "scenario": "throttle_mod"
+  },
+  "1519": {
+    "scenario": "straight"
+  },
+  "1520": {
+    "scenario": "gentle_brake"
+  },
+  "1521": {
+    "scenario": "corner_left"
+  },
+  "1522": {
+    "scenario": "corner_right"
+  },
+  "1523": {
+    "scenario": "corner_left"
+  },
+  "1524": {
+    "scenario": "throttle_mod"
+  },
+  "1525": {
+    "scenario": "throttle_mod"
+  },
+  "1526": {
+    "scenario": "straight"
+  },
+  "1527": {
+    "scenario": "straight"
+  },
+  "1528": {
+    "scenario": "straight"
+  },
+  "1529": {
+    "scenario": "straight"
+  },
+  "1530": {
+    "scenario": "gentle_brake"
+  },
+  "1531": {
+    "scenario": "corner_left"
+  },
+  "1532": {
+    "scenario": "throttle_mod"
+  },
+  "1533": {
+    "scenario": "gentle_brake"
+  },
+  "1534": {
+    "scenario": "corner_right"
+  },
+  "1535": {
+    "scenario": "corner_right"
+  },
+  "1536": {
+    "scenario": "throttle_mod"
+  },
+  "1537": {
+    "scenario": "throttle_mod"
+  },
+  "1538": {
+    "scenario": "corner_left"
+  },
+  "1539": {
+    "scenario": "gentle_brake"
+  },
+  "1540": {
+    "scenario": "throttle_mod"
+  },
+  "1541": {
+    "scenario": "throttle_mod"
+  },
+  "1542": {
+    "scenario": "gentle_brake"
+  },
+  "1543": {
+    "scenario": "straight"
+  },
+  "1544": {
+    "scenario": "corner_left"
+  },
+  "1545": {
+    "scenario": "gentle_brake"
+  },
+  "1546": {
+    "scenario": "straight"
+  },
+  "1547": {
+    "scenario": "corner_right"
+  },
+  "1548": {
+    "scenario": "throttle_mod"
+  },
+  "1549": {
+    "scenario": "throttle_mod"
+  },
+  "1550": {
+    "scenario": "corner_left"
+  },
+  "1551": {
+    "scenario": "gentle_brake"
+  },
+  "1552": {
+    "scenario": "gentle_brake"
+  },
+  "1553": {
+    "scenario": "gentle_brake"
+  },
+  "1554": {
+    "scenario": "straight"
+  },
+  "1555": {
+    "scenario": "straight"
+  },
+  "1556": {
+    "scenario": "corner_left"
+  },
+  "1557": {
+    "scenario": "corner_left"
+  },
+  "1558": {
+    "scenario": "straight"
+  },
+  "1559": {
+    "scenario": "throttle_mod"
+  },
+  "1560": {
+    "scenario": "corner_left"
+  },
+  "1561": {
+    "scenario": "straight"
+  },
+  "1562": {
+    "scenario": "corner_left"
+  },
+  "1563": {
+    "scenario": "corner_left"
+  },
+  "1564": {
+    "scenario": "straight"
+  },
+  "1565": {
+    "scenario": "corner_right"
+  },
+  "1566": {
+    "scenario": "throttle_mod"
+  },
+  "1567": {
+    "scenario": "corner_left"
+  },
+  "1568": {
+    "scenario": "straight"
+  },
+  "1569": {
+    "scenario": "straight"
+  },
+  "1570": {
+    "scenario": "straight"
+  },
+  "1571": {
+    "scenario": "corner_left"
+  },
+  "1572": {
+    "scenario": "corner_left"
+  },
+  "1573": {
+    "scenario": "corner_left"
+  },
+  "1574": {
+    "scenario": "corner_left"
+  },
+  "1575": {
+    "scenario": "throttle_mod"
+  },
+  "1576": {
+    "scenario": "corner_left"
+  },
+  "1577": {
+    "scenario": "gentle_brake"
+  },
+  "1578": {
+    "scenario": "corner_left"
+  },
+  "1579": {
+    "scenario": "corner_left"
+  },
+  "1580": {
+    "scenario": "gentle_brake"
+  },
+  "1581": {
+    "scenario": "gentle_brake"
+  },
+  "1582": {
+    "scenario": "corner_left"
+  },
+  "1583": {
+    "scenario": "gentle_brake"
+  },
+  "1584": {
+    "scenario": "corner_right"
+  },
+  "1585": {
+    "scenario": "straight"
+  },
+  "1586": {
+    "scenario": "gentle_brake"
+  },
+  "1587": {
+    "scenario": "straight"
+  },
+  "1588": {
+    "scenario": "straight"
+  },
+  "1589": {
+    "scenario": "gentle_brake"
+  },
+  "1590": {
+    "scenario": "straight"
+  },
+  "1591": {
+    "scenario": "gentle_brake"
+  },
+  "1592": {
+    "scenario": "throttle_mod"
+  },
+  "1593": {
+    "scenario": "throttle_mod"
+  },
+  "1594": {
+    "scenario": "straight"
+  },
+  "1595": {
+    "scenario": "straight"
+  },
+  "1596": {
+    "scenario": "throttle_mod"
+  },
+  "1597": {
+    "scenario": "corner_left"
+  },
+  "1598": {
+    "scenario": "straight"
+  },
+  "1599": {
+    "scenario": "straight"
+  },
+  "1600": {
+    "scenario": "throttle_mod"
+  },
+  "1601": {
+    "scenario": "corner_left"
+  },
+  "1602": {
+    "scenario": "straight"
+  },
+  "1603": {
+    "scenario": "straight"
+  },
+  "1604": {
+    "scenario": "corner_left"
+  },
+  "1605": {
+    "scenario": "straight"
+  },
+  "1606": {
+    "scenario": "gentle_brake"
+  },
+  "1607": {
+    "scenario": "throttle_mod"
+  },
+  "1608": {
+    "scenario": "gentle_brake"
+  },
+  "1609": {
+    "scenario": "gentle_brake"
+  },
+  "1610": {
+    "scenario": "corner_right"
+  },
+  "1611": {
+    "scenario": "corner_left"
+  },
+  "1612": {
+    "scenario": "throttle_mod"
+  },
+  "1613": {
+    "scenario": "gentle_brake"
+  },
+  "1614": {
+    "scenario": "corner_left"
+  },
+  "1615": {
+    "scenario": "straight"
+  },
+  "1616": {
+    "scenario": "gentle_brake"
+  },
+  "1617": {
+    "scenario": "throttle_mod"
+  },
+  "1618": {
+    "scenario": "throttle_mod"
+  },
+  "1619": {
+    "scenario": "throttle_mod"
+  },
+  "1620": {
+    "scenario": "gentle_brake"
+  },
+  "1621": {
+    "scenario": "straight"
+  },
+  "1622": {
+    "scenario": "corner_right"
+  },
+  "1623": {
+    "scenario": "straight"
+  },
+  "1624": {
+    "scenario": "straight"
+  },
+  "1625": {
+    "scenario": "straight"
+  },
+  "1626": {
+    "scenario": "straight"
+  },
+  "1627": {
+    "scenario": "throttle_mod"
+  },
+  "1628": {
+    "scenario": "gentle_brake"
+  },
+  "1629": {
+    "scenario": "corner_right"
+  },
+  "1630": {
+    "scenario": "gentle_brake"
+  },
+  "1631": {
+    "scenario": "gentle_brake"
+  },
+  "1632": {
+    "scenario": "straight"
+  },
+  "1633": {
+    "scenario": "gentle_brake"
+  },
+  "1634": {
+    "scenario": "corner_left"
+  },
+  "1635": {
+    "scenario": "straight"
+  },
+  "1636": {
+    "scenario": "throttle_mod"
+  },
+  "1637": {
+    "scenario": "throttle_mod"
+  },
+  "1638": {
+    "scenario": "gentle_brake"
+  },
+  "1639": {
+    "scenario": "corner_left"
+  },
+  "1640": {
+    "scenario": "corner_left"
+  },
+  "1641": {
+    "scenario": "corner_left"
+  },
+  "1642": {
+    "scenario": "straight"
+  },
+  "1643": {
+    "scenario": "corner_left"
+  },
+  "1644": {
+    "scenario": "corner_right"
+  },
+  "1645": {
+    "scenario": "straight"
+  },
+  "1646": {
+    "scenario": "gentle_brake"
+  },
+  "1647": {
+    "scenario": "corner_right"
+  },
+  "1648": {
+    "scenario": "throttle_mod"
+  },
+  "1649": {
+    "scenario": "straight"
+  },
+  "1650": {
+    "scenario": "corner_left"
+  },
+  "1651": {
+    "scenario": "corner_right"
+  },
+  "1652": {
+    "scenario": "throttle_mod"
+  },
+  "1653": {
+    "scenario": "corner_left"
+  },
+  "1654": {
+    "scenario": "corner_left"
+  },
+  "1655": {
+    "scenario": "corner_right"
+  },
+  "1656": {
+    "scenario": "corner_left"
+  },
+  "1657": {
+    "scenario": "corner_left"
+  },
+  "1658": {
+    "scenario": "straight"
+  },
+  "1659": {
+    "scenario": "throttle_mod"
+  },
+  "1660": {
+    "scenario": "throttle_mod"
+  },
+  "1661": {
+    "scenario": "straight"
+  },
+  "1662": {
+    "scenario": "corner_left"
+  },
+  "1663": {
+    "scenario": "throttle_mod"
+  },
+  "1664": {
+    "scenario": "gentle_brake"
+  },
+  "1665": {
+    "scenario": "straight"
+  },
+  "1666": {
+    "scenario": "gentle_brake"
+  },
+  "1667": {
+    "scenario": "gentle_brake"
+  },
+  "1668": {
+    "scenario": "corner_left"
+  },
+  "1669": {
+    "scenario": "corner_left"
+  },
+  "1670": {
+    "scenario": "straight"
+  },
+  "1671": {
+    "scenario": "straight"
+  },
+  "1672": {
+    "scenario": "corner_right"
+  },
+  "1673": {
+    "scenario": "corner_right"
+  },
+  "1674": {
+    "scenario": "straight"
+  },
+  "1675": {
+    "scenario": "throttle_mod"
+  },
+  "1676": {
+    "scenario": "throttle_mod"
+  },
+  "1677": {
+    "scenario": "throttle_mod"
+  },
+  "1678": {
+    "scenario": "straight"
+  },
+  "1679": {
+    "scenario": "gentle_brake"
+  },
+  "1680": {
+    "scenario": "corner_right"
+  },
+  "1681": {
+    "scenario": "straight"
+  },
+  "1682": {
+    "scenario": "straight"
+  },
+  "1683": {
+    "scenario": "corner_left"
+  },
+  "1684": {
+    "scenario": "throttle_mod"
+  },
+  "1685": {
+    "scenario": "corner_left"
+  },
+  "1686": {
+    "scenario": "corner_left"
+  },
+  "1687": {
+    "scenario": "gentle_brake"
+  },
+  "1688": {
+    "scenario": "straight"
+  },
+  "1689": {
+    "scenario": "corner_left"
+  },
+  "1690": {
+    "scenario": "gentle_brake"
+  },
+  "1691": {
+    "scenario": "gentle_brake"
+  },
+  "1692": {
+    "scenario": "gentle_brake"
+  },
+  "1693": {
+    "scenario": "straight"
+  },
+  "1694": {
+    "scenario": "throttle_mod"
+  },
+  "1695": {
+    "scenario": "gentle_brake"
+  },
+  "1696": {
+    "scenario": "corner_right"
+  },
+  "1697": {
+    "scenario": "straight"
+  },
+  "1698": {
+    "scenario": "straight"
+  },
+  "1699": {
+    "scenario": "straight"
+  },
+  "1700": {
+    "scenario": "corner_left"
+  },
+  "1701": {
+    "scenario": "corner_left"
+  },
+  "1702": {
+    "scenario": "straight"
+  },
+  "1703": {
+    "scenario": "gentle_brake"
+  },
+  "1704": {
+    "scenario": "throttle_mod"
+  },
+  "1705": {
+    "scenario": "corner_left"
+  },
+  "1706": {
+    "scenario": "gentle_brake"
+  },
+  "1707": {
+    "scenario": "gentle_brake"
+  },
+  "1708": {
+    "scenario": "gentle_brake"
+  },
+  "1709": {
+    "scenario": "gentle_brake"
+  },
+  "1710": {
+    "scenario": "corner_left"
+  },
+  "1711": {
+    "scenario": "straight"
+  },
+  "1712": {
+    "scenario": "throttle_mod"
+  },
+  "1713": {
+    "scenario": "straight"
+  },
+  "1714": {
+    "scenario": "throttle_mod"
+  },
+  "1715": {
+    "scenario": "throttle_mod"
+  },
+  "1716": {
+    "scenario": "gentle_brake"
+  },
+  "1717": {
+    "scenario": "throttle_mod"
+  },
+  "1718": {
+    "scenario": "corner_left"
+  },
+  "1719": {
+    "scenario": "throttle_mod"
+  },
+  "1720": {
+    "scenario": "straight"
+  },
+  "1721": {
+    "scenario": "straight"
+  },
+  "1722": {
+    "scenario": "corner_left"
+  },
+  "1723": {
+    "scenario": "corner_left"
+  },
+  "1724": {
+    "scenario": "corner_right"
+  },
+  "1725": {
+    "scenario": "straight"
+  },
+  "1726": {
+    "scenario": "corner_left"
+  },
+  "1727": {
+    "scenario": "throttle_mod"
+  },
+  "1728": {
+    "scenario": "gentle_brake"
+  },
+  "1729": {
+    "scenario": "straight"
+  },
+  "1730": {
+    "scenario": "corner_right"
+  },
+  "1731": {
+    "scenario": "corner_right"
+  },
+  "1732": {
+    "scenario": "gentle_brake"
+  },
+  "1733": {
+    "scenario": "throttle_mod"
+  },
+  "1734": {
+    "scenario": "gentle_brake"
+  },
+  "1735": {
+    "scenario": "throttle_mod"
+  },
+  "1736": {
+    "scenario": "corner_right"
+  },
+  "1737": {
+    "scenario": "corner_right"
+  },
+  "1738": {
+    "scenario": "corner_left"
+  },
+  "1739": {
+    "scenario": "throttle_mod"
+  },
+  "1740": {
+    "scenario": "gentle_brake"
+  },
+  "1741": {
+    "scenario": "corner_right"
+  },
+  "1742": {
+    "scenario": "corner_left"
+  },
+  "1743": {
+    "scenario": "corner_right"
+  },
+  "1744": {
+    "scenario": "corner_right"
+  },
+  "1745": {
+    "scenario": "corner_left"
+  },
+  "1746": {
+    "scenario": "gentle_brake"
+  },
+  "1747": {
+    "scenario": "corner_right"
+  },
+  "1748": {
+    "scenario": "corner_right"
+  },
+  "1749": {
+    "scenario": "corner_left"
+  },
+  "1750": {
+    "scenario": "gentle_brake"
+  },
+  "1751": {
+    "scenario": "throttle_mod"
+  },
+  "1752": {
+    "scenario": "corner_left"
+  },
+  "1753": {
+    "scenario": "gentle_brake"
+  },
+  "1754": {
+    "scenario": "gentle_brake"
+  },
+  "1755": {
+    "scenario": "throttle_mod"
+  },
+  "1756": {
+    "scenario": "straight"
+  },
+  "1757": {
+    "scenario": "throttle_mod"
+  },
+  "1758": {
+    "scenario": "corner_right"
+  },
+  "1759": {
+    "scenario": "gentle_brake"
+  },
+  "1760": {
+    "scenario": "corner_left"
+  },
+  "1761": {
+    "scenario": "straight"
+  },
+  "1762": {
+    "scenario": "gentle_brake"
+  },
+  "1763": {
+    "scenario": "straight"
+  },
+  "1764": {
+    "scenario": "throttle_mod"
+  },
+  "1765": {
+    "scenario": "throttle_mod"
+  },
+  "1766": {
+    "scenario": "corner_left"
+  },
+  "1767": {
+    "scenario": "corner_right"
+  },
+  "1768": {
+    "scenario": "straight"
+  },
+  "1769": {
+    "scenario": "straight"
+  },
+  "1770": {
+    "scenario": "straight"
+  },
+  "1771": {
+    "scenario": "gentle_brake"
+  },
+  "1772": {
+    "scenario": "corner_right"
+  },
+  "1773": {
+    "scenario": "corner_left"
+  },
+  "1774": {
+    "scenario": "throttle_mod"
+  },
+  "1775": {
+    "scenario": "corner_left"
+  },
+  "1776": {
+    "scenario": "gentle_brake"
+  },
+  "1777": {
+    "scenario": "corner_right"
+  },
+  "1778": {
+    "scenario": "corner_left"
+  },
+  "1779": {
+    "scenario": "throttle_mod"
+  },
+  "1780": {
+    "scenario": "straight"
+  },
+  "1781": {
+    "scenario": "corner_right"
+  },
+  "1782": {
+    "scenario": "throttle_mod"
+  },
+  "1783": {
+    "scenario": "gentle_brake"
+  },
+  "1784": {
+    "scenario": "straight"
+  },
+  "1785": {
+    "scenario": "corner_left"
+  },
+  "1786": {
+    "scenario": "corner_right"
+  },
+  "1787": {
+    "scenario": "corner_right"
+  },
+  "1788": {
+    "scenario": "corner_right"
+  },
+  "1789": {
+    "scenario": "throttle_mod"
+  },
+  "1790": {
+    "scenario": "gentle_brake"
+  },
+  "1791": {
+    "scenario": "throttle_mod"
+  },
+  "1792": {
+    "scenario": "corner_right"
+  },
+  "1793": {
+    "scenario": "gentle_brake"
+  },
+  "1794": {
+    "scenario": "gentle_brake"
+  },
+  "1795": {
+    "scenario": "throttle_mod"
+  },
+  "1796": {
+    "scenario": "straight"
+  },
+  "1797": {
+    "scenario": "corner_right"
+  },
+  "1798": {
+    "scenario": "straight"
+  },
+  "1799": {
+    "scenario": "straight"
+  },
+  "1800": {
+    "scenario": "corner_right"
+  },
+  "1801": {
+    "scenario": "corner_left"
+  },
+  "1802": {
+    "scenario": "gentle_brake"
+  },
+  "1803": {
+    "scenario": "straight"
+  },
+  "1804": {
+    "scenario": "straight"
+  },
+  "1805": {
+    "scenario": "corner_left"
+  },
+  "1806": {
+    "scenario": "gentle_brake"
+  },
+  "1807": {
+    "scenario": "throttle_mod"
+  },
+  "1808": {
+    "scenario": "corner_right"
+  },
+  "1809": {
+    "scenario": "throttle_mod"
+  },
+  "1810": {
+    "scenario": "straight"
+  },
+  "1811": {
+    "scenario": "gentle_brake"
+  },
+  "1812": {
+    "scenario": "corner_right"
+  },
+  "1813": {
+    "scenario": "corner_left"
+  },
+  "1814": {
+    "scenario": "straight"
+  },
+  "1815": {
+    "scenario": "straight"
+  },
+  "1816": {
+    "scenario": "corner_right"
+  },
+  "1817": {
+    "scenario": "straight"
+  },
+  "1818": {
+    "scenario": "throttle_mod"
+  },
+  "1819": {
+    "scenario": "corner_right"
+  },
+  "1820": {
+    "scenario": "gentle_brake"
+  },
+  "1821": {
+    "scenario": "corner_right"
+  },
+  "1822": {
+    "scenario": "corner_right"
+  },
+  "1823": {
+    "scenario": "gentle_brake"
+  },
+  "1824": {
+    "scenario": "straight"
+  },
+  "1825": {
+    "scenario": "gentle_brake"
+  },
+  "1826": {
+    "scenario": "corner_left"
+  },
+  "1827": {
+    "scenario": "corner_right"
+  },
+  "1828": {
+    "scenario": "straight"
+  },
+  "1829": {
+    "scenario": "gentle_brake"
+  },
+  "1830": {
+    "scenario": "corner_left"
+  },
+  "1831": {
+    "scenario": "straight"
+  },
+  "1832": {
+    "scenario": "straight"
+  },
+  "1833": {
+    "scenario": "straight"
+  },
+  "1834": {
+    "scenario": "throttle_mod"
+  },
+  "1835": {
+    "scenario": "straight"
+  },
+  "1836": {
+    "scenario": "corner_right"
+  },
+  "1837": {
+    "scenario": "gentle_brake"
+  },
+  "1838": {
+    "scenario": "straight"
+  },
+  "1839": {
+    "scenario": "corner_right"
+  },
+  "1840": {
+    "scenario": "straight"
+  },
+  "1841": {
+    "scenario": "straight"
+  },
+  "1842": {
+    "scenario": "straight"
+  },
+  "1843": {
+    "scenario": "straight"
+  },
+  "1844": {
+    "scenario": "throttle_mod"
+  },
+  "1845": {
+    "scenario": "throttle_mod"
+  },
+  "1846": {
+    "scenario": "gentle_brake"
+  },
+  "1847": {
+    "scenario": "throttle_mod"
+  },
+  "1848": {
+    "scenario": "corner_right"
+  },
+  "1849": {
+    "scenario": "straight"
+  },
+  "1850": {
+    "scenario": "corner_left"
+  },
+  "1851": {
+    "scenario": "corner_right"
+  },
+  "1852": {
+    "scenario": "straight"
+  },
+  "1853": {
+    "scenario": "corner_right"
+  },
+  "1854": {
+    "scenario": "gentle_brake"
+  },
+  "1855": {
+    "scenario": "straight"
+  },
+  "1856": {
+    "scenario": "corner_right"
+  },
+  "1857": {
+    "scenario": "gentle_brake"
+  },
+  "1858": {
+    "scenario": "gentle_brake"
+  },
+  "1859": {
+    "scenario": "gentle_brake"
+  },
+  "1860": {
+    "scenario": "gentle_brake"
+  },
+  "1861": {
+    "scenario": "throttle_mod"
+  },
+  "1862": {
+    "scenario": "gentle_brake"
+  },
+  "1863": {
+    "scenario": "corner_left"
+  },
+  "1864": {
+    "scenario": "gentle_brake"
+  },
+  "1865": {
+    "scenario": "throttle_mod"
+  },
+  "1866": {
+    "scenario": "straight"
+  },
+  "1867": {
+    "scenario": "straight"
+  },
+  "1868": {
+    "scenario": "corner_left"
+  },
+  "1869": {
+    "scenario": "straight"
+  },
+  "1870": {
+    "scenario": "corner_left"
+  },
+  "1871": {
+    "scenario": "straight"
+  },
+  "1872": {
+    "scenario": "corner_right"
+  },
+  "1873": {
+    "scenario": "throttle_mod"
+  },
+  "1874": {
+    "scenario": "straight"
+  },
+  "1875": {
+    "scenario": "gentle_brake"
+  },
+  "1876": {
+    "scenario": "throttle_mod"
+  },
+  "1877": {
+    "scenario": "corner_left"
+  },
+  "1878": {
+    "scenario": "straight"
+  },
+  "1879": {
+    "scenario": "gentle_brake"
+  },
+  "1880": {
+    "scenario": "straight"
+  },
+  "1881": {
+    "scenario": "corner_left"
+  },
+  "1882": {
+    "scenario": "corner_right"
+  },
+  "1883": {
+    "scenario": "straight"
+  },
+  "1884": {
+    "scenario": "throttle_mod"
+  },
+  "1885": {
+    "scenario": "gentle_brake"
+  },
+  "1886": {
+    "scenario": "throttle_mod"
+  },
+  "1887": {
+    "scenario": "corner_right"
+  },
+  "1888": {
+    "scenario": "straight"
+  },
+  "1889": {
+    "scenario": "corner_right"
+  },
+  "1890": {
+    "scenario": "corner_left"
+  },
+  "1891": {
+    "scenario": "corner_right"
+  },
+  "1892": {
+    "scenario": "corner_left"
+  },
+  "1893": {
+    "scenario": "straight"
+  },
+  "1894": {
+    "scenario": "gentle_brake"
+  },
+  "1895": {
+    "scenario": "corner_left"
+  },
+  "1896": {
+    "scenario": "corner_right"
+  },
+  "1897": {
+    "scenario": "throttle_mod"
+  },
+  "1898": {
+    "scenario": "corner_left"
+  },
+  "1899": {
+    "scenario": "corner_right"
+  },
+  "1900": {
+    "scenario": "corner_right"
+  },
+  "1901": {
+    "scenario": "gentle_brake"
+  },
+  "1902": {
+    "scenario": "straight"
+  },
+  "1903": {
+    "scenario": "straight"
+  },
+  "1904": {
+    "scenario": "gentle_brake"
+  },
+  "1905": {
+    "scenario": "gentle_brake"
+  },
+  "1906": {
+    "scenario": "corner_left"
+  },
+  "1907": {
+    "scenario": "corner_left"
+  },
+  "1908": {
+    "scenario": "straight"
+  },
+  "1909": {
+    "scenario": "corner_left"
+  },
+  "1910": {
+    "scenario": "corner_right"
+  },
+  "1911": {
+    "scenario": "corner_left"
+  },
+  "1912": {
+    "scenario": "gentle_brake"
+  },
+  "1913": {
+    "scenario": "corner_left"
+  },
+  "1914": {
+    "scenario": "corner_right"
+  },
+  "1915": {
+    "scenario": "throttle_mod"
+  },
+  "1916": {
+    "scenario": "corner_left"
+  },
+  "1917": {
+    "scenario": "straight"
+  },
+  "1918": {
+    "scenario": "throttle_mod"
+  },
+  "1919": {
+    "scenario": "gentle_brake"
+  },
+  "1920": {
+    "scenario": "straight"
+  },
+  "1921": {
+    "scenario": "corner_right"
+  },
+  "1922": {
+    "scenario": "throttle_mod"
+  },
+  "1923": {
+    "scenario": "corner_left"
+  },
+  "1924": {
+    "scenario": "gentle_brake"
+  },
+  "1925": {
+    "scenario": "corner_right"
+  },
+  "1926": {
+    "scenario": "corner_right"
+  },
+  "1927": {
+    "scenario": "throttle_mod"
+  },
+  "1928": {
+    "scenario": "corner_right"
+  },
+  "1929": {
+    "scenario": "straight"
+  },
+  "1930": {
+    "scenario": "gentle_brake"
+  },
+  "1931": {
+    "scenario": "throttle_mod"
+  },
+  "1932": {
+    "scenario": "gentle_brake"
+  },
+  "1933": {
+    "scenario": "straight"
+  },
+  "1934": {
+    "scenario": "straight"
+  },
+  "1935": {
+    "scenario": "gentle_brake"
+  },
+  "1936": {
+    "scenario": "gentle_brake"
+  },
+  "1937": {
+    "scenario": "corner_right"
+  },
+  "1938": {
+    "scenario": "throttle_mod"
+  },
+  "1939": {
+    "scenario": "corner_left"
+  },
+  "1940": {
+    "scenario": "corner_right"
+  },
+  "1941": {
+    "scenario": "throttle_mod"
+  },
+  "1942": {
+    "scenario": "straight"
+  },
+  "1943": {
+    "scenario": "throttle_mod"
+  },
+  "1944": {
+    "scenario": "straight"
+  },
+  "1945": {
+    "scenario": "throttle_mod"
+  },
+  "1946": {
+    "scenario": "gentle_brake"
+  },
+  "1947": {
+    "scenario": "straight"
+  },
+  "1948": {
+    "scenario": "corner_left"
+  },
+  "1949": {
+    "scenario": "gentle_brake"
+  },
+  "1950": {
+    "scenario": "throttle_mod"
+  },
+  "1951": {
+    "scenario": "gentle_brake"
+  },
+  "1952": {
+    "scenario": "corner_right"
+  },
+  "1953": {
+    "scenario": "corner_right"
+  },
+  "1954": {
+    "scenario": "throttle_mod"
+  },
+  "1955": {
+    "scenario": "throttle_mod"
+  },
+  "1956": {
+    "scenario": "straight"
+  },
+  "1957": {
+    "scenario": "throttle_mod"
+  },
+  "1958": {
+    "scenario": "throttle_mod"
+  },
+  "1959": {
+    "scenario": "straight"
+  },
+  "1960": {
+    "scenario": "gentle_brake"
+  },
+  "1961": {
+    "scenario": "gentle_brake"
+  },
+  "1962": {
+    "scenario": "corner_left"
+  },
+  "1963": {
+    "scenario": "throttle_mod"
+  },
+  "1964": {
+    "scenario": "gentle_brake"
+  },
+  "1965": {
+    "scenario": "corner_left"
+  },
+  "1966": {
+    "scenario": "gentle_brake"
+  },
+  "1967": {
+    "scenario": "throttle_mod"
+  },
+  "1968": {
+    "scenario": "throttle_mod"
+  },
+  "1969": {
+    "scenario": "throttle_mod"
+  },
+  "1970": {
+    "scenario": "throttle_mod"
+  },
+  "1971": {
+    "scenario": "gentle_brake"
+  },
+  "1972": {
+    "scenario": "straight"
+  },
+  "1973": {
+    "scenario": "corner_left"
+  },
+  "1974": {
+    "scenario": "corner_right"
+  },
+  "1975": {
+    "scenario": "throttle_mod"
+  },
+  "1976": {
+    "scenario": "corner_right"
+  },
+  "1977": {
+    "scenario": "straight"
+  },
+  "1978": {
+    "scenario": "throttle_mod"
+  },
+  "1979": {
+    "scenario": "gentle_brake"
+  },
+  "1980": {
+    "scenario": "corner_left"
+  },
+  "1981": {
+    "scenario": "corner_left"
+  },
+  "1982": {
+    "scenario": "corner_right"
+  },
+  "1983": {
+    "scenario": "throttle_mod"
+  },
+  "1984": {
+    "scenario": "throttle_mod"
+  },
+  "1985": {
+    "scenario": "throttle_mod"
+  },
+  "1986": {
+    "scenario": "straight"
+  },
+  "1987": {
+    "scenario": "gentle_brake"
+  },
+  "1988": {
+    "scenario": "throttle_mod"
+  },
+  "1989": {
+    "scenario": "corner_left"
+  },
+  "1990": {
+    "scenario": "gentle_brake"
+  },
+  "1991": {
+    "scenario": "gentle_brake"
+  },
+  "1992": {
+    "scenario": "straight"
+  },
+  "1993": {
+    "scenario": "gentle_brake"
+  },
+  "1994": {
+    "scenario": "corner_left"
+  },
+  "1995": {
+    "scenario": "corner_right"
+  },
+  "1996": {
+    "scenario": "straight"
+  },
+  "1997": {
+    "scenario": "straight"
+  },
+  "1998": {
+    "scenario": "gentle_brake"
+  },
+  "1999": {
+    "scenario": "straight"
+  }
+}

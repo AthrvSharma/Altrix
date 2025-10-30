@@ -1,0 +1,14 @@
+{
+  "baseline": {
+    "count": 2000,
+    "path": "/Users/athrvsharma/frontend/data_generated/baseline"
+  },
+  "highrisk": {
+    "count": 800,
+    "path": "/Users/athrvsharma/frontend/data_generated/highrisk"
+  },
+  "stress": {
+    "count": 400,
+    "path": "/Users/athrvsharma/frontend/data_generated/stress"
+  }
+}
