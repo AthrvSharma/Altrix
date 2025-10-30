@@ -1180,14 +1180,15 @@
       <div class="arch-card" id="datasetCard">
         <h3 style="margin-bottom:0.5rem;">Dataset coverage</h3>
         <ul class="stats-list" id="datasetStats">
+          <li><span>Dataset</span><span>…</span></li>
           <li><span>Total sequences</span><span>…</span></li>
-          <li><span>Normal</span><span>…</span></li>
-          <li><span>High risk</span><span>…</span></li>
+          <li><span>Total timesteps</span><span>…</span></li>
+          <li><span>Sequence length</span><span>…</span></li>
           <li><span>Epochs</span><span>…</span></li>
         </ul>
-        <h4 style="font-size:0.62rem;text-transform:uppercase;letter-spacing:0.08em;margin-top:0.6rem;color:rgba(255,255,255,0.65);">Augmentations</h4>
+        <h4 style="font-size:0.62rem;text-transform:uppercase;letter-spacing:0.08em;margin-top:0.6rem;color:rgba(255,255,255,0.65);">Calibration (MSE)</h4>
         <ul class="release-notes" id="augmentationList">
-          <li>Loading augmentations…</li>
+          <li>Loading calibration metrics…</li>
         </ul>
       </div>
       <div class="arch-card" id="featureHintCard">
@@ -1214,31 +1215,31 @@
 
     <!-- Data -->
     <h2 class="section-title">Training Data Strategy</h2>
-    <p class="section-sub">We mix real motorsport data + synthetic augmentations to make road-safe scenarios.</p>
+    <p class="section-sub">Purpose-built synthetic telemetry covers normal laps, aggressive attacks, and caution laps, then feeds quantile calibration for interpretable risk.</p>
     <div class="data-grid">
       <div class="data-card">
-        <h4 style="margin-bottom:0.35rem;">Real F1 / motorsport</h4>
-        <p style="font-size:0.7rem;color:var(--muted);">Crash telemetry, sensor arrays, steering input.</p>
+        <h4 style="margin-bottom:0.35rem;">Profiled telemetry generator</h4>
+        <p style="font-size:0.7rem;color:var(--muted);">320 sequences split across normal, attack, and caution drive profiles with realistic speed, yaw, g-force dynamics.</p>
       </div>
       <div class="data-card">
-        <h4 style="margin-bottom:0.35rem;">Synthetic expansions</h4>
-        <p style="font-size:0.7rem;color:var(--muted);">We slightly change weather, track grip, speed, driver reaction.</p>
+        <h4 style="margin-bottom:0.35rem;">Quantile envelope</h4>
+        <p style="font-size:0.7rem;color:var(--muted);">Compute p80 / p95 / p99 per feature (plus absolute & brake decel tails) to weight domain risk instead of static thresholds.</p>
       </div>
       <div class="data-card">
-        <h4 style="margin-bottom:0.35rem;">Road mapping</h4>
-        <p style="font-size:0.7rem;color:var(--muted);">Convert race events to ADAS-friendly JSON schema.</p>
+        <h4 style="margin-bottom:0.35rem;">Global scaler</h4>
+        <p style="font-size:0.7rem;color:var(--muted);">Store mean / std per channel so inference uses the same normalization as training, avoiding false spikes.</p>
       </div>
       <div class="data-card">
-        <h4 style="margin-bottom:0.35rem;">Labels</h4>
-        <p style="font-size:0.7rem;color:var(--muted);">Derived from deviation score, not human labeling.</p>
+        <h4 style="margin-bottom:0.35rem;">Self-supervised calibration</h4>
+        <p style="font-size:0.7rem;color:var(--muted);">Track reconstruction MSE distribution (mean, p95, p99) to map anomaly → crash probability via logistic fusion.</p>
       </div>
     </div>
 
     <!-- FAQ style -->
     <h2 class="section-title">Explain to examiner like this 👇</h2>
     <p class="section-sub">
-      “We are not predicting lap time. We are detecting <b>rare, high-impact crash patterns</b> and <b>teaching road cars to react to them</b>.
-      The model is unsupervised / self-supervised, so it works even when labeled crash data is low.”
+      “We are not predicting lap time. We detect <b>rare, high-impact crash patterns</b>, calibrate the anomaly score with learned telemetry envelopes,
+      and fuse environment context so road cars react proportionally even with limited labeled crashes.”
     </p>
     </div>
   </main>
@@ -1399,20 +1400,35 @@
 
       if (datasetStats) {
         const summary = meta.training_summary || {};
-        const normalPct = typeof summary.normal_ratio === "number" ? `${Math.round(summary.normal_ratio * 100)}%` : "—";
-        const riskPct = typeof summary.high_risk_ratio === "number" ? `${Math.round(summary.high_risk_ratio * 100)}%` : "—";
+        const datasetLabel = typeof summary.dataset === "string" ? summary.dataset : "—";
         const totalSequences = Number(summary.total_sequences);
+        const totalSteps = Number(summary.total_timesteps);
+        const seqLen = Number(summary.sequence_length || meta.seq_len);
         datasetStats.innerHTML = `
-          <li><span>Total sequences</span><span>${Number.isFinite(totalSequences) ? totalSequences : summary.total_sequences || "—"}</span></li>
-          <li><span>Normal</span><span>${normalPct}</span></li>
-          <li><span>High risk</span><span>${riskPct}</span></li>
+          <li><span>Dataset</span><span>${datasetLabel}</span></li>
+          <li><span>Total sequences</span><span>${Number.isFinite(totalSequences) ? totalSequences : "—"}</span></li>
+          <li><span>Total timesteps</span><span>${Number.isFinite(totalSteps) ? totalSteps : "—"}</span></li>
+          <li><span>Sequence length</span><span>${Number.isFinite(seqLen) ? seqLen : "—"}</span></li>
           <li><span>Epochs</span><span>${summary.epochs || "—"}</span></li>
         `;
         if (augmentationList) {
-          const aug = Array.isArray(summary.augmentations) ? summary.augmentations : [];
-          augmentationList.innerHTML = aug.length
-            ? aug.map((item) => `<li>${item}</li>`).join("")
-            : `<li>No augmentations listed</li>`;
+          const calibration = summary.reconstruction_error && typeof summary.reconstruction_error === "object"
+            ? Object.entries(summary.reconstruction_error)
+            : [];
+          augmentationList.innerHTML = calibration.length
+            ? calibration
+                .filter(([key, value]) => value !== null && value !== undefined)
+                .map(([key, value]) => {
+                  const numeric = Number(value);
+                  const formatted = Number.isFinite(numeric)
+                    ? key === "sample_count"
+                      ? numeric.toLocaleString()
+                      : numeric.toFixed(4)
+                    : value;
+                  return `<li><strong>${formatLabel(key)}</strong><span>${formatted}</span></li>`;
+                })
+                .join("")
+            : `<li>No calibration metrics reported.</li>`;
         }
       }
 
@@ -1547,9 +1563,12 @@
         .join("");
     }
 
-    function renderNotes(notes) {
+    function renderNotes(notes, extra) {
       if (!notesList) return;
-      const list = Array.isArray(notes) && notes.length ? notes : ["Telemetry reconstruction aligns with trained envelope."];
+      const base = Array.isArray(notes) ? notes : [];
+      const extraNotes = Array.isArray(extra) ? extra : [];
+      const combined = [...base, ...extraNotes];
+      const list = combined.length ? combined : ["Telemetry reconstruction aligns with trained envelope."];
       notesList.innerHTML = list.map((note) => `<li>${note}</li>`).join("");
     }
 
@@ -1799,7 +1818,7 @@
       renderFeatures(data.feature_breakdown);
       renderProbabilityComponents(data.probability_components);
       renderEnvironment(data.condition_summary, data.condition_contributors);
-      renderNotes(data.notes);
+      renderNotes(data.notes, data.domain_notes);
       renderCharts(data);
       const latencyValue = Number(data.latency_ms);
       const latency = Number.isFinite(latencyValue) ? `${latencyValue.toFixed(2)} ms` : `${data.latency_ms || "—"} ms`;
@@ -1824,13 +1843,24 @@
         },
       };
       const copy = scenarioCopy[riskBand] || scenarioCopy.normal;
+      const scenarioLabel = data.scenario_label ? formatLabel(data.scenario_label) : copy.caption;
       if (insightDeck) {
         insightDeck.classList.remove("hidden");
         insightDeck.classList.add("visible");
       }
       if (summaryLabel) summaryLabel.textContent = copy.title;
-      if (scenarioTag) scenarioTag.textContent = copy.caption;
-      const dominant = Array.isArray(data.feature_breakdown) && data.feature_breakdown.length ? data.feature_breakdown[0] : null;
+      if (scenarioTag) scenarioTag.textContent = scenarioLabel;
+      const breakdownArray = Array.isArray(data.feature_breakdown) ? data.feature_breakdown : [];
+      let dominant = null;
+      if (data.dominant_feature) {
+        const match = breakdownArray.find((item) => item.feature === data.dominant_feature);
+        dominant = {
+          feature: data.dominant_feature,
+          recon_error: match ? match.recon_error : undefined,
+        };
+      } else if (breakdownArray.length) {
+        dominant = breakdownArray[0];
+      }
       if (keyFeatureLabel) {
         if (dominant) {
           keyFeatureLabel.textContent = `${formatLabel(dominant.feature)} · ${Number(dominant.recon_error || 0).toFixed(3)}`;
@@ -1839,7 +1869,8 @@
         }
       }
       const envLine = Array.isArray(data.condition_summary) && data.condition_summary.length ? data.condition_summary[0] : "No environment context supplied";
-      if (envImpactLabel) envImpactLabel.textContent = envLine;
+      const domainImpact = typeof data.domain_modifier === "number" ? `Telemetry heuristics ${data.domain_modifier >= 0 ? "+" : ""}${data.domain_modifier.toFixed(2)}` : "";
+      if (envImpactLabel) envImpactLabel.textContent = domainImpact ? `${envLine} | ${domainImpact}` : envLine;
       const actions = Array.isArray(data.actions) ? data.actions : [];
       if (actionsBadge) actionsBadge.textContent = String(actions.length);
       if (actionHighlightList) {

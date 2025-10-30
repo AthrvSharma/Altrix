@@ -10,11 +10,12 @@ class TelemetryDataset(Dataset):
     Expects folder of CSVs/NPYs where each file is (time_steps, features)
     We'll pad/cut to fixed seq_len
     """
-    def __init__(self, data_dir: str, seq_len: int = 100):
+    def __init__(self, data_dir: str, seq_len: int = 100, normalize: bool = False):
         self.files = glob.glob(os.path.join(data_dir, "*.csv")) + \
                      glob.glob(os.path.join(data_dir, "*.npy")) + \
                      glob.glob(os.path.join(data_dir, "*.npz"))
         self.seq_len = seq_len
+        self.normalize = normalize
 
     def __len__(self):
         return len(self.files)
@@ -39,10 +40,10 @@ class TelemetryDataset(Dataset):
 
         T, F = arr.shape
 
-        # normalize per sample (simple); for production: fit scaler first
-        mean = arr.mean(axis=0, keepdims=True)
-        std = arr.std(axis=0, keepdims=True) + 1e-6
-        arr = (arr - mean) / std
+        if self.normalize:
+            mean = arr.mean(axis=0, keepdims=True)
+            std = arr.std(axis=0, keepdims=True) + 1e-6
+            arr = (arr - mean) / std
 
         # pad / cut
         if T >= self.seq_len:
@@ -53,6 +54,6 @@ class TelemetryDataset(Dataset):
 
         return torch.tensor(arr, dtype=torch.float32)  # (seq_len, F)
 
-def get_dataloader(data_dir, seq_len=100, batch_size=16, shuffle=True):
-    ds = TelemetryDataset(data_dir, seq_len=seq_len)
+def get_dataloader(data_dir, seq_len=100, batch_size=16, shuffle=True, normalize=False):
+    ds = TelemetryDataset(data_dir, seq_len=seq_len, normalize=normalize)
     return DataLoader(ds, batch_size=batch_size, shuffle=shuffle)
