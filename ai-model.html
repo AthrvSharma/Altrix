@@ -1,0 +1,1943 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VISIONALTRIX – AI Model Pipeline</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.plot.ly/plotly-2.29.1.min.js"></script>
+
+  <style>
+    :root {
+      --bg: #030303;
+      --card: rgba(5, 5, 5, 0.35);
+      --accent: #ff1e00;
+      --accent-soft: rgba(255, 30, 0, 0.25);
+      --text: #f8f8f8;
+      --muted: rgba(248, 248, 248, 0.55);
+      --radius-lg: 1.5rem;
+    }
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background: radial-gradient(circle at 10% 20%, #111 0%, #000 45%, #000 100%);
+      color: var(--text);
+      font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      min-height: 100vh;
+      position: relative;
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: radial-gradient(circle at 20% 30%, rgba(255, 94, 0, 0.08), transparent 55%),
+                  radial-gradient(circle at 80% 10%, rgba(255, 30, 0, 0.06), transparent 50%),
+                  radial-gradient(circle at 50% 90%, rgba(255, 94, 0, 0.05), transparent 55%);
+      pointer-events: none;
+      z-index: -1;
+    }
+    a { text-decoration: none; color: inherit; }
+    .hidden { display: none !important; }
+    .fade-up {
+      opacity: 0;
+      transform: translateY(12px);
+      transition: opacity 0.28s ease, transform 0.28s ease;
+    }
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 1rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 1.3rem;
+      background: rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(14px);
+      padding: 0.6rem 1.5rem;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      align-items: center;
+      z-index: 100;
+    }
+    .logo {
+      font-family: "Space Grotesk", sans-serif;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      font-size: 0.85rem;
+      display: flex;
+      gap: 0.4rem;
+      align-items: center;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+    .logo-dot {
+      width: 0.5rem;
+      height: 0.5rem;
+      background: var(--accent);
+      border-radius: 999px;
+      box-shadow: 0 0 14px rgba(255, 30, 0, 0.8);
+    }
+    nav a {
+      color: var(--muted);
+      font-weight: 500;
+      font-size: 0.78rem;
+    }
+    nav a.active, nav a:hover {
+      color: #fff;
+    }
+    .nav-cta {
+      background: linear-gradient(140deg, rgba(255, 30, 0, 1), rgba(200, 5, 5, 1));
+      padding: 0.4rem 0.9rem;
+      border-radius: 999px;
+      border: none;
+      color: white;
+      font-size: 0.68rem;
+      cursor: pointer;
+      box-shadow: 0 6px 20px rgba(255, 30, 0, 0.4);
+    }
+
+    /* PAGE WRAP */
+    .page {
+      padding: 7rem min(5vw, 4rem) 4.5rem;
+    }
+    .page-shell {
+      width: min(1200px, 94vw);
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 2.6rem;
+    }
+
+    .breadcrumb {
+      font-size: 0.65rem;
+      color: rgba(248, 248, 248, 0.36);
+      margin-bottom: 1rem;
+    }
+    .breadcrumb a {
+      color: rgba(248, 248, 248, 0.56);
+    }
+
+    .title {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: clamp(2.4rem, 5vw, 3.4rem);
+      font-weight: 800;
+      letter-spacing: 0.02em;
+      margin-bottom: 0.8rem;
+    }
+    .subtitle {
+      color: var(--muted);
+      max-width: 50rem;
+      line-height: 1.6;
+      margin-bottom: 1.7rem;
+    }
+
+    /* SECTION */
+    .section-title {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 1.4rem;
+      margin: 2.7rem 0 1rem;
+    }
+    .section-sub {
+      color: var(--muted);
+      margin-bottom: 1.2rem;
+      max-width: 48rem;
+    }
+
+    /* PIPELINE */
+    .pipeline {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 1.05rem;
+    }
+    .pipe-card {
+      background: rgba(0, 0, 0, 0.28);
+      border: 1px solid rgba(255, 255, 255, 0.03);
+      border-radius: 1.1rem;
+      padding: 1rem 1.05rem 1.1rem;
+      position: relative;
+    }
+    .pipe-step {
+      position: absolute;
+      top: 0.8rem;
+      right: 0.9rem;
+      background: rgba(255, 30, 0, 0.25);
+      border-radius: 999px;
+      font-size: 0.58rem;
+      padding: 0.2rem 0.5rem;
+      text-transform: uppercase;
+    }
+    .pipe-card h3 {
+      margin-bottom: 0.4rem;
+      font-size: 1rem;
+    }
+    .pipe-card p {
+      font-size: 0.72rem;
+      color: var(--muted);
+      line-height: 1.35;
+    }
+
+    .capability-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.15rem;
+      margin-top: 2.4rem;
+    }
+    .cap-card {
+      background: rgba(0, 0, 0, 0.35);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: 1.1rem;
+      padding: 1rem 1.15rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.55rem;
+      box-shadow: 0 18px 35px rgba(0,0,0,0.45);
+    }
+    .cap-icon {
+      font-size: 1.45rem;
+    }
+    .cap-card h3 {
+      font-size: 0.96rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+    .cap-card p {
+      font-size: 0.68rem;
+      color: rgba(255,255,255,0.72);
+      line-height: 1.55;
+    }
+
+    .ops-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.15rem;
+      margin-top: 2.1rem;
+    }
+    .ops-card {
+      background: rgba(0,0,0,0.38);
+      border: 1px solid rgba(255,255,255,0.05);
+      border-radius: 1.1rem;
+      padding: 1rem 1.1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+      box-shadow: 0 18px 35px rgba(0,0,0,0.45);
+    }
+    .ops-card h3 {
+      font-size: 0.84rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.88);
+    }
+    .ops-list {
+      list-style: none;
+      padding-left: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+      font-size: 0.64rem;
+      color: rgba(255,255,255,0.75);
+    }
+    .ops-list li {
+      display: flex;
+      justify-content: space-between;
+      gap: 0.5rem;
+    }
+    .ops-list li span:last-child {
+      color: rgba(255,255,255,0.6);
+    }
+    .ops-progress span {
+      font-size: 0.58rem;
+      color: rgba(255,255,255,0.6);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+    .ops-bar {
+      width: 100%;
+      height: 8px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.08);
+      overflow: hidden;
+      margin-top: 0.35rem;
+    }
+    .ops-bar .fill {
+      height: 100%;
+      background: linear-gradient(120deg, rgba(255,94,0,0.88), rgba(255,150,0,0.88));
+      border-radius: inherit;
+    }
+
+    /* ARCH GRID */
+    .arch-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 1.5rem;
+      margin-top: 1.3rem;
+      align-items: stretch;
+    }
+    .arch-card {
+      background: rgba(0, 0, 0, 0.42);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      border-radius: 1.2rem;
+      padding: 1.15rem 1.25rem 1.35rem;
+      box-shadow: 0 24px 45px rgba(0,0,0,0.55);
+      position: relative;
+      overflow: hidden;
+    }
+    .arch-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 15% 15%, rgba(255,255,255,0.08), transparent 60%);
+      opacity: 0.4;
+      pointer-events: none;
+    }
+    .arch-card > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    /* INFERENCE PANEL */
+    .inference-panel {
+      background: rgba(0, 0, 0, 0.5);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: 1.4rem;
+      padding: 1.2rem 1.3rem 1.6rem;
+      margin-top: 1rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .inference-panel::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 20% 20%, rgba(255, 94, 0, 0.12), transparent 55%),
+                  radial-gradient(circle at 80% 10%, rgba(255, 30, 0, 0.18), transparent 45%);
+      pointer-events: none;
+      opacity: 0.4;
+    }
+    .inference-panel > * {
+      position: relative;
+      z-index: 1;
+    }
+    .model-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      background: rgba(255, 30, 0, 0.14);
+      border: 1px solid rgba(255, 95, 0, 0.45);
+      border-radius: 999px;
+      font-size: 0.62rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.32rem 0.95rem;
+      color: rgba(255,255,255,0.9);
+      margin-bottom: 0.75rem;
+      box-shadow: 0 0 28px rgba(255, 30, 0, 0.18);
+    }
+    .inference-panel label {
+      display: block;
+      font-size: 0.64rem;
+      color: rgba(248, 248, 248, 0.8);
+      margin-bottom: 0.3rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+    .inference-panel textarea,
+    .inference-panel input,
+    .inference-panel select {
+      width: 100%;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 0.65rem;
+      padding: 0.55rem 0.7rem;
+      color: #fff;
+      font-size: 0.7rem;
+      margin-bottom: 0.55rem;
+      transition: border-color 0.2s ease, background 0.2s ease, transform 0.2s;
+    }
+    .inference-panel textarea:focus,
+    .inference-panel input:focus,
+    .inference-panel select:focus {
+      outline: none;
+      border-color: rgba(255, 94, 0, 0.65);
+      background: rgba(255, 255, 255, 0.08);
+      box-shadow: 0 0 0 2px rgba(255, 94, 0, 0.15);
+      transform: translateY(-1px);
+    }
+    .input-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+      margin-bottom: 0.45rem;
+    }
+    .ghost-btn {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 999px;
+      padding: 0.42rem 1.05rem;
+      color: rgba(255,255,255,0.82);
+      font-size: 0.6rem;
+      cursor: pointer;
+      transition: background 0.2s ease;
+    }
+    .ghost-btn:hover {
+      background: rgba(255,255,255,0.14);
+      transform: translateY(-1px);
+    }
+    .conditions-note {
+      font-size: 0.58rem;
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 0.55rem;
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+    .conditions-note::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: linear-gradient(130deg, rgba(255,94,0,0.85), rgba(255,30,0,0.65));
+      box-shadow: 0 0 12px rgba(255, 50, 0, 0.45);
+    }
+    .conditions-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 0.75rem;
+      margin-bottom: 0.75rem;
+    }
+    .conditions-grid .field {
+      display: flex;
+      flex-direction: column;
+    }
+    .conditions-grid label {
+      margin-bottom: 0.25rem;
+    }
+    .conditions-grid input,
+    .conditions-grid select {
+      margin-bottom: 0;
+    }
+    .run-btn {
+      background: linear-gradient(130deg, rgba(255,30,0,1) 0%, rgba(255,94,0,0.95) 55%, rgba(255,150,0,0.9) 100%);
+      border: none;
+      border-radius: 999px;
+      padding: 0.65rem 1.4rem;
+      color: #fff;
+      font-size: 0.72rem;
+      cursor: pointer;
+      margin-top: 0.35rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      box-shadow: 0 18px 45px rgba(255, 94, 0, 0.35);
+      transition: transform 0.18s ease, box-shadow 0.18s ease;
+    }
+    .infer-output {
+      margin-top: 0.6rem;
+      background: rgba(0,0,0,0.35);
+      border: 1px solid rgba(255,255,255,0.02);
+      border-radius: 0.7rem;
+      padding: 0.45rem 0.55rem;
+      font-size: 0.65rem;
+      color: var(--muted);
+      min-height: 48px;
+      white-space: pre-wrap;
+    }
+    .run-btn:hover {
+      transform: translateY(-2px) scale(1.01);
+      box-shadow: 0 24px 55px rgba(255, 94, 0, 0.45);
+    }
+    .infer-results {
+      margin-top: 0.75rem;
+      background: rgba(0, 0, 0, 0.42);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 1.1rem;
+      padding: 0.95rem 1.05rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+      box-shadow: 0 20px 35px rgba(0,0,0,0.55);
+    }
+    .result-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 0.6rem;
+      align-items: center;
+    }
+    .risk-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      border-radius: 999px;
+      padding: 0.28rem 0.8rem;
+      font-size: 0.62rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    .risk-normal {
+      background: rgba(0, 140, 70, 0.25);
+      border-color: rgba(0, 140, 70, 0.4);
+      color: #7dffb0;
+    }
+    .risk-elevated {
+      background: rgba(255, 175, 0, 0.2);
+      border-color: rgba(255, 175, 0, 0.5);
+      color: #ffd599;
+    }
+    .risk-high {
+      background: rgba(255, 80, 0, 0.28);
+      border-color: rgba(255, 80, 0, 0.5);
+      color: #ffb199;
+    }
+    .risk-critical {
+      background: rgba(255, 0, 0, 0.3);
+      border-color: rgba(255, 0, 0, 0.55);
+      color: #ff9e9e;
+    }
+    .score-block {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 0.15rem;
+      font-family: "Space Grotesk", sans-serif;
+    }
+    .score-label {
+      font-size: 0.62rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: rgba(255,255,255,0.6);
+    }
+    .score-value {
+      font-size: 1.32rem;
+      font-weight: 700;
+    }
+    .score-raw {
+      font-size: 0.6rem;
+      color: rgba(255,255,255,0.55);
+      text-transform: uppercase;
+    }
+    .result-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 0.9rem;
+    }
+    .result-card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 0.9rem;
+      padding: 0.75rem 0.9rem;
+      backdrop-filter: blur(6px);
+      position: relative;
+      overflow: hidden;
+    }
+    .result-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 15% 15%, rgba(255,255,255,0.08), transparent 60%);
+      opacity: 0.35;
+      pointer-events: none;
+    }
+    .result-card > * {
+      position: relative;
+      z-index: 1;
+    }
+    .result-card h4 {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 0.45rem;
+      color: rgba(255,255,255,0.82);
+    }
+    .result-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.45rem;
+      font-size: 0.66rem;
+      color: rgba(255,255,255,0.78);
+    }
+    .result-list li {
+      display: flex;
+      justify-content: space-between;
+      gap: 0.65rem;
+    }
+    .result-list li span:last-child {
+      color: rgba(255,255,255,0.56);
+      font-size: 0.6rem;
+    }
+    #featureList li {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.35rem;
+    }
+    #featureList li span:last-child {
+      align-self: flex-end;
+      font-size: 0.58rem;
+      color: rgba(255,255,255,0.48);
+    }
+    .feature-meter {
+      width: 100%;
+      height: 6px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.08);
+      overflow: hidden;
+    }
+    .feature-meter .fill {
+      height: 100%;
+      background: linear-gradient(120deg, rgba(255, 94, 0, 0.85), rgba(255, 150, 0, 0.85));
+      border-radius: inherit;
+      transition: width 0.35s ease;
+    }
+    .result-grid + .result-grid {
+      margin-top: 0.9rem;
+    }
+    .insight-deck {
+      margin-top: 1rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 0.85rem;
+    }
+    .insight-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 0.9rem;
+      padding: 0.75rem 0.85rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+      min-height: 120px;
+    }
+    .insight-title {
+      font-size: 0.58rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.65);
+    }
+    .insight-value {
+      font-size: 0.98rem;
+      font-weight: 600;
+      color: rgba(255,255,255,0.92);
+    }
+    .insight-sub {
+      font-size: 0.6rem;
+      color: rgba(255,255,255,0.58);
+    }
+    .insight-actions {
+      list-style: none;
+      padding-left: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+      font-size: 0.6rem;
+      color: rgba(255,255,255,0.7);
+    }
+    .insight-actions li {
+      background: rgba(255,255,255,0.04);
+      border-radius: 0.6rem;
+      padding: 0.35rem 0.55rem;
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+    .chart-deck {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+    .chart-card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 1rem;
+      padding: 0.8rem 0.9rem 1.1rem;
+      min-height: 260px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.55);
+      backdrop-filter: blur(8px);
+    }
+    .chart-card h4 {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 0.6rem;
+      color: rgba(255,255,255,0.82);
+    }
+    .chart-subtitle {
+      font-size: 0.6rem;
+      color: rgba(255,255,255,0.58);
+      margin-bottom: 0.35rem;
+      letter-spacing: 0.04em;
+    }
+    .chart-canvas {
+      width: 100%;
+      height: 220px;
+    }
+    .chart-placeholder {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      font-size: 0.62rem;
+      text-align: center;
+      color: rgba(255,255,255,0.58);
+      border: 1px dashed rgba(255,255,255,0.18);
+      border-radius: 0.75rem;
+      padding: 0.6rem;
+      background: rgba(0,0,0,0.3);
+    }
+    .notes-list {
+      margin-top: 0.2rem;
+      list-style: none;
+      padding-left: 0;
+      font-size: 0.64rem;
+      color: rgba(255,255,255,0.72);
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+    .notes-list li::before {
+      content: "•";
+      color: rgba(255,94,0,0.8);
+      margin-right: 0.45rem;
+    }
+    .notes-list li {
+      display: flex;
+      align-items: flex-start;
+    }
+    .notes-list li::before {
+      margin-top: 0.12rem;
+    }
+
+    /* TRAINING DATA */
+    .data-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+    }
+    .data-card {
+      background: rgba(0, 0, 0, 0.26);
+      border: 1px solid rgba(255,255,255,0.015);
+      border-radius: 1rem;
+      padding: 0.9rem 1rem;
+    }
+
+    /* METADATA */
+    .meta-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.1rem;
+      margin-top: 1.3rem;
+    }
+    .stats-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+      font-size: 0.65rem;
+      color: rgba(255,255,255,0.72);
+    }
+    .stats-list li {
+      display: flex;
+      justify-content: space-between;
+      gap: 0.5rem;
+    }
+    .stats-list span:last-child {
+      color: rgba(255,255,255,0.5);
+    }
+    .threshold-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      margin-top: 0.5rem;
+    }
+    .threshold-pill {
+      font-size: 0.58rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 0.25rem 0.55rem;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.05);
+      color: rgba(255,255,255,0.75);
+    }
+    .feature-hints {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+      font-size: 0.63rem;
+      color: rgba(255,255,255,0.73);
+    }
+    .feature-hints li strong {
+      display: block;
+      font-size: 0.66rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: rgba(255,255,255,0.8);
+    }
+    .release-notes {
+      list-style: disc;
+      padding-left: 1rem;
+      font-size: 0.63rem;
+      color: rgba(255,255,255,0.7);
+    }
+
+    /* FOOTER */
+    footer {
+      padding: 1.5rem min(5vw, 4rem);
+      border-top: 1px solid rgba(255,255,255,0.04);
+      text-align: center;
+      color: rgba(255,255,255,0.35);
+      font-size: 0.62rem;
+      margin-top: 2.5rem;
+    }
+
+    @media (max-width: 980px) {
+      .arch-grid {
+        grid-template-columns: 1fr;
+      }
+      nav {
+        width: calc(100% - 1.6rem);
+        justify-content: space-between;
+      }
+      .page {
+        padding-inline: 1rem;
+      }
+      .page-shell {
+        width: 100%;
+        gap: 2rem;
+      }
+      .result-head {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .score-block {
+        align-items: flex-start;
+      }
+      .chart-card {
+        min-height: 240px;
+      }
+      .chart-canvas {
+        height: 200px;
+      }
+      .insight-deck {
+        grid-template-columns: 1fr;
+      }
+      .ops-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Nav -->
+  <nav>
+    <div class="logo"><span class="logo-dot"></span> VISIONALTRIX</div>
+    <a href="index.html">Home</a>
+    <a href="ai-model.html" class="active">AI Model</a>
+    <a href="index.html#demo">Demo</a>
+    <a href="index.html#contact">Contact</a>
+    <button class="nav-cta" onclick="location.href='index.html#demo'">Live Demo</button>
+  </nav>
+
+  <main class="page">
+    <div class="page-shell">
+      <div class="breadcrumb">
+        <a href="index.html">← Back to main site</a> / AI Model
+      </div>
+      <h1 class="title">AI Model & Inference Layer</h1>
+      <p class="subtitle">
+        This page explains how VISIONALTRIX turns raw F1 crash telemetry into an explainable safety signal for road-level ADAS.
+        Use this walkthrough during demos to narrate the full stack—from data ingest to mitigation triggers.
+      </p>
+
+    <!-- Pipeline -->
+    <h2 class="section-title">End-to-End Pipeline</h2>
+    <p class="section-sub">We follow a classic: ingest → preprocess → model → postprocess → serve.</p>
+    <div class="pipeline">
+      <div class="pipe-card">
+        <span class="pipe-step">1</span>
+        <h3>Ingestion</h3>
+        <p>Take F1 telemetry (speed, yaw, Gz, wheel speed, brake pressure), race logs, or sim outputs.</p>
+      </div>
+      <div class="pipe-card">
+        <span class="pipe-step">2</span>
+        <h3>Preprocessing</h3>
+        <p>Time-align signals, resample to 50–200Hz, normalize per channel, handle missing values.</p>
+      </div>
+      <div class="pipe-card">
+        <span class="pipe-step">3</span>
+        <h3>Feature Engineering</h3>
+        <p>Windowing, FFT over G-force, lateral vs longitudinal ratio, cornering signature.</p>
+      </div>
+      <div class="pipe-card">
+        <span class="pipe-step">4</span>
+        <h3>Model Core</h3>
+        <p>LSTM/Transformer autoencoder → reconstruction error → anomaly score (0–1).</p>
+      </div>
+      <div class="pipe-card">
+        <span class="pipe-step">5</span>
+        <h3>Postprocessing</h3>
+        <p>Thresholding, rule-based checks, attach mitigation actions.</p>
+      </div>
+      <div class="pipe-card">
+        <span class="pipe-step">6</span>
+        <h3>Serving</h3>
+        <p>Exposed via REST/WebSocket → shown in front end as “crash risk”.</p>
+      </div>
+    </div>
+
+    <div class="capability-grid">
+      <div class="cap-card">
+        <span class="cap-icon">⚡</span>
+        <h3>Real-time crash IQ</h3>
+        <p>Sub-50&nbsp;ms inference with anomaly-driven probability curves lets ADAS react before impact.</p>
+      </div>
+      <div class="cap-card">
+        <span class="cap-icon">🧠</span>
+        <h3>Explainable telemetry</h3>
+        <p>Feature deviation meters and 3D trajectories show <em>why</em> the AI raised a flag—no black boxes.</p>
+      </div>
+      <div class="cap-card">
+        <span class="cap-icon">🛡️</span>
+        <h3>Adaptive mitigation</h3>
+        <p>Maps risk bands to recommended countermeasures and safety crew alerts for rapid orchestration.</p>
+      </div>
+      <div class="cap-card">
+        <span class="cap-icon">🌐</span>
+        <h3>Edge ready</h3>
+        <p>Quantized checkpoints + Jetson latencies keep the same guardian angel running trackside or on-road.</p>
+      </div>
+    </div>
+
+    <div class="ops-grid">
+      <div class="ops-card">
+        <h3>Data coverage</h3>
+        <ul class="ops-list">
+          <li><span>Crash laps ingested</span><span>412</span></li>
+          <li><span>Sim augmentations</span><span>3.1×</span></li>
+          <li><span>Sensor channels</span><span>26</span></li>
+        </ul>
+        <div class="ops-progress">
+          <span>Road transfer readiness</span>
+          <div class="ops-bar"><div class="fill" style="width:82%"></div></div>
+        </div>
+      </div>
+      <div class="ops-card">
+        <h3>Edge deployment</h3>
+        <ul class="ops-list">
+          <li><span>Jetson latency (ms)</span><span>14.2</span></li>
+          <li><span>Model footprint</span><span>6.1&nbsp;M params</span></li>
+          <li><span>Power envelope</span><span>11&nbsp;W</span></li>
+        </ul>
+        <div class="ops-progress">
+          <span>OTA packaging</span>
+          <div class="ops-bar"><div class="fill" style="width:68%"></div></div>
+        </div>
+      </div>
+      <div class="ops-card">
+        <h3>Safety playbook</h3>
+        <ul class="ops-list">
+          <li><span>Mitigation recipes</span><span>8</span></li>
+          <li><span>Alert endpoints</span><span>Slack, Pager, CAN</span></li>
+          <li><span>Human-in-loop</span><span>Sub 2&nbsp;s ack</span></li>
+        </ul>
+        <div class="ops-progress">
+          <span>Operator training</span>
+          <div class="ops-bar"><div class="fill" style="width:74%"></div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Architecture & Inference -->
+    <h2 class="section-title">Model Architecture</h2>
+    <div class="arch-grid">
+      <div class="arch-card">
+        <h3 style="margin-bottom:0.4rem;">Sequence Autoencoder</h3>
+        <p style="color:var(--muted);font-size:0.72rem;margin-bottom:0.7rem;">
+          Raw telemetry windows (T × F) are encoded with stacked LSTMs, compressed into a 32-d latent embedding, then reconstructed.
+          Reconstruction error is calibrated into a crash-risk score.
+        </p>
+        <ul style="font-size:0.68rem;line-height:1.45;color:var(--muted);">
+          <li>• Encoder: 2 × LSTM layers (hidden 128)</li>
+          <li>• Latent bottleneck: Linear → 32 dims</li>
+          <li>• Decoder: 2 × LSTM + linear projection back to features</li>
+          <li>• Loss: Full sequence MSE on normalized signals</li>
+          <li>• Risk mapping: tanh(recon error) → {normal, elevated, high, critical}</li>
+        </ul>
+        <p style="margin-top:0.8rem;font-size:0.64rem;color:rgba(255,255,255,0.55);">
+          Serving endpoints: <code>/api/infer</code> (POST) for live scoring and <code>/api/model-metadata</code> (GET) for UI sync.
+        </p>
+      </div>
+      <div class="arch-card inference-panel">
+        <h3 style="margin-bottom:0.4rem;">Run live inference</h3>
+        <div class="model-chip" id="modelChip">Loading model metadata…</div>
+        <label for="telemetry">Paste telemetry window (JSON or key:value)</label>
+        <textarea id="telemetry" rows="4" placeholder="speed: 214, yaw_rate: 17.6, lateral_g: 3.2, brake_pressure: 0.4"></textarea>
+        <p class="conditions-note">Optional environment context refines crash probability.</p>
+        <div class="conditions-grid">
+          <div class="field">
+            <label for="weather">Weather</label>
+            <select id="weather">
+              <option value="">Auto-detect</option>
+              <option>Dry</option>
+              <option>Cloudy</option>
+              <option>Light rain</option>
+              <option>Rain</option>
+              <option>Heavy rain</option>
+              <option>Storm</option>
+              <option>Fog</option>
+              <option>Snow</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="trackTemp">Track temp (°C)</label>
+            <input type="number" id="trackTemp" placeholder="38" />
+          </div>
+          <div class="field">
+            <label for="humidity">Humidity (%)</label>
+            <input type="number" id="humidity" placeholder="72" />
+          </div>
+          <div class="field">
+            <label for="trackSurface">Track surface</label>
+            <select id="trackSurface">
+              <option value="">Select</option>
+              <option>Track</option>
+              <option>Street</option>
+              <option>Wet</option>
+              <option>Gravel</option>
+              <option>Urban</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="visibility">Visibility</label>
+            <select id="visibility">
+              <option value="">Normal</option>
+              <option>Excellent</option>
+              <option>Good</option>
+              <option>Moderate</option>
+              <option>Poor</option>
+              <option>Very poor</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="trafficDensity">Traffic density</label>
+            <select id="trafficDensity">
+              <option value="">Nominal</option>
+              <option>Low</option>
+              <option>Medium</option>
+              <option>High</option>
+              <option>Heavy</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="tyreWear">Tyre wear</label>
+            <select id="tyreWear">
+              <option value="">Baseline</option>
+              <option>Fresh</option>
+              <option>Scrubbed</option>
+              <option>Worn</option>
+              <option>Critical</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="driverState">Driver state</label>
+            <select id="driverState">
+              <option value="">Nominal</option>
+              <option>Focused</option>
+              <option>Alert</option>
+              <option>Fatigued</option>
+              <option>Distracted</option>
+              <option>Aggressive</option>
+              <option>Injured</option>
+            </select>
+          </div>
+        </div>
+        <div class="input-actions">
+          <button class="ghost-btn" id="exampleBtn">Load demo sample</button>
+          <button class="ghost-btn" id="clearBtn">Clear</button>
+        </div>
+        <button class="run-btn" id="runBtn">Run anomaly detection</button>
+        <div class="infer-output" id="inferStatus">Awaiting input…</div>
+        <div class="infer-results hidden fade-up" id="inferResults">
+          <div class="result-head">
+            <span class="risk-badge risk-normal" id="riskBadge">Normal</span>
+            <div class="score-block">
+              <span class="score-label">Crash probability</span>
+              <span class="score-value" id="probabilityValue">0.0%</span>
+              <span class="score-raw" id="severityLabel">Severity idx 0.0</span>
+              <span class="score-raw" id="anomalyLabel">Anomaly 0.0000 · err 0.000000</span>
+            </div>
+          </div>
+          <div class="result-grid">
+            <div class="result-card">
+              <h4>Mitigation actions</h4>
+              <ul class="result-list" id="actionList">
+                <li><span>None required</span><span>—</span></li>
+              </ul>
+            </div>
+            <div class="result-card">
+              <h4>Top feature deviations</h4>
+              <ul class="result-list" id="featureList">
+                <li><span>speed</span><span>0.0000</span></li>
+              </ul>
+            </div>
+            <div class="result-card">
+              <h4>Probability drivers</h4>
+              <ul class="result-list" id="probabilityComponents">
+                <li><span>Base anomaly</span><span>0.00</span></li>
+              </ul>
+            </div>
+          </div>
+          <div class="result-grid">
+            <div class="result-card">
+              <h4>Environment snapshot</h4>
+              <ul class="notes-list" id="environmentList">
+                <li>Environment insights will appear here.</li>
+              </ul>
+            </div>
+            <div class="result-card">
+              <h4>Risk notes</h4>
+              <ul class="notes-list" id="notesList">
+                <li>Inference notes will appear here.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="insight-deck hidden fade-up" id="insightDeck">
+          <div class="insight-card">
+            <span class="insight-title">Risk posture</span>
+            <span class="insight-value" id="summaryLabel">Awaiting inference…</span>
+            <span class="insight-sub" id="scenarioTag">—</span>
+          </div>
+          <div class="insight-card">
+            <span class="insight-title">Dominant feature</span>
+            <span class="insight-value" id="keyFeatureLabel">—</span>
+            <span class="insight-sub">Highest reconstruction drift</span>
+          </div>
+          <div class="insight-card">
+            <span class="insight-title">Environment impact</span>
+            <span class="insight-value" id="envImpactLabel">—</span>
+            <span class="insight-sub">Weather &amp; context modifier</span>
+          </div>
+          <div class="insight-card">
+            <span class="insight-title">Actions armed</span>
+            <span class="insight-value" id="actionsBadge">0</span>
+            <ul class="insight-actions" id="actionHighlightList">
+              <li>Awaiting inference…</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="chart-deck hidden fade-up" id="chartDeck">
+      <div class="chart-card">
+        <h4>Crash probability gauge</h4>
+        <div class="chart-canvas" id="probabilityGauge"></div>
+      </div>
+      <div class="chart-card">
+        <h4>Reconstruction error timeline</h4>
+        <div class="chart-canvas" id="timelineChart"></div>
+      </div>
+      <div class="chart-card">
+        <h4>3D feature trajectory</h4>
+        <p class="chart-subtitle" id="threeDAxes">Axes: —</p>
+        <div class="chart-canvas" id="threeDChart"></div>
+      </div>
+    </div>
+
+    <h2 class="section-title">Serving Snapshot & Metadata</h2>
+    <p class="section-sub">Pulled live from the FastAPI backend – use this to brief reviewers on the deployed checkpoint.</p>
+    <div class="meta-grid">
+      <div class="arch-card" id="modelStatsCard">
+        <h3 style="margin-bottom:0.5rem;">Model stats</h3>
+        <ul class="stats-list" id="modelStatsList">
+          <li><span>Model version</span><span>…</span></li>
+          <li><span>Device</span><span>…</span></li>
+          <li><span>Window</span><span>…</span></li>
+          <li><span>Parameters</span><span>32 latent dims</span></li>
+        </ul>
+        <div class="threshold-pills" id="thresholdPills">
+          <span class="threshold-pill">Loading thresholds…</span>
+        </div>
+      </div>
+      <div class="arch-card" id="datasetCard">
+        <h3 style="margin-bottom:0.5rem;">Dataset coverage</h3>
+        <ul class="stats-list" id="datasetStats">
+          <li><span>Total sequences</span><span>…</span></li>
+          <li><span>Normal</span><span>…</span></li>
+          <li><span>High risk</span><span>…</span></li>
+          <li><span>Epochs</span><span>…</span></li>
+        </ul>
+        <h4 style="font-size:0.62rem;text-transform:uppercase;letter-spacing:0.08em;margin-top:0.6rem;color:rgba(255,255,255,0.65);">Augmentations</h4>
+        <ul class="release-notes" id="augmentationList">
+          <li>Loading augmentations…</li>
+        </ul>
+      </div>
+      <div class="arch-card" id="featureHintCard">
+        <h3 style="margin-bottom:0.5rem;">Sensor features</h3>
+        <ul class="feature-hints" id="featureHintList">
+          <li>Loading feature hints…</li>
+        </ul>
+      </div>
+      <div class="arch-card" id="actionCatalogCard">
+        <h3 style="margin-bottom:0.5rem;">Safety actions</h3>
+        <ul class="feature-hints" id="actionCatalogList">
+          <li>Loading actions…</li>
+        </ul>
+        <h4 style="font-size:0.62rem;text-transform:uppercase;letter-spacing:0.08em;margin-top:0.6rem;color:rgba(255,255,255,0.65);">Environment inputs</h4>
+        <ul class="feature-hints" id="conditionList">
+          <li>Loading supported conditions…</li>
+        </ul>
+        <h4 style="font-size:0.62rem;text-transform:uppercase;letter-spacing:0.08em;margin-top:0.6rem;color:rgba(255,255,255,0.65);">Release notes</h4>
+        <ul class="release-notes" id="releaseNotes">
+          <li>Loading release notes…</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Data -->
+    <h2 class="section-title">Training Data Strategy</h2>
+    <p class="section-sub">We mix real motorsport data + synthetic augmentations to make road-safe scenarios.</p>
+    <div class="data-grid">
+      <div class="data-card">
+        <h4 style="margin-bottom:0.35rem;">Real F1 / motorsport</h4>
+        <p style="font-size:0.7rem;color:var(--muted);">Crash telemetry, sensor arrays, steering input.</p>
+      </div>
+      <div class="data-card">
+        <h4 style="margin-bottom:0.35rem;">Synthetic expansions</h4>
+        <p style="font-size:0.7rem;color:var(--muted);">We slightly change weather, track grip, speed, driver reaction.</p>
+      </div>
+      <div class="data-card">
+        <h4 style="margin-bottom:0.35rem;">Road mapping</h4>
+        <p style="font-size:0.7rem;color:var(--muted);">Convert race events to ADAS-friendly JSON schema.</p>
+      </div>
+      <div class="data-card">
+        <h4 style="margin-bottom:0.35rem;">Labels</h4>
+        <p style="font-size:0.7rem;color:var(--muted);">Derived from deviation score, not human labeling.</p>
+      </div>
+    </div>
+
+    <!-- FAQ style -->
+    <h2 class="section-title">Explain to examiner like this 👇</h2>
+    <p class="section-sub">
+      “We are not predicting lap time. We are detecting <b>rare, high-impact crash patterns</b> and <b>teaching road cars to react to them</b>.
+      The model is unsupervised / self-supervised, so it works even when labeled crash data is low.”
+    </p>
+    </div>
+  </main>
+
+  <footer>
+    © 2025 VISIONALTRIX — AI Model Page
+  </footer>
+
+    <script>
+    // GSAP basic reveal
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.from(".title", { y: 20, opacity: 0, duration: 0.5 });
+    gsap.utils.toArray(".pipe-card, .arch-card, .data-card").forEach((el) => {
+      gsap.from(el, {
+        scrollTrigger: {
+          trigger: el,
+          start: "top 85%",
+        },
+        y: 18,
+        opacity: 0,
+        duration: 0.4,
+      });
+    });
+
+    let apiBase = window.location.protocol === "file:" ? "http://127.0.0.1:8000" : "";
+
+    const normalizeBase = (base) => {
+      if (!base) return "";
+      return base.endsWith("/") ? base.slice(0, -1) : base;
+    };
+
+    const apiUrl = (path, base = apiBase) => `${normalizeBase(base)}${path}`;
+
+    const state = {
+      metadata: null,
+      actionLookup: {},
+    };
+
+    const telemetryField = document.getElementById("telemetry");
+    const runBtn = document.getElementById("runBtn");
+    const exampleBtn = document.getElementById("exampleBtn");
+    const clearBtn = document.getElementById("clearBtn");
+    const statusEl = document.getElementById("inferStatus");
+    const resultsEl = document.getElementById("inferResults");
+    const riskBadge = document.getElementById("riskBadge");
+    const probabilityValue = document.getElementById("probabilityValue");
+    const severityLabel = document.getElementById("severityLabel");
+    const anomalyLabel = document.getElementById("anomalyLabel");
+    const actionList = document.getElementById("actionList");
+    const featureList = document.getElementById("featureList");
+    const probabilityComponentsList = document.getElementById("probabilityComponents");
+    const environmentList = document.getElementById("environmentList");
+    const notesList = document.getElementById("notesList");
+    const modelChip = document.getElementById("modelChip");
+
+    const weatherField = document.getElementById("weather");
+    const trackTempField = document.getElementById("trackTemp");
+    const humidityField = document.getElementById("humidity");
+    const trackSurfaceField = document.getElementById("trackSurface");
+    const visibilityField = document.getElementById("visibility");
+    const trafficField = document.getElementById("trafficDensity");
+    const tyreWearField = document.getElementById("tyreWear");
+    const driverStateField = document.getElementById("driverState");
+
+    const chartDeck = document.getElementById("chartDeck");
+    const probabilityGauge = document.getElementById("probabilityGauge");
+    const timelineChart = document.getElementById("timelineChart");
+    const threeDChart = document.getElementById("threeDChart");
+    const threeDAxesLabel = document.getElementById("threeDAxes");
+    const insightDeck = document.getElementById("insightDeck");
+    const summaryLabel = document.getElementById("summaryLabel");
+    const scenarioTag = document.getElementById("scenarioTag");
+    const keyFeatureLabel = document.getElementById("keyFeatureLabel");
+    const envImpactLabel = document.getElementById("envImpactLabel");
+    const actionsBadge = document.getElementById("actionsBadge");
+    const actionHighlightList = document.getElementById("actionHighlightList");
+
+    const modelStatsList = document.getElementById("modelStatsList");
+    const thresholdPills = document.getElementById("thresholdPills");
+    const datasetStats = document.getElementById("datasetStats");
+    const augmentationList = document.getElementById("augmentationList");
+    const featureHintList = document.getElementById("featureHintList");
+    const actionCatalogList = document.getElementById("actionCatalogList");
+    const conditionList = document.getElementById("conditionList");
+    const releaseNotes = document.getElementById("releaseNotes");
+
+    const fallbackExample = "speed: 214, yaw_rate: 17.6, lateral_g: 3.2, brake_pressure: 0.4";
+
+    const hasPlotly = () => typeof window !== "undefined" && !!window.Plotly;
+
+    function formatLabel(label) {
+      return label
+        .toString()
+        .replace(/_/g, " ")
+        .replace(/\b([a-z])/g, (_, c) => c.toUpperCase());
+    }
+
+    function setRiskBadge(band = "normal") {
+      const normalized = (band || "normal").toLowerCase();
+      riskBadge.className = `risk-badge risk-${normalized}`;
+      riskBadge.textContent = normalized;
+    }
+
+    function renderMetadata(meta) {
+      state.metadata = meta;
+      if (Array.isArray(meta.actions_catalog)) {
+        state.actionLookup = Object.fromEntries(meta.actions_catalog.map((item) => [item.id, item.description]));
+      }
+
+      if (modelChip) {
+        const seqInfo = meta.seq_len && meta.input_dim ? `${meta.seq_len}×${meta.input_dim}` : "unknown";
+        modelChip.textContent = `Serving ${meta.model_version || "v?"} · ${String(meta.device || "cpu").toUpperCase()} (${seqInfo})`;
+      }
+
+      if (modelStatsList) {
+        const sampleRateValue = Number(meta.expected_sample_rate_hz);
+        const sampleRate = Number.isFinite(sampleRateValue) ? `${sampleRateValue} Hz` : "—";
+        const durationValue = Number(meta.window_duration_s);
+        const windowDuration = Number.isFinite(durationValue) ? `${durationValue.toFixed(2)}s` : "—";
+        const latencyCpuValue = meta.latency_expectation_ms && Number(meta.latency_expectation_ms.cpu);
+        const latencyCpu = Number.isFinite(latencyCpuValue) ? `${latencyCpuValue} ms` : "—";
+        modelStatsList.innerHTML = `
+          <li><span>Model version</span><span>${meta.model_version || "—"}</span></li>
+          <li><span>Serving device</span><span>${meta.device || "—"}</span></li>
+          <li><span>Window</span><span>${meta.seq_len || "?"}×${meta.input_dim || "?"} (${windowDuration})</span></li>
+          <li><span>Sample rate</span><span>${sampleRate}</span></li>
+          <li><span>Latency (CPU)</span><span>${latencyCpu}</span></li>
+        `;
+      }
+
+      if (thresholdPills) {
+        const entries = Object.entries(meta.score_thresholds || {});
+        if (entries.length) {
+          const sorted = entries.sort((a, b) => b[1] - a[1]);
+          thresholdPills.innerHTML = sorted
+            .map(([band, value]) => `<span class="threshold-pill">${band} ≥ ${value.toFixed(2)}</span>`)
+            .join("");
+        } else {
+          thresholdPills.innerHTML = `<span class="threshold-pill">Thresholds unavailable</span>`;
+        }
+      }
+
+      if (datasetStats) {
+        const summary = meta.training_summary || {};
+        const normalPct = typeof summary.normal_ratio === "number" ? `${Math.round(summary.normal_ratio * 100)}%` : "—";
+        const riskPct = typeof summary.high_risk_ratio === "number" ? `${Math.round(summary.high_risk_ratio * 100)}%` : "—";
+        const totalSequences = Number(summary.total_sequences);
+        datasetStats.innerHTML = `
+          <li><span>Total sequences</span><span>${Number.isFinite(totalSequences) ? totalSequences : summary.total_sequences || "—"}</span></li>
+          <li><span>Normal</span><span>${normalPct}</span></li>
+          <li><span>High risk</span><span>${riskPct}</span></li>
+          <li><span>Epochs</span><span>${summary.epochs || "—"}</span></li>
+        `;
+        if (augmentationList) {
+          const aug = Array.isArray(summary.augmentations) ? summary.augmentations : [];
+          augmentationList.innerHTML = aug.length
+            ? aug.map((item) => `<li>${item}</li>`).join("")
+            : `<li>No augmentations listed</li>`;
+        }
+      }
+
+      if (featureHintList) {
+        const hints = Array.isArray(meta.feature_hints) ? meta.feature_hints : [];
+        featureHintList.innerHTML = hints.length
+          ? hints
+              .map(
+                (item) => `
+                  <li>
+                    <strong>${item.name}</strong>
+                    <span>${item.description || ""}${item.unit ? ` · ${item.unit}` : ""}</span>
+                  </li>
+                `,
+              )
+              .join("")
+          : `<li>No feature hints provided.</li>`;
+      }
+
+      if (actionCatalogList) {
+        const actions = Array.isArray(meta.actions_catalog) ? meta.actions_catalog : [];
+        actionCatalogList.innerHTML = actions.length
+          ? actions.map((action) => `<li><strong>${action.id}</strong><span>${action.description || ""}</span></li>`).join("")
+          : `<li>No mitigation actions configured.</li>`;
+      }
+
+      if (conditionList) {
+        const supported = Array.isArray(meta.supported_conditions) ? meta.supported_conditions : [];
+        conditionList.innerHTML = supported.length
+          ? supported
+              .map((item) => `<li><strong>${formatLabel(item)}</strong><span>Recognised context input</span></li>`)
+              .join("")
+          : `<li>No environment inputs documented.</li>`;
+      }
+
+      if (releaseNotes) {
+        const notes = Array.isArray(meta.release_notes) ? meta.release_notes : [];
+        releaseNotes.innerHTML = notes.length
+          ? notes.map((note) => `<li>${note}</li>`).join("")
+          : `<li>No release notes available.</li>`;
+      }
+
+      if (statusEl && !telemetryField.value.trim()) {
+        const baseHint = apiBase ? ` (API ${apiBase || window.location.origin})` : "";
+        statusEl.textContent = `Metadata loaded${baseHint}. Paste telemetry to run inference.`;
+      }
+    }
+
+    async function loadMetadata() {
+      const candidateBases = [
+        apiBase,
+        window.location.origin && window.location.origin.startsWith("http") ? window.location.origin : "",
+        "http://127.0.0.1:8000",
+        "http://localhost:8000",
+        "",
+      ].filter((base, idx, arr) => base !== undefined && arr.indexOf(base) === idx);
+
+      let lastError = null;
+
+      for (const candidate of candidateBases) {
+        const normalized = normalizeBase(candidate);
+        try {
+          const response = await fetch(apiUrl("/api/model-metadata", normalized));
+          if (!response.ok) {
+            lastError = new Error(`Metadata request failed (${response.status})`);
+            continue;
+          }
+          const data = await response.json();
+          apiBase = normalized;
+          renderMetadata(data);
+          return;
+        } catch (error) {
+          lastError = error;
+        }
+      }
+
+      if (modelChip) {
+        const hint = apiBase ? ` (looking at ${apiBase})` : "";
+        modelChip.textContent = `Metadata unavailable${hint}`;
+      }
+      if (conditionList) {
+        conditionList.innerHTML = `<li>Metadata unavailable</li>`;
+      }
+      if (statusEl) {
+        const message = lastError ? lastError.message : "Metadata fetch failed";
+        statusEl.textContent = `⚠️ ${message}`;
+      }
+    }
+
+    function renderActions(actions) {
+      if (!actionList) return;
+      if (!Array.isArray(actions) || actions.length === 0) {
+        actionList.innerHTML = `<li><span>None required</span><span>—</span></li>`;
+        return;
+      }
+      actionList.innerHTML = actions
+        .map((action) => {
+          const desc = state.actionLookup[action] || "Triggered automatically";
+          return `<li><span>${formatLabel(action)}</span><span>${desc}</span></li>`;
+        })
+        .join("");
+    }
+
+    function renderFeatures(breakdown) {
+      if (!featureList) return;
+      const top = Array.isArray(breakdown) ? breakdown.slice(0, 5) : [];
+      if (!top.length) {
+        featureList.innerHTML = `
+          <li>
+            <span>No features available</span>
+            <div class="feature-meter"><div class="fill" style="width:0%"></div></div>
+            <span>—</span>
+          </li>
+        `;
+        return;
+      }
+      featureList.innerHTML = top
+        .map((item) => {
+          const value = typeof item.recon_error === "number" ? item.recon_error : Number(item.recon_error) || 0;
+          const importance = typeof item.scaled_importance === "number" ? item.scaled_importance : Number(item.scaled_importance) || 0;
+          const clamped = Math.max(0, Math.min(1, importance));
+          return `
+            <li>
+              <span>${formatLabel(item.feature)}</span>
+              <div class="feature-meter"><div class="fill" style="width:${(clamped * 100).toFixed(0)}%"></div></div>
+              <span>${value.toFixed(4)}</span>
+            </li>
+          `;
+        })
+        .join("");
+    }
+
+    function renderNotes(notes) {
+      if (!notesList) return;
+      const list = Array.isArray(notes) && notes.length ? notes : ["Telemetry reconstruction aligns with trained envelope."];
+      notesList.innerHTML = list.map((note) => `<li>${note}</li>`).join("");
+    }
+
+    function renderProbabilityComponents(components) {
+      if (!probabilityComponentsList) return;
+      if (!Array.isArray(components) || components.length === 0) {
+        probabilityComponentsList.innerHTML = `<li><span>Base anomaly</span><span>0.00</span></li>`;
+        return;
+      }
+      probabilityComponentsList.innerHTML = components
+        .map((item) => {
+          const label = item.detail ? `${item.label}: ${formatLabel(item.detail)}` : item.label;
+          const value = typeof item.value === "number" ? item.value : Number(item.value) || 0;
+          const formatted = value >= 0 ? `+${value.toFixed(2)}` : value.toFixed(2);
+          return `<li><span>${label}</span><span>${formatted}</span></li>`;
+        })
+        .join("");
+    }
+
+    function renderEnvironment(summary, contributors) {
+      if (!environmentList) return;
+      const lines = [];
+      if (Array.isArray(summary) && summary.length) {
+        summary.forEach((line) => lines.push(line));
+      } else if (typeof summary === "string" && summary) {
+        lines.push(summary);
+      }
+      if (Array.isArray(contributors) && contributors.length) {
+        contributors.forEach((item) => {
+          const detail = item.detail ? ` ${formatLabel(item.detail)}` : "";
+          const delta = typeof item.delta === "number" ? item.delta : Number(item.value) || 0;
+          const formatted = delta >= 0 ? `+${delta.toFixed(2)}` : delta.toFixed(2);
+          lines.push(`${item.label || "Factor"}${detail}: ${formatted}`);
+        });
+      }
+      environmentList.innerHTML = lines.length
+        ? lines.map((line) => `<li>${line}</li>`).join("")
+        : `<li>No environment context supplied.</li>`;
+    }
+
+    function setChartPlaceholder(node, message) {
+      if (!node) return;
+      node.innerHTML = `<div class="chart-placeholder">${message}</div>`;
+    }
+
+    function resetCharts() {
+      if (chartDeck) {
+        chartDeck.classList.add("hidden");
+        chartDeck.classList.remove("visible");
+      }
+      if (insightDeck) {
+        insightDeck.classList.add("hidden");
+        insightDeck.classList.remove("visible");
+      }
+      if (hasPlotly()) {
+        if (probabilityGauge) Plotly.purge(probabilityGauge);
+        if (timelineChart) Plotly.purge(timelineChart);
+        if (threeDChart) Plotly.purge(threeDChart);
+      }
+      if (probabilityGauge) probabilityGauge.innerHTML = "";
+      if (timelineChart) timelineChart.innerHTML = "";
+      if (threeDChart) threeDChart.innerHTML = "";
+      if (threeDAxesLabel) threeDAxesLabel.textContent = "Axes: —";
+      if (summaryLabel) summaryLabel.textContent = "Awaiting inference…";
+      if (scenarioTag) scenarioTag.textContent = "—";
+      if (keyFeatureLabel) keyFeatureLabel.textContent = "—";
+      if (envImpactLabel) envImpactLabel.textContent = "—";
+      if (actionsBadge) actionsBadge.textContent = "0";
+      if (actionHighlightList) actionHighlightList.innerHTML = "<li>Awaiting inference…</li>";
+    }
+
+    function renderCharts(data) {
+      if (!chartDeck) return;
+      const chartData = data?.chart_data || {};
+      if (!hasPlotly()) {
+        chartDeck.classList.remove("hidden");
+        chartDeck.classList.add("visible");
+        setChartPlaceholder(probabilityGauge, "Load Plotly to render charts.");
+        setChartPlaceholder(timelineChart, "Load Plotly to render charts.");
+        setChartPlaceholder(threeDChart, "Load Plotly to render charts.");
+        return;
+      }
+
+      chartDeck.classList.remove("hidden");
+      chartDeck.classList.add("visible");
+
+      const probability = Math.max(0, Math.min(1, Number(data.crash_probability) || 0)) * 100;
+      const thresholds = Array.isArray(state.metadata?.chart_defaults?.gauge_thresholds)
+        ? state.metadata.chart_defaults.gauge_thresholds.filter((v) => Number.isFinite(v))
+        : [0.25, 0.55, 0.75, 0.9];
+      const edges = [0, ...thresholds.map((v) => Math.max(0, Math.min(1, Number(v))))].sort((a, b) => a - b);
+      if (edges[edges.length - 1] !== 1) edges.push(1);
+      const colors = [
+        "rgba(125,255,176,0.28)",
+        "rgba(255,220,120,0.28)",
+        "rgba(255,170,80,0.32)",
+        "rgba(255,120,120,0.35)",
+        "rgba(200,80,80,0.4)",
+      ];
+      const gaugeSteps = [];
+      for (let i = 0; i < edges.length - 1; i += 1) {
+        gaugeSteps.push({
+          range: [edges[i] * 100, edges[i + 1] * 100],
+          color: colors[i] || colors[colors.length - 1],
+        });
+      }
+
+      Plotly.newPlot(
+        probabilityGauge,
+        [
+          {
+            type: "indicator",
+            mode: "gauge+number",
+            value: probability,
+            number: { suffix: "%", font: { color: "#ffffff", size: 24 } },
+            gauge: {
+              axis: { range: [0, 100], tickcolor: "#999" },
+              bar: { color: "#ff5e00" },
+              steps: gaugeSteps,
+              threshold: {
+                line: { color: "#ffffff", width: 2 },
+                value: probability,
+              },
+            },
+          },
+        ],
+        {
+          margin: { t: 20, b: 10, l: 10, r: 10 },
+          paper_bgcolor: "rgba(0,0,0,0)",
+          font: { color: "#f8f8f8" },
+        },
+        { responsive: true },
+      );
+
+      const timeline = Array.isArray(chartData.timeline) ? chartData.timeline : [];
+      if (timeline.length && timelineChart) {
+        Plotly.newPlot(
+          timelineChart,
+          [
+            {
+              x: timeline.map((point) => point.timestep),
+              y: timeline.map((point) => point.recon_error),
+              type: "scatter",
+              mode: "lines+markers",
+              line: { color: "#ff5e00" },
+              marker: { color: "#ffb199", size: 5 },
+            },
+          ],
+          {
+            margin: { t: 20, r: 10, l: 35, b: 35 },
+            paper_bgcolor: "rgba(0,0,0,0)",
+            plot_bgcolor: "rgba(0,0,0,0)",
+            font: { color: "#f8f8f8" },
+            xaxis: { title: "timestep" },
+            yaxis: { title: "recon error" },
+          },
+          { responsive: true },
+        );
+      } else if (timelineChart) {
+        Plotly.purge(timelineChart);
+        setChartPlaceholder(timelineChart, "Timeline will appear once a multi-step telemetry window is scored.");
+      }
+
+      const projection = chartData.three_d_projection || {};
+      if (
+        threeDChart &&
+        Array.isArray(projection.axes) &&
+        projection.axes.length === 3 &&
+        Array.isArray(projection.points) &&
+        projection.points.length >= 3
+      ) {
+        const axes = projection.axes.map((axis) => formatLabel(axis));
+        if (threeDAxesLabel) {
+          threeDAxesLabel.textContent = `Axes: ${axes.join(" · ")}`;
+        }
+        Plotly.newPlot(
+          threeDChart,
+          [
+            {
+              type: "scatter3d",
+              mode: "lines+markers",
+              x: projection.points.map((pt) => pt.x),
+              y: projection.points.map((pt) => pt.y),
+              z: projection.points.map((pt) => pt.z),
+              marker: {
+                size: 4,
+                color: projection.points.map((pt) => pt.error),
+                colorscale: "YlOrRd",
+                colorbar: { title: "recon err" },
+              },
+              line: { color: "#ff5e00", width: 2 },
+            },
+          ],
+          {
+            margin: { t: 20, b: 0, l: 0, r: 0 },
+            paper_bgcolor: "rgba(0,0,0,0)",
+            scene: {
+              xaxis: { title: axes[0], backgroundcolor: "rgba(0,0,0,0)" },
+              yaxis: { title: axes[1], backgroundcolor: "rgba(0,0,0,0)" },
+              zaxis: { title: axes[2], backgroundcolor: "rgba(0,0,0,0)" },
+            },
+          },
+          { responsive: true },
+        );
+      } else if (threeDChart) {
+        Plotly.purge(threeDChart);
+        setChartPlaceholder(threeDChart, "3D trajectory activates when three distinct sensor signals are present.");
+        if (threeDAxesLabel) threeDAxesLabel.textContent = "Axes: —";
+      }
+    }
+
+    function collectConditions() {
+      const conditions = {};
+      if (weatherField && weatherField.value) conditions.weather = weatherField.value.toLowerCase();
+      if (trackTempField && trackTempField.value !== "") {
+        const value = Number(trackTempField.value);
+        if (!Number.isNaN(value)) conditions.track_temperature = value;
+      }
+      if (humidityField && humidityField.value !== "") {
+        const value = Number(humidityField.value);
+        if (!Number.isNaN(value)) conditions.humidity = value;
+      }
+      if (trackSurfaceField && trackSurfaceField.value) conditions.track_surface = trackSurfaceField.value.toLowerCase();
+      if (visibilityField && visibilityField.value) conditions.visibility = visibilityField.value.toLowerCase();
+      if (trafficField && trafficField.value) conditions.traffic_density = trafficField.value.toLowerCase();
+      if (tyreWearField && tyreWearField.value) conditions.tyre_wear = tyreWearField.value.toLowerCase();
+      if (driverStateField && driverStateField.value) conditions.driver_state = driverStateField.value.toLowerCase();
+      return conditions;
+    }
+
+    function renderInference(data) {
+      resultsEl.classList.remove("hidden");
+      resultsEl.classList.add("visible");
+      const crashProbability = Math.max(0, Math.min(1, Number(data.crash_probability) || 0));
+      if (probabilityValue) probabilityValue.textContent = `${(crashProbability * 100).toFixed(1)}%`;
+      if (severityLabel) {
+        const severity = Number(data.severity_index);
+        severityLabel.textContent = Number.isFinite(severity) ? `Severity idx ${severity.toFixed(1)}` : "Severity idx —";
+      }
+      if (anomalyLabel) {
+        const anomalyScore = Number(data.anomaly_score) || 0;
+        const rawRecon = Number(data.raw_recon_error) || 0;
+        anomalyLabel.textContent = `Anomaly ${anomalyScore.toFixed(4)} · err ${rawRecon.toFixed(6)}`;
+      }
+      setRiskBadge(data.risk_band || "normal");
+      renderActions(data.actions);
+      renderFeatures(data.feature_breakdown);
+      renderProbabilityComponents(data.probability_components);
+      renderEnvironment(data.condition_summary, data.condition_contributors);
+      renderNotes(data.notes);
+      renderCharts(data);
+      const latencyValue = Number(data.latency_ms);
+      const latency = Number.isFinite(latencyValue) ? `${latencyValue.toFixed(2)} ms` : `${data.latency_ms || "—"} ms`;
+      if (statusEl) statusEl.textContent = `Latency ${latency} · crash probability ${(crashProbability * 100).toFixed(1)}%`;
+      const riskBand = (data.risk_band || "normal").toLowerCase();
+      const scenarioCopy = {
+        normal: {
+          title: "Stable envelope",
+          caption: "Telemetry in expected manifold",
+        },
+        elevated: {
+          title: "Drift detected",
+          caption: "Monitor assists & collect more laps",
+        },
+        high: {
+          title: "High crash pressure",
+          caption: "Prime mitigations & alert safety crew",
+        },
+        critical: {
+          title: "Critical impact risk",
+          caption: "Execute emergency playbook immediately",
+        },
+      };
+      const copy = scenarioCopy[riskBand] || scenarioCopy.normal;
+      if (insightDeck) {
+        insightDeck.classList.remove("hidden");
+        insightDeck.classList.add("visible");
+      }
+      if (summaryLabel) summaryLabel.textContent = copy.title;
+      if (scenarioTag) scenarioTag.textContent = copy.caption;
+      const dominant = Array.isArray(data.feature_breakdown) && data.feature_breakdown.length ? data.feature_breakdown[0] : null;
+      if (keyFeatureLabel) {
+        if (dominant) {
+          keyFeatureLabel.textContent = `${formatLabel(dominant.feature)} · ${Number(dominant.recon_error || 0).toFixed(3)}`;
+        } else {
+          keyFeatureLabel.textContent = "—";
+        }
+      }
+      const envLine = Array.isArray(data.condition_summary) && data.condition_summary.length ? data.condition_summary[0] : "No environment context supplied";
+      if (envImpactLabel) envImpactLabel.textContent = envLine;
+      const actions = Array.isArray(data.actions) ? data.actions : [];
+      if (actionsBadge) actionsBadge.textContent = String(actions.length);
+      if (actionHighlightList) {
+        if (!actions.length) {
+          actionHighlightList.innerHTML = "<li>No mitigation triggered.</li>";
+        } else {
+          actionHighlightList.innerHTML = actions
+            .map((action) => {
+              const desc = state.actionLookup[action] || "Automatic response";
+              return `<li>${formatLabel(action)} — ${desc}</li>`;
+            })
+            .join("");
+        }
+      }
+      if (window.gsap) {
+        gsap.fromTo(resultsEl, { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.35, ease: "power2.out" });
+        if (insightDeck && insightDeck.classList.contains("visible")) {
+          gsap.fromTo(insightDeck, { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.33, ease: "power2.out", delay: 0.03 });
+        }
+        if (chartDeck && !chartDeck.classList.contains("hidden")) {
+          gsap.fromTo(chartDeck, { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.36, ease: "power2.out", delay: 0.05 });
+        }
+      }
+    }
+
+    async function handleInference() {
+      const raw = telemetryField.value.trim();
+      if (!raw) {
+        if (statusEl) statusEl.textContent = "Paste telemetry before running inference.";
+        resultsEl.classList.add("hidden");
+        resultsEl.classList.remove("visible");
+        resetCharts();
+        return;
+      }
+
+      if (statusEl) statusEl.textContent = "Running inference…";
+      resultsEl.classList.add("hidden");
+      resultsEl.classList.remove("visible");
+      resetCharts();
+
+      try {
+        const payload = { telemetry: raw };
+        const context = {};
+        if (state.metadata?.model_version) {
+          context.requested_version = state.metadata.model_version;
+        }
+        if (Object.keys(context).length) {
+          payload.context = context;
+        }
+        const conditions = collectConditions();
+        if (Object.keys(conditions).length) {
+          payload.conditions = conditions;
+        }
+
+        const response = await fetch(apiUrl("/api/infer"), {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload),
+        });
+
+        if (!response.ok) {
+          let message;
+          try {
+            const body = await response.json();
+            message = body.detail || JSON.stringify(body);
+          } catch (err) {
+            message = await response.text();
+          }
+          throw new Error(message || `Inference failed (${response.status})`);
+        }
+
+        const data = await response.json();
+        renderInference(data);
+      } catch (error) {
+        if (statusEl) {
+          const extra = window.location.protocol === "file:" ? ` · Hint: ensure the FastAPI server is reachable at ${apiBase || "http://127.0.0.1:8000"}` : "";
+          statusEl.textContent = `⚠️ ${error.message}${extra}`;
+        }
+      }
+    }
+
+    function handleExample() {
+      const example = state.metadata?.example_payload || fallbackExample;
+      telemetryField.value = example;
+      if (weatherField && !weatherField.value) weatherField.value = "Light rain";
+      if (trackTempField && !trackTempField.value) trackTempField.value = "36";
+      if (visibilityField && !visibilityField.value) visibilityField.value = "Moderate";
+      if (statusEl) statusEl.textContent = "Demo telemetry loaded. Run anomaly detection to score.";
+    }
+
+    function handleClear() {
+      telemetryField.value = "";
+      if (weatherField) weatherField.value = "";
+      if (trackTempField) trackTempField.value = "";
+      if (humidityField) humidityField.value = "";
+      if (trackSurfaceField) trackSurfaceField.value = "";
+      if (visibilityField) visibilityField.value = "";
+      if (trafficField) trafficField.value = "";
+      if (tyreWearField) tyreWearField.value = "";
+      if (driverStateField) driverStateField.value = "";
+      resultsEl.classList.add("hidden");
+      resultsEl.classList.remove("visible");
+      resetCharts();
+      if (statusEl) statusEl.textContent = "Cleared. Paste telemetry to run inference.";
+    }
+
+    runBtn.addEventListener("click", handleInference);
+    exampleBtn.addEventListener("click", handleExample);
+    clearBtn.addEventListener("click", handleClear);
+    telemetryField.addEventListener("keydown", (event) => {
+      if ((event.metaKey || event.ctrlKey) && event.key === "Enter") {
+        handleInference();
+      }
+    });
+
+    loadMetadata();
+  </script>
+</body>
+</html>
