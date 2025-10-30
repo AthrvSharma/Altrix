@@ -1263,11 +1263,27 @@
       });
     });
 
-    let apiBase = window.location.protocol === "file:" ? "http://127.0.0.1:8000" : "";
+    // Default API base; we use 5501 by team convention
+    let apiBase = window.location.protocol === "file:" ? "http://127.0.0.1:5501" : "";
+    try {
+      const params = new URLSearchParams(window.location.search || "");
+      const overrideBase = params.get("API_BASE") || params.get("api_base");
+      if (overrideBase) {
+        apiBase = overrideBase;
+      }
+    } catch (e) {}
+    try {
+      if (!apiBase) {
+        const saved = localStorage.getItem("apiBase");
+        if (saved) apiBase = saved;
+      }
+    } catch (e) {}
 
     const normalizeBase = (base) => {
       if (!base) return "";
-      return base.endsWith("/") ? base.slice(0, -1) : base;
+      let out = String(base).trim();
+      if (out && !/^https?:\/\//i.test(out)) { out = "http://" + out; }
+      return out.endsWith("/") ? out.slice(0, -1) : out;
     };
 
     const apiUrl = (path, base = apiBase) => `${normalizeBase(base)}${path}`;
@@ -1449,6 +1465,8 @@
       const candidateBases = [
         apiBase,
         window.location.origin && window.location.origin.startsWith("http") ? window.location.origin : "",
+        "http://127.0.0.1:5501",
+        "http://localhost:5501",
         "http://127.0.0.1:8000",
         "http://localhost:8000",
         "",
@@ -1884,11 +1902,12 @@
 
         if (!response.ok) {
           let message;
+          const responseText = await response.text();
           try {
-            const body = await response.json();
+            const body = JSON.parse(responseText);
             message = body.detail || JSON.stringify(body);
           } catch (err) {
-            message = await response.text();
+            message = responseText;
           }
           throw new Error(message || `Inference failed (${response.status})`);
         }
@@ -1938,6 +1957,27 @@
     });
 
     loadMetadata();
+    // Add API base controls for manual override
+    (function injectApiControls(){
+      const chip = document.getElementById("modelChip");
+      if (!chip || document.getElementById("apiControls")) return;
+      const wrap = document.createElement("div");
+      wrap.id = "apiControls";
+      wrap.style.cssText = "margin:0.4rem 0 0.6rem; display:flex; gap:0.4rem; align-items:center;";
+      wrap.innerHTML = '<input id="apiBaseInput" placeholder="http://127.0.0.1:5501" style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.06);color:#fff;padding:0.35rem 0.55rem;border-radius:8px;width:19rem;max-width:90%;font-size:0.75rem;" />'+
+                       '<button id="applyApiBase" class="nav-cta" style="font-size:0.68rem;">Set API</button>';
+      chip.insertAdjacentElement("afterend", wrap);
+      const input = document.getElementById("apiBaseInput");
+      if (input) input.value = normalizeBase(apiBase) || "";
+      const btn = document.getElementById("applyApiBase");
+      if (btn) btn.addEventListener("click", async () => {
+        const next = normalizeBase(input.value || "");
+        apiBase = next;
+        try { localStorage.setItem("apiBase", apiBase); } catch (e) {}
+        if (statusEl) statusEl.textContent = `Using API ${apiBase || "(same origin)"}. Reloading metadata...`;
+        await loadMetadata();
+      });
+    })();
   </script>
 </body>
 </html>

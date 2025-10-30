@@ -12,49 +12,41 @@ from src.model import LSTMAutoencoder
 MODEL_PATH = "models/best_model.pth"
 DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
 
-# Suggested sensor catalogue for UI/metadata purposes
-FEATURE_HINTS: List[Dict[str, str]] = [
+# Feature definitions for the model
+FEATURE_HINTS = [
     {
         "name": "speed",
         "unit": "km/h",
-        "description": "Vehicle ground speed from CAN bus",
+        "description": "Vehicle ground speed from CAN bus"
     },
     {
         "name": "yaw_rate",
         "unit": "deg/s",
-        "description": "Rotation around vertical axis (gyro)",
+        "description": "Rotation around vertical axis (gyro)"
     },
     {
         "name": "lateral_g",
         "unit": "g",
-        "description": "Side-force measured from accelerometer",
+        "description": "Side-force measured from accelerometer"
     },
     {
         "name": "longitudinal_g",
         "unit": "g",
-        "description": "Forward/backward force",
+        "description": "Forward/backward force"
     },
     {
         "name": "brake_pressure",
         "unit": "bar",
-        "description": "Hydraulic brake pressure",
+        "description": "Hydraulic brake pressure"
     },
     {
         "name": "steering_angle",
         "unit": "deg",
-        "description": "Driver steering input",
-    },
-    {
-        "name": "wheel_speed_fl",
-        "unit": "km/h",
-        "description": "Front-left wheel speed sensor",
-    },
-    {
-        "name": "wheel_speed_fr",
-        "unit": "km/h",
-        "description": "Front-right wheel speed sensor",
-    },
+        "description": "Driver steering input"
+    }
 ]
+
+# (Model metadata is defined later after model load — see MODEL_METADATA near the bottom.)
 
 ACTIONS_CATALOG: List[Dict[str, str]] = [
     {
@@ -145,7 +137,15 @@ def load_model():
     model.eval()
     return model, seq_len, input_dim
 
-model, SEQ_LEN, INPUT_DIM = load_model()
+MODEL_LOAD_ERROR: Optional[str] = None
+try:
+    model, SEQ_LEN, INPUT_DIM = load_model()
+except Exception as e:
+    # Defer hard failure so metadata endpoint can still respond
+    model = None
+    SEQ_LEN = 100
+    INPUT_DIM = len(FEATURE_HINTS)
+    MODEL_LOAD_ERROR = f"{type(e).__name__}: {e}"
 
 
 def _normalize_key(key: str) -> str:
@@ -472,6 +472,9 @@ MODEL_METADATA: Dict[str, Any] = {
     "device": DEVICE,
     "seq_len": SEQ_LEN,
     "input_dim": INPUT_DIM,
+    "model_loaded": model is not None,
+    "model_path": MODEL_PATH,
+    **({"model_load_error": MODEL_LOAD_ERROR} if MODEL_LOAD_ERROR else {}),
     "expected_sample_rate_hz": 50,
     "window_duration_s": round(SEQ_LEN / 50, 2),
     "feature_hints": FEATURE_HINTS,
@@ -528,6 +531,10 @@ def _band_from_score(score: float) -> str:
 
 
 def run_inference(telemetry: TelemetryPayload, context: Optional[Dict[str, Any]] = None) -> Dict[str, Any]:
+    if model is None:
+        raise RuntimeError(
+            "Model not loaded. Install torch and ensure models/best_model.pth is present."
+        )
     inference_start = time.perf_counter()
     x, feature_order, raw_timeline, raw_arr, padded_arr = preprocess_payload(telemetry)
     conditions = _extract_conditions(context)
