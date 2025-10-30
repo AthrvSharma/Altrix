@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VISIONALTRIX | F1-to-Road Safety AI</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <style>
+    /* ============ RESET ============ */
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --bg: #030303;
+      --card: rgba(5, 5, 5, 0.35);
+      --accent: #ff1e00;
+      --accent-soft: rgba(255, 30, 0, 0.25);
+      --text: #f8f8f8;
+      --muted: rgba(248, 248, 248, 0.55);
+      --radius-lg: 1.5rem;
+    }
+
+    body {
+      background: radial-gradient(circle at 10% 20%, #111 0%, #000 45%, #000 100%);
+      color: var(--text);
+      font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* ============ NAVBAR ============ */
+    nav {
+      position: fixed;
+      top: 1.2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 1.6rem;
+      z-index: 1000;
+      background: rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(14px);
+      padding: 0.65rem 1.6rem;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      align-items: center;
+    }
+    .logo {
+      font-family: "Space Grotesk", sans-serif;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      font-size: 0.85rem;
+      display: flex;
+      gap: 0.4rem;
+      align-items: center;
+      text-transform: uppercase;
+    }
+    .logo-dot {
+      width: 0.5rem;
+      height: 0.5rem;
+      background: var(--accent);
+      border-radius: 999px;
+      box-shadow: 0 0 14px rgba(255, 30, 0, 0.8);
+    }
+    nav a {
+      color: var(--muted);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.8rem;
+      transition: 0.2s ease;
+    }
+    nav a:hover,
+    nav a.active {
+      color: #fff;
+    }
+    .nav-cta {
+      background: linear-gradient(140deg, rgba(255, 30, 0, 1), rgba(200, 5, 5, 1));
+      padding: 0.4rem 0.95rem;
+      border-radius: 999px;
+      border: none;
+      color: white;
+      font-size: 0.7rem;
+      cursor: pointer;
+      box-shadow: 0 6px 20px rgba(255, 30, 0, 0.4);
+      transition: transform 0.2s;
+    }
+    .nav-cta:hover {
+      transform: translateY(-2px);
+    }
+
+    /* ============ HERO ============ */
+    .hero {
+      height: 100vh;
+      display: grid;
+      grid-template-columns: 1.05fr 0.8fr;
+      gap: 1rem;
+      align-items: center;
+      padding: 7rem min(5vw, 4rem) 3rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* blurred light streaks */
+    .hero::before,
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 480px;
+      height: 480px;
+      filter: blur(120px);
+      opacity: 0.7;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .hero::before {
+      background: radial-gradient(circle, rgba(255, 30, 0, 0.6), rgba(3, 3, 3, 0));
+      top: -12%;
+      left: -12%;
+    }
+    .hero::after {
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.2), rgba(3, 3, 3, 0));
+      bottom: -14%;
+      right: -10%;
+    }
+
+    .hero-left {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .badge {
+      display: inline-flex;
+      gap: 0.5rem;
+      background: rgba(255, 30, 0, 0.14);
+      border: 1px solid rgba(255, 30, 0, 0.5);
+      border-radius: 999px;
+      padding: 0.35rem 0.9rem;
+      align-items: center;
+      width: fit-content;
+      font-size: 0.68rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .badge span:last-child {
+      color: #fff;
+      font-weight: 600;
+    }
+
+    .title-wrap {
+      position: relative;
+    }
+
+    .hero-title {
+      font-size: clamp(2.8rem, 5vw, 4rem);
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      line-height: 0.9;
+      text-wrap: balance;
+      font-family: "Space Grotesk", sans-serif;
+    }
+    .hero-sub {
+      color: var(--muted);
+      max-width: 36rem;
+      line-height: 1.55;
+      font-size: 0.92rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .primary-btn {
+      background: radial-gradient(circle, #ff1e00 0%, #ff5e00 60%);
+      padding: 0.95rem 1.6rem;
+      border-radius: 999px;
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.78rem;
+      border: none;
+      cursor: pointer;
+      transition: 0.2s;
+      box-shadow: 0 0 28px rgba(255, 30, 0, 0.4);
+    }
+    .primary-btn:hover {
+      transform: translateY(-2px);
+    }
+    .ghost-btn {
+      padding: 0.9rem 1.4rem;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.045);
+      border: 1px solid rgba(248, 248, 248, 0.2);
+      color: #fff;
+      font-weight: 500;
+      text-decoration: none;
+      font-size: 0.78rem;
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+    }
+
+    /* stats */
+    .stats {
+      display: flex;
+      gap: 1.4rem;
+      margin-top: 0.6rem;
+      flex-wrap: wrap;
+    }
+    .stat {
+      background: rgba(0, 0, 0, 0.35);
+      border: 1px solid rgba(255, 30, 0, 0.1);
+      border-radius: 1.1rem;
+      padding: 0.55rem 0.9rem;
+      min-width: 130px;
+    }
+    .stat .num {
+      font-size: 1.6rem;
+      font-weight: 700;
+    }
+    .stat small {
+      color: var(--muted);
+      font-size: 0.65rem;
+    }
+
+    /* ============ HERO RIGHT (image) ============ */
+    .hero-right {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      justify-content: center;
+    }
+
+    .car-wrap {
+      position: relative;
+      width: min(40rem, 90vw);
+      aspect-ratio: 16 / 9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      filter: drop-shadow(0 24px 66px rgba(0, 0, 0, 0.6));
+    }
+
+    .hero-gradient {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle, rgba(255, 30, 0, 0.35) 0%, rgba(0, 0, 0, 0) 60%);
+      filter: blur(70px);
+      z-index: 0;
+    }
+
+    .car-image {
+      position: relative;
+      width: 100%;
+      object-fit: contain;
+      transform-origin: center;
+      border-radius: 1.6rem;
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .floating-chip {
+      position: absolute;
+      top: 7%;
+      right: 1%;
+      background: rgba(0, 0, 0, 0.25);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      padding: 0.75rem 1rem;
+      border-radius: 1rem;
+      width: 11rem;
+      font-size: 0.6rem;
+      display: grid;
+      gap: 0.35rem;
+    }
+    .floating-chip h4 {
+      font-size: 0.75rem;
+    }
+    .chip-pill {
+      background: rgba(255, 30, 0, 0.18);
+      border-radius: 999px;
+      padding: 0.18rem 0.4rem;
+      width: fit-content;
+      font-size: 0.57rem;
+    }
+    .floating-chip small {
+      color: var(--muted);
+    }
+
+    /* ============ SECTIONS ============ */
+    section {
+      padding: 3rem min(5vw, 4rem);
+    }
+
+    .section-title {
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
+      font-family: "Space Grotesk", sans-serif;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 1.1rem;
+    }
+    .feature-card {
+      background: rgba(0, 0, 0, 0.35);
+      border: 1px solid rgba(255, 255, 255, 0.02);
+      border-radius: 1.25rem;
+      padding: 1.1rem 1.25rem;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 28px 70px rgba(0, 0, 0, 0.15);
+    }
+    .feature-card h3 {
+      font-size: 1rem;
+      margin-bottom: 0.4rem;
+    }
+    .feature-card p {
+      font-size: 0.75rem;
+      color: var(--muted);
+      line-height: 1.4;
+    }
+
+    /* ============ PARTICLES ============ */
+    .particles {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .particle {
+      position: absolute;
+      width: 2px;
+      height: 16px;
+      background: radial-gradient(circle, rgba(255, 30, 0, 1) 0%, rgba(255, 30, 0, 0) 75%);
+      opacity: 0.5;
+      border-radius: 999px;
+      filter: blur(1px);
+    }
+
+    /* ============ RESPONSIVE ============ */
+    @media (max-width: 992px) {
+      .hero {
+        grid-template-columns: 1fr;
+        text-align: left;
+        height: auto;
+        padding-top: 6.6rem;
+      }
+      .hero-right {
+        margin-top: 2rem;
+      }
+      nav {
+        gap: 1rem;
+      }
+      .hero-title {
+        font-size: clamp(2.5rem, 10vw, 3.5rem);
+      }
+    }
+
+    @media (max-width: 720px) {
+      nav {
+        width: calc(100% - 1.6rem);
+        justify-content: space-between;
+        gap: 0.4rem;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      .hero-actions {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .car-wrap {
+        aspect-ratio: auto;
+      }
+      .floating-chip {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Floating Particles -->
+  <div class="particles" id="particles"></div>
+
+  <!-- Navigation -->
+  <nav>
+    <div class="logo"><span class="logo-dot"></span> VISIONALTRIX</div>
+    <a href="#about" class="active">About</a>
+    <a href="#model">AI Model</a>
+    <a href="#demo">Demo</a>
+    <a href="#team">Team</a>
+    <a href="#contact">Contact</a>
+    <button class="nav-cta" onclick="scrollToDemo()">Live Safety Demo</button>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero" id="top">
+    <div class="hero-left">
+      <div class="badge">
+        <span>F1 → Road</span>
+        <span>Safety AI Bridge</span>
+      </div>
+      <div class="title-wrap">
+        <h1 class="hero-title">Automotive Safety,<br>Trained on Extreme Data.</h1>
+      </div>
+      <p class="hero-sub">
+        We ingest high-speed F1 crash telemetry, detect rare anomalies, and feed insights to consumer-grade ADAS systems so normal cars can react like race cars in extreme cases.
+      </p>
+      <div class="hero-actions">
+        <button class="primary-btn" onclick="scrollToDemo()">Try Crash Anomaly Demo</button>
+        <a href="#model" class="ghost-btn">How the AI works →</a>
+      </div>
+      <div class="stats">
+        <div class="stat">
+          <div class="num" id="stat1">0</div>
+          <small>F1 crash sequences modelled</small>
+        </div>
+        <div class="stat">
+          <div class="num" id="stat2">0</div>
+          <small>ms decision latency</small>
+        </div>
+        <div class="stat">
+          <div class="num" id="stat3">0</div>
+          <small>road scenarios generated</small>
+        </div>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="car-wrap">
+        <div class="hero-gradient"></div>
+        <!-- Put your image in same folder or change this -->
+        <img src="Ferrari front.jpg" alt="F1 Car" class="car-image" id="carImage">
+        <div class="floating-chip">
+          <span class="chip-pill">Live Inference</span>
+          <h4>Crash Risk: 0.03%</h4>
+          <small>Telemetry synced • Brake assist ready</small>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <h2 class="section-title">What is VISIONALTRIX?</h2>
+    <div class="hero-sub" style="max-width: 58rem; margin-bottom:1.5rem;">
+      It is an AI gateway that learns from rare, high-impact racing crashes and converts them into synthetic, explainable test cases for real-world automotive systems.
+    </div>
+    <div class="features-grid">
+      <div class="feature-card">
+        <h3>1. F1 Telemetry Ingestion</h3>
+        <p>Normalize, denoise, and align racing data (velocity, yaw, G-force, suspension) from multiple sources.</p>
+      </div>
+      <div class="feature-card">
+        <h3>2. Anomaly Detection</h3>
+        <p>We detect outlier crash signatures that normal datasets barely have — rollovers, split-second side impacts.</p>
+      </div>
+      <div class="feature-card">
+        <h3>3. Safety Scenario Generator</h3>
+        <p>Outliers are translated into road-level events that ADAS, lane-keep, or collision avoidance can train on.</p>
+      </div>
+      <div class="feature-card">
+        <h3>4. Reporting & Explainability</h3>
+        <p>We log “why” a crash is flagged, ideal for regulators, OEM R&amp;D teams, and hackathon demo judges 😉</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- AI MODEL -->
+  <section id="model">
+    <h2 class="section-title">AI Model Pipeline</h2>
+    <div class="features-grid">
+      <div class="feature-card">
+        <h3>Input Layer</h3>
+        <p>F1 crash logs, synthetic sim data, telemetry packets.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Feature Studio</h3>
+        <p>Time-series windowing, FFT on G-force, cornering signatures.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Model Core</h3>
+        <p>LSTM / Transformer-based autoencoder for anomaly scores.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Deployment</h3>
+        <p>Exported to edge-friendly runners (Raspberry Pi / Jetson).</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEMO -->
+  <section id="demo">
+    <h2 class="section-title">Interactive Demo (placeholder)</h2>
+    <p class="hero-sub" style="max-width:48rem;margin-bottom:1rem;">
+      Here you can later embed your real-time FastAPI / Flask / Node inference endpoint. For now, we’ll animate a “scenario detected” tile.
+    </p>
+    <div class="feature-card" id="demoCard" style="max-width: 22rem;">
+      <h3>Scenario: High-speed lateral</h3>
+      <p>Risk score: <strong>0.82 (High)</strong></p>
+      <p class="hero-sub" style="margin-top:0.6rem;">Recommended: Pre-tension seatbelts, pre-charge brakes, deploy adaptive damping.</p>
+    </div>
+  </section>
+
+  <!-- TEAM -->
+  <section id="team">
+    <h2 class="section-title">Team VISIONALTRIX</h2>
+    <p class="hero-sub" style="max-width:42rem;">
+      4-member team building AI safety bridges for hackathons 🚀
+    </p>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" style="padding-bottom:4rem;">
+    <h2 class="section-title">Contact</h2>
+    <p class="hero-sub">Drop your mail in your real deployment — for now this is static.</p>
+  </section>
+
+  <script>
+    // ========== HELPER SCROLL ==========
+    function scrollToDemo() {
+      document.querySelector("#demo").scrollIntoView({ behavior: "smooth" });
+    }
+
+    // ========== PARTICLES ==========
+    const particlesContainer = document.getElementById("particles");
+    for (let i = 0; i < 25; i++) {
+      const p = document.createElement("div");
+      p.className = "particle";
+      p.style.left = Math.random() * 100 + "%";
+      p.style.top = Math.random() * 100 + "%";
+      p.style.animation = `float ${5 + Math.random() * 5}s ease-in-out infinite`;
+      particlesContainer.appendChild(p);
+    }
+
+    // float keyframes
+    const style = document.createElement("style");
+    style.innerHTML = `
+      @keyframes float {
+        0%, 100% { transform: translateY(0) translateX(0); opacity:.55; }
+        50% { transform: translateY(-25px) translateX(15px); opacity:1; }
+      }
+    `;
+    document.head.appendChild(style);
+
+    // ========== GSAP ANIMATIONS ==========
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Hero entrance
+    gsap.from(".hero-left .badge", { y: 20, opacity: 0, duration: 0.5, delay: 0.1 });
+    gsap.from(".hero-title", { y: 24, opacity: 0, duration: 0.7, delay: 0.3 });
+    gsap.from(".hero-sub", { y: 18, opacity: 0, duration: 0.6, delay: 0.5 });
+    gsap.from(".hero-actions", { y: 16, opacity: 0, duration: 0.6, delay: 0.65 });
+    gsap.from(".stats .stat", {
+      y: 10,
+      opacity: 0,
+      duration: 0.4,
+      delay: 0.8,
+      stagger: 0.12
+    });
+
+    // Car slight parallax
+    gsap.from("#carImage", {
+      scale: 1.12,
+      y: 22,
+      opacity: 0,
+      duration: 1,
+      delay: 0.2,
+      ease: "power3.out"
+    });
+
+    // Sections scroll
+    gsap.utils.toArray("section").forEach((sec) => {
+      gsap.from(sec.children, {
+        scrollTrigger: {
+          trigger: sec,
+          start: "top 80%",
+        },
+        y: 20,
+        opacity: 0,
+        duration: 0.6,
+        stagger: 0.12,
+        ease: "power2.out"
+      });
+    });
+
+    // Counting stats
+    function animateCount(id, to) {
+      let obj = { val: 0 };
+      gsap.to(obj, {
+        val: to,
+        duration: 1.6,
+        ease: "power1.out",
+        onUpdate: () => {
+          document.getElementById(id).textContent = Math.floor(obj.val);
+        }
+      });
+    }
+    animateCount("stat1", 124);
+    animateCount("stat2", 48);
+    animateCount("stat3", 320);
+
+    // Demo card pulse
+    gsap.to("#demoCard", {
+      scale: 1.02,
+      repeat: -1,
+      yoyo: true,
+      duration: 1.5,
+      ease: "power1.inOut"
+    });
+
+    // Active link on scroll
+    const sections = document.querySelectorAll("section");
+    const navLinks = document.querySelectorAll("nav a");
+    window.addEventListener("scroll", () => {
+      let current = "";
+      sections.forEach(sec => {
+        const secTop = sec.offsetTop;
+        if (pageYOffset >= secTop - 200) {
+          current = sec.getAttribute("id");
+        }
+      });
+      navLinks.forEach(a => {
+        a.classList.remove("active");
+        if (a.getAttribute("href") === "#" + current) {
+          a.classList.add("active");
+        }
+      });
+    });
+
+    // Mouse parallax for car
+    const carWrap = document.querySelector(".car-wrap");
+    window.addEventListener("mousemove", (e) => {
+      const x = (e.clientX / window.innerWidth - 0.5) * 18;
+      const y = (e.clientY / window.innerHeight - 0.5) * 18;
+      gsap.to("#carImage", { rotationY: x * 0.2, rotationX: -y * 0.2, duration: 0.5 });
+    });
+  </script>
+</body>
+</html>
