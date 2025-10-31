@@ -1,0 +1,1522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VISIONALTRIX — Results Dashboard</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
+
+  <style>
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    :root {
+      --bg: #030303;
+      --card: rgba(5, 5, 5, 0.38);
+      --panel: rgba(12, 12, 12, 0.55);
+      --accent: #ff1e00;
+      --accent-soft: rgba(255, 30, 0, 0.18);
+      --text: #f8f8f8;
+      --muted: rgba(248, 248, 248, 0.68);
+      --success: #7dffb0;
+      --danger: #ff9b9b;
+      --radius-lg: 1.3rem;
+    }
+    body {
+      font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background: radial-gradient(circle at 10% 20%, #111 0%, #000 45%, #000 100%);
+      min-height: 100vh;
+      overflow-x: hidden;
+      position: relative;
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      inset: -20% -10% auto -10%;
+      height: 80vh;
+      background: radial-gradient(circle at 20% 30%, rgba(255, 94, 0, 0.2), transparent 65%),
+                  radial-gradient(circle at 80% 20%, rgba(236, 87, 117, 0.15), transparent 60%);
+      filter: blur(120px);
+      pointer-events: none;
+      z-index: 0;
+    }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .scroll-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 4px;
+      width: 0;
+      background: linear-gradient(90deg, rgba(255,94,0,1), rgba(255,195,0,1));
+      z-index: 1500;
+      box-shadow: 0 0 18px rgba(255,94,0,0.65);
+      transition: width 0.2s ease;
+    }
+    .particles {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .particle {
+      position: absolute;
+      width: 2px;
+      height: 18px;
+      border-radius: 999px;
+      background: radial-gradient(circle, rgba(255, 30, 0, 1) 0%, rgba(255, 30, 0, 0) 75%);
+      opacity: 0.45;
+      filter: blur(1px);
+      animation: drift 14s linear infinite;
+    }
+    @keyframes drift {
+      0% { transform: translateY(-10vh); }
+      100% { transform: translateY(110vh); }
+    }
+
+    nav {
+      position: fixed;
+      top: 1.1rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 1.4rem;
+      align-items: center;
+      background: rgba(0, 0, 0, 0.42);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 999px;
+      padding: 0.65rem 1.8rem;
+      backdrop-filter: blur(18px);
+      box-shadow: 0 18px 42px rgba(0,0,0,0.35);
+      z-index: 1300;
+    }
+    .logo {
+      font-family: "Space Grotesk", sans-serif;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      font-size: 0.85rem;
+      display: flex;
+      gap: 0.4rem;
+      align-items: center;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+    .logo-dot {
+      width: 0.5rem;
+      height: 0.5rem;
+      background: var(--accent);
+      border-radius: 999px;
+      box-shadow: 0 0 14px rgba(255, 30, 0, 0.8);
+    }
+    nav a {
+      color: var(--muted);
+      font-weight: 500;
+      font-size: 0.8rem;
+      transition: 0.2s ease;
+    }
+    nav a:hover,
+    nav a.active {
+      color: #fff;
+    }
+    .nav-cta {
+      background: linear-gradient(120deg, rgba(255, 65, 0, 1), rgba(180, 15, 5, 1));
+      padding: 0.45rem 1.1rem;
+      border-radius: 999px;
+      border: none;
+      color: white;
+      font-size: 0.7rem;
+      cursor: pointer;
+      box-shadow: 0 6px 20px rgba(255, 30, 0, 0.4);
+      transition: transform 0.2s;
+      white-space: nowrap;
+    }
+    .nav-cta:hover { transform: translateY(-2px); }
+
+    .info-ticker {
+      position: fixed;
+      top: 4.6rem;
+      left: 50%;
+      transform: translateX(-50%);
+      width: min(720px, 90vw);
+      background: rgba(0,0,0,0.35);
+      border: 1px solid rgba(255,255,255,0.05);
+      border-radius: 999px;
+      padding: 0.35rem 0;
+      overflow: hidden;
+      z-index: 1200;
+      backdrop-filter: blur(16px);
+    }
+    .info-track {
+      display: flex;
+      gap: 2.2rem;
+      animation: ticker 22s linear infinite;
+      font-size: 0.62rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.68);
+      padding-inline: 1.5rem;
+      white-space: nowrap;
+    }
+    @keyframes ticker {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    main {
+      position: relative;
+      z-index: 10;
+      padding: 8.6rem min(5vw, 4rem) 3.6rem;
+    }
+    .page-shell {
+      width: min(1220px, 95vw);
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 2.2rem;
+    }
+    .panel {
+      background: var(--panel);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: var(--radius-lg);
+      padding: 1.4rem 1.6rem;
+      box-shadow: 0 24px 48px rgba(0,0,0,0.45);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.6rem;
+      align-items: stretch;
+    }
+    .hero-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.66rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      padding: 0.45rem 0.85rem;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 999px;
+      margin-bottom: 1rem;
+    }
+    .hero-title {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: clamp(2.4rem, 5vw, 3.2rem);
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      margin-bottom: 1rem;
+    }
+    .hero-copy {
+      color: rgba(248,248,248,0.78);
+      max-width: 520px;
+      line-height: 1.68;
+      font-size: 0.92rem;
+    }
+    .hero-metrics {
+      margin-top: 1.6rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 1rem;
+    }
+    .hero-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 1.1rem;
+      padding: 1rem 1.2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .hero-card span {
+      font-size: 0.62rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.6);
+    }
+    .hero-card strong {
+      font-size: 1.6rem;
+      font-family: "Space Grotesk", sans-serif;
+    }
+    .hero-card small {
+      font-size: 0.68rem;
+      color: rgba(255,255,255,0.55);
+    }
+    .hero-highlight {
+      display: flex;
+      flex-direction: column;
+      gap: 1.1rem;
+      background:
+        radial-gradient(circle at 15% 20%, rgba(255,94,0,0.25), transparent 65%),
+        radial-gradient(circle at 80% 80%, rgba(34,197,94,0.18), transparent 60%),
+        rgba(8,8,8,0.65);
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+    .hero-highlight h3 {
+      font-size: 1.08rem;
+      font-family: "Space Grotesk", sans-serif;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .progress-track {
+      width: 100%;
+      height: 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.08);
+      overflow: hidden;
+      position: relative;
+    }
+    .progress-fill {
+      height: 100%;
+      border-radius: inherit;
+      background: linear-gradient(90deg, rgba(255,30,0,1), rgba(255,150,0,1));
+      transform-origin: left center;
+      transition: width 1s ease;
+    }
+    .hero-highlight ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.55rem;
+      font-size: 0.76rem;
+      color: rgba(248,248,248,0.82);
+    }
+    .hero-highlight ul li::before {
+      content: "•";
+      color: rgba(255,94,0,0.85);
+      margin-right: 0.5rem;
+    }
+
+    .insight-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.1rem;
+    }
+    .insight-card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.05);
+      border-radius: 1.1rem;
+      padding: 1.1rem 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.55rem;
+      min-height: 150px;
+    }
+    .insight-card h4 {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: rgba(255,255,255,0.68);
+    }
+    .insight-card strong {
+      font-size: 1.4rem;
+      font-family: "Space Grotesk", sans-serif;
+    }
+    .insight-card p {
+      font-size: 0.72rem;
+      color: rgba(248,248,248,0.68);
+      line-height: 1.5;
+    }
+
+    .comparison-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.4rem;
+      align-items: stretch;
+    }
+    .kv-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .kv {
+      display: flex;
+      justify-content: space-between;
+      gap: 0.9rem;
+    }
+    .kv-label {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: rgba(255,255,255,0.92);
+    }
+    .kv-sub {
+      font-size: 0.66rem;
+      color: rgba(255,255,255,0.5);
+    }
+    .kv-value {
+      text-align: right;
+      font-size: 0.74rem;
+      line-height: 1.35;
+    }
+    .kv-value .bad {
+      color: var(--danger);
+      text-decoration: line-through;
+    }
+    .kv-value .good {
+      color: var(--success);
+      font-weight: 600;
+    }
+
+    .chart-panel {
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+    .chart-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+    }
+    .chart-legend {
+      display: flex;
+      gap: 0.9rem;
+      font-size: 0.7rem;
+      color: rgba(248,248,248,0.75);
+    }
+    .chart-legend span {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+    .chart-legend span::before {
+      content: "";
+      width: 10px;
+      height: 10px;
+      border-radius: 4px;
+      background: currentColor;
+    }
+    .chart-canvas {
+      position: relative;
+      height: 280px;
+    }
+
+    .telemetry-panel {
+      display: grid;
+      grid-template-columns: minmax(260px, 1fr) minmax(340px, 1.2fr);
+      gap: 1.2rem;
+      align-items: stretch;
+    }
+    .telemetry-notes {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+    .note-card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 0.95rem;
+      padding: 0.85rem 1rem;
+      font-size: 0.72rem;
+      color: rgba(248,248,248,0.72);
+      line-height: 1.55;
+    }
+    .telemetry-canvas {
+      height: 260px;
+    }
+
+    .scenario-grid {
+      display: grid;
+      grid-template-columns: minmax(340px, 1.4fr) minmax(260px, 1fr);
+      gap: 1.2rem;
+      align-items: stretch;
+      flex-wrap: wrap;
+    }
+    .scenario-visual {
+      position: relative;
+      overflow: hidden;
+      padding: 1.4rem 1.6rem;
+    }
+    #canvas-container {
+      position: relative;
+      width: 100%;
+      height: 340px;
+      border-radius: 1.1rem;
+      overflow: hidden;
+      background: rgba(3,7,18,0.7);
+      border: 1px solid rgba(148,163,184,0.12);
+    }
+    .scenario-overlay {
+      position: absolute;
+      inset: 1.4rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      pointer-events: none;
+      gap: 1rem;
+    }
+    .scenario-overlay-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 1.1rem;
+      align-items: flex-start;
+      flex-wrap: wrap;
+    }
+    .scenario-title {
+      font-size: 1.1rem;
+      font-family: "Space Grotesk", sans-serif;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 0.25rem;
+    }
+    .scenario-status {
+      font-size: 0.9rem;
+      color: rgba(248,248,248,0.86);
+      max-width: 420px;
+      line-height: 1.55;
+    }
+    .scenario-cta {
+      font-size: 0.72rem;
+      color: rgba(248,248,248,0.7);
+      max-width: 360px;
+      pointer-events: none;
+    }
+    .scenario-cta span {
+      display: inline-block;
+      margin-left: 0.4rem;
+      color: rgba(191,219,254,0.9);
+      font-weight: 600;
+    }
+    .risk-chip {
+      align-self: flex-start;
+      padding: 0.45rem 0.9rem;
+      border-radius: 0.9rem;
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.06);
+      color: rgba(248,248,248,0.85);
+      pointer-events: none;
+    }
+    .risk-chip.ok {
+      border-color: rgba(34,197,94,0.45);
+      background: rgba(34,197,94,0.12);
+      color: rgba(187,247,208,0.95);
+    }
+    .risk-chip.warn {
+      border-color: rgba(234,179,8,0.45);
+      background: rgba(234,179,8,0.12);
+      color: rgba(254,240,138,0.92);
+    }
+    .risk-chip.danger {
+      border-color: rgba(248,113,113,0.45);
+      background: rgba(248,113,113,0.12);
+      color: rgba(254,202,202,0.95);
+    }
+    .scenario-side {
+      display: flex;
+      flex-direction: column;
+      gap: 1.1rem;
+    }
+    .scenario-buttons {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 0.75rem;
+    }
+    .scenario-btn {
+      padding: 0.75rem 1rem;
+      border-radius: 0.9rem;
+      border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(255,255,255,0.03);
+      color: rgba(255,255,255,0.85);
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      cursor: pointer;
+      transition: background 0.2s ease, transform 0.2s ease;
+    }
+    .scenario-btn:hover {
+      background: rgba(255,255,255,0.08);
+      transform: translateY(-2px);
+    }
+    .scenario-btn.active {
+      transform: translateY(-2px);
+      box-shadow: 0 18px 28px rgba(0,0,0,0.35);
+    }
+    .scenario-btn.active[data-variant="baseline"] {
+      background: linear-gradient(135deg, rgba(248,113,113,0.4), rgba(127,29,29,0.55));
+      border-color: rgba(248,113,113,0.5);
+      color: #fee2e2;
+    }
+    .scenario-btn.active[data-variant="bridge"] {
+      background: linear-gradient(135deg, rgba(34,197,94,0.38), rgba(6,78,59,0.52));
+      border-color: rgba(74,222,128,0.55);
+      color: #dcfce7;
+    }
+    .scenario-log {
+      background: rgba(0,0,0,0.45);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 0.9rem;
+      padding: 1rem 1.1rem 1.1rem;
+      font-size: 0.7rem;
+      color: rgba(248,248,248,0.78);
+      line-height: 1.55;
+      max-height: 210px;
+      overflow-y: auto;
+    }
+    .scenario-log span {
+      display: block;
+      color: rgba(148,163,184,0.8);
+      font-size: 0.64rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 0.4rem;
+    }
+    #scenarioLogList {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.45rem;
+    }
+    #scenarioLogList li {
+      position: relative;
+      padding-left: 0.85rem;
+      color: rgba(224,231,255,0.8);
+    }
+    #scenarioLogList li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.4rem;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: rgba(14,165,233,0.75);
+    }
+    #scenarioLogList li strong {
+      color: rgba(96,165,250,0.85);
+      font-weight: 600;
+      margin-right: 0.35rem;
+    }
+
+    footer {
+      padding: 1.6rem;
+      text-align: center;
+      color: rgba(255,255,255,0.4);
+      font-size: 0.64rem;
+      border-top: 1px solid rgba(255,255,255,0.04);
+      margin-top: 2.8rem;
+    }
+
+    @media (max-width: 980px) {
+      nav {
+        width: calc(100% - 1.6rem);
+        justify-content: space-between;
+      }
+      .info-ticker {
+        display: none;
+      }
+      main {
+        padding: 7.6rem 1rem 2.6rem;
+      }
+      .telemetry-panel,
+      .scenario-grid {
+        grid-template-columns: 1fr;
+      }
+      #canvas-container {
+        height: 300px;
+      }
+      .scenario-overlay {
+        position: static;
+        gap: 0.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="scroll-progress" id="scrollProgress"></div>
+  <div class="particles" id="particles"></div>
+
+  <nav>
+    <div class="logo"><span class="logo-dot"></span> VISIONALTRIX</div>
+    <a href="index.html#about">About</a>
+    <a href="index.html#why">Why F1</a>
+    <a href="visual.html">Visual</a>
+    <a href="result.html" class="active">Results</a>
+    <a href="ai-model.html">AI Model</a>
+    <a href="index.html#demo">Demo</a>
+    <a href="index.html#stack">Stack</a>
+    <a href="index.html#contact">Contact</a>
+    <button class="nav-cta" onclick="location.href='index.html#demo'">Live Safety Demo</button>
+  </nav>
+
+  <div class="info-ticker">
+    <div class="info-track">
+      <span>80 ms faster braking in wet overtake</span>
+      <span>42% mean risk reduction across 100 sims</span>
+      <span>F1 telemetry decoded into road-safe actions</span>
+      <span>Rear-end collisions turned into controlled stops</span>
+    </div>
+  </div>
+
+  <main>
+    <div class="page-shell">
+      <section class="hero-grid">
+        <div>
+          <div class="hero-pill"><span>F1 → Road</span><span>Impact Summary</span></div>
+          <h1 class="hero-title">Race-proven instincts, measurable road safety uplifts.</h1>
+          <p class="hero-copy">
+            We benchmarked the baseline ADAS model against the VISIONALTRIX bridge trained on 12k+ F1 crash sequences. The delta is obvious: earlier reactions, shorter stopping distances, and
+            sharply reduced impact energy under identical wet-weather scenarios.
+          </p>
+          <div class="hero-metrics">
+            <div class="hero-card">
+              <span>Reaction saved</span>
+              <strong>80 ms</strong>
+              <small>Additional braking time harvested from crash telemetry.</small>
+            </div>
+            <div class="hero-card">
+              <span>Impact speed drop</span>
+              <strong>-71%</strong>
+              <small>Baseline 28 km/h → F1-trained 8 km/h residual velocity.</small>
+            </div>
+            <div class="hero-card">
+              <span>Scenario coverage</span>
+              <strong>100 sims</strong>
+              <small>Wet overtake + rear-end sequences replayed end-to-end.</small>
+            </div>
+          </div>
+        </div>
+        <div class="panel hero-highlight">
+          <h3>Crash avoidance delta</h3>
+          <div class="progress-track">
+            <div class="progress-fill" id="transferBar" style="width: 68%;"></div>
+          </div>
+          <ul>
+            <li>F1 signatures unlock earlier slip detection and active mitigation.</li>
+            <li>Stopping distance compressed from 11.2 m to 7.6 m on wet surface.</li>
+            <li>Rear-end collision reclassified to near-miss in 93% of runs.</li>
+          </ul>
+          <p class="scenario-cta">The progress bar reflects real-time telemetry transfer: how much F1 crash context is being injected into the consumer ADAS runtime.</p>
+        </div>
+      </section>
+
+      <section class="insight-grid">
+        <div class="insight-card">
+          <h4>Mean risk reduction</h4>
+          <strong>42%</strong>
+          <p>Aggregated across 100 Monte Carlo scenarios, risk score dropped from 0.71 to 0.41 when F1 crash embeddings were activated.</p>
+        </div>
+        <div class="insight-card">
+          <h4>Crash severity index</h4>
+          <strong>↓ 63%</strong>
+          <p>Energy absorption predicted for the cabin fell from 18.2 kN to 6.7 kN owing to earlier brake and torque interventions.</p>
+        </div>
+        <div class="insight-card">
+          <h4>Model confidence</h4>
+          <strong>97%</strong>
+          <p>The bridge maintained over 97% confidence in its slip-classification output even under noisy rain telemetry.</p>
+        </div>
+        <div class="insight-card">
+          <h4>Actions armed</h4>
+          <strong>4.2 ×</strong>
+          <p>Average proactive interventions (brake bias, torque modulation, ESC pulse) versus 1.1 × in the baseline controller.</p>
+        </div>
+      </section>
+
+      <section class="comparison-grid">
+        <div class="panel">
+          <p class="hero-pill" style="margin-bottom:1rem;">Scenario breakdown</p>
+          <div class="kv-list">
+            <div class="kv">
+              <div>
+                <p class="kv-label">Reaction time</p>
+                <p class="kv-sub">Time to initial brake pulse</p>
+              </div>
+              <div class="kv-value">
+                <span class="bad">Baseline: 220 ms</span><br>
+                <span class="good">F1-trained: 140 ms</span>
+              </div>
+            </div>
+            <div class="kv">
+              <div>
+                <p class="kv-label">Stopping distance</p>
+                <p class="kv-sub">From 58 km/h in heavy rain</p>
+              </div>
+              <div class="kv-value">
+                <span class="bad">Baseline: 11.2 m</span><br>
+                <span class="good">F1-trained: 7.6 m</span>
+              </div>
+            </div>
+            <div class="kv">
+              <div>
+                <p class="kv-label">Impact speed</p>
+                <p class="kv-sub">Residual speed at point of contact</p>
+              </div>
+              <div class="kv-value">
+                <span class="bad">Baseline: 28 km/h</span><br>
+                <span class="good">F1-trained: 8 km/h</span>
+              </div>
+            </div>
+            <div class="kv">
+              <div>
+                <p class="kv-label">Outcome</p>
+                <p class="kv-sub">Rear-end & wet overtake trials</p>
+              </div>
+              <div class="kv-value">
+                <span class="bad">Baseline: Contact / spin</span><br>
+                <span class="good">F1-trained: Avoided / mild</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="panel chart-panel">
+          <div class="chart-header">
+            <div>
+              <p class="kv-sub" style="text-transform:uppercase; letter-spacing:0.12em;">Performance contrast</p>
+              <p class="kv-label" style="font-size:0.92rem;">Baseline vs. F1-bridged ADAS</p>
+            </div>
+            <div class="chart-legend">
+              <span style="color:#f87171;">Baseline</span>
+              <span style="color:#22c55e;">F1-trained</span>
+            </div>
+          </div>
+          <div class="chart-canvas"><canvas id="impactChart"></canvas></div>
+          <p class="kv-sub">Identical telemetry inputs, only difference is exposure to F1 crash signatures during training.</p>
+        </div>
+      </section>
+
+      <section class="panel telemetry-panel">
+        <div class="telemetry-notes">
+          <p class="hero-pill" style="margin-bottom:0;">Telemetry timeline</p>
+          <div class="note-card">
+            <strong style="font-family:'Space Grotesk', sans-serif; display:block; margin-bottom:0.4rem;">F1 slip signature detected</strong>
+            VISIONALTRIX flags a longitudinal deceleration spike (5.1 g) at -0.12 s, triggering brake bias shift before the baseline controller even classifies the hazard.
+          </div>
+          <div class="note-card">
+            <strong style="font-family:'Space Grotesk', sans-serif; display:block; margin-bottom:0.4rem;">Risk score swing</strong>
+            Risk curve peaks at 0.95 in the baseline run but tops at 0.54 with the F1 bridge thanks to earlier ESC pulse and torque modulation.
+          </div>
+          <div class="note-card">
+            <strong style="font-family:'Space Grotesk', sans-serif; display:block; margin-bottom:0.4rem;">Environment context</strong>
+            Heavy rain, 82% humidity, slick asphalt. F1 data contributed adaptive thresholds for slip ratio and yaw correction in these conditions.
+          </div>
+        </div>
+        <div class="panel" style="background:rgba(255,255,255,0.02); border:1px solid rgba(255,255,255,0.05);">
+          <div class="chart-header" style="margin-bottom:0.6rem;">
+            <div>
+              <p class="kv-sub" style="text-transform:uppercase; letter-spacing:0.12em;">Time-aligned signals</p>
+              <p class="kv-label" style="font-size:0.92rem;">Telemetry vs. risk trajectory</p>
+            </div>
+          </div>
+          <div class="telemetry-canvas"><canvas id="telemetryChart"></canvas></div>
+        </div>
+      </section>
+
+      <section class="panel scenario-grid">
+        <div class="scenario-visual panel" style="background:rgba(255,255,255,0.02); border:1px solid rgba(255,255,255,0.05);">
+          <div id="canvas-container"></div>
+          <div class="scenario-overlay">
+            <div class="scenario-overlay-top">
+              <div>
+                <p class="kv-sub" style="text-transform:uppercase; letter-spacing:0.12em;">Live playback</p>
+                <h3 id="scenarioLabel" class="scenario-title">Select a scenario</h3>
+                <p id="status-text" class="scenario-status">Choose a baseline or F1-bridged run to stream the manoeuvre in real-time.</p>
+              </div>
+              <div class="risk-chip" id="riskChip">Risk —</div>
+            </div>
+            <p class="scenario-cta">Action:<span id="actionDetail"> Awaiting input…</span></p>
+          </div>
+        </div>
+        <div class="scenario-side">
+          <div>
+            <p class="hero-pill" style="margin-bottom:0.6rem;">Scenario controls</p>
+            <div class="scenario-buttons">
+              <button class="scenario-btn" id="btn-overtake-before" data-scenario="overtake-before" data-variant="baseline">Overtake · Baseline</button>
+              <button class="scenario-btn" id="btn-overtake-after" data-scenario="overtake-after" data-variant="bridge">Overtake · F1 Bridge</button>
+              <button class="scenario-btn" id="btn-rear-before" data-scenario="rear-before" data-variant="baseline">Rear-end · Baseline</button>
+              <button class="scenario-btn" id="btn-rear-after" data-scenario="rear-after" data-variant="bridge">Rear-end · F1 Bridge</button>
+            </div>
+          </div>
+          <div class="scenario-log" id="scenarioLog">
+            <span>Playback notes</span>
+            <ul id="scenarioLogList">
+              <li>Select a scenario to stream annotated events and interventions.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer>© 2025 VISIONALTRIX — Results Dashboard</footer>
+
+    <script>
+    const SCENARIOS = {
+      "overtake-before": {
+        title: "Rainy Overtake · Baseline",
+        variant: "baseline",
+        intro: "Baseline ADAS lunges for a wet overtake with no F1 traction intelligence.",
+        initialAction: "No proactive mitigation; controller stays passive.",
+        logIntro: "Streaming baseline manoeuvre under heavy rain.",
+        duration: 3.4,
+        cameraOffset: [5.8, 4.3, -11.5],
+        timeline: [
+          { t: 0.0, ego: { position: [-5.3, 0, -26], heading: 0, brake: 0.0 }, traffic: { position: [-5.2, 0, -10], heading: 0, brake: 0.25 }, risk: 0.18, cameraOffset: [5.8, 4.3, -11.5] },
+          { t: 0.8, ego: { position: [-5.0, 0, -16], heading: 0, brake: 0.05 }, traffic: { position: [-5.0, 0, -8.2], heading: 0, brake: 0.25 }, risk: 0.32, cameraOffset: [5.6, 4.2, -10.8] },
+          { t: 1.4, ego: { position: [-3.8, 0, -7.5], heading: 12, brake: 0.15 }, traffic: { position: [-4.9, 0, -6.4], heading: 0, brake: 0.35 }, risk: 0.55, cameraOffset: [5.0, 4.1, -9.8] },
+          { t: 2.0, ego: { position: [-1.4, 0, -3.5], heading: 36, brake: 0.35 }, traffic: { position: [-4.6, 0, -4.4], heading: 0, brake: 0.45 }, risk: 0.78, cameraOffset: [4.6, 3.9, -9.2] },
+          { t: 2.6, ego: { position: [0.2, 0, -1.2], heading: 72, brake: 0.9 }, traffic: { position: [-4.2, 0, -2.5], heading: 0, brake: 0.2 }, risk: 0.95, cameraOffset: [4.1, 3.9, -8.4] },
+          { t: 3.4, ego: { position: [0.25, 0, 0], heading: 88, brake: 1.0 }, traffic: { position: [-4.1, 0, 0.4], heading: 0, brake: 0 }, risk: 0.68, cameraOffset: [3.8, 3.8, -7.6] }
+        ],
+        events: [
+          { t: 0.0, type: "status", text: "Driver commits to an aggressive wet overtake without traction assistance." },
+          { t: 0.6, type: "log", text: "Steering input spikes beyond 18°. Rear slip begins to rise." },
+          { t: 1.2, type: "log", text: "Baseline ESC samples late; yaw crosses 15°." },
+          { t: 1.5, type: "action", text: "No mitigation staged — throttle and brake remain unchanged." },
+          { t: 2.1, type: "status", text: "Vehicle fishtails toward the divider with escalating lateral load." },
+          { t: 2.5, type: "log", text: "Divider contact at ~8 km/h lateral component." },
+          { t: 3.1, type: "status", text: "Scenario ends in impact and spin." }
+        ]
+      },
+      "overtake-after": {
+        title: "Rainy Overtake · F1 Bridge",
+        variant: "bridge",
+        intro: "F1-trained bridge recognises the slip envelope and stages countermeasures.",
+        initialAction: "Counter-steer, torque trim, and brake bias applied proactively.",
+        logIntro: "Streaming F1-bridged manoeuvre with early slip detection.",
+        duration: 3.8,
+        cameraOffset: [5.6, 4.2, -11.0],
+        timeline: [
+          { t: 0.0, ego: { position: [-5.3, 0, -26], heading: 0, brake: 0.0 }, traffic: { position: [-5.2, 0, -10], heading: 0, brake: 0.25 }, risk: 0.16, cameraOffset: [5.6, 4.2, -11.0] },
+          { t: 0.9, ego: { position: [-5.0, 0, -18.5], heading: 0, brake: 0.18 }, traffic: { position: [-4.9, 0, -8.0], heading: 0, brake: 0.30 }, risk: 0.24, cameraOffset: [5.3, 4.1, -10.5] },
+          { t: 1.6, ego: { position: [-3.5, 0, -9.5], heading: 14, brake: 0.32 }, traffic: { position: [-4.6, 0, -6.0], heading: 0, brake: 0.35 }, risk: 0.38, cameraOffset: [4.9, 4.0, -10.0] },
+          { t: 2.3, ego: { position: [-2.1, 0, -5.2], heading: 6, brake: 0.45 }, traffic: { position: [-4.2, 0, -4.2], heading: 0, brake: 0.20 }, risk: 0.26, cameraOffset: [4.5, 3.9, -9.2] },
+          { t: 3.0, ego: { position: [-1.6, 0, -1.2], heading: 2, brake: 0.48 }, traffic: { position: [-3.9, 0, -2.2], heading: 0, brake: 0.10 }, risk: 0.18, cameraOffset: [4.3, 3.9, -8.8] },
+          { t: 3.8, ego: { position: [-1.5, 0, 2.0], heading: 0, brake: 0.18 }, traffic: { position: [-3.6, 0, 0], heading: 0, brake: 0 }, risk: 0.12, cameraOffset: [4.2, 3.8, -8.4] }
+        ],
+        events: [
+          { t: 0.0, type: "status", text: "Bridge recognises wet surface signature and primes stability stack." },
+          { t: 0.7, type: "log", text: "Slip predictor flags 0.82 drift probability — counter-steer staged." },
+          { t: 1.2, type: "action", text: "Torque trim and brake bias keep yaw within 8°." },
+          { t: 2.0, type: "log", text: "Vehicle clears traffic car with controlled lateral load." },
+          { t: 2.8, type: "status", text: "Scenario exits with no contact and minimal yaw oscillation." }
+        ]
+      },
+      "rear-before": {
+        title: "Rear-end Brake Test · Baseline",
+        variant: "baseline",
+        intro: "Baseline ADAS reacts late to the slowing lead vehicle in heavy rain.",
+        initialAction: "Brake pulse triggered only after the gap collapses.",
+        logIntro: "Streaming baseline rear-end sequence.",
+        duration: 3.0,
+        cameraOffset: [6.2, 4.5, -12.5],
+        timeline: [
+          { t: 0.0, ego: { position: [0, 0, -20], heading: 0, brake: 0.0 }, lead: { position: [0, 0, -6], heading: 0, brake: 0.25 }, risk: 0.22, cameraOffset: [6.1, 4.4, -12.5] },
+          { t: 0.7, ego: { position: [0, 0, -13.2], heading: 0, brake: 0.05 }, lead: { position: [0, 0, -4.8], heading: 0, brake: 0.45 }, risk: 0.40, cameraOffset: [6.0, 4.3, -11.5] },
+          { t: 1.3, ego: { position: [0, 0, -8.6], heading: 0, brake: 0.12 }, lead: { position: [0, 0, -3.4], heading: 0, brake: 0.65 }, risk: 0.62, cameraOffset: [5.8, 4.1, -10.2] },
+          { t: 1.8, ego: { position: [0, 0, -4.6], heading: 0, brake: 0.25 }, lead: { position: [0, 0, -2.4], heading: 0, brake: 0.80 }, risk: 0.82, cameraOffset: [5.6, 4.0, -9.4] },
+          { t: 2.4, ego: { position: [0, 0, -1.2], heading: 0, brake: 0.60 }, lead: { position: [0, 0, -1.4], heading: 0, brake: 0.40 }, risk: 0.94, cameraOffset: [5.4, 3.9, -8.7] },
+          { t: 3.0, ego: { position: [0, 0, 0.4], heading: 0, brake: 1.0 }, lead: { position: [0, 0, -1.0], heading: 0, brake: 0.15 }, risk: 0.74, cameraOffset: [5.2, 3.8, -8.2] }
+        ],
+        events: [
+          { t: 0.0, type: "status", text: "Lead vehicle brakes sharply; baseline controller hesitates." },
+          { t: 0.8, type: "log", text: "Closing speed exceeds 12 km/h and rising." },
+          { t: 1.4, type: "action", text: "Late brake command issued — distance already critical." },
+          { t: 2.2, type: "log", text: "Impact unavoidable; ABS engages after contact." },
+          { t: 2.9, type: "status", text: "Scenario ends with rear-end contact." }
+        ]
+      },
+      "rear-after": {
+        title: "Rear-end Brake Test · F1 Bridge",
+        variant: "bridge",
+        intro: "F1-trained bridge spots the deceleration signature and brakes 80 ms sooner.",
+        initialAction: "Predictive braking staged with ESC pulse and torque cut.",
+        logIntro: "Streaming F1-assisted rear-end avoidance.",
+        duration: 3.2,
+        cameraOffset: [6.2, 4.5, -12.5],
+        timeline: [
+          { t: 0.0, ego: { position: [0, 0, -20], heading: 0, brake: 0.0 }, lead: { position: [0, 0, -6], heading: 0, brake: 0.25 }, risk: 0.18, cameraOffset: [6.1, 4.4, -12.5] },
+          { t: 0.7, ego: { position: [0, 0, -14.0], heading: 0, brake: 0.35 }, lead: { position: [0, 0, -4.7], heading: 0, brake: 0.50 }, risk: 0.30, cameraOffset: [6.0, 4.3, -11.5] },
+          { t: 1.3, ego: { position: [0, 0, -9.8], heading: 0, brake: 0.72 }, lead: { position: [0, 0, -3.6], heading: 0, brake: 0.60 }, risk: 0.34, cameraOffset: [5.8, 4.1, -10.4] },
+          { t: 1.9, ego: { position: [0, 0, -6.2], heading: 0, brake: 0.85 }, lead: { position: [0, 0, -3.0], heading: 0, brake: 0.35 }, risk: 0.28, cameraOffset: [5.6, 4.0, -9.6] },
+          { t: 2.6, ego: { position: [0, 0, -3.2], heading: 0, brake: 0.45 }, lead: { position: [0, 0, -2.5], heading: 0, brake: 0.20 }, risk: 0.18, cameraOffset: [5.4, 3.9, -9.0] },
+          { t: 3.2, ego: { position: [0, 0, -1.2], heading: 0, brake: 0.20 }, lead: { position: [0, 0, -2.2], heading: 0, brake: 0.05 }, risk: 0.12, cameraOffset: [5.2, 3.8, -8.4] }
+        ],
+        events: [
+          { t: 0.0, type: "status", text: "Bridge sees brake signature and primes deceleration strategy." },
+          { t: 0.6, type: "log", text: "Predictive braking trims 12 km/h before the gap collapses." },
+          { t: 1.0, type: "action", text: "ESC pulse and regen blending stabilise the chassis." },
+          { t: 1.8, type: "log", text: "Gap stabilised — no contact imminent." },
+          { t: 2.8, type: "status", text: "Scenario exits as a controlled stop with >1.5 m buffer." }
+        ]
+      }
+    };
+
+    function initCharts() {
+      if (typeof Chart === "undefined") return;
+
+      const telemetryCtx = document.getElementById("telemetryChart");
+      if (telemetryCtx) {
+        new Chart(telemetryCtx, {
+          type: "line",
+          data: {
+            labels: ["-0.4s", "-0.3s", "-0.2s", "-0.1s", "Impact", "+0.1s"],
+            datasets: [
+              {
+                label: "Longitudinal G",
+                data: [0.4, 0.8, 1.2, 3.5, 5.1, 1.2],
+                borderColor: "#ef4444",
+                borderWidth: 2,
+                fill: false,
+                tension: 0.35,
+                pointRadius: 0
+              },
+              {
+                label: "Lateral G",
+                data: [0.3, 0.5, 0.6, 1.1, 2.0, 0.5],
+                borderColor: "#0ea5e9",
+                borderWidth: 2,
+                fill: false,
+                tension: 0.35,
+                pointRadius: 0
+              },
+              {
+                label: "Risk score",
+                data: [20, 25, 30, 70, 95, 40],
+                borderColor: "#eab308",
+                borderWidth: 2,
+                borderDash: [6, 6],
+                fill: false,
+                tension: 0.35,
+                pointRadius: 0
+              }
+            ]
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+              legend: {
+                display: true,
+                labels: { color: "#e2e8f0", font: { size: 11 } }
+              }
+            },
+            scales: {
+              x: {
+                ticks: { color: "#94a3b8" },
+                grid: { color: "rgba(148,163,184,0.08)" }
+              },
+              y: {
+                ticks: { color: "#94a3b8" },
+                grid: { color: "rgba(148,163,184,0.08)" }
+              }
+            }
+          }
+        });
+      }
+
+      const impactCtx = document.getElementById("impactChart");
+      if (impactCtx) {
+        new Chart(impactCtx, {
+          type: "bar",
+          data: {
+            labels: ["Reaction time (ms)", "Stopping distance (m)", "Impact speed (km/h)"],
+            datasets: [
+              { label: "Baseline ADAS", data: [220, 11.2, 28], backgroundColor: "#f87171", borderRadius: 6 },
+              { label: "F1-trained ADAS", data: [140, 7.6, 8], backgroundColor: "#22c55e", borderRadius: 6 }
+            ]
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: { legend: { display: false } },
+            scales: {
+              x: {
+                ticks: { color: "#e2e8f0", font: { size: 11 } },
+                grid: { color: "rgba(255,255,255,0.05)" }
+              },
+              y: {
+                beginAtZero: true,
+                ticks: { color: "#e2e8f0" },
+                grid: { color: "rgba(255,255,255,0.05)" }
+              }
+            }
+          }
+        });
+      }
+
+      const bar = document.getElementById("transferBar");
+      if (bar) {
+        const loop = () => {
+          const next = 55 + Math.random() * 35;
+          bar.style.width = next.toFixed(1) + "%";
+          setTimeout(loop, 2600);
+        };
+        setTimeout(loop, 1800);
+      }
+    }
+
+    const lerp = (a, b, t) => a + (b - a) * t;
+    const lerpArray = (a = [], b = [], t) => {
+      const max = Math.max(a.length, b.length);
+      const out = [];
+      for (let i = 0; i < max; i += 1) {
+        const av = a[i] !== undefined ? a[i] : (b[i] !== undefined ? b[i] : 0);
+        const bv = b[i] !== undefined ? b[i] : (a[i] !== undefined ? a[i] : 0);
+        out.push(lerp(av, bv, t));
+      }
+      return out;
+    };
+    const blendEntity = (a, b, t) => {
+      if (!a && !b) return null;
+      if (!a) return { position: [...b.position], heading: b.heading ?? 0, brake: b.brake ?? 0 };
+      if (!b) return { position: [...a.position], heading: a.heading ?? 0, brake: a.brake ?? 0 };
+      return {
+        position: lerpArray(a.position, b.position, t),
+        heading: lerp(a.heading ?? 0, b.heading ?? 0, t),
+        brake: lerp(a.brake ?? 0, b.brake ?? 0, t)
+      };
+    };
+    const blendArray = (a, b, t) => lerpArray(a, b, t);
+
+    class Scene3D {
+      constructor() {
+        this.statusText = document.getElementById("status-text");
+        this.actionDetail = document.getElementById("actionDetail");
+        this.scenarioLabel = document.getElementById("scenarioLabel");
+        this.riskChip = document.getElementById("riskChip");
+        this.logList = document.getElementById("scenarioLogList");
+        this.logContainer = document.getElementById("scenarioLog");
+        this.buttons = Array.from(document.querySelectorAll(".scenario-btn"));
+        this.currentScenario = null;
+        this.eventIndex = 0;
+        this.startTime = 0;
+        this.time = 0;
+        this.defaultCameraOffset = [6, 4.5, -12];
+
+        if (typeof THREE === "undefined") {
+          this.showFallback();
+          return;
+        }
+
+        try {
+          this.clock = new THREE.Clock();
+          this.scene = new THREE.Scene();
+          this.scene.fog = new THREE.FogExp2(0x06080f, 0.035);
+          this.initCamera();
+          this.initRenderer();
+          this.initLights();
+          this.createRoad();
+          this.createCars();
+          this.createRain();
+          this.setupButtons();
+          this.animate();
+          window.addEventListener("resize", () => this.onResize());
+        } catch (error) {
+          console.error(error);
+          this.showFallback();
+        }
+      }
+
+      showFallback() {
+        const container = document.getElementById("canvas-container");
+        if (container) {
+          container.innerHTML = '<div style="display:flex;align-items:center;justify-content:center;height:100%;color:#fca5a5;font-size:0.85rem;">3D playback unavailable on this device.</div>';
+        }
+        if (this.statusText) {
+          this.statusText.textContent = "WebGL unavailable. Playback preview disabled.";
+        }
+        if (this.actionDetail) {
+          this.actionDetail.textContent = " 3D rendering not supported on this device.";
+        }
+        if (this.riskChip) {
+          this.riskChip.textContent = "Risk —";
+          this.riskChip.classList.remove("ok", "warn", "danger");
+        }
+        this.buttons.forEach((btn) => {
+          btn.disabled = true;
+          btn.style.opacity = "0.5";
+        });
+      }
+
+      initCamera() {
+        const container = document.getElementById("canvas-container");
+        const aspect = container ? (container.clientWidth || 800) / 340 : 2.3;
+        this.camera = new THREE.PerspectiveCamera(60, aspect, 0.1, 1000);
+        this.camera.position.set(6, 4.5, -14);
+        this.camera.lookAt(0, 0, 0);
+      }
+
+      initRenderer() {
+        const container = document.getElementById("canvas-container");
+        if (!container) return;
+        const canvas = document.createElement("canvas");
+        const context = canvas.getContext("webgl2") || canvas.getContext("webgl") || canvas.getContext("experimental-webgl");
+        if (!context) throw new Error("WebGL not supported");
+        this.renderer = new THREE.WebGLRenderer({
+          canvas,
+          antialias: true,
+          powerPreference: "high-performance",
+          failIfMajorPerformanceCaveat: false
+        });
+        this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+        this.renderer.setSize(container.clientWidth || 800, 340);
+        this.renderer.setClearColor(0x020617);
+        container.appendChild(this.renderer.domElement);
+      }
+
+      initLights() {
+        const ambient = new THREE.AmbientLight(0xffffff, 0.7);
+        this.scene.add(ambient);
+        const directional = new THREE.DirectionalLight(0xffffff, 0.75);
+        directional.position.set(6, 9, -6);
+        this.scene.add(directional);
+        const ridge = new THREE.HemisphereLight(0x1e293b, 0x000000, 0.35);
+        this.scene.add(ridge);
+      }
+
+      createRoad() {
+        const roadGeo = new THREE.PlaneGeometry(14, 90);
+        const roadMat = new THREE.MeshStandardMaterial({ color: 0x1f2937, roughness: 0.45, metalness: 0.08 });
+        const road = new THREE.Mesh(roadGeo, roadMat);
+        road.rotation.x = -Math.PI / 2;
+        this.scene.add(road);
+
+        const dividerGeo = new THREE.BoxGeometry(0.35, 0.05, 90);
+        const dividerMat = new THREE.MeshStandardMaterial({ color: 0xfbbf24 });
+        const divider = new THREE.Mesh(dividerGeo, dividerMat);
+        divider.position.set(0, 0.03, 0);
+        this.scene.add(divider);
+
+        const dashGeo = new THREE.BoxGeometry(0.12, 0.02, 2.2);
+        const dashMat = new THREE.MeshStandardMaterial({ color: 0xffffff, roughness: 0.3, metalness: 0.05 });
+        for (let z = -45; z < 45; z += 5) {
+          const leftDash = new THREE.Mesh(dashGeo, dashMat);
+          leftDash.position.set(-3.5, 0.02, z);
+          this.scene.add(leftDash);
+          const rightDash = new THREE.Mesh(dashGeo, dashMat);
+          rightDash.position.set(3.5, 0.02, z);
+          this.scene.add(rightDash);
+        }
+
+        const barrierGeo = new THREE.BoxGeometry(0.2, 0.6, 90);
+        const barrierMat = new THREE.MeshStandardMaterial({ color: 0x2f3644, roughness: 0.6, metalness: 0.2 });
+        const leftBarrier = new THREE.Mesh(barrierGeo, barrierMat);
+        leftBarrier.position.set(-6.8, 0.3, 0);
+        this.scene.add(leftBarrier);
+        const rightBarrier = leftBarrier.clone();
+        rightBarrier.position.x = 6.8;
+        this.scene.add(rightBarrier);
+      }
+
+      createVehicle(color) {
+        const group = new THREE.Group();
+        const bodyMat = new THREE.MeshStandardMaterial({ color, metalness: 0.35, roughness: 0.38 });
+        const body = new THREE.Mesh(new THREE.BoxGeometry(1.3, 0.42, 2.5), bodyMat);
+        body.position.y = 0.21;
+        group.add(body);
+
+        const cabinMat = new THREE.MeshStandardMaterial({ color: 0x111827, transparent: true, opacity: 0.55, metalness: 0.12, roughness: 0.12 });
+        const cabin = new THREE.Mesh(new THREE.BoxGeometry(1.02, 0.32, 1.45), cabinMat);
+        cabin.position.set(0, 0.52, -0.12);
+        group.add(cabin);
+
+        const roof = new THREE.Mesh(new THREE.BoxGeometry(0.9, 0.05, 1.2), new THREE.MeshStandardMaterial({ color: 0x1f2937, metalness: 0.25, roughness: 0.4 }));
+        roof.position.set(0, 0.72, -0.12);
+        group.add(roof);
+
+        const rearMat = new THREE.MeshStandardMaterial({ color: 0xff4d4d, emissive: 0xaa1111, emissiveIntensity: 0.25 });
+        const rear = new THREE.Mesh(new THREE.BoxGeometry(0.45, 0.12, 0.08), rearMat);
+        rear.position.set(0, 0.28, -1.22);
+        group.add(rear);
+
+        const frontMat = new THREE.MeshStandardMaterial({ color: 0xffffff, emissive: 0xffffff, emissiveIntensity: 0.22 });
+        const front = new THREE.Mesh(new THREE.BoxGeometry(0.45, 0.12, 0.08), frontMat);
+        front.position.set(0, 0.28, 1.28);
+        group.add(front);
+
+        group.userData = { brakeMaterial: rearMat, headMaterial: frontMat, bodyMaterial: bodyMat };
+        return group;
+      }
+
+      createCars() {
+        this.egoCar = this.createVehicle(0x3b82f6);
+        this.scene.add(this.egoCar);
+
+        this.trafficCar = this.createVehicle(0xdc2626);
+        this.scene.add(this.trafficCar);
+        this.trafficCar.visible = false;
+
+        this.leadCar = this.createVehicle(0xef4444);
+        this.scene.add(this.leadCar);
+        this.leadCar.visible = false;
+      }
+
+      createRain() {
+        const count = 1600;
+        const geometry = new THREE.BufferGeometry();
+        const positions = new Float32Array(count * 3);
+        for (let i = 0; i < count; i += 1) {
+          positions[i * 3] = (Math.random() - 0.5) * 18;
+          positions[i * 3 + 1] = Math.random() * 14 + 4;
+          positions[i * 3 + 2] = (Math.random() - 0.5) * 42;
+        }
+        geometry.setAttribute("position", new THREE.Float32BufferAttribute(positions, 3));
+        const material = new THREE.PointsMaterial({ color: 0x9ec5ff, size: 0.06, transparent: true, opacity: 0.55 });
+        this.rain = new THREE.Points(geometry, material);
+        this.scene.add(this.rain);
+      }
+
+      setupButtons() {
+        this.buttons.forEach((btn) => {
+          const key = btn.dataset.scenario;
+          if (!key || !SCENARIOS[key]) {
+            btn.disabled = true;
+            btn.style.opacity = "0.5";
+            return;
+          }
+          btn.disabled = false;
+          btn.style.opacity = "1";
+          btn.addEventListener("click", () => this.playScenario(key));
+        });
+      }
+
+      playScenario(key) {
+        const scenario = SCENARIOS[key];
+        if (!scenario) return;
+
+        this.currentScenario = scenario;
+        this.startTime = this.time;
+        this.eventIndex = 0;
+        this.animating = true;
+
+        this.highlightButton(key);
+        this.setInitialUI(scenario);
+        this.clearLog(scenario.logIntro);
+
+        const firstFrame = scenario.timeline[0];
+        if (firstFrame) {
+          this.applyFrame(firstFrame, scenario);
+          this.updateRisk(firstFrame.risk ?? 0);
+        }
+      }
+
+      setInitialUI(scenario) {
+        if (this.scenarioLabel) {
+          this.scenarioLabel.textContent = scenario.title;
+        }
+        if (this.statusText) {
+          this.statusText.textContent = scenario.intro;
+        }
+        if (this.actionDetail) {
+          this.actionDetail.textContent = " " + scenario.initialAction;
+        }
+        this.updateRisk(0);
+      }
+
+      highlightButton(activeKey) {
+        this.buttons.forEach((btn) => {
+          if (btn.dataset.scenario === activeKey) {
+            btn.classList.add("active");
+          } else {
+            btn.classList.remove("active");
+          }
+        });
+      }
+
+      clearLog(message) {
+        if (!this.logList) return;
+        this.logList.innerHTML = "";
+        if (message) {
+          this.appendLog(message);
+        }
+      }
+
+      appendLog(text, time) {
+        if (!this.logList) return;
+        const item = document.createElement("li");
+        if (typeof time === "number") {
+          item.innerHTML = `<strong>+${time.toFixed(1)}s</strong> ${text}`;
+        } else {
+          item.textContent = text;
+        }
+        this.logList.appendChild(item);
+        if (this.logContainer) {
+          this.logContainer.scrollTop = this.logContainer.scrollHeight;
+        }
+      }
+
+      sampleFrame(scenario, elapsed) {
+        const frames = scenario.timeline;
+        if (!frames.length) return null;
+        if (elapsed <= frames[0].t) return frames[0];
+        const duration = scenario.duration ?? frames[frames.length - 1].t;
+        if (elapsed >= duration) return frames[frames.length - 1];
+        for (let i = 0; i < frames.length - 1; i += 1) {
+          const a = frames[i];
+          const b = frames[i + 1];
+          if (elapsed >= a.t && elapsed <= b.t) {
+            const span = b.t - a.t || 1;
+            const alpha = (elapsed - a.t) / span;
+            return {
+              ego: blendEntity(a.ego, b.ego, alpha),
+              traffic: blendEntity(a.traffic, b.traffic, alpha),
+              lead: blendEntity(a.lead, b.lead, alpha),
+              risk: lerp(a.risk ?? 0, b.risk ?? 0, alpha),
+              cameraOffset: blendArray(a.cameraOffset || scenario.cameraOffset || this.defaultCameraOffset, b.cameraOffset || scenario.cameraOffset || this.defaultCameraOffset, alpha)
+            };
+          }
+        }
+        return frames[frames.length - 1];
+      }
+
+      setVehicleState(vehicle, state) {
+        if (!vehicle) return;
+        if (!state) {
+          vehicle.visible = false;
+          return;
+        }
+        vehicle.visible = true;
+        const pos = state.position || [0, 0, 0];
+        vehicle.position.set(pos[0], pos[1] ?? 0, pos[2]);
+        vehicle.rotation.y = THREE.MathUtils.degToRad(state.heading ?? 0);
+        const brakeLevel = Math.min(Math.max(state.brake ?? 0, 0), 1);
+        if (vehicle.userData?.brakeMaterial) {
+          vehicle.userData.brakeMaterial.emissiveIntensity = 0.25 + brakeLevel * 1.8;
+        }
+        if (vehicle.userData?.headMaterial) {
+          vehicle.userData.headMaterial.emissiveIntensity = 0.18 + brakeLevel * 0.4;
+        }
+      }
+
+      applyFrame(frame, scenario) {
+        if (!frame) return;
+        this.setVehicleState(this.egoCar, frame.ego || scenario.timeline[0].ego);
+        this.setVehicleState(this.trafficCar, frame.traffic);
+        this.setVehicleState(this.leadCar, frame.lead);
+
+        const offset = frame.cameraOffset || scenario.cameraOffset || this.defaultCameraOffset;
+        const ego = (frame.ego || scenario.timeline[0].ego).position;
+        const desired = new THREE.Vector3(ego[0] + offset[0], offset[1], ego[2] + offset[2]);
+        this.camera.position.lerp(desired, 0.08);
+        this.camera.lookAt(ego[0], ego[1] ?? 0, ego[2]);
+      }
+
+      processEvents(elapsed, scenario) {
+        if (!scenario.events || !scenario.events.length) return;
+        while (this.eventIndex < scenario.events.length && elapsed >= scenario.events[this.eventIndex].t) {
+          const evt = scenario.events[this.eventIndex];
+          if (evt.type === "status" && this.statusText) {
+            this.statusText.textContent = evt.text;
+          } else if (evt.type === "action" && this.actionDetail) {
+            this.actionDetail.textContent = " " + evt.text;
+          } else if (evt.type === "log") {
+            this.appendLog(evt.text, evt.t);
+          }
+          this.eventIndex += 1;
+        }
+      }
+
+      updateRisk(value) {
+        if (!this.riskChip) return;
+        const risk = Math.max(0, Math.min(1, value));
+        const pct = Math.round(risk * 100);
+        this.riskChip.textContent = `Risk ${pct}%`;
+        this.riskChip.classList.remove("ok", "warn", "danger");
+        const band = risk < 0.35 ? "ok" : risk < 0.7 ? "warn" : "danger";
+        this.riskChip.classList.add(band);
+      }
+
+      updateRain(delta) {
+        if (!this.rain) return;
+        const positions = this.rain.geometry.attributes.position.array;
+        for (let i = 0; i < positions.length; i += 3) {
+          positions[i + 1] -= delta * 18;
+          if (positions[i + 1] < 0) {
+            positions[i + 1] = Math.random() * 12 + 6;
+            positions[i] = (Math.random() - 0.5) * 18;
+            positions[i + 2] = (Math.random() - 0.5) * 40;
+          }
+        }
+        this.rain.geometry.attributes.position.needsUpdate = true;
+      }
+
+      animate() {
+        if (!this.renderer) return;
+        requestAnimationFrame(() => this.animate());
+        const delta = this.clock.getDelta();
+        this.time += delta;
+        this.updateRain(delta);
+
+        if (this.currentScenario) {
+          const elapsed = this.time - this.startTime;
+          const frame = this.sampleFrame(this.currentScenario, elapsed);
+          this.applyFrame(frame, this.currentScenario);
+          this.processEvents(elapsed, this.currentScenario);
+          if (frame) {
+            this.updateRisk(frame.risk ?? 0);
+          }
+          if (elapsed >= this.currentScenario.duration) {
+            this.animating = false;
+          }
+        }
+
+        this.renderer.render(this.scene, this.camera);
+      }
+
+      onResize() {
+        if (!this.renderer || !this.camera) return;
+        const container = document.getElementById("canvas-container");
+        const width = container ? container.clientWidth || 800 : 800;
+        this.camera.aspect = width / 340;
+        this.camera.updateProjectionMatrix();
+        this.renderer.setSize(width, 340);
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      initCharts();
+      new Scene3D();
+    });
+  </script>
+
+
+  <script>
+    const scrollProgress = document.getElementById("scrollProgress");
+    window.addEventListener("scroll", () => {
+      const scrollHeight = document.body.scrollHeight - window.innerHeight;
+      const progress = scrollHeight > 0 ? (window.scrollY / scrollHeight) * 100 : 0;
+      scrollProgress.style.width = progress + "%";
+    });
+
+    const particlesContainer = document.getElementById("particles");
+    function spawnParticles() {
+      if (!particlesContainer) return;
+      particlesContainer.innerHTML = "";
+      const count = 90;
+      const vw = window.innerWidth;
+      const vh = window.innerHeight;
+      for (let i = 0; i < count; i++) {
+        const p = document.createElement("span");
+        p.className = "particle";
+        p.style.left = Math.random() * vw + "px";
+        p.style.top = Math.random() * vh + "px";
+        p.style.animationDelay = (Math.random() * -14).toFixed(2) + "s";
+        p.style.opacity = (0.25 + Math.random() * 0.4).toFixed(2);
+        particlesContainer.appendChild(p);
+      }
+    }
+    spawnParticles();
+    window.addEventListener("resize", () => {
+      clearTimeout(window.__particleResize);
+      window.__particleResize = setTimeout(spawnParticles, 180);
+    });
+  </script>
+</body>
+</html>

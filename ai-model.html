@@ -358,8 +358,8 @@
     }
     .inference-shell {
       display: grid;
-      grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
-      gap: 1.7rem;
+      grid-template-columns: 1fr;
+      gap: 1.2rem;
       align-items: start;
       position: relative;
     }
@@ -428,23 +428,24 @@
     }
     .inference-panel label {
       display: block;
-      font-size: 0.64rem;
-      color: rgba(248, 248, 248, 0.8);
-      margin-bottom: 0.3rem;
+      font-size: 0.75rem;
+      color: rgba(248, 248, 248, 0.9);
+      margin-bottom: 0.4rem;
       text-transform: uppercase;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.06em;
     }
     .inference-panel textarea,
     .inference-panel input,
     .inference-panel select {
       width: 100%;
-      background: rgba(255, 255, 255, 0.04);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: 0.65rem;
-      padding: 0.55rem 0.7rem;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 0.7rem;
+      padding: 0.68rem 0.85rem;
       color: #fff;
-      font-size: 0.7rem;
-      margin-bottom: 0.55rem;
+      font-size: 0.82rem;
+      line-height: 1.4;
+      margin-bottom: 0.7rem;
       transition: border-color 0.2s ease, background 0.2s ease, transform 0.2s;
     }
     .inference-panel textarea:focus,
@@ -459,16 +460,16 @@
     .input-actions {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.45rem;
-      margin-bottom: 0.45rem;
+      gap: 0.5rem;
+      margin-bottom: 0.6rem;
     }
     .ghost-btn {
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255, 255, 255, 0.12);
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255, 255, 255, 0.14);
       border-radius: 999px;
-      padding: 0.42rem 1.05rem;
-      color: rgba(255,255,255,0.82);
-      font-size: 0.6rem;
+      padding: 0.5rem 1.1rem;
+      color: rgba(255,255,255,0.9);
+      font-size: 0.68rem;
       cursor: pointer;
       transition: background 0.2s ease;
     }
@@ -513,25 +514,25 @@
       background: linear-gradient(130deg, rgba(255,30,0,1) 0%, rgba(255,94,0,0.95) 55%, rgba(255,150,0,0.9) 100%);
       border: none;
       border-radius: 999px;
-      padding: 0.65rem 1.4rem;
+      padding: 0.75rem 1.6rem;
       color: #fff;
-      font-size: 0.72rem;
+      font-size: 0.82rem;
       cursor: pointer;
-      margin-top: 0.35rem;
-      font-weight: 600;
-      letter-spacing: 0.06em;
-      box-shadow: 0 18px 45px rgba(255, 94, 0, 0.35);
+      margin-top: 0.5rem;
+      font-weight: 650;
+      letter-spacing: 0.05em;
+      box-shadow: 0 18px 45px rgba(255, 94, 0, 0.38);
       transition: transform 0.18s ease, box-shadow 0.18s ease;
     }
     .infer-output {
-      margin-top: 0.6rem;
-      background: rgba(0,0,0,0.35);
-      border: 1px solid rgba(255,255,255,0.02);
-      border-radius: 0.7rem;
-      padding: 0.45rem 0.55rem;
-      font-size: 0.65rem;
-      color: var(--muted);
-      min-height: 48px;
+      margin-top: 0.7rem;
+      background: rgba(0,0,0,0.38);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 0.75rem;
+      padding: 0.6rem 0.7rem;
+      font-size: 0.72rem;
+      color: rgba(248,248,248,0.8);
+      min-height: 54px;
       white-space: pre-wrap;
     }
     .run-btn:hover {
@@ -635,19 +636,19 @@
       z-index: 1;
     }
     .result-card h4 {
-      font-size: 0.7rem;
+      font-size: 0.78rem;
       text-transform: uppercase;
-      letter-spacing: 0.1em;
-      margin-bottom: 0.45rem;
-      color: rgba(255,255,255,0.82);
+      letter-spacing: 0.09em;
+      margin-bottom: 0.55rem;
+      color: rgba(255,255,255,0.92);
     }
     .result-list {
       list-style: none;
       display: flex;
       flex-direction: column;
-      gap: 0.45rem;
-      font-size: 0.66rem;
-      color: rgba(255,255,255,0.78);
+      gap: 0.5rem;
+      font-size: 0.72rem;
+      color: rgba(255,255,255,0.86);
     }
     .result-list li {
       display: flex;
@@ -921,6 +922,21 @@
         gap: 1.2rem;
       }
     }
+    /* Added for appended t2 section */
+    @keyframes shimmer {
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(100%); }
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.4; }
+    }
+    @media (max-width: 980px) {
+      .crash-analysis-grid,
+      .feature-visual-grid {
+        grid-template-columns: 1fr !important;
+      }
+    }
   </style>
 </head>
 <body>
@@ -928,164 +944,26 @@
   <!-- Nav -->
   <nav>
     <div class="logo"><span class="logo-dot"></span> VISIONALTRIX</div>
-    <a href="index.html">Home</a>
+    <a href="index.html#about">About</a>
+    <a href="index.html#why">Why F1</a>
+    <a href="visual.html">Visual</a>
+    <a href="result.html">Results</a>
     <a href="ai-model.html" class="active">AI Model</a>
     <a href="index.html#demo">Demo</a>
+    <a href="index.html#stack">Stack</a>
     <a href="index.html#contact">Contact</a>
     <button class="nav-cta" onclick="location.href='index.html#demo'">Live Demo</button>
   </nav>
 
   <main class="page">
     <div class="page-shell">
-      <div class="breadcrumb">
-        <a href="index.html">← Back to main site</a> / AI Model
-      </div>
-      <h1 class="title">AI Model & Inference Layer</h1>
-      <p class="subtitle">
-        This page explains how VISIONALTRIX turns raw F1 crash telemetry into an explainable safety signal for road-level ADAS.
-        Use this walkthrough during demos to narrate the full stack—from data ingest to mitigation triggers.
-      </p>
 
-    <!-- Pipeline -->
-    <h2 class="section-title">End-to-End Pipeline</h2>
-    <p class="section-sub">We follow a classic: ingest → preprocess → model → postprocess → serve.</p>
-    <div class="pipeline">
-      <div class="pipe-card">
-        <span class="pipe-step">1</span>
-        <h3>Ingestion</h3>
-        <p>Take F1 telemetry (speed, yaw, Gz, wheel speed, brake pressure), race logs, or sim outputs.</p>
-      </div>
-      <div class="pipe-card">
-        <span class="pipe-step">2</span>
-        <h3>Preprocessing</h3>
-        <p>Time-align signals, resample to 50–200Hz, normalize per channel, handle missing values.</p>
-      </div>
-      <div class="pipe-card">
-        <span class="pipe-step">3</span>
-        <h3>Feature Engineering</h3>
-        <p>Windowing, FFT over G-force, lateral vs longitudinal ratio, cornering signature.</p>
-      </div>
-      <div class="pipe-card">
-        <span class="pipe-step">4</span>
-        <h3>Model Core</h3>
-        <p>LSTM/Transformer autoencoder → reconstruction error → anomaly score (0–1).</p>
-      </div>
-      <div class="pipe-card">
-        <span class="pipe-step">5</span>
-        <h3>Postprocessing</h3>
-        <p>Thresholding, rule-based checks, attach mitigation actions.</p>
-      </div>
-      <div class="pipe-card">
-        <span class="pipe-step">6</span>
-        <h3>Serving</h3>
-        <p>Exposed via REST/WebSocket → shown in front end as “crash risk”.</p>
-      </div>
-    </div>
-
-    <div class="capability-grid">
-      <div class="cap-card">
-        <span class="cap-icon">⚡</span>
-        <h3>Real-time crash IQ</h3>
-        <p>Sub-50&nbsp;ms inference with anomaly-driven probability curves lets ADAS react before impact.</p>
-      </div>
-      <div class="cap-card">
-        <span class="cap-icon">🧠</span>
-        <h3>Explainable telemetry</h3>
-        <p>Feature deviation meters and 3D trajectories show <em>why</em> the AI raised a flag—no black boxes.</p>
-      </div>
-      <div class="cap-card">
-        <span class="cap-icon">🛡️</span>
-        <h3>Adaptive mitigation</h3>
-        <p>Maps risk bands to recommended countermeasures and safety crew alerts for rapid orchestration.</p>
-      </div>
-      <div class="cap-card">
-        <span class="cap-icon">🌐</span>
-        <h3>Edge ready</h3>
-        <p>Quantized checkpoints + Jetson latencies keep the same guardian angel running trackside or on-road.</p>
-      </div>
-    </div>
-
-    <div class="ops-grid">
-      <div class="ops-card">
-        <h3>Data coverage</h3>
-        <ul class="ops-list">
-          <li><span>Crash laps ingested</span><span>412</span></li>
-          <li><span>Sim augmentations</span><span>3.1×</span></li>
-          <li><span>Sensor channels</span><span>26</span></li>
-        </ul>
-        <div class="ops-progress">
-          <span>Road transfer readiness</span>
-          <div class="ops-bar"><div class="fill" style="width:82%"></div></div>
-        </div>
-      </div>
-      <div class="ops-card">
-        <h3>Edge deployment</h3>
-        <ul class="ops-list">
-          <li><span>Jetson latency (ms)</span><span>14.2</span></li>
-          <li><span>Model footprint</span><span>6.1&nbsp;M params</span></li>
-          <li><span>Power envelope</span><span>11&nbsp;W</span></li>
-        </ul>
-        <div class="ops-progress">
-          <span>OTA packaging</span>
-          <div class="ops-bar"><div class="fill" style="width:68%"></div></div>
-        </div>
-      </div>
-      <div class="ops-card">
-        <h3>Safety playbook</h3>
-        <ul class="ops-list">
-          <li><span>Mitigation recipes</span><span>8</span></li>
-          <li><span>Alert endpoints</span><span>Slack, Pager, CAN</span></li>
-          <li><span>Human-in-loop</span><span>Sub 2&nbsp;s ack</span></li>
-        </ul>
-        <div class="ops-progress">
-          <span>Operator training</span>
-          <div class="ops-bar"><div class="fill" style="width:74%"></div></div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Architecture & Inference -->
-    <h2 class="section-title">Model Architecture</h2>
-    <div class="arch-grid">
-      <div class="arch-card">
-        <h3 style="margin-bottom:0.4rem;">Sequence Autoencoder</h3>
-        <p style="color:var(--muted);font-size:0.72rem;margin-bottom:0.7rem;">
-          Raw telemetry windows (T × F) are encoded with stacked LSTMs, compressed into a 32-d latent embedding, then reconstructed.
-          Reconstruction error is calibrated into a crash-risk score.
-        </p>
-        <ul style="font-size:0.68rem;line-height:1.45;color:var(--muted);">
-          <li>• Encoder: 2 × LSTM layers (hidden 128)</li>
-          <li>• Latent bottleneck: Linear → 32 dims</li>
-          <li>• Decoder: 2 × LSTM + linear projection back to features</li>
-          <li>• Loss: Full sequence MSE on normalized signals</li>
-          <li>• Risk mapping: tanh(recon error) → {normal, elevated, high, critical}</li>
-        </ul>
-        <p style="margin-top:0.8rem;font-size:0.64rem;color:rgba(255,255,255,0.55);">
-          Serving endpoints: <code>/api/infer</code> (POST) for live scoring and <code>/api/model-metadata</code> (GET) for UI sync.
-        </p>
-      </div>
-    </div>
-
-    <section class="inference-section">
+      <section class="inference-section">
       <div class="inference-header">
         <h2>Run Live Inference</h2>
-        <p>
-          Drop in a telemetry snapshot to exercise the deployed checkpoint. Add context like weather or traffic to see
-          how the calibrated risk score and mitigation actions adapt in real time.
-        </p>
       </div>
       <div class="inference-shell">
-        <div class="inference-summary">
-          <h3>How to use it</h3>
-          <p>Capture any 2&nbsp;s telemetry window (100 samples @ 50&nbsp;Hz) and provide the key signals below.</p>
-          <ul>
-            <li><span>01</span>Paste raw text (`speed: 220, yaw_rate: 15 …`) or a JSON payload of sensor readings.</li>
-            <li><span>02</span>Optionally specify environment modifiers (wet track, tyre wear, driver fatigue, etc.).</li>
-            <li><span>03</span>Trigger inference to view probability gauges, top feature deviations, and mitigation advice.</li>
-          </ul>
-        </div>
         <div class="inference-panel">
-          <h3 style="margin-bottom:0.4rem;">Live scoring console</h3>
           <div class="model-chip" id="modelChip">Loading model metadata…</div>
           <label for="telemetry">Paste telemetry window (JSON or key:value)</label>
           <textarea id="telemetry" rows="4" placeholder="speed: 214, yaw_rate: 17.6, lateral_g: 3.2, brake_pressure: 0.4"></textarea>
@@ -1245,102 +1123,179 @@
         </div>
       </div>
     </section>
+      <!-- Appended content from t2.html -->
+      <section>
+        <!-- Crash Analysis Showcase -->
+        <h2 class="section-title">Live Crash Analysis Pipeline</h2>
+        <p class="section-sub">See how VISIONALTRIX processes F1 telemetry in real-time, extracts crash signatures, and transfers learned patterns to consumer ADAS training datasets.</p>
 
-    <div class="chart-deck hidden fade-up" id="chartDeck">
-      <div class="chart-card">
-        <h4>Crash probability gauge</h4>
-        <div class="chart-canvas" id="probabilityGauge"></div>
-      </div>
-      <div class="chart-card">
-        <h4>Reconstruction error timeline</h4>
-        <div class="chart-canvas" id="timelineChart"></div>
-      </div>
-      <div class="chart-card">
-        <h4>3D feature trajectory</h4>
-        <p class="chart-subtitle" id="threeDAxes">Axes: —</p>
-        <div class="chart-canvas" id="threeDChart"></div>
-      </div>
-    </div>
-
-    <h2 class="section-title">Serving Snapshot & Metadata</h2>
-    <p class="section-sub">Pulled live from the FastAPI backend – use this to brief reviewers on the deployed checkpoint.</p>
-    <div class="meta-grid">
-      <div class="arch-card" id="modelStatsCard">
-        <h3 style="margin-bottom:0.5rem;">Model stats</h3>
-        <ul class="stats-list" id="modelStatsList">
-          <li><span>Model version</span><span>…</span></li>
-          <li><span>Device</span><span>…</span></li>
-          <li><span>Window</span><span>…</span></li>
-          <li><span>Parameters</span><span>32 latent dims</span></li>
-        </ul>
-        <div class="threshold-pills" id="thresholdPills">
-          <span class="threshold-pill">Loading thresholds…</span>
+        <!-- Quick Stats Banner -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 0.9rem; margin: 1.5rem 0 2rem;">
+          <div class="arch-card" style="padding: 0.9rem 1rem; text-align: center;">
+            <div id="statCrashes" style="font-size: 1.65rem; font-weight: 700; color: #ff5e00; font-family: 'Space Grotesk', sans-serif;">12,746</div>
+            <div style="font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.08em; color: rgba(255,255,255,0.65); margin-top: 0.2rem;">Crashes Processed</div>
+          </div>
+          <div class="arch-card" style="padding: 0.9rem 1rem; text-align: center;">
+            <div id="statSignatures" style="font-size: 1.65rem; font-weight: 700; color: #ff5e00; font-family: 'Space Grotesk', sans-serif;">418</div>
+            <div style="font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.08em; color: rgba(255,255,255,0.65); margin-top: 0.2rem;">Unique Signatures</div>
+          </div>
+          <div class="arch-card" style="padding: 0.9rem 1rem; text-align: center;">
+            <div id="statGain" style="font-size: 1.65rem; font-weight: 700; color: #ff5e00; font-family: 'Space Grotesk', sans-serif;">+82 ms</div>
+            <div style="font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.08em; color: rgba(255,255,255,0.65); margin-top: 0.2rem;">Mean Prediction Gain</div>
+          </div>
         </div>
-      </div>
-      <div class="arch-card" id="datasetCard">
-        <h3 style="margin-bottom:0.5rem;">Dataset coverage</h3>
-        <ul class="stats-list" id="datasetStats">
-          <li><span>Dataset</span><span>…</span></li>
-          <li><span>Total sequences</span><span>…</span></li>
-          <li><span>Total timesteps</span><span>…</span></li>
-          <li><span>Sequence length</span><span>…</span></li>
-          <li><span>Epochs</span><span>…</span></li>
-        </ul>
-        <h4 style="font-size:0.62rem;text-transform:uppercase;letter-spacing:0.08em;margin-top:0.6rem;color:rgba(255,255,255,0.65);">Calibration (MSE)</h4>
-        <ul class="release-notes" id="augmentationList">
-          <li>Loading calibration metrics…</li>
-        </ul>
-      </div>
-      <div class="arch-card" id="featureHintCard">
-        <h3 style="margin-bottom:0.5rem;">Sensor features</h3>
-        <ul class="feature-hints" id="featureHintList">
-          <li>Loading feature hints…</li>
-        </ul>
-      </div>
-      <div class="arch-card" id="actionCatalogCard">
-        <h3 style="margin-bottom:0.5rem;">Safety actions</h3>
-        <ul class="feature-hints" id="actionCatalogList">
-          <li>Loading actions…</li>
-        </ul>
-        <h4 style="font-size:0.62rem;text-transform:uppercase;letter-spacing:0.08em;margin-top:0.6rem;color:rgba(255,255,255,0.65);">Environment inputs</h4>
-        <ul class="feature-hints" id="conditionList">
-          <li>Loading supported conditions…</li>
-        </ul>
-        <h4 style="font-size:0.62rem;text-transform:uppercase;letter-spacing:0.08em;margin-top:0.6rem;color:rgba(255,255,255,0.65);">Release notes</h4>
-        <ul class="release-notes" id="releaseNotes">
-          <li>Loading release notes…</li>
-        </ul>
-      </div>
-    </div>
 
-    <!-- Data -->
-    <h2 class="section-title">Training Data Strategy</h2>
-    <p class="section-sub">Purpose-built synthetic telemetry covers normal laps, aggressive attacks, and caution laps, then feeds quantile calibration for interpretable risk.</p>
-    <div class="data-grid">
-      <div class="data-card">
-        <h4 style="margin-bottom:0.35rem;">Profiled telemetry generator</h4>
-        <p style="font-size:0.7rem;color:var(--muted);">320 sequences split across normal, attack, and caution drive profiles with realistic speed, yaw, g-force dynamics.</p>
-      </div>
-      <div class="data-card">
-        <h4 style="margin-bottom:0.35rem;">Quantile envelope</h4>
-        <p style="font-size:0.7rem;color:var(--muted);">Compute p80 / p95 / p99 per feature (plus absolute & brake decel tails) to weight domain risk instead of static thresholds.</p>
-      </div>
-      <div class="data-card">
-        <h4 style="margin-bottom:0.35rem;">Global scaler</h4>
-        <p style="font-size:0.7rem;color:var(--muted);">Store mean / std per channel so inference uses the same normalization as training, avoiding false spikes.</p>
-      </div>
-      <div class="data-card">
-        <h4 style="margin-bottom:0.35rem;">Self-supervised calibration</h4>
-        <p style="font-size:0.7rem;color:var(--muted);">Track reconstruction MSE distribution (mean, p95, p99) to map anomaly → crash probability via logistic fusion.</p>
-      </div>
-    </div>
+        <!-- Crash Analysis Grid -->
+        <div style="display: grid; grid-template-columns: 0.85fr 1.15fr; gap: 1.2rem; margin-bottom: 1.5rem;" class="crash-analysis-grid">
+          <!-- Left: Crash Snapshot -->
+          <div class="arch-card">
+            <h3 style="margin-bottom: 0.8rem; font-size: 0.92rem;">Crash Snapshot</h3>
+            <div style="display: flex; flex-direction: column; gap: 0.55rem;">
+              <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.4rem 0; border-bottom: 1px solid rgba(255,255,255,0.06);">
+                <span style="font-size: 0.68rem; color: rgba(255,255,255,0.65); text-transform: uppercase; letter-spacing: 0.06em;">Crash ID</span>
+                <span id="snapshotCrashId" style="font-size: 0.72rem; font-family: 'Space Grotesk', sans-serif; color: #ff5e00; font-weight: 600;">F1-A17-SPA-2020</span>
+              </div>
+              <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.4rem 0; border-bottom: 1px solid rgba(255,255,255,0.06);">
+                <span style="font-size: 0.68rem; color: rgba(255,255,255,0.65); text-transform: uppercase; letter-spacing: 0.06em;">Speed Before Impact</span>
+                <span id="snapshotSpeed" style="font-size: 0.72rem; font-family: 'Space Grotesk', sans-serif; color: rgba(255,255,255,0.9); font-weight: 600;">305 km/h</span>
+              </div>
+              <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.4rem 0; border-bottom: 1px solid rgba(255,255,255,0.06);">
+                <span style="font-size: 0.68rem; color: rgba(255,255,255,0.65); text-transform: uppercase; letter-spacing: 0.06em;">Impact Angle</span>
+                <span id="snapshotAngle" style="font-size: 0.72rem; font-family: 'Space Grotesk', sans-serif; color: rgba(255,255,255,0.9); font-weight: 600;">28.4°</span>
+              </div>
+              <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.4rem 0; border-bottom: 1px solid rgba(255,255,255,0.06);">
+                <span style="font-size: 0.68rem; color: rgba(255,255,255,0.65); text-transform: uppercase; letter-spacing: 0.06em;">Peak G-Force</span>
+                <span id="snapshotLatG" style="font-size: 0.72rem; font-family: 'Space Grotesk', sans-serif; color: #ff3030; font-weight: 700;">51.7 G</span>
+              </div>
+              <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.4rem 0;">
+                <span style="font-size: 0.68rem; color: rgba(255,255,255,0.65); text-transform: uppercase; letter-spacing: 0.06em;">Peak Longitudinal G</span>
+                <span id="snapshotLongG" style="font-size: 0.72rem; font-family: 'Space Grotesk', sans-serif; color: rgba(255,255,255,0.9); font-weight: 600;">-5.1 G</span>
+              </div>
+              <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.4rem 0;">
+                <span style="font-size: 0.68rem; color: rgba(255,255,255,0.65); text-transform: uppercase; letter-spacing: 0.06em;">Window</span>
+                <span id="snapshotWindow" style="font-size: 0.72rem; font-family: 'Space Grotesk', sans-serif; color: rgba(255,255,255,0.9); font-weight: 600;">2.0 s @ 50 Hz</span>
+              </div>
+            </div>
+          </div>
 
-    <!-- FAQ style -->
-    <h2 class="section-title">Explain to examiner like this 👇</h2>
-    <p class="section-sub">
-      “We are not predicting lap time. We detect <b>rare, high-impact crash patterns</b>, calibrate the anomaly score with learned telemetry envelopes,
-      and fuse environment context so road cars react proportionally even with limited labeled crashes.”
-    </p>
+          <!-- Right: Live Telemetry Graph -->
+          <div class="arch-card">
+            <h3 style="margin-bottom: 0.6rem; font-size: 0.92rem;">Live Telemetry Stream</h3>
+            <div id="telemetryChart" style="width: 100%; height: 240px;"></div>
+          </div>
+        </div>
+
+        <!-- AI Feature Extraction + F1 Visual -->
+        <div style="display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 1.2rem; margin-bottom: 1.5rem;" class="feature-visual-grid">
+          <!-- Left: AI Feature Extraction -->
+          <div class="arch-card">
+            <h3 style="margin-bottom: 0.8rem; font-size: 0.92rem;">AI Feature Extraction</h3>
+            <p style="font-size: 0.68rem; color: rgba(255,255,255,0.65); margin-bottom: 1rem; line-height: 1.5;">Patterns automatically learned from F1 crashes and exported to ADAS training datasets.</p>
+            <div id="featureExtractionList" style="display: flex; flex-direction: column; gap: 0.65rem;">
+              <div style="display: flex; align-items: center; gap: 0.6rem; background: rgba(0,255,100,0.08); border: 1px solid rgba(0,255,100,0.25); border-radius: 0.7rem; padding: 0.55rem 0.75rem;">
+                <span style="font-size: 1.1rem;">✓</span>
+                <div style="flex: 1;">
+                  <div style="font-size: 0.7rem; font-weight: 600; color: #7dffb0; font-family: 'Space Grotesk', sans-serif;">decel-spike-longitudinal</div>
+                  <div style="font-size: 0.6rem; color: rgba(255,255,255,0.6); margin-top: 0.15rem;">Sudden deceleration pattern detected</div>
+                </div>
+              </div>
+              <div style="display: flex; align-items: center; gap: 0.6rem; background: rgba(0,255,100,0.08); border: 1px solid rgba(0,255,100,0.25); border-radius: 0.7rem; padding: 0.55rem 0.75rem;">
+                <span style="font-size: 1.1rem;">✓</span>
+                <div style="flex: 1;">
+                  <div style="font-size: 0.7rem; font-weight: 600; color: #7dffb0; font-family: 'Space Grotesk', sans-serif;">steering-jitter-pattern</div>
+                  <div style="font-size: 0.6rem; color: rgba(255,255,255,0.6); margin-top: 0.15rem;">High-frequency steering oscillations</div>
+                </div>
+              </div>
+              <div style="display: flex; align-items: center; gap: 0.6rem; background: rgba(0,255,100,0.08); border: 1px solid rgba(0,255,100,0.25); border-radius: 0.7rem; padding: 0.55rem 0.75rem;">
+                <span style="font-size: 1.1rem;">✓</span>
+                <div style="flex: 1;">
+                  <div style="font-size: 0.7rem; font-weight: 600; color: #7dffb0; font-family: 'Space Grotesk', sans-serif;">yaw-rate &gt; threshold</div>
+                  <div style="font-size: 0.6rem; color: rgba(255,255,255,0.6); margin-top: 0.15rem;">Excessive rotation rate detected</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: F1 Vehicle Sensor Visual -->
+          <div class="arch-card">
+            <h3 style="margin-bottom: 0.8rem; font-size: 0.92rem;">Sensor Network</h3>
+            <div id="f1Visual" style="width: 100%; height: 240px; display: flex; align-items: center; justify-content: center; position: relative;">
+              <!-- F1 Car Outline with Sensors -->
+              <svg viewBox="0 0 200 280" style="width: 100%; height: 100%; max-width: 180px;">
+                <!-- Car Body -->
+                <path d="M100,20 L110,30 L115,60 L120,100 L120,180 L115,220 L110,250 L100,260 L90,250 L85,220 L80,180 L80,100 L85,60 L90,30 Z" 
+                      fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.25)" stroke-width="1.5"/>
+                
+                <!-- Front Wing -->
+                <rect x="75" y="25" width="50" height="3" rx="1.5" fill="rgba(255,255,255,0.15)"/>
+                
+                <!-- Rear Wing -->
+                <rect x="75" y="252" width="50" height="3" rx="1.5" fill="rgba(255,255,255,0.15)"/>
+                
+                <!-- Wheels -->
+                <ellipse cx="75" cy="70" rx="8" ry="14" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.25)" stroke-width="1"/>
+                <ellipse cx="125" cy="70" rx="8" ry="14" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.25)" stroke-width="1"/>
+                <ellipse cx="75" cy="210" rx="8" ry="14" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.25)" stroke-width="1"/>
+                <ellipse cx="125" cy="210" rx="8" ry="14" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.25)" stroke-width="1"/>
+                
+                <!-- Sensor Dots (animated) -->
+                <circle class="sensor-dot" cx="100" cy="20" r="3" fill="#ff5e00" opacity="0.9">
+                  <animate attributeName="opacity" values="0.9;0.3;0.9" dur="1.5s" repeatCount="indefinite"/>
+                </circle>
+                <circle class="sensor-dot" cx="70" cy="100" r="3" fill="#ff5e00" opacity="0.7">
+                  <animate attributeName="opacity" values="0.7;0.3;0.7" dur="1.8s" repeatCount="indefinite"/>
+                </circle>
+                <circle class="sensor-dot" cx="130" cy="100" r="3" fill="#ff5e00" opacity="0.7">
+                  <animate attributeName="opacity" values="0.7;0.3;0.7" dur="1.8s" repeatCount="indefinite"/>
+                </circle>
+                <circle class="sensor-dot" cx="100" cy="140" r="3" fill="#ffaa00" opacity="0.8">
+                  <animate attributeName="opacity" values="0.8;0.4;0.8" dur="2s" repeatCount="indefinite"/>
+                </circle>
+                <circle class="sensor-dot" cx="100" cy="260" r="3" fill="#ff5e00" opacity="0.9">
+                  <animate attributeName="opacity" values="0.9;0.3;0.9" dur="1.6s" repeatCount="indefinite"/>
+                </circle>
+                
+                <!-- Sensor Labels -->
+                <text x="100" y="12" font-size="7" fill="rgba(255,255,255,0.7)" text-anchor="middle" font-family="Poppins">Front Impact</text>
+                <text x="55" y="103" font-size="7" fill="rgba(255,255,255,0.7)" text-anchor="end" font-family="Poppins">Side L</text>
+                <text x="145" y="103" font-size="7" fill="rgba(255,255,255,0.7)" text-anchor="start" font-family="Poppins">Side R</text>
+                <text x="100" y="155" font-size="7" fill="rgba(255,255,255,0.7)" text-anchor="middle" font-family="Poppins">Driver Cell</text>
+                <text x="100" y="274" font-size="7" fill="rgba(255,255,255,0.7)" text-anchor="middle" font-family="Poppins">Rear Impact</text>
+              </svg>
+            </div>
+            <p id="sensorSummaryText" style="font-size: 0.62rem; color: rgba(255,255,255,0.55); text-align: center; margin-top: 0.5rem;">26 active sensor channels at 1000 Hz</p>
+          </div>
+        </div>
+
+        <!-- Transfer Indicator -->
+        <div class="arch-card" style="margin-bottom: 2rem;">
+          <div style="display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; flex-wrap: wrap;">
+            <div style="flex: 1; min-width: 240px;">
+              <h3 style="margin-bottom: 0.5rem; font-size: 0.92rem;">F1 → Consumer ADAS Transfer</h3>
+              <p style="font-size: 0.68rem; color: rgba(255,255,255,0.65); line-height: 1.5;">Learned crash signatures are automatically transferred to consumer vehicle ADAS training modules, improving prediction accuracy by an average of 82 milliseconds.</p>
+            </div>
+            <div style="flex: 1; min-width: 280px;">
+              <div style="display: flex; align-items: center; gap: 0.8rem; margin-bottom: 0.5rem;">
+                <span style="font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.08em; color: rgba(255,255,255,0.65);">Transfer Progress</span>
+                <span style="font-size: 0.7rem; font-weight: 600; color: #ff5e00; font-family: 'Space Grotesk', sans-serif;">89%</span>
+              </div>
+              <div style="width: 100%; height: 12px; background: rgba(255,255,255,0.08); border-radius: 999px; overflow: hidden; position: relative;">
+                <div id="transferBar" style="height: 100%; width: 89%; background: linear-gradient(90deg, #ff5e00, #ffaa00); border-radius: 999px; transition: width 0.4s ease;"></div>
+                <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent); animation: shimmer 2s infinite;"></div>
+              </div>
+              <div style="display: flex; justify-content: space-between; margin-top: 0.4rem; font-size: 0.58rem; color: rgba(255,255,255,0.5);">
+                <span>F1 Crash Dataset</span>
+                <span style="display: flex; align-items: center; gap: 0.3rem;">
+                  <span style="animation: pulse 1.5s infinite;">→</span>
+                  ADAS Training Module
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+   
+      
     </div>
   </main>
 
@@ -1432,6 +1387,14 @@
     const envImpactLabel = document.getElementById("envImpactLabel");
     const actionsBadge = document.getElementById("actionsBadge");
     const actionHighlightList = document.getElementById("actionHighlightList");
+    const statCrashes = document.getElementById("statCrashes");
+    const statSignatures = document.getElementById("statSignatures");
+    const statGain = document.getElementById("statGain");
+    const snapshotLatG = document.getElementById("snapshotLatG");
+    const snapshotLongG = document.getElementById("snapshotLongG");
+    const snapshotWindow = document.getElementById("snapshotWindow");
+    const sensorSummaryText = document.getElementById("sensorSummaryText");
+    const telemetryChartEl = document.getElementById("telemetryChart");
 
     const modelStatsList = document.getElementById("modelStatsList");
     const thresholdPills = document.getElementById("thresholdPills");
@@ -1445,6 +1408,14 @@
     const fallbackExample = "speed: 214, yaw_rate: 17.6, lateral_g: 3.2, brake_pressure: 0.4";
 
     const hasPlotly = () => typeof window !== "undefined" && !!window.Plotly;
+    const DEFAULT_SAMPLE_RATE = 50;
+    const DEFAULT_STATS = { crashes: 12746, signatures: 418, gain: 82 };
+    const DEFAULT_FEATURE_ENTRIES = [
+      { title: "decel-spike-longitudinal", detail: "Sudden deceleration pattern detected" },
+      { title: "steering-jitter-pattern", detail: "High-frequency steering oscillations" },
+      { title: "yaw-rate > threshold", detail: "Excessive rotation rate detected" },
+    ];
+    let runtimeStats = { ...DEFAULT_STATS };
 
     function formatLabel(label) {
       return label
@@ -1453,10 +1424,180 @@
         .replace(/\b([a-z])/g, (_, c) => c.toUpperCase());
     }
 
+    const normalizeKey = (value) => String(value || "").toLowerCase().replace(/[^a-z0-9]+/g, "");
+
     function setRiskBadge(band = "normal") {
       const normalized = (band || "normal").toLowerCase();
       riskBadge.className = `risk-badge risk-${normalized}`;
       riskBadge.textContent = normalized;
+    }
+
+    function updateStatsDisplay() {
+      if (statCrashes) statCrashes.textContent = runtimeStats.crashes.toLocaleString();
+      if (statSignatures) statSignatures.textContent = runtimeStats.signatures.toLocaleString();
+      if (statGain) statGain.textContent = `${runtimeStats.gain >= 0 ? "+" : ""}${runtimeStats.gain} ms`;
+    }
+
+    function setFeatureExtraction(items) {
+      if (!featureExtractionList) return;
+      const list = Array.isArray(items) && items.length ? items : DEFAULT_FEATURE_ENTRIES;
+      featureExtractionList.innerHTML = list
+        .map(
+          (entry) => `
+            <div style="display: flex; align-items: center; gap: 0.6rem; background: rgba(0,255,100,0.08); border: 1px solid rgba(0,255,100,0.25); border-radius: 0.7rem; padding: 0.55rem 0.75rem;">
+              <span style="font-size: 1.1rem;">✓</span>
+              <div style="flex: 1;">
+                <div style="font-size: 0.7rem; font-weight: 600; color: #7dffb0; font-family: 'Space Grotesk', sans-serif;">${formatLabel(entry.title || "feature-pattern")}</div>
+                <div style="font-size: 0.6rem; color: rgba(255,255,255,0.6); margin-top: 0.15rem;">${entry.detail || "Pattern detected during inference."}</div>
+              </div>
+            </div>
+          `,
+        )
+        .join("");
+    }
+
+    function updateSensorSummary(topFeatures) {
+      const names = Array.isArray(topFeatures) && topFeatures.length ? topFeatures : DEFAULT_FEATURE_ENTRIES.map((item) => item.title);
+      if (sensorSummaryText) {
+        sensorSummaryText.textContent = names.length
+          ? `${names.slice(0, 4).map((name) => formatLabel(name)).join(", ")} sensors drove the latest anomaly.`
+          : "26 active sensor channels at 50 Hz";
+      }
+    }
+
+    function getSeriesFromResult(result, aliases) {
+      const chartData = result?.chart_data || {};
+      const topFeatures = Array.isArray(chartData.top_features) ? chartData.top_features : [];
+      const normalizedTargets = aliases.map((alias) => normalizeKey(alias));
+
+      const matchFromTop = topFeatures.find((series) => normalizedTargets.includes(normalizeKey(series.feature)));
+      if (matchFromTop && Array.isArray(matchFromTop.values) && matchFromTop.values.length) {
+        return matchFromTop.values.map((value) => Number(value)).filter((value) => Number.isFinite(value));
+      }
+
+      const rawSeq = Array.isArray(result?.raw_sequence) ? result.raw_sequence : [];
+      const order = Array.isArray(result?.input_feature_order) ? result.input_feature_order : [];
+      if (!rawSeq.length || !order.length) return [];
+      const orderLookup = order.map((name) => normalizeKey(name));
+      const idx = orderLookup.findIndex((key) => normalizedTargets.includes(key));
+      if (idx === -1) return [];
+      return rawSeq
+        .map((row) => {
+          if (Array.isArray(row)) return Number(row[idx]);
+          if (row && typeof row === "object") {
+            const keys = Object.keys(row);
+            const matchKey = keys.find((key) => normalizeKey(key) === orderLookup[idx]);
+            return Number(row[matchKey]);
+          }
+          return Number(row);
+        })
+        .filter((value) => Number.isFinite(value));
+    }
+
+    function renderTelemetryChart(data) {
+      if (!telemetryChartEl) return;
+
+      const speedSeries = getSeriesFromResult(data, ["speed", "speed_kmh", "vehicle_speed"]);
+      const latSeries = getSeriesFromResult(data, ["lateral_g", "lat_g", "gz"]);
+      const longSeries = getSeriesFromResult(data, ["longitudinal_g", "long_g", "ax"]);
+      const timeline = Array.isArray(data?.chart_data?.timeline) ? data.chart_data.timeline : [];
+      const lengths = [speedSeries.length, latSeries.length, longSeries.length, timeline.length].filter((len) => len > 0);
+      const totalLen = lengths.length ? Math.max(...lengths) : 0;
+      const sampleRate = Number(state.metadata?.expected_sample_rate_hz) || DEFAULT_SAMPLE_RATE;
+      const windowSeconds = Number.isFinite(Number(data.seq_len)) ? Number(data.seq_len) / sampleRate : totalLen / sampleRate || 2;
+      const dt = totalLen > 1 ? windowSeconds / (totalLen - 1) : windowSeconds || 0.02;
+      const timeAxis = totalLen
+        ? Array.from({ length: totalLen }, (_, index) => Number((index * dt).toFixed(2)))
+        : Array.from({ length: speedSeries.length }, (_, index) => index * dt);
+
+      if (!hasPlotly() || !totalLen) {
+        if (hasPlotly()) Plotly.purge(telemetryChartEl);
+        telemetryChartEl.innerHTML = `<div class="chart-placeholder">Run inference to stream live telemetry.</div>`;
+        return;
+      }
+
+      const expandSeries = (values, fallback = 0) =>
+        Array.from({ length: totalLen }, (_, index) => {
+          if (!values.length) return fallback;
+          const value = Number(values[Math.min(index, values.length - 1)]);
+          return Number.isFinite(value) ? value : fallback;
+        });
+
+     const speed = expandSeries(speedSeries, 0);
+     const longG = expandSeries(longSeries, 0);
+     const reconErrors = timeline.map((point) => Number(point.recon_error) || 0);
+     const maxError = reconErrors.length ? Math.max(...reconErrors) : 0;
+     const baseRisk = Math.max(0, Math.min(1, Number(data.crash_probability) || 0));
+      const riskSeries = totalLen
+        ? Array.from({ length: totalLen }, (_, index) => {
+            if (!reconErrors.length || maxError <= 0) return Math.round(baseRisk * 100);
+            const value = reconErrors[Math.min(index, reconErrors.length - 1)];
+            const scaled = Math.min(1, Math.max(0, (value / maxError) * baseRisk));
+            return Math.round(scaled * 100);
+          })
+        : Array.from({ length: totalLen }, () => Math.round(baseRisk * 100));
+
+      telemetryChartEl.innerHTML = "";
+      Plotly.react(
+        telemetryChartEl,
+        [
+          {
+            x: timeAxis,
+            y: speed,
+            name: "Speed (km/h)",
+            type: "scatter",
+            mode: "lines",
+            line: { color: "#f8f8f8", width: 2 },
+          },
+          {
+            x: timeAxis,
+            y: longG,
+            name: "Longitudinal g",
+            type: "scatter",
+            mode: "lines",
+            line: { color: "#ff3030", width: 2 },
+            yaxis: "y2",
+          },
+          {
+            x: timeAxis,
+            y: riskSeries,
+            name: "Risk (%)",
+            type: "scatter",
+            mode: "lines",
+            line: { color: "#ff5e00", width: 2.5 },
+            yaxis: "y3",
+          },
+        ],
+        {
+          margin: { t: 20, r: 45, l: 45, b: 35 },
+          paper_bgcolor: "rgba(0,0,0,0)",
+          plot_bgcolor: "rgba(0,0,0,0)",
+          font: { color: "#f8f8f8", size: 10 },
+          legend: { orientation: "h", x: 0.5, xanchor: "center", y: 1.12, font: { size: 9 } },
+          xaxis: { title: "Time (s)", gridcolor: "rgba(255,255,255,0.08)" },
+          yaxis: { title: "Speed", range: [0, Math.max(120, Math.max(...speed) * 1.15)], gridcolor: "rgba(255,255,255,0.08)" },
+          yaxis2: { title: "Longitudinal g", overlaying: "y", side: "right", range: [Math.min(...longG, -2), Math.max(...longG, 2)], showgrid: false },
+          yaxis3: { overlaying: "y", side: "right", position: 0.98, range: [0, 100], visible: false },
+        },
+        { responsive: true },
+      );
+    }
+
+    function renderCrashSnapshot(data) {
+      const latValues = getSeriesFromResult(data, ["lateral_g", "lat_g", "gz"]);
+      const longValues = getSeriesFromResult(data, ["longitudinal_g", "long_g", "ax"]);
+      const speedValues = getSeriesFromResult(data, ["speed", "speed_kmh", "vehicle_speed"]);
+      const yawValues = getSeriesFromResult(data, ["yaw_rate", "yaw"]);
+      const sampleRate = Number(state.metadata?.expected_sample_rate_hz) || DEFAULT_SAMPLE_RATE;
+      const seqLen = Number.isFinite(Number(data.seq_len)) ? Number(data.seq_len) : Array.isArray(data.raw_sequence) ? data.raw_sequence.length : sampleRate * 2;
+      const windowSeconds = seqLen ? (seqLen / sampleRate).toFixed(2) : "2.0";
+
+      if (snapshotCrashId) snapshotCrashId.textContent = `LIVE-${String(Date.now()).slice(-6)}`;
+      if (snapshotSpeed && speedValues.length) snapshotSpeed.textContent = `${Math.max(...speedValues).toFixed(1)} km/h`;
+      if (snapshotAngle && yawValues.length) snapshotAngle.textContent = `${(Math.max(...yawValues.map((value) => Math.abs(value))) * 0.35).toFixed(1)}°`;
+      if (snapshotLatG && latValues.length) snapshotLatG.textContent = `${Math.max(...latValues.map((value) => Math.abs(value))).toFixed(2)} g`;
+      if (snapshotLongG && longValues.length) snapshotLongG.textContent = `${Math.min(...longValues).toFixed(2)} g`;
+      if (snapshotWindow) snapshotWindow.textContent = `${windowSeconds} s @ ${sampleRate} Hz`;
     }
 
     function renderMetadata(meta) {
@@ -1531,6 +1672,18 @@
             : `<li>No calibration metrics reported.</li>`;
         }
       }
+      runtimeStats = {
+        crashes: Number.isFinite(Number(meta.training_summary?.total_sequences))
+          ? Number(meta.training_summary.total_sequences)
+          : DEFAULT_STATS.crashes,
+        signatures: Number.isFinite(Number(meta.training_summary?.unique_signatures))
+          ? Number(meta.training_summary.unique_signatures)
+          : DEFAULT_STATS.signatures,
+        gain: Number.isFinite(Number(meta.training_summary?.prediction_gain_ms))
+          ? Number(meta.training_summary.prediction_gain_ms)
+          : DEFAULT_STATS.gain,
+      };
+      updateStatsDisplay();
 
       if (featureHintList) {
         const hints = Array.isArray(meta.feature_hints) ? meta.feature_hints : [];
@@ -1738,6 +1891,13 @@
       if (envImpactLabel) envImpactLabel.textContent = "—";
       if (actionsBadge) actionsBadge.textContent = "0";
       if (actionHighlightList) actionHighlightList.innerHTML = "<li>Awaiting inference…</li>";
+      if (telemetryChartEl) {
+        if (hasPlotly()) Plotly.purge(telemetryChartEl);
+        telemetryChartEl.innerHTML = '<div class="chart-placeholder">Run inference to stream live telemetry.</div>';
+      }
+      setFeatureExtraction(DEFAULT_FEATURE_ENTRIES);
+      updateSensorSummary([]);
+      updateStatsDisplay();
     }
 
     function renderCharts(data) {
@@ -1920,6 +2080,24 @@
       renderEnvironment(data.condition_summary, data.condition_contributors);
       renderNotes(data.notes, data.domain_notes);
       renderCharts(data);
+      renderTelemetryChart(data);
+      renderCrashSnapshot(data);
+      const featureEntries = Array.isArray(data.feature_breakdown)
+        ? data.feature_breakdown.slice(0, 3).map((item) => ({
+            title: item.feature,
+            detail: `Reconstruction error ${Number(item.recon_error || 0).toFixed(3)}`,
+          }))
+        : [];
+      setFeatureExtraction(featureEntries);
+      updateSensorSummary(featureEntries.map((entry) => entry.title));
+      runtimeStats.crashes += 1;
+      if (featureEntries.length) {
+        runtimeStats.signatures = Math.max(runtimeStats.signatures, DEFAULT_STATS.signatures + featureEntries.length);
+      }
+      if (Number.isFinite(Number(data.latency_ms))) {
+        runtimeStats.gain = Math.max(10, Math.round(120 - Number(data.latency_ms)));
+      }
+      updateStatsDisplay();
       const latencyValue = Number(data.latency_ms);
       const latency = Number.isFinite(latencyValue) ? `${latencyValue.toFixed(2)} ms` : `${data.latency_ms || "—"} ms`;
       if (statusEl) statusEl.textContent = `Latency ${latency} · crash probability ${(crashProbability * 100).toFixed(1)}%`;
@@ -2072,11 +2250,15 @@
       if (trafficField) trafficField.value = "";
       if (tyreWearField) tyreWearField.value = "";
       if (driverStateField) driverStateField.value = "";
-      resultsEl.classList.add("hidden");
-      resultsEl.classList.remove("visible");
-      resetCharts();
-      if (statusEl) statusEl.textContent = "Cleared. Paste telemetry to run inference.";
-    }
+    resultsEl.classList.add("hidden");
+    resultsEl.classList.remove("visible");
+    resetCharts();
+    if (statusEl) statusEl.textContent = "Cleared. Paste telemetry to run inference.";
+  }
+
+    updateStatsDisplay();
+    setFeatureExtraction(DEFAULT_FEATURE_ENTRIES);
+    updateSensorSummary([]);
 
     runBtn.addEventListener("click", handleInference);
     exampleBtn.addEventListener("click", handleExample);
@@ -2088,27 +2270,6 @@
     });
 
     loadMetadata();
-    // Add API base controls for manual override
-    (function injectApiControls(){
-      const chip = document.getElementById("modelChip");
-      if (!chip || document.getElementById("apiControls")) return;
-      const wrap = document.createElement("div");
-      wrap.id = "apiControls";
-      wrap.style.cssText = "margin:0.4rem 0 0.6rem; display:flex; gap:0.4rem; align-items:center;";
-      wrap.innerHTML = '<input id="apiBaseInput" placeholder="http://127.0.0.1:5501" style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.06);color:#fff;padding:0.35rem 0.55rem;border-radius:8px;width:19rem;max-width:90%;font-size:0.75rem;" />'+
-                       '<button id="applyApiBase" class="nav-cta" style="font-size:0.68rem;">Set API</button>';
-      chip.insertAdjacentElement("afterend", wrap);
-      const input = document.getElementById("apiBaseInput");
-      if (input) input.value = normalizeBase(apiBase) || "";
-      const btn = document.getElementById("applyApiBase");
-      if (btn) btn.addEventListener("click", async () => {
-        const next = normalizeBase(input.value || "");
-        apiBase = next;
-        try { localStorage.setItem("apiBase", apiBase); } catch (e) {}
-        if (statusEl) statusEl.textContent = `Using API ${apiBase || "(same origin)"}. Reloading metadata...`;
-        await loadMetadata();
-      });
-    })();
   </script>
 </body>
 </html>

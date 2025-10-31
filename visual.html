@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VISIONALTRIX — Rainy Overtake Visual</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    :root {
+      --bg: #030303;
+      --accent: #ff1e00;
+      --text: #f8f8f8;
+      --muted: rgba(248, 248, 248, 0.6);
+    }
+    body {
+      font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background: radial-gradient(circle at 10% 20%, #111 0%, #000 45%, #000 100%);
+      min-height: 100vh;
+      overflow-x: hidden;
+      position: relative;
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      inset: -20% -10% auto -10%;
+      height: 80vh;
+      background: radial-gradient(circle at 20% 30%, rgba(255, 94, 0, 0.2), transparent 65%),
+                  radial-gradient(circle at 80% 20%, rgba(236, 87, 117, 0.15), transparent 60%);
+      filter: blur(120px);
+      pointer-events: none;
+      z-index: 0;
+    }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+    .scroll-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 4px;
+      width: 0;
+      background: linear-gradient(90deg, rgba(255,94,0,1), rgba(255,195,0,1));
+      z-index: 1400;
+      box-shadow: 0 0 18px rgba(255,94,0,0.65);
+      transition: width 0.2s ease;
+    }
+    .particles {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .particle {
+      position: absolute;
+      width: 2px;
+      height: 16px;
+      background: radial-gradient(circle, rgba(255, 30, 0, 1) 0%, rgba(255, 30, 0, 0) 75%);
+      opacity: 0.45;
+      border-radius: 999px;
+      filter: blur(1px);
+      animation: drift 12s linear infinite;
+    }
+    @keyframes drift {
+      0% {
+        transform: translateY(0);
+      }
+      100% {
+        transform: translateY(120vh);
+      }
+    }
+
+    nav {
+      position: fixed;
+      top: 1.1rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 1.4rem;
+      z-index: 1300;
+      background: rgba(0, 0, 0, 0.42);
+      backdrop-filter: blur(18px);
+      padding: 0.65rem 1.8rem;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      align-items: center;
+      box-shadow: 0 18px 42px rgba(0,0,0,0.35);
+    }
+    .logo {
+      font-family: "Space Grotesk", sans-serif;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      font-size: 0.85rem;
+      display: flex;
+      gap: 0.4rem;
+      align-items: center;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+    .logo-dot {
+      width: 0.5rem;
+      height: 0.5rem;
+      background: var(--accent);
+      border-radius: 999px;
+      box-shadow: 0 0 14px rgba(255, 30, 0, 0.8);
+    }
+    nav a {
+      color: var(--muted);
+      font-weight: 500;
+      font-size: 0.8rem;
+      transition: 0.2s ease;
+    }
+    nav a:hover,
+    nav a.active {
+      color: #fff;
+    }
+    .nav-cta {
+      background: linear-gradient(120deg, rgba(255, 65, 0, 1), rgba(180, 15, 5, 1));
+      padding: 0.45rem 1.1rem;
+      border-radius: 999px;
+      border: none;
+      color: white;
+      font-size: 0.7rem;
+      cursor: pointer;
+      box-shadow: 0 6px 20px rgba(255, 30, 0, 0.4);
+      transition: transform 0.2s;
+      white-space: nowrap;
+    }
+    .nav-cta:hover {
+      transform: translateY(-2px);
+    }
+    .info-ticker {
+      position: fixed;
+      top: 4.6rem;
+      left: 50%;
+      transform: translateX(-50%);
+      width: min(720px, 90vw);
+      background: rgba(0,0,0,0.35);
+      border: 1px solid rgba(255,255,255,0.05);
+      border-radius: 999px;
+      padding: 0.35rem 0;
+      overflow: hidden;
+      z-index: 1200;
+      backdrop-filter: blur(16px);
+    }
+    .info-track {
+      display: flex;
+      gap: 2.2rem;
+      animation: ticker 22s linear infinite;
+      font-size: 0.62rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.68);
+      padding-inline: 1.5rem;
+      white-space: nowrap;
+    }
+    @keyframes ticker {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    main {
+      position: relative;
+      min-height: 100vh;
+      padding: 8.5rem min(5vw, 4rem) 3.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.8rem;
+      z-index: 10;
+    }
+    .sim-section {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .sim-headline {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      letter-spacing: 0.04em;
+      font-weight: 700;
+    }
+    .sim-intro {
+      max-width: 540px;
+      color: rgba(248, 248, 248, 0.7);
+      line-height: 1.6;
+      font-size: 0.88rem;
+    }
+    .sim-stage {
+      position: relative;
+      min-height: 580px;
+      border-radius: 1.5rem;
+      border: 1px solid rgba(255,255,255,0.06);
+      overflow: hidden;
+      background: radial-gradient(circle at 20% 20%, rgba(255,94,0,0.12), transparent 55%),
+                  radial-gradient(circle at 70% 80%, rgba(30,144,255,0.18), transparent 60%),
+                  rgba(5,5,5,0.75);
+      box-shadow: 0 26px 55px rgba(0,0,0,0.55);
+    }
+    #canvas-container {
+      position: absolute;
+      inset: 0;
+    }
+    .sim-overlay {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 1.4rem 1.8rem;
+      pointer-events: none;
+    }
+    .sim-top,
+    .sim-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 1.4rem;
+      flex-wrap: wrap;
+    }
+    .sim-bottom {
+      align-items: flex-end;
+    }
+    .sim-header h2 {
+      font-size: 1.6rem;
+      font-family: "Space Grotesk", sans-serif;
+      margin-bottom: 0.35rem;
+      letter-spacing: 0.05em;
+    }
+    .sim-status {
+      font-size: 0.92rem;
+      color: rgba(248, 248, 248, 0.78);
+    }
+    .sim-status--before {
+      color: rgba(248,113,113,0.95);
+    }
+    .sim-status--after {
+      color: rgba(134,239,172,0.95);
+    }
+    .sim-controls {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      pointer-events: auto;
+    }
+    .sim-btn {
+      padding: 0.8rem 1.6rem;
+      border-radius: 1rem;
+      border: none;
+      font-size: 0.78rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      cursor: pointer;
+      transition: transform 0.18s ease, box-shadow 0.18s ease;
+      box-shadow: 0 18px 32px rgba(0,0,0,0.38);
+    }
+    .sim-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 24px 42px rgba(0,0,0,0.45);
+    }
+    .sim-btn--before {
+      background: linear-gradient(135deg, rgba(220,38,38,0.95), rgba(185,28,28,0.95));
+      color: #fff;
+    }
+    .sim-btn--after {
+      background: linear-gradient(135deg, rgba(34,197,94,0.95), rgba(22,163,74,0.95));
+      color: #fff;
+    }
+    .sim-info {
+      width: 260px;
+      background: rgba(9,13,26,0.65);
+      border: 1px solid rgba(96,165,250,0.35);
+      border-radius: 1.1rem;
+      padding: 1rem 1.15rem;
+      font-size: 0.72rem;
+      color: rgba(173, 216, 255, 0.82);
+      pointer-events: auto;
+      backdrop-filter: blur(12px);
+    }
+    .sim-info__title {
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 0.68rem;
+      margin-bottom: 0.65rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid rgba(96,165,250,0.35);
+      letter-spacing: 0.12em;
+      color: rgba(191,219,254,0.9);
+      font-family: "Space Grotesk", sans-serif;
+    }
+    .sim-info p {
+      display: flex;
+      justify-content: space-between;
+      gap: 0.4rem;
+      margin: 0.3rem 0;
+      font-family: "Space Grotesk", sans-serif;
+    }
+    .sim-info span {
+      font-family: "Poppins", sans-serif;
+      font-weight: 500;
+    }
+    .sim-error {
+      min-width: 200px;
+      max-width: 320px;
+      min-height: 34px;
+      max-height: 140px;
+      background: rgba(0,0,0,0.42);
+      border: 1px solid rgba(248,113,113,0.4);
+      border-radius: 0.75rem;
+      padding: 0.6rem 0.75rem;
+      font-size: 0.62rem;
+      color: rgba(248,113,113,0.8);
+      overflow: auto;
+      pointer-events: auto;
+      font-family: "Space Grotesk", monospace;
+    }
+    footer {
+      padding: 1.6rem;
+      text-align: center;
+      color: rgba(255,255,255,0.4);
+      font-size: 0.64rem;
+    }
+    @media (max-width: 980px) {
+      nav {
+        width: calc(100% - 1.6rem);
+        justify-content: space-between;
+      }
+      .info-ticker {
+        display: none;
+      }
+      main {
+        padding: 7.5rem 1rem 2.5rem;
+      }
+      .sim-stage {
+        min-height: 480px;
+      }
+      .sim-overlay {
+        padding: 1.1rem;
+        gap: 1rem;
+      }
+      .sim-top,
+      .sim-bottom {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .sim-controls {
+        justify-content: center;
+      }
+      .sim-info,
+      .sim-error {
+        width: 100%;
+      }
+      .sim-info {
+        order: 2;
+      }
+      .sim-controls {
+        order: 1;
+      }
+      .sim-error {
+        order: 3;
+      }
+    }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.155.0/build/three.min.js"></script>
+</head>
+<body>
+  <div class="scroll-progress" id="scrollProgress"></div>
+  <div class="particles" id="particles"></div>
+
+  <nav>
+    <div class="logo"><span class="logo-dot"></span> VISIONALTRIX</div>
+    <a href="index.html#about">About</a>
+    <a href="index.html#why">Why F1</a>
+    <a href="visual.html" class="active">Visual</a>
+    <a href="result.html">Results</a>
+    <a href="ai-model.html">AI Model</a>
+    <a href="index.html#demo">Demo</a>
+    <a href="index.html#stack">Stack</a>
+    <a href="index.html#contact">Contact</a>
+    <button class="nav-cta" onclick="location.href='index.html#demo'">Live Safety Demo</button>
+  </nav>
+
+  <div class="info-ticker">
+    <div class="info-track">
+      <span>Edge-ready crash anomaly detection</span>
+      <span>F1 telemetry distilled into ADAS insights</span>
+      <span>Explainable risk scoring with environment context</span>
+      <span>Designed for hackathons, mobility labs, OEM pilots</span>
+    </div>
+  </div>
+
+  <main>
+    <section class="sim-section">
+      <h1 class="sim-headline">Rainy Overtake Comparison</h1>
+      <p class="sim-intro">
+        Replay the before/after impact of our F1-trained countermeasures on a high-speed wet pass. Toggle each scenario to see how the safety bridge keeps the car planted when the surface turns unpredictable.
+      </p>
+      <div class="sim-stage">
+        <div id="canvas-container"></div>
+        <div class="sim-overlay">
+          <div class="sim-top">
+            <div class="sim-header">
+              <h2>Live Scenario</h2>
+              <p id="status-text" class="sim-status">Status: Select a scenario</p>
+            </div>
+            <div id="info-panel" class="sim-info">
+              <div class="sim-info__title">AI Safety Bridge</div>
+              <p><span>Model</span><span>f1-safety-bridge-v1</span></p>
+              <p><span>Scenario</span><span>Wet-lane overtake</span></p>
+              <p><span>Risk (Untrained)</span><span class="sim-status--before">0.82</span></p>
+              <p><span>Risk (F1-Trained)</span><span class="sim-status--after">0.29</span></p>
+              <p id="ai-action"><span>Action</span><span style="color:rgba(160,174,192,0.8)">Awaiting input…</span></p>
+            </div>
+          </div>
+          <div class="sim-bottom">
+            <div class="sim-controls">
+              <button id="play-before" class="sim-btn sim-btn--before">Before: Untrained ADAS</button>
+              <button id="play-after" class="sim-btn sim-btn--after">After: F1-Trained ADAS</button>
+            </div>
+            <pre id="err" class="sim-error"></pre>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>© 2025 VISIONALTRIX — Visual Analytics</footer>
+
+  <script>
+  const CONFIG = {
+    CAR_Y_POS: 0.4,
+    LANE_POS_LEFT: -5.0,
+    LANE_POS_OVERTAKE: -2.0,
+    TRAFFIC_Z: -6.0,
+    CAMERA_FOLLOW_OFFSET: new THREE.Vector3(6, 4, -10),
+    RAIN_PARTICLE_COUNT: 3000,
+    RAIN_FALL_SPEED: 0.3,
+  };
+
+  let scene, camera, renderer, clock, mixer;
+  let egoCar, trafficCar, rain;
+  let beforeClip, afterClip;
+  let initialPos, initialQuat;
+  let activeScenario = null;
+
+  const statusText = document.getElementById("status-text");
+  const aiActionText = document.getElementById("ai-action");
+  const errorText = document.getElementById("err");
+  const container = document.getElementById("canvas-container");
+
+  try {
+    init();
+    animate();
+  } catch (e) {
+    console.error(e);
+    errorText.textContent = e.stack;
+  }
+
+  function init() {
+    scene = new THREE.Scene();
+    scene.fog = new THREE.Fog(0x1f2937, 30, 70);
+    clock = new THREE.Clock();
+
+    camera = new THREE.PerspectiveCamera(60, container.clientWidth / container.clientHeight || window.innerWidth / window.innerHeight, 0.1, 1000);
+    camera.position.set(6, 4, -15);
+    camera.lookAt(0, 0, 0);
+
+    renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    container.appendChild(renderer.domElement);
+
+    scene.add(new THREE.AmbientLight(0xffffff, 0.7));
+    const dirLight = new THREE.DirectionalLight(0xffffff, 0.6);
+    dirLight.position.set(5, 10, -5);
+    scene.add(dirLight);
+
+    const roadGeo = new THREE.PlaneGeometry(14, 60);
+    const roadMat = new THREE.MeshStandardMaterial({ color: 0x1f2937, roughness: 0.2, metalness: 0.1 });
+    const road = new THREE.Mesh(roadGeo, roadMat);
+    road.rotation.x = -Math.PI / 2;
+    scene.add(road);
+
+    const divGeo = new THREE.BoxGeometry(0.4, 1, 60);
+    const divMat = new THREE.MeshStandardMaterial({ color: 0xd9b000 });
+    const divider = new THREE.Mesh(divGeo, divMat);
+    divider.position.set(0, 0.5, 0);
+    scene.add(divider);
+
+    createLaneLines();
+
+    rain = createRain();
+    scene.add(rain);
+
+    trafficCar = createCar(0xcc0000);
+    trafficCar.position.set(CONFIG.LANE_POS_LEFT, 0, CONFIG.TRAFFIC_Z);
+    scene.add(trafficCar);
+
+    egoCar = createCar(0x3b82f6);
+    egoCar.position.set(CONFIG.LANE_POS_LEFT, 0, -20);
+    scene.add(egoCar);
+
+    createAmbientCars();
+
+    initialPos = egoCar.position.clone();
+    initialQuat = egoCar.quaternion.clone();
+
+    mixer = new THREE.AnimationMixer(egoCar);
+    createClips();
+
+    document.getElementById("play-before").addEventListener("click", playBefore);
+    document.getElementById("play-after").addEventListener("click", playAfter);
+    window.addEventListener("resize", onWindowResize);
+  }
+
+  function animate() {
+    requestAnimationFrame(animate);
+    const delta = clock.getDelta();
+
+    if (mixer) mixer.update(delta);
+
+    if (rain) {
+      const positions = rain.geometry.attributes.position.array;
+      for (let i = 0; i < positions.length; i += 3) {
+        positions[i + 1] -= CONFIG.RAIN_FALL_SPEED;
+        if (positions[i + 1] < -10) {
+          positions[i + 1] = 40;
+        }
+      }
+      rain.geometry.attributes.position.needsUpdate = true;
+    }
+
+    if (egoCar && activeScenario) {
+      const targetPos = egoCar.position;
+      const wantedPos = new THREE.Vector3().copy(targetPos).add(CONFIG.CAMERA_FOLLOW_OFFSET);
+      camera.position.lerp(wantedPos, 0.08);
+      const lookAtPos = new THREE.Vector3(targetPos.x, targetPos.y + 0.5, targetPos.z);
+      camera.lookAt(lookAtPos);
+    }
+
+    renderer.render(scene, camera);
+  }
+
+  function createCar(color) {
+    const car = new THREE.Group();
+    const bodyMat = new THREE.MeshStandardMaterial({ color, roughness: 0.3, metalness: 0.2 });
+    const bodyGeo = new THREE.BoxGeometry(1.8, 0.8, 3.0);
+    const bodyMesh = new THREE.Mesh(bodyGeo, bodyMat);
+    bodyMesh.position.y = CONFIG.CAR_Y_POS;
+    car.add(bodyMesh);
+
+    const cabinMat = new THREE.MeshStandardMaterial({ color: 0x222222, transparent: true, opacity: 0.6 });
+    const cabinGeo = new THREE.BoxGeometry(1.4, 0.7, 1.8);
+    const cabinMesh = new THREE.Mesh(cabinGeo, cabinMat);
+    cabinMesh.position.y = CONFIG.CAR_Y_POS * 2 + 0.35;
+    cabinMesh.position.z = -0.2;
+    car.add(cabinMesh);
+
+    return car;
+  }
+
+  function createRain() {
+    const particles = new THREE.BufferGeometry();
+    const positions = [];
+
+    for (let i = 0; i < CONFIG.RAIN_PARTICLE_COUNT; i++) {
+      positions.push(
+        (Math.random() - 0.5) * 50,
+        Math.random() * 40,
+        (Math.random() - 0.5) * 60
+      );
+    }
+
+    particles.setAttribute("position", new THREE.Float32BufferAttribute(positions, 3));
+    const mat = new THREE.PointsMaterial({ color: 0xaaaaee, size: 0.1, transparent: true, opacity: 0.6 });
+
+    return new THREE.Points(particles, mat);
+  }
+
+  function createLaneLines() {
+    const lineMat = new THREE.MeshStandardMaterial({ color: 0xaaaaaa, roughness: 0.8 });
+    const lineGeo = new THREE.BoxGeometry(0.1, 0.05, 3.0);
+    const spacing = 3.0;
+    const lineCount = 10;
+
+    const laneCenterLeftPos = -3.5;
+    const laneCenterRightPos = 3.5;
+
+    for (let i = -lineCount; i < lineCount; i++) {
+      const zPos = i * (3.0 + spacing);
+
+      const meshLeft = new THREE.Mesh(lineGeo, lineMat);
+      meshLeft.position.set(laneCenterLeftPos, 0.05, zPos);
+      scene.add(meshLeft);
+
+      const meshRight = new THREE.Mesh(lineGeo, lineMat);
+      meshRight.position.set(laneCenterRightPos, 0.05, zPos);
+      scene.add(meshRight);
+    }
+  }
+
+  function createAmbientCars() {
+    const colors = [0x6b7280, 0x15803d, 0xbe123c, 0xfacc15, 0x8b5cf6, 0x06b6d4];
+    const spawnPoints = [
+      { x: 6.5, z: -40, rot: -5 },
+      { x: -6.5, z: -30, rot: 3 },
+      { x: 6.5, z: -18, rot: 2 },
+      { x: -6.5, z: 0, rot: -3 },
+      { x: 6.5, z: 20, rot: -1 },
+      { x: -6.5, z: 30, rot: 4 },
+    ];
+
+    spawnPoints.forEach((point, index) => {
+      const car = createCar(colors[index % colors.length]);
+      car.position.set(point.x, 0, point.z);
+      car.rotation.y = THREE.MathUtils.degToRad(point.rot);
+      scene.add(car);
+    });
+  }
+
+  function createClips() {
+    const q0 = new THREE.Quaternion().setFromEuler(new THREE.Euler(0, THREE.MathUtils.degToRad(0), 0));
+    const q10 = new THREE.Quaternion().setFromEuler(new THREE.Euler(0, THREE.MathUtils.degToRad(10), 0));
+    const q15 = new THREE.Quaternion().setFromEuler(new THREE.Euler(0, THREE.MathUtils.degToRad(15), 0));
+    const q25 = new THREE.Quaternion().setFromEuler(new THREE.Euler(0, THREE.MathUtils.degToRad(25), 0));
+    const q35 = new THREE.Quaternion().setFromEuler(new THREE.Euler(0, THREE.MathUtils.degToRad(35), 0));
+    const q65 = new THREE.Quaternion().setFromEuler(new THREE.Euler(0, THREE.MathUtils.degToRad(65), 0));
+    const q90 = new THREE.Quaternion().setFromEuler(new THREE.Euler(0, THREE.MathUtils.degToRad(90), 0));
+    const CAR_Y = 0;
+
+    const beforeTimes = [0.0, 1.3, 2.0, 2.4, 2.8, 3.2, 3.5];
+    const beforePositions = [
+      -5.25, CAR_Y, -20,
+      -5.25, CAR_Y, -10,
+      -1.75, CAR_Y, -6,
+       0.3,  CAR_Y, -3,
+       0.1,  CAR_Y, -1,
+       0.0,  CAR_Y,  0,
+       0.0,  CAR_Y,  0
+    ];
+    const beforeRotations = [
+      ...q0.toArray(),
+      ...q0.toArray(),
+      ...q25.toArray(),
+      ...q65.toArray(),
+      ...q90.toArray(),
+      ...q90.toArray(),
+      ...q90.toArray()
+    ];
+
+    const posTrack = new THREE.VectorKeyframeTrack(".position", beforeTimes, beforePositions);
+    const rotTrack = new THREE.QuaternionKeyframeTrack(".quaternion", beforeTimes, beforeRotations);
+    beforeClip = new THREE.AnimationClip("Before_Fishtail_Crash", -1, [posTrack, rotTrack]);
+
+    const afterTimes = [0.0, 1.3, 1.6, 2.0, 2.3, 2.6, 3.4, 4.0];
+    const afterPositions = [
+      -5.25, CAR_Y, -20,
+      -5.25, CAR_Y, -12,
+      -5.25, CAR_Y, -11,
+      -3.5,  CAR_Y,  -9,
+      -1.75, CAR_Y,  -7,
+      -1.0,  CAR_Y,  -6,
+      -1.75, CAR_Y,  -4,
+      -1.75, CAR_Y,   1
+    ];
+    const afterRotations = [
+      ...q0.toArray(),
+      ...q0.toArray(),
+      ...q0.toArray(),
+      ...q10.toArray(),
+      ...q15.toArray(),
+      ...q25.toArray(),
+      ...q0.toArray(),
+      ...q0.toArray()
+    ];
+
+    const afterPosTrack = new THREE.VectorKeyframeTrack(".position", afterTimes, afterPositions);
+    const afterRotTrack = new THREE.QuaternionKeyframeTrack(".quaternion", afterTimes, afterRotations);
+    afterClip = new THREE.AnimationClip("After_ADAS_Avoid", -1, [afterPosTrack, afterRotTrack]);
+  }
+
+  function resetCar() {
+    mixer.stopAllAction();
+    egoCar.position.copy(initialPos);
+    egoCar.quaternion.copy(initialQuat);
+    egoCar.updateMatrixWorld(true);
+  }
+
+  function playBefore() {
+    resetCar();
+    const act = mixer.clipAction(beforeClip);
+    act.loop = THREE.LoopOnce;
+    act.clampWhenFinished = true;
+    act.play();
+    activeScenario = "before";
+    statusText.textContent = "Status: Untrained ADAS → sharp overtake in wet → skid → divider";
+    statusText.classList.remove("sim-status--after");
+    statusText.classList.add("sim-status", "sim-status--before");
+    aiActionText.innerHTML = '<span>Action</span><span class="sim-status--before">No intervention. Vehicle lost lateral stability.</span>';
+  }
+
+  function playAfter() {
+    resetCar();
+    const act = mixer.clipAction(afterClip);
+    act.loop = THREE.LoopOnce;
+    act.clampWhenFinished = true;
+    act.play();
+    activeScenario = "after";
+    statusText.textContent = "Status: F1-trained ADAS → detected slip → corrected skid → completed overtake";
+    statusText.classList.remove("sim-status--before");
+    statusText.classList.add("sim-status", "sim-status--after");
+    aiActionText.innerHTML = '<span>Action</span><span class="sim-status--after">Oversteer detected → counter-steer & throttle control applied.</span>';
+  }
+
+  function onWindowResize() {
+    const width = window.innerWidth;
+    const height = window.innerHeight;
+    camera.aspect = width / height;
+    camera.updateProjectionMatrix();
+    renderer.setSize(width, height);
+  }
+  </script>
+
+  <script>
+    const scrollProgress = document.getElementById("scrollProgress");
+    window.addEventListener("scroll", () => {
+      const scrollHeight = document.body.scrollHeight - window.innerHeight;
+      const progress = scrollHeight > 0 ? (window.scrollY / scrollHeight) * 100 : 0;
+      scrollProgress.style.width = progress + "%";
+    });
+
+    const particlesContainer = document.getElementById("particles");
+    function spawnParticles() {
+      const count = 80;
+      const vw = window.innerWidth;
+      const vh = window.innerHeight;
+      particlesContainer.innerHTML = "";
+      for (let i = 0; i < count; i++) {
+        const p = document.createElement("span");
+        p.className = "particle";
+        p.style.left = Math.random() * vw + "px";
+        p.style.top = Math.random() * vh + "px";
+        p.style.animationDelay = (Math.random() * -12).toFixed(2) + "s";
+        p.style.opacity = (0.25 + Math.random() * 0.35).toFixed(2);
+        particlesContainer.appendChild(p);
+      }
+    }
+    spawnParticles();
+    window.addEventListener("resize", spawnParticles);
+  </script>
+</body>
+</html>
