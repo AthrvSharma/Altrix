@@ -1,0 +1,1253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+  <title>VISIONALTRIX | F1-to-Road Safety AI</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  
+  <!-- Model Viewer -->
+  <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.3.0/model-viewer.min.js"></script>
+
+  <style>
+    /* ============ RESET ============ */
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --bg: #030303;
+      --card: rgba(5, 5, 5, 0.35);
+      --accent: #ff1e00;
+      --accent-soft: rgba(255, 30, 0, 0.25);
+      --text: #f8f8f8;
+      --muted: rgba(248, 248, 248, 0.55);
+      --radius-lg: 1.5rem;
+      --panel: rgba(0,0,0,0.55);
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: radial-gradient(circle at 10% 20%, #111 0%, #000 45%, #000 100%);
+      color: var(--text);
+      font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      min-height: 100vh;
+      overflow-x: hidden;
+      position: relative;
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      inset: -20% -10% auto -10%;
+      height: 70vh;
+      background: radial-gradient(circle at 20% 30%, rgba(255, 94, 0, 0.2), transparent 65%),
+                  radial-gradient(circle at 80% 20%, rgba(236, 87, 117, 0.15), transparent 60%);
+      filter: blur(120px);
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    /* ============ NAVBAR ============ */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1.8rem;
+      z-index: 1000;
+      background: rgba(0, 0, 0, 0.42);
+      backdrop-filter: blur(18px);
+      padding: 1.8rem 2.5rem;
+      border-radius: 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.35);
+    }
+    .logo {
+      font-family: "Space Grotesk", sans-serif;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      font-size: 1.05rem;
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+    .logo-dot {
+      width: 0.65rem;
+      height: 0.65rem;
+      background: var(--accent);
+      border-radius: 999px;
+      box-shadow: 0 0 14px rgba(255, 30, 0, 0.8);
+    }
+    nav a {
+      color: var(--muted);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: 0.2s ease;
+    }
+    nav a:hover,
+    nav a.active {
+      color: #fff;
+    }
+    .nav-cta {
+      background: linear-gradient(120deg, rgba(255, 65, 0, 1), rgba(180, 15, 5, 1));
+      padding: 0.65rem 1.5rem;
+      border-radius: 999px;
+      border: none;
+      color: white;
+      font-size: 0.85rem;
+      cursor: pointer;
+      box-shadow: 0 6px 20px rgba(255, 30, 0, 0.4);
+      transition: transform 0.2s;
+      white-space: nowrap;
+    }
+    .nav-cta:hover {
+      transform: translateY(-2px);
+    }
+
+    .info-ticker {
+      position: fixed;
+      top: 6.2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      width: min(720px, 90vw);
+      background: rgba(0,0,0,0.35);
+      border: 1px solid rgba(255,255,255,0.05);
+      border-radius: 999px;
+      padding: 0.5rem 0;
+      overflow: hidden;
+      z-index: 900;
+      backdrop-filter: blur(16px);
+    }
+    .info-track {
+      display: flex;
+      gap: 2.2rem;
+      animation: ticker 22s linear infinite;
+      font-size: 0.62rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.68);
+      padding-inline: 1.5rem;
+      white-space: nowrap;
+    }
+    @keyframes ticker {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    .scroll-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 4px;
+      width: 0;
+      background: linear-gradient(90deg, rgba(255,94,0,1), rgba(255,195,0,1));
+      z-index: 1200;
+      box-shadow: 0 0 18px rgba(255,94,0,0.65);
+      transition: width 0.2s ease;
+    }
+
+    /* ============ HERO ============ */
+    .hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1.05fr 0.8fr;
+      gap: 1rem;
+      align-items: center;
+      padding: 9rem min(5vw, 4rem) 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* blurred light streaks */
+    .hero::before,
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 480px;
+      height: 480px;
+      filter: blur(120px);
+      opacity: 0.7;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .hero::before {
+      background: radial-gradient(circle, rgba(255, 30, 0, 0.6), rgba(3, 3, 3, 0));
+      top: -12%;
+      left: -12%;
+    }
+    .hero::after {
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.15), rgba(3, 3, 3, 0));
+      bottom: -14%;
+      right: -10%;
+    }
+
+    .hero-left {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 1.6rem;
+    }
+
+    .hero-ribbon {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(248, 248, 248, 0.05);
+      border-radius: 999px;
+      padding: 0.35rem 1rem;
+      font-size: 0.65rem;
+      width: fit-content;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      color: var(--muted);
+    }
+    .hero-ribbon small {
+      background: rgba(255, 30, 0, 0.3);
+      border-radius: 999px;
+      padding: 0.1rem 0.5rem;
+      font-size: 0.55rem;
+      color: #fff;
+    }
+
+    .badge {
+      display: inline-flex;
+      gap: 0.6rem;
+      background: rgba(255, 30, 0, 0.14);
+      border: 1px solid rgba(255, 30, 0, 0.5);
+      border-radius: 999px;
+      padding: 0.45rem 1.1rem;
+      align-items: center;
+      width: fit-content;
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .badge span:last-child {
+      color: #fff;
+      font-weight: 600;
+    }
+
+    .title-wrap {
+      position: relative;
+      margin-top: 0.3rem;
+    }
+
+    .hero-title {
+      font-size: clamp(2.8rem, 5vw, 4rem);
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      line-height: 0.95;
+      text-wrap: balance;
+      font-family: "Space Grotesk", sans-serif;
+      margin-bottom: 0.1rem;
+    }
+    .hero-sub {
+      color: var(--muted);
+      max-width: 36rem;
+      line-height: 1.6;
+      font-size: 0.98rem;
+      margin-top: 0.2rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .primary-btn {
+      background: radial-gradient(circle, #ff1e00 0%, #ff5e00 60%);
+      padding: 0.95rem 1.6rem;
+      border-radius: 999px;
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.78rem;
+      border: none;
+      cursor: pointer;
+      transition: 0.2s;
+      box-shadow: 0 0 28px rgba(255, 30, 0, 0.4);
+    }
+    .primary-btn:hover {
+      transform: translateY(-2px);
+    }
+    .ghost-btn {
+      padding: 0.9rem 1.4rem;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.045);
+      border: 1px solid rgba(248, 248, 248, 0.2);
+      color: #fff;
+      font-weight: 500;
+      text-decoration: none;
+      font-size: 0.78rem;
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+    }
+
+    /* stats */
+    .stats {
+      display: flex;
+      gap: 1.6rem;
+      margin-top: 1rem;
+      flex-wrap: wrap;
+    }
+    .stat {
+      background: rgba(0, 0, 0, 0.35);
+      border: 1px solid rgba(255, 30, 0, 0.1);
+      border-radius: 1.1rem;
+      padding: 0.7rem 1.1rem;
+      min-width: 140px;
+    }
+    .stat .num {
+      font-size: 1.6rem;
+      font-weight: 700;
+    }
+    .stat small {
+      color: var(--muted);
+      font-size: 0.65rem;
+    }
+
+    /* ============ HERO RIGHT (image) ============ */
+    .hero-right {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      padding-right: clamp(1rem, 4vw, 3rem);
+    }
+
+    .car-wrap {
+      position: relative;
+      width: min(90rem, 80vw);
+      aspect-ratio: 16 / 9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      filter: drop-shadow(0 24px 66px rgba(0, 0, 0, 0.6));
+    }
+
+    .car-bounce {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transform-origin: center;
+      transform: translateY(0);
+    }
+
+    .car-model {
+      width: 100%;
+      height: 100%;
+      transform: scale(1.18) rotateX(8deg);
+      transform-origin: center;
+    }
+
+    /* model-viewer uses default sizing; keep car-wrap centered */
+
+    .hero-gradient {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle, rgba(255, 30, 0, 0.35) 0%, rgba(0, 0, 0, 0) 60%);
+      filter: blur(70px);
+      z-index: 0;
+    }
+
+    .car-image {
+      position: relative;
+      width: 100%;
+      object-fit: contain;
+      transform-origin: center;
+      border-radius: 1.6rem;
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .floating-chip {
+      position: absolute;
+      top: 7%;
+      right: 1%;
+      background: rgba(0, 0, 0, 0.25);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      padding: 0.75rem 1rem;
+      border-radius: 1rem;
+      width: 11rem;
+      font-size: 0.6rem;
+      display: grid;
+      gap: 0.35rem;
+    }
+    .floating-chip h4 {
+      font-size: 0.75rem;
+    }
+    .chip-pill {
+      background: rgba(255, 30, 0, 0.18);
+      border-radius: 999px;
+      padding: 0.18rem 0.4rem;
+      width: fit-content;
+      font-size: 0.57rem;
+    }
+    .floating-chip small {
+      color: var(--muted);
+    }
+
+    /* ============ SECTIONS ============ */
+    section {
+      padding: 4rem min(5vw, 4rem);
+    }
+    section:first-of-type {
+      padding-top: 5rem;
+    }
+    section > * {
+      max-width: min(1100px, 92vw);
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .section-title {
+      font-size: 1.8rem;
+      margin-bottom: 1.8rem;
+      font-family: "Space Grotesk", sans-serif;
+      margin-top: 0.5rem;
+    }
+
+    .section-sub {
+      color: var(--muted);
+      max-width: 56rem;
+      margin-bottom: 2rem;
+      line-height: 1.65;
+      font-size: 1rem;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 1.1rem;
+    }
+    .pipeline {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 1.1rem;
+    }
+    .feature-card {
+      background: rgba(0, 0, 0, 0.35);
+      border: 1px solid rgba(255, 255, 255, 0.02);
+      border-radius: 1.25rem;
+      padding: 1.1rem 1.25rem;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 28px 70px rgba(0, 0, 0, 0.15);
+      position: relative;
+      overflow: hidden;
+    }
+    .feature-card::before {
+      content: "";
+      position: absolute;
+      width: 22px;
+      height: 22px;
+      top: 1.1rem;
+      right: 1.1rem;
+      background: radial-gradient(circle, rgba(255,94,0,0.9) 0%, rgba(255,94,0,0) 75%);
+      opacity: 0.7;
+      filter: blur(0.5px);
+    }
+    .feature-card h3 {
+      font-size: 1rem;
+      margin-bottom: 0.4rem;
+    }
+    .feature-card p {
+      font-size: 0.75rem;
+      color: var(--muted);
+      line-height: 1.4;
+    }
+
+    .capability-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 1.15rem;
+    }
+    .cap-card {
+      background: rgba(0, 0, 0, 0.38);
+      border: 1px solid rgba(255,255,255,0.05);
+      border-radius: 1.1rem;
+      padding: 1rem 1.15rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.55rem;
+      box-shadow: 0 18px 35px rgba(0,0,0,0.45);
+    }
+    .cap-icon {
+      font-size: 1.45rem;
+    }
+    .cap-card h3 {
+      font-size: 0.96rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+    .cap-card p {
+      font-size: 0.68rem;
+      color: rgba(255,255,255,0.72);
+      line-height: 1.55;
+    }
+
+    .ops-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.15rem;
+      margin-top: 2.1rem;
+    }
+    .ops-card {
+      background: rgba(0,0,0,0.38);
+      border: 1px solid rgba(255,255,255,0.05);
+      border-radius: 1.1rem;
+      padding: 1rem 1.1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+      box-shadow: 0 18px 35px rgba(0,0,0,0.45);
+    }
+    .ops-card h3 {
+      font-size: 0.84rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.88);
+    }
+    .ops-list {
+      list-style: none;
+      padding-left: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+      font-size: 0.64rem;
+      color: rgba(255,255,255,0.75);
+    }
+    .ops-list li {
+      display: flex;
+      justify-content: space-between;
+      gap: 0.5rem;
+    }
+    .ops-list li span:last-child {
+      color: rgba(255,255,255,0.6);
+    }
+    .ops-progress span {
+      font-size: 0.58rem;
+      color: rgba(255,255,255,0.6);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+    .ops-bar {
+      width: 100%;
+      height: 8px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.08);
+      overflow: hidden;
+      margin-top: 0.35rem;
+    }
+    .ops-bar .fill {
+      height: 100%;
+      background: linear-gradient(120deg, rgba(255,94,0,0.88), rgba(255,150,0,0.88));
+      border-radius: inherit;
+    }
+
+    /* ============ WHY F1 SECTION ============ */
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1rem;
+    }
+    .why-item {
+      background: rgba(0, 0, 0, 0.3);
+      border: 1px solid rgba(255, 30, 0, 0.04);
+      border-radius: 1rem;
+      padding: 1rem 1.1rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .why-item::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(140deg, rgba(255,255,255,0.05), transparent 60%);
+      opacity: 0.3;
+      pointer-events: none;
+    }
+    .why-item small {
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: rgba(255, 255, 255, 0.6);
+    }
+    .why-item h4 {
+      margin-top: 0.4rem;
+      font-size: 1rem;
+    }
+
+    /* ============ TELEMETRY PANEL ============ */
+    .telemetry-wrapper {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 1.2rem;
+    }
+    .telemetry-card {
+      background: var(--panel);
+      border-radius: 1.1rem;
+      border: 1px solid rgba(255,255,255,0.04);
+      padding: 1rem 1.1rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .telemetry-card::before {
+      content: "";
+      position: absolute;
+      inset: -40% 20% auto;
+      height: 120px;
+      background: radial-gradient(circle, rgba(255,94,0,0.25), transparent 70%);
+      pointer-events: none;
+    }
+    .telemetry-title {
+      font-size: 0.85rem;
+      margin-bottom: 0.5rem;
+      justify-content: center;
+      align-self: start; /* ensure the car-wrap aligns to the top of the hero column */
+      justify-content: space-between;
+      align-items: center;
+    }
+    .telemetry-tag {
+      background: rgba(255, 30, 0, 0.2);
+      border-radius: 999px;
+      padding: 0.2rem 0.6rem;
+      font-size: 0.6rem;
+    }
+    .telemetry-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+      gap: 0.7rem;
+    }
+    .telemetry-item {
+      background: rgba(255, 255, 255, 0.01);
+      border: 1px solid rgba(255,255,255,0.02);
+      border-radius: 0.6rem;
+      padding: 0.6rem 0.6rem 0.4rem;
+    }
+    .telemetry-label {
+      font-size: 0.62rem;
+      color: rgba(255,255,255,0.5);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .telemetry-value {
+      font-size: 1.05rem;
+      font-weight: 600;
+    }
+    .risk-bar {
+      height: 10px;
+      border-radius: 99px;
+      background: rgba(255, 255, 255, 0.03);
+      margin-top: 0.6rem;
+      overflow: hidden;
+    }
+    .risk-bar-inner {
+      height: 100%;
+      width: 82%;
+      background: linear-gradient(90deg, #04c018, #f3f311, #ff1e00);
+    }
+
+    /* ============ USE CASES ============ */
+    .use-cases {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+    }
+    .use-case {
+      background: rgba(0, 0, 0, 0.28);
+      border: 1px solid rgba(255, 255, 255, 0.03);
+      border-radius: 1.2rem;
+      padding: 1rem 1.05rem;
+    }
+    .use-case h4 {
+      margin-bottom: 0.45rem;
+    }
+
+    /* ============ ROADMAP ============ */
+    .roadmap {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+    }
+    .road-step {
+      border-left: 2px solid rgba(255, 30, 0, 0.4);
+      padding-left: 0.8rem;
+    }
+    .road-step small {
+      font-size: 0.6rem;
+      color: rgba(255,255,255,0.45);
+      text-transform: uppercase;
+    }
+    .road-step h4 {
+      margin-top: 0.5rem;
+      margin-bottom: 0.3rem;
+      font-size: 0.95rem;
+    }
+
+    /* ============ FAQ ============ */
+    .faq-wrap {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+    }
+    .faq {
+      background: rgba(0, 0, 0, 0.32);
+      border: 1px solid rgba(255,255,255,0.02);
+      border-radius: 1rem;
+      padding: 0.9rem 1rem;
+    }
+    .faq h4 {
+      font-size: 0.85rem;
+      margin-bottom: 0.3rem;
+    }
+    .faq p {
+      font-size: 0.7rem;
+      color: var(--muted);
+    }
+
+    /* ============ CONTACT ============ */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 1rem;
+    }
+    .contact-form {
+      background: rgba(0,0,0,0.4);
+      border: 1px solid rgba(255,255,255,0.03);
+      border-radius: 1.2rem;
+      padding: 1rem 1.2rem 1.2rem;
+    }
+    .contact-form label {
+      font-size: 0.65rem;
+      color: rgba(255,255,255,0.6);
+    }
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      margin-top: 0.25rem;
+      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(255,255,255,0.03);
+      border-radius: 0.6rem;
+      padding: 0.5rem 0.55rem;
+      color: #fff;
+      font-family: inherit;
+      font-size: 0.7rem;
+    }
+    .contact-form textarea {
+      resize: vertical;
+      min-height: 110px;
+    }
+    .contact-side {
+      background: rgba(0,0,0,0.18);
+      border: 1px solid rgba(255,255,255,0.03);
+      border-radius: 1.2rem;
+      padding: 1rem 1.2rem;
+    }
+
+    /* ============ FOOTER ============ */
+    footer {
+      padding: 1.5rem min(5vw, 4rem);
+      border-top: 1px solid rgba(255,255,255,0.04);
+      text-align: center;
+      color: rgba(255,255,255,0.4);
+      font-size: 0.65rem;
+    }
+
+    /* ============ PARTICLES ============ */
+    .particles {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .particle {
+      position: absolute;
+      width: 2px;
+      height: 16px;
+      background: radial-gradient(circle, rgba(255, 30, 0, 1) 0%, rgba(255, 30, 0, 0) 75%);
+      opacity: 0.5;
+      border-radius: 999px;
+      filter: blur(1px);
+    }
+
+    /* ============ RESPONSIVE ============ */
+    @media (max-width: 1100px) {
+      .hero {
+        grid-template-columns: 1fr;
+        text-align: left;
+        height: auto;
+        padding-top: 8.5rem;
+      }
+      .hero-right {
+        margin-top: 2.5rem;
+        justify-content: center;
+        padding-right: 0;
+      }
+    }
+
+    @media (max-width: 720px) {
+      nav {
+        padding: 1rem 1.2rem;
+        flex-wrap: wrap;
+      }
+      nav .logo {
+        font-size: 0.9rem;
+      }
+      .nav-cta {
+        font-size: 0.75rem;
+        padding: 0.5rem 1.1rem;
+      }
+      .info-ticker {
+        display: none;
+      }
+      .hero-actions {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .car-wrap {
+        aspect-ratio: auto;
+        width: min(36rem, 100%);
+      }
+      .car-model {
+        transform: scale(1.08) rotateX(6deg);
+      }
+      .floating-chip {
+        display: none;
+      }
+      .telemetry-wrapper,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+      section {
+        padding-inline: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <!-- Floating Particles -->
+  <div class="particles" id="particles"></div>
+
+  <!-- Navigation -->
+  <nav>
+    <a href="index1.html" class="logo"><span class="logo-dot"></span> VISIONALTRIX</a>
+    <a href="#why" class="nav-cta">Why F1</a>
+    <a href="ai-model.html" class="nav-cta">AI Model Training</a>
+    <a href="visual.html" class="nav-cta">Live Safety Demo</a>
+    <a href="result.html" class="nav-cta">Results</a>
+  </nav> 
+
+  <!-- HERO -->
+  <header class="hero" id="top">
+    <div class="hero-left">
+      <div class="badge">
+        <span>F1 → Road</span>
+        <span>Safety AI Bridge</span>
+      </div>
+      <div class="title-wrap">
+        <h1 class="hero-title">Automotive Safety,<br>Trained on Extreme Data.</h1>
+      </div>
+      <p class="hero-sub">
+        We ingest high-speed F1 crash telemetry, detect rare anomalies, and feed insights to consumer-grade ADAS systems so normal cars can react like race cars in extreme cases.
+      </p>
+      <div class="hero-actions">
+      </div>
+      <div class="stats">
+        <div class="stat">
+          <div class="num" id="stat1">0</div>
+          <small>F1 crash sequences modelled</small>
+        </div>
+        <div class="stat">
+          <div class="num" id="stat2">0</div>
+          <small>ms decision latency</small>
+        </div>
+        <div class="stat">
+          <div class="num" id="stat3">0</div>
+          <small>road scenarios generated</small>
+        </div>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="car-wrap">
+        <div class="hero-gradient"></div>
+        <!-- Replace Ferrari image with an exported Blender model -->
+        <div class="car-bounce">
+          <model-viewer
+            src="f1_2023_mercedes_amg_w14_e_performance_s1.glb"
+            alt="F1 Car"
+            class="car-model"
+            id="carImage"
+            camera-controls
+            auto-rotate
+            auto-rotate-delay="0"
+            camera-orbit="-25deg 60deg auto"
+            camera-target="0m 0.22m 0m"
+            field-of-view="13deg"
+            shadow-intensity="1"
+            exposure="1">
+          </model-viewer>
+        </div>
+      </div>
+    </div>
+</header>
+
+  <!-- ============ WHAT OUR SYSTEM SHOWS ============ -->
+  <section id="screen-b">
+    <h2 class="section-title" style="font-size: 2.5rem; font-weight: 800;">What Our System Shows</h2>
+    <p class="section-sub" style="font-size: 1.1rem; color: rgba(248, 248, 248, 0.75);">Three key demonstrations of our F1-to-Road Safety AI system in action.</p>
+    <div class="features-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+      <!-- Screen A -->
+      <div class="feature-card" style="border-color: rgba(255, 30, 0, 0.5); border-width: 2px; padding: 1.4rem 1.5rem;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.2rem;">
+          <h3 style="font-size: 1.35rem; font-weight: 700;">AI Model Training</h3>
+          <span style="background: rgba(255, 30, 0, 0.35); border: 1px solid rgba(255, 30, 0, 0.7); border-radius: 999px; padding: 0.4rem 0.8rem; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600;">Data Feed</span>
+        </div>
+        <h4 style="color: var(--accent); margin-bottom: 1rem; font-size: 1.15rem; font-weight: 600;">F1 Crash Telemetry / Training</h4>
+        <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.7rem; font-size: 0.95rem; color: rgba(248, 248, 248, 0.8); line-height: 1.6;">
+          <li>• High-frequency F1 crash data streaming in real-time</li>
+          <li>• Each crash tagged with crash_id, G-forces, impact angle, and velocity</li>
+          <li>• Exported crash signatures ready for model ingestion</li>
+        </ul>
+      </div>
+
+      <!-- Screen B -->
+      <div class="feature-card" style="border-color: rgba(100, 150, 255, 0.5); border-width: 2px; padding: 1.4rem 1.5rem;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.2rem;">
+          <h3 style="font-size: 1.35rem; font-weight: 700;">Live Demo</h3>
+          <span style="background: rgba(100, 150, 255, 0.35); border: 1px solid rgba(100, 150, 255, 0.7); border-radius: 999px; padding: 0.4rem 0.8rem; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600;">Live Demo</span>
+        </div>
+        <h4 style="color: rgba(100, 150, 255, 1); margin-bottom: 1rem; font-size: 1.15rem; font-weight: 600;">Before vs After (3D Demo)</h4>
+        <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.7rem; font-size: 0.95rem; color: rgba(248, 248, 248, 0.8); line-height: 1.6;">
+          <li>• Rainy overtake scenario: untrained ADAS fails to brake in time</li>
+          <li>• Rear-end collision setup: baseline system reacts too late</li>
+          <li>• F1-trained ADAS corrects steering and brakes 80ms earlier, avoiding impact</li>
+        </ul>
+      </div>
+
+      <!-- Screen C -->
+      <div class="feature-card" style="border-color: rgba(46, 204, 113, 0.5); border-width: 2px; padding: 1.4rem 1.5rem;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.2rem;">
+          <h3 style="font-size: 1.35rem; font-weight: 700;">Results</h3>
+          <span style="background: rgba(46, 204, 113, 0.35); border: 1px solid rgba(46, 204, 113, 0.7); border-radius: 999px; padding: 0.4rem 0.8rem; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600;">Visual</span>
+        </div>
+        <h4 style="color: rgba(46, 204, 113, 1); margin-bottom: 1rem; font-size: 1.15rem; font-weight: 600;">Result / Impact Board</h4>
+        <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.7rem; font-size: 0.95rem; color: rgba(248, 248, 248, 0.8); line-height: 1.6;">
+          <li>• Reaction time: 220 ms → 140 ms (80 ms improvement)</li>
+          <li>• Stopping distance: 11.2 m → 7.6 m (3.6 m reduction)</li>
+          <li>• Impact speed: 28 km/h → 8 km/h (crash → near-miss)</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ WHY FORMULA 1 ============ -->
+  <section id="why">
+    <h2 class="section-title" style="font-size: 2.5rem; font-weight: 800;">Why Formula 1?</h2>
+    <p class="section-sub" style="font-size: 1.1rem; color: rgba(248, 248, 248, 0.75);">Formula 1 provides uniquely valuable data for training consumer ADAS systems.</p>
+    <div class="why-grid">
+      <div class="why-item" style="padding: 1.4rem 1.5rem;">
+        <small style="font-size: 0.75rem; color: rgba(255, 255, 255, 0.7);">Fully Instrumented</small>
+        <h4 style="font-size: 1.25rem; margin-top: 0.6rem; margin-bottom: 0.8rem; font-weight: 700;">F1 crashes are fully instrumented</h4>
+
+      </div>
+      <div class="why-item" style="padding: 1.4rem 1.5rem;">
+        <small style="font-size: 0.75rem; color: rgba(255, 255, 255, 0.7);">Rare High-G Impacts</small>
+        <h4 style="font-size: 1.25rem; margin-top: 0.6rem; margin-bottom: 0.8rem; font-weight: 700;">Rare, high-G, multi-angle impacts</h4>
+
+      </div>
+      <div class="why-item" style="padding: 1.4rem 1.5rem;">
+        <small style="font-size: 0.75rem; color: rgba(255, 255, 255, 0.7);">Edge Case Patterns</small>
+        <h4 style="font-size: 1.25rem; margin-top: 0.6rem; margin-bottom: 0.8rem; font-weight: 700;">Patterns that cause ADAS failures</h4>
+
+      </div>
+      <div class="why-item" style="padding: 1.4rem 1.5rem;">
+        <small style="font-size: 0.75rem; color: rgba(255, 255, 255, 0.7);">Early Reaction</small>
+        <h4 style="font-size: 1.25rem; margin-top: 0.6rem; margin-bottom: 0.8rem; font-weight: 700;">Road cars can react earlier</h4>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ WHY THIS PROBLEM STATEMENT ============ -->
+  <section>
+    <h2 class="section-title" style="font-size: 2.5rem; font-weight: 800;">Why This Problem Statement?</h2>
+    <p class="section-sub" style="font-size: 1.1rem; color: rgba(248, 248, 248, 0.75);">Understanding the gap that F1 data fills in consumer ADAS training.</p>
+    <div style="background: rgba(0, 0, 0, 0.45); border: 2px solid rgba(255, 30, 0, 0.25); border-radius: 1.5rem; padding: 2rem 2.2rem; position: relative; overflow: hidden;">
+      <div style="position: absolute; inset: -30% -20% auto; height: 120px; background: radial-gradient(circle, rgba(255, 30, 0, 0.15), transparent 60%); pointer-events: none;"></div>
+      <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 1.3rem; position: relative; z-index: 1;">
+        <li style="display: flex; gap: 1rem; align-items: flex-start; font-size: 1rem; line-height: 1.7;">
+          <span style="color: var(--accent); font-weight: 700; font-size: 1.4rem; line-height: 1;">→</span>
+          <span style="color: rgba(248, 248, 248, 0.9);"><strong style="font-size: 1.05rem; color: #fff;">Normal ADAS training relies on normal driving data</strong> plus light collision scenarios—meaning models learn from low-severity, common events that don't represent catastrophic failures.</span>
+        </li>
+        <li style="display: flex; gap: 1rem; align-items: flex-start; font-size: 1rem; line-height: 1.7;">
+          <span style="color: var(--accent); font-weight: 700; font-size: 1.4rem; line-height: 1;">→</span>
+          <span style="color: rgba(248, 248, 248, 0.9);"><strong style="font-size: 1.05rem; color: #fff;">Real-world ADAS failures happen in edge cases:</strong> wet overtakes, sudden deceleration from highway speeds, bad-angle impacts, hydroplaning during emergency braking—rare events that training data barely covers.</span>
+        </li>
+        <li style="display: flex; gap: 1rem; align-items: flex-start; font-size: 1rem; line-height: 1.7;">
+          <span style="color: var(--accent); font-weight: 700; font-size: 1.4rem; line-height: 1;">→</span>
+          <span style="color: rgba(248, 248, 248, 0.9);"><strong style="font-size: 1.05rem; color: #fff;">F1 gives us a ready-made library of edge cases</strong> recorded under controlled but extreme conditions—a unique dataset that bridges the gap between normal driving and worst-case crashes.</span>
+        </li>
+        <li style="display: flex; gap: 1rem; align-items: flex-start; font-size: 1rem; line-height: 1.7;">
+          <span style="color: var(--accent); font-weight: 700; font-size: 1.4rem; line-height: 1;">→</span>
+          <span style="color: rgba(248, 248, 248, 0.9);"><strong style="font-size: 1.05rem; color: #fff;">This makes it an ideal hackathon problem:</strong> small scope, clear demonstration, measurable impact (milliseconds and meters matter), and a novel data transfer approach that's never been tried before.</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ HOW IT WORKS ============ -->
+  <section style="background: rgba(0, 0, 0, 0.3); border-radius: 1.5rem; margin-top: 2rem; padding: 2.5rem min(5vw, 4rem);">
+    <h2 class="section-title" style="text-align: center; font-size: 2.5rem; font-weight: 800;">How It Works</h2>
+    <div style="background: rgba(0, 0, 0, 0.5); border: 2px solid rgba(255, 255, 255, 0.08); border-radius: 1.5rem; padding: 2.5rem 2rem;">
+      <div style="display: flex; align-items: center; justify-content: center; gap: 1rem; flex-wrap: nowrap; overflow-x: auto; padding: 1rem 0;">
+        <div style="display: flex; align-items: center; gap: 0.75rem; flex-shrink: 0; white-space: nowrap;">
+          <div style="background: var(--accent); color: white; font-weight: 700; padding: 0.75rem 1.1rem; border-radius: 0.75rem; font-size: 1.1rem; min-width: 3rem; text-align: center; box-shadow: 0 4px 12px rgba(255, 30, 0, 0.4);">1</div>
+          <span style="font-size: 0.85rem;">F1 crash telemetry</span>
+        </div>
+        <div style="color: var(--muted); font-size: 1.5rem; text-align: center; flex-shrink: 0;">→</div>
+        <div style="display: flex; align-items: center; gap: 0.75rem; flex-shrink: 0; white-space: nowrap;">
+          <div style="background: var(--accent); color: white; font-weight: 700; padding: 0.75rem 1.1rem; border-radius: 0.75rem; font-size: 1.1rem; min-width: 3rem; text-align: center; box-shadow: 0 4px 12px rgba(255, 30, 0, 0.4);">2</div>
+          <span style="font-size: 0.85rem;">Signature extraction</span>
+        </div>
+        <div style="color: var(--muted); font-size: 1.5rem; text-align: center; flex-shrink: 0;">→</div>
+        <div style="display: flex; align-items: center; gap: 0.75rem; flex-shrink: 0; white-space: nowrap;">
+          <div style="background: var(--accent); color: white; font-weight: 700; padding: 0.75rem 1.1rem; border-radius: 0.75rem; font-size: 1.1rem; min-width: 3rem; text-align: center; box-shadow: 0 4px 12px rgba(255, 30, 0, 0.4);">3</div>
+          <span style="font-size: 0.85rem;">Transfer to ADAS</span>
+        </div>
+        <div style="color: var(--muted); font-size: 1.5rem; text-align: center; flex-shrink: 0;">→</div>
+        <div style="display: flex; align-items: center; gap: 0.75rem; flex-shrink: 0; white-space: nowrap;">
+          <div style="background: rgba(46, 204, 113, 1); color: white; font-weight: 700; padding: 0.75rem 1.1rem; border-radius: 0.75rem; font-size: 1.1rem; min-width: 3rem; text-align: center; box-shadow: 0 4px 12px rgba(46, 204, 113, 0.4);">✓</div>
+          <span style="font-size: 0.85rem;">ADAS reacts earlier</span>
+        </div>
+      </div>
+      <p style="text-align: center; color: rgba(248, 248, 248, 0.85); margin-top: 2.5rem; font-size: 1.1rem; line-height: 1.7; font-weight: 500;">
+        The result: public cars gain the crash-prevention intelligence of Formula 1 safety systems.
+      </p>
+    </div>
+  </section>
+
+  <footer>
+    © 2025 VISIONALTRIX — F1-to-Road Safety AI. Built for demos & hackathons. Crafted with GSAP.
+  </footer>
+
+  <script>
+    // ========== HELPER SCROLL ==========
+    function scrollToDemo() {
+      document.querySelector("#demo").scrollIntoView({ behavior: "smooth" });
+    }
+
+    // ========== PARTICLES ==========
+    const particlesContainer = document.getElementById("particles");
+    for (let i = 0; i < 25; i++) {
+      const p = document.createElement("div");
+      p.className = "particle";
+      p.style.left = Math.random() * 100 + "%";
+      p.style.top = Math.random() * 100 + "%";
+      p.style.animation = `float ${5 + Math.random() * 5}s ease-in-out infinite`;
+      particlesContainer.appendChild(p);
+    }
+
+    // float keyframes
+    const style = document.createElement("style");
+    style.innerHTML = `
+      @keyframes float {
+        0%, 100% { transform: translateY(0) translateX(0); opacity:.55; }
+        50% { transform: translateY(-25px) translateX(15px); opacity:1; }
+      }
+    `;
+    document.head.appendChild(style);
+
+    // duplicate ticker content for seamless loop
+    const tickerTrack = document.querySelector(".info-track");
+    if (tickerTrack) {
+      tickerTrack.innerHTML += tickerTrack.innerHTML;
+    }
+
+    // ========== GSAP ANIMATIONS ==========
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Hero entrance
+    gsap.from(".hero-left .hero-ribbon", { y: 18, opacity: 0, duration: 0.5, delay: 0.05 });
+    gsap.from(".hero-left .badge", { y: 20, opacity: 0, duration: 0.5, delay: 0.15 });
+    gsap.from(".hero-title", { y: 24, opacity: 0, duration: 0.7, delay: 0.3 });
+    gsap.from(".hero-sub", { y: 18, opacity: 0, duration: 0.6, delay: 0.5 });
+    gsap.from(".hero-actions", { y: 16, opacity: 0, duration: 0.6, delay: 0.65 });
+    gsap.from(".stats .stat", {
+      y: 10,
+      opacity: 0,
+      duration: 0.4,
+      delay: 0.8,
+      stagger: 0.12
+    });
+
+    // Car entrance pop
+    const carPop = gsap.timeline({ delay: 0.2 });
+    carPop.fromTo(".car-bounce", {
+      y: 80,
+      scale: 0.85,
+      opacity: 0
+    }, {
+      y: -18,
+      scale: 1,
+      opacity: 1,
+      duration: 0.9,
+      ease: "power3.out"
+    }).to(".car-bounce", {
+      y: 0,
+      duration: 0.6,
+      ease: "bounce.out"
+    }, "-=0.3");
+
+    // Sections scroll
+    gsap.utils.toArray("section").forEach((sec) => {
+      gsap.from(sec.children, {
+        scrollTrigger: {
+          trigger: sec,
+          start: "top 80%",
+        },
+        y: 20,
+        opacity: 0,
+        duration: 0.6,
+        stagger: 0.12,
+        ease: "power2.out"
+      });
+    });
+
+    // Counting stats
+    function animateCount(id, to) {
+      let obj = { val: 0 };
+      gsap.to(obj, {
+        val: to,
+        duration: 1.6,
+        ease: "power1.out",
+        onUpdate: () => {
+          document.getElementById(id).textContent = Math.floor(obj.val);
+        }
+      });
+    }
+    animateCount("stat1", 124);
+    animateCount("stat2", 48);
+    animateCount("stat3", 320);
+
+    // Demo card pulse
+    gsap.to("#demoCard", {
+      scale: 1.02,
+      repeat: -1,
+      yoyo: true,
+      duration: 1.5,
+      ease: "power1.inOut"
+    });
+
+    // Active link on scroll
+    const sections = document.querySelectorAll("section");
+    const navLinks = document.querySelectorAll("nav a");
+    const progressBar = document.getElementById("scrollProgress");
+    window.addEventListener("scroll", () => {
+      let current = "";
+      sections.forEach(sec => {
+        const secTop = sec.offsetTop;
+        if (pageYOffset >= secTop - 200) {
+          current = sec.getAttribute("id");
+        }
+      });
+      navLinks.forEach(a => {
+        a.classList.remove("active");
+        if (a.getAttribute("href") === "#" + current) {
+          a.classList.add("active");
+        }
+      });
+      if (progressBar) {
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const scrolled = docHeight > 0 ? (window.scrollY / docHeight) * 100 : 0;
+        progressBar.style.width = `${scrolled}%`;
+      }
+    });
+
+    // Mouse parallax for car
+    window.addEventListener("mousemove", (e) => {
+      const x = (e.clientX / window.innerWidth - 0.5) * 18;
+      const y = (e.clientY / window.innerHeight - 0.5) * 18;
+      gsap.to("#carImage", { rotationY: x * 0.2, rotationX: -y * 0.2, duration: 0.5 });
+    });
+
+    // Simple live telemetry fake change
+    const speedEl = document.getElementById("t-speed");
+    const yawEl = document.getElementById("t-yaw");
+    const gEl = document.getElementById("t-g");
+    const tyreEl = document.getElementById("t-tyre");
+    const riskBar = document.getElementById("riskBar");
+
+    setInterval(() => {
+      const speed = 200 + Math.floor(Math.random() * 36);
+      const yaw = (14 + Math.random() * 7).toFixed(1);
+      const g = (2.6 + Math.random() * 1.5).toFixed(1);
+      const tyre = 80 + Math.floor(Math.random() * 12);
+      const risk = 60 + Math.floor(Math.random() * 30);
+
+      speedEl.textContent = speed + " km/h";
+      yawEl.textContent = yaw + " °/s";
+      gEl.textContent = g + " G";
+      tyreEl.textContent = tyre + " °C";
+      riskBar.style.width = risk + "%";
+    }, 2300);
+  </script>
+  <script>
+    // Unregister any service workers that might serve old content
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.getRegistrations().then((regs) => {
+        regs.forEach((reg) => reg.unregister().catch(() => {}));
+      }).catch(() => {});
+    }
+    // Append cache-busting param to internal .html links
+    (function() {
+      const version = Date.now().toString();
+      document.querySelectorAll('nav a[href$=".html"]').forEach((a) => {
+        try {
+          const url = new URL(a.href, window.location.origin);
+          url.searchParams.set('v', version);
+          a.href = url.toString();
+        } catch (_) {}
+      });
+    })();
+  </script>
+</body>
+</html>
+

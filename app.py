@@ -73,14 +73,14 @@ def _file_or_404(path: str):
 @app.get("/")
 def serve_root():
     try:
-        return FileResponse("index.html")
+        return FileResponse("index1.html")
     except Exception:
         # Fallback minimal index if file not present
         return HTMLResponse("""
             <html><body>
               <h3>Altrix API</h3>
               <ul>
-                <li><a href='/index.html'>index.html</a></li>
+                <li><a href='/index1.html'>index1.html</a></li>
                 <li><a href='/ai-model.html'>ai-model.html</a></li>
                 <li><a href='/api/health'>/api/health</a></li>
                 <li><a href='/api/model-metadata'>/api/model-metadata</a></li>
@@ -90,9 +90,13 @@ def serve_root():
 
 
 @app.get("/index.html")
-def serve_index():
-    return _file_or_404("index.html")
+def serve_legacy_index():
+    return _file_or_404("index1.html")
 
+
+@app.get("/index1.html")
+def serve_index():
+    return _file_or_404("index1.html")
 
 @app.get("/ai-model.html")
 def serve_ai_model():
@@ -102,3 +106,16 @@ def serve_ai_model():
 @app.get("/Ferrari front.jpg")
 def serve_image():
     return _file_or_404("Ferrari front.jpg")
+
+
+@app.get("/f1_2023_mercedes_amg_w14_e_performance_s1.glb")
+def serve_f1_model():
+    return _file_or_404("f1_2023_mercedes_amg_w14_e_performance_s1.glb")
+
+@app.get("/visual.html")
+def serve_ai_model():
+    return _file_or_404("visual.html")
+
+@app.get("/result.html")
+def serve_ai_model():
+    return _file_or_404("result.html")
