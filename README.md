@@ -11,6 +11,7 @@ VISIONALTRIX is a demo stack that blends a FastAPI backend, an LSTM autoencoder,
   - [Launching the API](#launching-the-api)
   - [Available Pages](#available-pages)
   - [Core API Endpoints](#core-api-endpoints)
+- [Deploy on Render (Single Service)](#deploy-on-render-single-service)
 - [Synthetic Telemetry + Training](#synthetic-telemetry--training)
 - [Testing](#testing)
 - [3D Assets](#3d-assets)
@@ -102,6 +103,39 @@ curl -X POST http://127.0.0.1:8000/api/infer \
 ```
 
 The response contains `crash_probability`, `risk_band`, recommended safety actions, and feature attributions derived from `inference.py`.
+
+## Deploy on Render (Single Service)
+
+This repository can be deployed as one Render Web Service (frontend + API together) because `app.py` serves both static HTML pages and `/api/*` routes.
+
+### Files already prepared for Render
+
+- `requirements.txt` - Python dependencies for FastAPI + inference.
+- `render.yaml` - Render Blueprint config (build, start, health check).
+- `runtime.txt` - Python runtime pin (`python-3.11.10`).
+
+### Deploy steps
+
+1. Commit and push this repository to GitHub.
+2. In Render, create a new **Blueprint** and select this repository.
+3. Render will detect `render.yaml` and create the `visionaltrix` web service.
+4. Wait for initial build (first build can take longer because `torch` is large).
+5. Open:
+   - `https://<your-service>.onrender.com/`
+   - `https://<your-service>.onrender.com/api/health`
+   - `https://<your-service>.onrender.com/ai-model.html`
+
+### Manual service settings (if you do not use Blueprint)
+
+- Runtime: `Python`
+- Build command: `pip install --upgrade pip && pip install -r requirements.txt`
+- Start command: `uvicorn app:app --host 0.0.0.0 --port $PORT`
+- Health check path: `/api/health`
+
+### Notes
+
+- Keep `models/best_model.pth` in the repository so inference can load on startup.
+- If the service hits memory limits during inference, move to a larger Render instance.
 
 ## Synthetic Telemetry & Training
 

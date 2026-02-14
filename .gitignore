@@ -3,3 +3,6 @@ __pycache__/
 *.pyo
 *.pyd
 *.log
+.venv/
+.DS_Store
+runningCommand.txt
